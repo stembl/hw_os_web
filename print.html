@@ -156,7 +156,7 @@
                         <h1 id="the-hardware-os"><a class="header" href="#the-hardware-os">The Hardware OS</a></h1>
 <p><strong>Author:</strong> Steve Embleton</p>
 <p>Short, direct guidance for engineering leads: operating habits and records for hardware programs — so decisions, limits, and status stay tied to what build and test actually see.</p>
-<p>Opening scenes follow one <strong>four-week workweek clock</strong> in sidebar order: Monday early through Friday late, then a quiet Friday win at the close.</p>
+<p>Opening scenes follow <strong>one workweek</strong> in sidebar order: Monday early through Friday late — several beats per day, clock always forward — then a quiet Friday win at the close.</p>
 <p><strong>Start reading:</strong> use the sidebar for the full outline, or open <a href="chapters/01-the-missing-manual.html">1. The Missing Manual</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="1-the-missing-manual"><a class="header" href="#1-the-missing-manual">1. The Missing Manual</a></h1>
 <p>Monday, 6:47 a.m., parking-lot light still on, first messages already stacking before standup.</p>
@@ -197,7 +197,7 @@
 <p>Not a textbook on formal drawing rules, structured multi-factor experiments, or simulation theory. Those tools matter; pull specialists when the program needs them. You get when to insist on that class of work, what “good enough to decide” looks like, how the result feeds a gate and a one-pager. Not twelve chapters you must finish before the rest makes sense.</p>
 <p>Not a replacement for design history, functional safety, or regulatory paperwork. The last chapter names what this book does not cover so nobody confuses habits with compliance.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="2-process-is-the-product"><a class="header" href="#2-process-is-the-product">2. Process Is the Product</a></h1>
-<p>Tuesday, 7:18 a.m., test floor lights at half, second shift still cleaning up yesterday’s run.</p>
+<p>Monday, 9:35 a.m., test floor lights at half, second shift still cleaning up yesterday’s run.</p>
 <p>Two programs just failed the same end-of-line leak test.</p>
 <p>Both teams have competent engineers, a supplier in the loop, and a date that will not move without consequences. Both have test data that says the current build is not stable enough to ship.</p>
 <p>One program contains the issue in a day and restarts with a revised control plan. The other burns two weeks arguing whether the failure is fixture drift, operator variation, or the wrong revision on the floor.</p>
@@ -244,7 +244,7 @@
 <p>That is enough to expose whether your current process is implemented or cosmetic.</p>
 <p>Do not widen scope in Chapter 2. Install one narrow control loop, prove it reduces argument and lag, then extend.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="3-failure-patterns-chaos-drift-and-unowned-decisions"><a class="header" href="#3-failure-patterns-chaos-drift-and-unowned-decisions">3. Failure Patterns: Chaos, Drift, and Unowned Decisions</a></h1>
-<p>Wednesday, 9:05 a.m., mid-week already, coffee going cold in the conference room.</p>
+<p>Monday, 12:50 p.m., same day already feels long, coffee going cold in the conference room.</p>
 <p>Day 19 of an EVT build for a handheld controller, and this is the third meeting on the same leakage-limit decision; every slip keeps a $42k fixture order on hold.</p>
 <p>Test says one thing. The status page says another. Procurement already acted on a third version because nobody marked which number was live.</p>
 <p>Everyone can show calendar load and email effort. Nobody can point to a single owner for the live value.</p>
@@ -323,7 +323,7 @@
 </ul>
 <p>That single loop reduces all three failure patterns at once.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="4-dri-ownership-and-decision-authority"><a class="header" href="#4-dri-ownership-and-decision-authority">4. DRI Ownership and Decision Authority</a></h1>
-<p>Thursday, 3:55 p.m., afternoon sun on the whiteboard, decision still hanging open.</p>
+<p>Monday, 3:55 p.m., late sun on the whiteboard, decision still hanging open.</p>
 <p>The question is clear. The data is good enough. The room still does not decide.</p>
 <p>Everyone has input. Nobody has closure authority.</p>
 <p>By next week, the same topic appears in three meetings with three different "current" assumptions.</p>
@@ -393,7 +393,7 @@
 </ul>
 <p>When trigger conditions are objective, escalation is faster and less political.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="5-spec-integrity-and-requirement-hygiene"><a class="header" href="#5-spec-integrity-and-requirement-hygiene">5. Spec Integrity and Requirement Hygiene</a></h1>
-<p>Friday, 10:20 a.m., half the room already thinking about lunch and ship windows.</p>
+<p>Tuesday, 7:20 a.m., half the room still on their first coffee, ship windows already on the screen.</p>
 <p>Manufacturing asks which revision is real. Test says they validated Rev C assumptions. Procurement already placed orders against Rev B.</p>
 <p>The drawing package is "released." The program still has three definitions of done.</p>
 <p>Spec integrity is not about prettier documents. It is about one build reality.</p>
@@ -457,7 +457,7 @@ Downstream artifacts updated (test plan, one-pager, supplier packet)</li>
 If requirement truth is ambiguous, the gate becomes theater regardless of slide quality.</p>
 <p>Spec integrity is the substrate under every later control: risk scoring, one-page truth, supplier alignment, and schedule realism.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="6-gates-risk-registers-and-one-page-truth"><a class="header" href="#6-gates-risk-registers-and-one-page-truth">6. Gates, Risk Registers, and One-Page Truth</a></h1>
-<p>Monday, 1:15 p.m., post-lunch gate, room still smelling like someone’s takeout.</p>
+<p>Tuesday, 10:45 a.m., gate slides on the projector, room still smelling like someone’s takeout from an hour ago.</p>
 <p>The gate deck looks clean. The room still cannot answer one simple question: what changed since last gate that alters risk to launch.</p>
 <p>If a gate cannot produce that answer in two minutes, the program is performing confidence, not making decisions.</p>
 <hr />
@@ -529,7 +529,7 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 <p>Before Gate G3, risk row R-14 listed "supplier CpK pending" with no decision date, and the one-page line still read "launch confidence: green." After the gate decision to hold launch lot and fund gauge redesign, R-14 gained an owner/date and the one-page delta changed to "launch at risk until CpK &gt;= 1.33 evidence dated 2026-05-12."</p>
 <p>Two weeks is enough to expose whether your current rhythm is decision-grade.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="8-automation-decisions-at-concept-stage"><a class="header" href="#8-automation-decisions-at-concept-stage">8. Automation Decisions at Concept Stage</a></h1>
-<p>Tuesday, 10:10 a.m., concept review optimism still on the whiteboard from yesterday.</p>
+<p>Tuesday, 2:20 p.m., concept review optimism still on the whiteboard from this morning.</p>
 <p>The design review celebrates fit, function, and cost.</p>
 <p>Six months later, the line cannot probe one critical node without custom fixture workarounds that add 40 seconds per unit and destabilize yield.</p>
 <p>Nothing is "wrong" with the product design. The automation path was never designed into it.</p>
@@ -599,7 +599,7 @@ They are usually requirement and ownership failures:</p>
 <p>Treat automation as part of the operating system and it becomes predictable.
 Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="15-schedule-from-real-dependencies-and-honest-critical-path"><a class="header" href="#15-schedule-from-real-dependencies-and-honest-critical-path">15. Schedule from Real Dependencies and Honest Critical Path</a></h1>
-<p>Wednesday, 4:45 p.m., long shadows in the program office, dependency chart finally honest.</p>
+<p>Tuesday, 5:50 p.m., long shadows in the program office, dependency chart finally honest.</p>
 <p>The launch date on the slide has not moved in three months.</p>
 <p>The dependency chain under it has moved every week.</p>
 <p>This is date reporting without dependency control.</p>
@@ -673,7 +673,7 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 </ul>
 <p>If these are weak, schedule updates drift into negotiation instead of model updates.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="9-requirements-lifecycle-hypothesis---bless---evidence---revise"><a class="header" href="#9-requirements-lifecycle-hypothesis---bless---evidence---revise">9. Requirements Lifecycle (Hypothesis -&gt; Bless -&gt; Evidence -&gt; Revise)</a></h1>
-<p>Thursday, 2:40 p.m., lab hallway quiet, the thermal verification log shows requirement <code>RQ-THERM-014</code> set to 85 C while chamber run <code>T-117</code> fails above 78 C.</p>
+<p>Wednesday, 6:50 a.m., lab hallway quiet, the thermal verification log shows requirement <code>RQ-THERM-014</code> set to 85 C while chamber run <code>T-117</code> fails above 78 C.</p>
 <p>The systems requirements owner set <code>RQ-THERM-014</code> to 85 C, and last week's full-load chamber test showed the assembly drifting out of spec above 78 C.</p>
 <p>The change board leaves <code>RQ-THERM-014</code> unchanged because leads fear a revision will be labeled "moving goalposts" before Gate 3.</p>
 <p>Design, test, and supplier teams keep building to a known-wrong value until the next gate review forces a contradiction.</p>
@@ -744,7 +744,7 @@ The opposite failure is also common: freezing wrong values in the requirement re
 </ul>
 <p>The requirement owner should finish this review in minutes and publish one delta note, not run a half-day meeting.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="10-requirements-from-physics-not-stacked-buffers"><a class="header" href="#10-requirements-from-physics-not-stacked-buffers">10. Requirements from Physics (Not Stacked Buffers)</a></h1>
-<p>Friday, 11:30 a.m., people already talking about who is covering the weekend build, requirement <code>RQ-LOAD-022</code> carries three stacked safety factors while the latest build misses weight and yield targets.</p>
+<p>Wednesday, 11:15 a.m., people already trading rumors about who pulls the weekend build, requirement <code>RQ-LOAD-022</code> carries three stacked safety factors while the latest build misses weight and yield targets.</p>
 <p>The systems requirement <code>RQ-LOAD-022</code> now includes three separate safety factors added by component, system, and operations leads.</p>
 <p>No named owner can show which uncertainty each factor covers in the requirement rationale table.</p>
 <p>The released design is 6% heavier, material cost is up, and pilot-line yield is down versus the previous baseline.</p>
@@ -804,7 +804,7 @@ The opposite failure is also common: freezing wrong values in the requirement re
 "At condition set X/Y/Z, measured by method M, value shall be &lt;= N. Program buffer B covers uncertainty U, is owned by O, and is reviewed at gate G."</p>
 <p>The intent is the same, but the owner, uncertainty source, and gate review trigger are now explicit and auditable.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="11-many-factors-one-honest-limit"><a class="header" href="#11-many-factors-one-honest-limit">11. Many Factors, One Honest Limit</a></h1>
-<p>Monday, 8:35 a.m., week reboot energy already burned by factor-table noise, subsystem verification report <code>SVR-31</code> is green on single-factor tests while integrated run <code>INT-07</code> fails the requirement boundary.</p>
+<p>Wednesday, 2:35 p.m., afternoon energy burned on factor-table noise, subsystem verification report <code>SVR-31</code> is green on single-factor tests while integrated run <code>INT-07</code> fails the requirement boundary.</p>
 <p>The subsystem passes every single-factor check in <code>SVR-31</code>.</p>
 <p>It still fails in integrated operation during <code>INT-07</code> at combined load and temperature.</p>
 <p>The verification team tested variables one at a time and never ran the combined condition envelope that exists in the real product.</p>
@@ -878,7 +878,7 @@ It is the best current boundary supported by evidence, explicit assumptions, and
 </ul>
 <p>Lead responsibility remains: the lead still owns the decision question, artifact quality bar, and closure date.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="12-models-and-tests-that-change-decisions"><a class="header" href="#12-models-and-tests-that-change-decisions">12. Models and Tests That Change Decisions</a></h1>
-<p>Tuesday, 6:52 p.m., empty hallway outside the war room, the decision review packet contains 20 model runs and 12 test reports but still cannot resolve requirement <code>RQ-THERM-014</code>.</p>
+<p>Wednesday, 6:40 p.m., empty hallway outside the war room, the decision review packet contains 20 model runs and 12 test reports but still cannot resolve requirement <code>RQ-THERM-014</code>.</p>
 <p>The verification team produced twenty model runs and twelve test reports for the same requirement decision.</p>
 <p>The gate decision still hangs because no owner can show baseline, delta, and effect size in one traceable artifact.</p>
 <p>Evidence volume is high, but decision power stays low when each run is not linked to a baseline requirement state.</p>
@@ -945,7 +945,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 </ul>
 <p>This package keeps technical depth available while giving exec and PM reviewers a clear, fair decision frame.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="7-fleet-as-instrumented-experiment"><a class="header" href="#7-fleet-as-instrumented-experiment">7. Fleet as Instrumented Experiment</a></h1>
-<p>Wednesday, 7:14 a.m., early fleet readout before the cross-site call.</p>
+<p>Thursday, 7:02 a.m., early fleet readout before the cross-site call.</p>
 <p>Five prototype units are built.</p>
 <p>By Friday, the team has stories about each one and no comparable record of what was different between them.</p>
 <p>That is a missed experiment, not a successful fleet.</p>
@@ -1012,7 +1012,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 Fleet work applies the same discipline across physical units in real variation.</p>
 <p>When done well, fleet turns uncertainty into bounded decisions before major spend.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="13-risk-and-how-we-define-done-on-paper"><a class="header" href="#13-risk-and-how-we-define-done-on-paper">13. Risk and How We Define Done on Paper</a></h1>
-<p>Thursday, 9:08 a.m., gate prep table covered in coffee rings, the gate review package marks all actions closed while two critical failure modes remain open in current lab evidence.</p>
+<p>Thursday, 9:40 a.m., gate prep table covered in coffee rings, the gate review package marks all actions closed while two critical failure modes remain open in current lab evidence.</p>
 <p>The gate review package artifact states "all actions closed."</p>
 <p>In the lab log, verification and reliability owners still track two unresolved critical failure modes with no accepted closure evidence.</p>
 <p>The paper package says done, but the program state is not done.</p>
@@ -1083,7 +1083,7 @@ Fleet work applies the same discipline across physical units in real variation.<
 </ol>
 <p>If questions 3 and 4 are blank, closure is likely cosmetic and should not be treated as done.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="14-what-every-tier-wants-exec-to-supplier"><a class="header" href="#14-what-every-tier-wants-exec-to-supplier">14. What Every Tier Wants (Exec to Supplier)</a></h1>
-<p>Friday, 12:38 p.m., lunch bags rustling, the weekly review stalls because each tier reads a different "current truth" artifact.</p>
+<p>Thursday, 12:55 p.m., lunch bags rustling, the weekly review stalls because each tier reads a different "current truth" artifact.</p>
 <p>The executive asks for confidence in the decision packet; engineering asks for protected technical closure time; PM asks for stable inputs and early risk flags; the supplier asks for one released package with one owner.</p>
 <p>Each ask is legitimate on its own, and friction starts when those asks stay implicit and compete through mismatched artifacts.</p>
 <hr />
@@ -1161,7 +1161,7 @@ It is interface-contract ambiguity:</p>
 </ul>
 <p>That path resolves blockers faster than personality-driven escalation because decision authority and artifact gaps are explicit.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="16-first-article-fast-disciplined-iteration"><a class="header" href="#16-first-article-fast-disciplined-iteration">16. First Article: Fast, Disciplined Iteration</a></h1>
-<p>Monday, 7:08 p.m., first-article week night, someone’s kid’s practice already texted on the lock screen.</p>
+<p>Thursday, 4:48 p.m., first-article scramble still running, someone’s kid’s practice already texted on the lock screen.</p>
 <p>The first article build starts rough, as expected.</p>
 <p>By day three, every shift has made "small improvements."</p>
 <p>Yield is still unstable and no one can say which change helped or hurt.</p>
@@ -1229,7 +1229,7 @@ It is interface-contract ambiguity:</p>
 </ul>
 <p>This protects speed while preserving decision quality.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="17-supplier-data-critical-characteristics-and-producibility"><a class="header" href="#17-supplier-data-critical-characteristics-and-producibility">17. Supplier Data, Critical Characteristics, and Producibility</a></h1>
-<p>Tuesday, 9:18 a.m., supplier package spread next to internal Cpk charts.</p>
+<p>Friday, 8:28 a.m., supplier package spread next to internal Cpk charts.</p>
 <p>The supplier says the process is stable.</p>
 <p>Incoming variation says otherwise.</p>
 <p>No one can tell whether the gap is process drift, measurement mismatch, or requirement ambiguity.</p>
@@ -1301,7 +1301,7 @@ It is interface-contract ambiguity:</p>
 </ul>
 <p>This keeps make/buy reality coupled to program decisions.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="18-rollout-sequence-triage-then-system"><a class="header" href="#18-rollout-sequence-triage-then-system">18. Rollout Sequence: Triage Then System</a></h1>
-<p>Wednesday, 8:44 a.m., mid-week calm before the next customer visit, someone still pitching a big-bang rollout.</p>
+<p>Friday, 11:12 a.m., end-of-week calm before the next customer visit, someone still pitching a big-bang rollout.</p>
 <p>The program is already behind, with unresolved blockers accumulating every cycle.</p>
 <p>Someone proposes a full OS rollout with new templates, role changes, and weekly governance meetings starting immediately.</p>
 <p>That sequence usually collapses adoption before controls stabilize.</p>
@@ -1363,7 +1363,7 @@ It is interface-contract ambiguity:</p>
 </ul>
 <p>If these are improving, adoption is real.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="19-training-cadence-and-failure-recovery"><a class="header" href="#19-training-cadence-and-failure-recovery">19. Training, Cadence, and Failure Recovery</a></h1>
-<p>Thursday, 4:52 p.m., end-of-day light through the blinds, the habits already starting to slip.</p>
+<p>Friday, 2:18 p.m., low sun through the blinds, the habits already starting to slip before the week ends.</p>
 <p>The rollout looked good for six weeks.</p>
 <p>Then one lead change, one urgent supplier issue, and one skipped review cycle later, old behavior is back.</p>
 <p>That relapse pattern is expected unless durability controls are designed into daily work.</p>
@@ -1431,7 +1431,7 @@ It is interface-contract ambiguity:</p>
 <li>flexible on meeting format and local workflow details.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="20-what-this-os-does-not-cover"><a class="header" href="#20-what-this-os-does-not-cover">20. What This OS Does Not Cover</a></h1>
-<p>Friday, 3:38 p.m., fourth Friday of the push, the gate room clears with nods instead of another circular fight.</p>
+<p>Friday, 3:38 p.m., same week that opened Monday before standup, the gate room clears with nods instead of another circular fight.</p>
 <p>The one-page status matches the risk register for the first time in a month. Someone mutters they might actually make the school pickup — nobody rolls their eyes, because the window they guarded is still the one on the controlled plan.</p>
 <hr />
 <p>Honest scope is part of that quiet finish: say what this operating layer <strong>is</strong>, and what it <strong>never</strong> pretends to be, before anyone labels it compliance theater or a substitute for domain rigor.</p>
