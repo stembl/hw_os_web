@@ -154,12 +154,50 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="the-hardware-os"><a class="header" href="#the-hardware-os">The Hardware OS</a></h1>
-<p>Book manuscript folder in a GitBook-style structure.</p>
+<p><strong>Author:</strong> Steve Embleton</p>
+<p>Short, direct guidance for engineering leads: operating habits and records for hardware programs — so decisions, limits, and status stay tied to what build and test actually see.</p>
+<p><strong>See the full outline:</strong> <a href="toc.html">Table of contents</a> (generated when the site builds — same structure as the sidebar).</p>
+<p><strong>Start reading:</strong> open <a href="chapters/01-the-missing-manual.html">1. The Missing Manual</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="table-of-contents"><a class="header" href="#table-of-contents">Table of contents</a></h1>
+<p>Full outline of what this edition includes — same entries as the sidebar, so you can see scope and ordering at a glance.</p>
 <ul>
-<li>Start reading order: <code>SUMMARY.md</code></li>
-<li>Chapter drafts: <code>chapters/</code></li>
+<li><a href="title-page.html">The Hardware OS</a></li>
 </ul>
-<p>This folder is for chapter-level drafting.</p>
+<h2 id="part-i---why-hardware-programs-break"><a class="header" href="#part-i---why-hardware-programs-break">Part I - Why Hardware Programs Break</a></h2>
+<ul>
+<li><a href="chapters/01-the-missing-manual.html">1. The Missing Manual</a></li>
+<li><a href="chapters/02-process-is-the-product.html">2. Process Is the Product</a></li>
+<li><a href="chapters/03-failure-patterns-chaos-drift-unowned-decisions.html">3. Failure Patterns: Chaos, Drift, and Unowned Decisions</a></li>
+</ul>
+<h2 id="part-ii---the-hardware-os-core"><a class="header" href="#part-ii---the-hardware-os-core">Part II - The Hardware OS Core</a></h2>
+<ul>
+<li><a href="chapters/04-dri-ownership-and-decision-authority.html">4. DRI Ownership and Decision Authority</a></li>
+<li><a href="chapters/05-spec-integrity-and-requirement-hygiene.html">5. Spec Integrity and Requirement Hygiene</a></li>
+<li><a href="chapters/06-gates-risk-registers-one-page-truth.html">6. Gates, Risk Registers, and One-Page Truth</a></li>
+<li><a href="chapters/08-automation-decisions-at-concept-stage.html">8. Automation Decisions at Concept Stage</a></li>
+<li><a href="chapters/15-schedule-from-real-dependencies.html">15. Schedule from Real Dependencies and Honest Critical Path</a></li>
+</ul>
+<h2 id="part-iii---serious-technical-work-plain-talk-not-teaching-the-tools"><a class="header" href="#part-iii---serious-technical-work-plain-talk-not-teaching-the-tools">Part III - Serious technical work, plain talk (not teaching the tools)</a></h2>
+<ul>
+<li><a href="chapters/09-requirements-lifecycle.html">9. Requirements Lifecycle (Hypothesis -&gt; Bless -&gt; Evidence -&gt; Revise)</a></li>
+<li><a href="chapters/10-requirements-from-physics.html">10. Requirements from Physics (Not Stacked Buffers)</a></li>
+<li><a href="chapters/11-many-factors-one-honest-limit.html">11. Many Factors, One Honest Limit</a></li>
+<li><a href="chapters/12-models-and-tests-that-change-decisions.html">12. Models and Tests That Change Decisions</a></li>
+<li><a href="chapters/07-fleet-as-instrumented-experiment.html">7. Fleet as Instrumented Experiment</a></li>
+<li><a href="chapters/13-risk-and-how-we-define-done-on-paper.html">13. Risk and How We Define Done on Paper</a></li>
+</ul>
+<h2 id="part-iv---running-the-organization"><a class="header" href="#part-iv---running-the-organization">Part IV - Running the Organization</a></h2>
+<ul>
+<li><a href="chapters/14-what-every-tier-wants.html">14. What Every Tier Wants (Exec to Supplier)</a></li>
+<li><a href="chapters/16-first-article-fast-disciplined-iteration.html">16. First Article: Fast, Disciplined Iteration</a></li>
+<li><a href="chapters/17-supplier-data-critical-characteristics-producibility.html">17. Supplier Data, Critical Characteristics, and Producibility</a></li>
+</ul>
+<h2 id="part-v---adoption-and-scale"><a class="header" href="#part-v---adoption-and-scale">Part V - Adoption and Scale</a></h2>
+<ul>
+<li><a href="chapters/18-rollout-sequence-triage-then-system.html">18. Rollout Sequence: Triage Then System</a></li>
+<li><a href="chapters/19-training-cadence-failure-recovery.html">19. Training, Cadence, and Failure Recovery</a></li>
+<li><a href="chapters/20-what-this-os-does-not-cover.html">20. What This OS Does Not Cover</a></li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="1-the-missing-manual"><a class="header" href="#1-the-missing-manual">1. The Missing Manual</a></h1>
 <p>Tuesday, 7:42 a.m.</p>
 <p>The thermal limit changed again.</p>
@@ -198,7 +236,6 @@
 <p>Primary reader: the engineering lead, the person who ends up owning integration whether or not the title caught up. PMs and executives too. Same facts in the same order the lead needs, without inventing another standing meeting to get them.</p>
 <p>Not a textbook on formal drawing rules, structured multi-factor experiments, or simulation theory. Those tools matter; pull specialists when the program needs them. You get when to insist on that class of work, what “good enough to decide” looks like, how the result feeds a gate and a one-pager. Not twelve chapters you must finish before the rest makes sense.</p>
 <p>Not a replacement for design history, functional safety, or regulatory paperwork. The last chapter names what this book does not cover so nobody confuses habits with compliance.</p>
-<p>The next chapter states the thesis: in development, process is the product. The system you are building while you build the hardware. After that: how to run that system without turning it into religion.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="2-process-is-the-product"><a class="header" href="#2-process-is-the-product">2. Process Is the Product</a></h1>
 <p>Friday, 2:35 p.m.</p>
 <p>Two programs just failed the same end-of-line leak test.</p>
@@ -246,10 +283,6 @@
 </ol>
 <p>That is enough to expose whether your current process is implemented or cosmetic.</p>
 <p>Do not widen scope in Chapter 2. Install one narrow control loop, prove it reduces argument and lag, then extend.</p>
-<h3 id="bridge-to-the-rest-of-the-book"><a class="header" href="#bridge-to-the-rest-of-the-book">Bridge to the rest of the book</a></h3>
-<p>This chapter makes one claim: in development, the system that moves truth into decisions is part of the product you are building.</p>
-<p>The next chapter names the recurring failure patterns when that system is vague: chaos, drift, and unowned decisions.</p>
-<p>After that, the book turns to operating mechanics: who owns decisions, how spec truth stays intact, how gates decide, and how technical evidence feeds the one-page status.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="3-failure-patterns-chaos-drift-and-unowned-decisions"><a class="header" href="#3-failure-patterns-chaos-drift-and-unowned-decisions">3. Failure Patterns: Chaos, Drift, and Unowned Decisions</a></h1>
 <p>Monday, 9:20 a.m.</p>
 <p>Day 19 of an EVT build for a handheld controller, and this is the third meeting on the same leakage-limit decision; every slip keeps a $42k fixture order on hold.</p>
@@ -329,9 +362,6 @@
 <li>and force the one-pager to reflect that record.</li>
 </ul>
 <p>That single loop reduces all three failure patterns at once.</p>
-<h3 id="bridge-to-chapter-4"><a class="header" href="#bridge-to-chapter-4">Bridge to Chapter 4</a></h3>
-<p>If unowned decisions are the first break point, ownership cannot stay vague.</p>
-<p>Next chapter: how to define DRI ownership and decision authority so closure is fast, legible, and fair across engineering, PM, and leadership.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="4-dri-ownership-and-decision-authority"><a class="header" href="#4-dri-ownership-and-decision-authority">4. DRI Ownership and Decision Authority</a></h1>
 <p>Tuesday, 4:10 p.m.</p>
 <p>The question is clear. The data is good enough. The room still does not decide.</p>
@@ -402,9 +432,6 @@
 <li>customer/compliance impact.</li>
 </ul>
 <p>When trigger conditions are objective, escalation is faster and less political.</p>
-<h3 id="bridge-to-chapter-5"><a class="header" href="#bridge-to-chapter-5">Bridge to Chapter 5</a></h3>
-<p>Ownership decides who closes decisions. Next question: who owns the quality of the requirements those decisions depend on.</p>
-<p>Chapter 5 covers spec integrity and requirement hygiene: how to keep "what good means" stable, traceable, and usable.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="5-spec-integrity-and-requirement-hygiene"><a class="header" href="#5-spec-integrity-and-requirement-hygiene">5. Spec Integrity and Requirement Hygiene</a></h1>
 <p>Wednesday, 11:05 a.m.</p>
 <p>Manufacturing asks which revision is real. Test says they validated Rev C assumptions. Procurement already placed orders against Rev B.</p>
@@ -469,9 +496,6 @@ Downstream artifacts updated (test plan, one-pager, supplier packet)</li>
 <p>A gate asks, "Are we ready to commit?"
 If requirement truth is ambiguous, the gate becomes theater regardless of slide quality.</p>
 <p>Spec integrity is the substrate under every later control: risk scoring, one-page truth, supplier alignment, and schedule realism.</p>
-<h3 id="bridge-to-chapter-6"><a class="header" href="#bridge-to-chapter-6">Bridge to Chapter 6</a></h3>
-<p>Now that requirement truth is controlled, the next question is decision cadence:</p>
-<p>how weekly gate outputs, risk-row updates, and one-page deltas keep program truth synchronized across engineering, PM, and exec views.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="6-gates-risk-registers-and-one-page-truth"><a class="header" href="#6-gates-risk-registers-and-one-page-truth">6. Gates, Risk Registers, and One-Page Truth</a></h1>
 <p>Thursday, 1:30 p.m.</p>
 <p>The gate deck looks clean. The room still cannot answer one simple question: what changed since last gate that alters risk to launch.</p>
@@ -544,9 +568,6 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 </ul>
 <p>Before Gate G3, risk row R-14 listed "supplier CpK pending" with no decision date, and the one-page line still read "launch confidence: green." After the gate decision to hold launch lot and fund gauge redesign, R-14 gained an owner/date and the one-page delta changed to "launch at risk until CpK &gt;= 1.33 evidence dated 2026-05-12."</p>
 <p>Two weeks is enough to expose whether your current rhythm is decision-grade.</p>
-<h3 id="bridge-to-chapter-15-schedule-truth"><a class="header" href="#bridge-to-chapter-15-schedule-truth">Bridge to Chapter 15 (schedule truth)</a></h3>
-<p>Once gates and one-page truth are live, schedule claims can be tied to real dependencies instead of wishful compression.</p>
-<p>Next we move to schedule from real dependencies and honest critical path, where date claims trace to dependency owners and evidence dates.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="8-automation-decisions-at-concept-stage"><a class="header" href="#8-automation-decisions-at-concept-stage">8. Automation Decisions at Concept Stage</a></h1>
 <p>Thursday, 10:00 a.m.</p>
 <p>The design review celebrates fit, function, and cost.</p>
@@ -617,9 +638,6 @@ They are usually requirement and ownership failures:</p>
 </ul>
 <p>Treat automation as part of the operating system and it becomes predictable.
 Treat it as "integration detail" and it becomes late-stage volatility.</p>
-<h3 id="bridge-to-chapter-15-schedule-truth-1"><a class="header" href="#bridge-to-chapter-15-schedule-truth-1">Bridge to Chapter 15 (schedule truth)</a></h3>
-<p>Automation consequences land directly on schedule realism.</p>
-<p>Next chapter in reading order: schedule from real dependencies and honest critical path, including where automation tasks sit, who owns them, and which evidence dates keep them on path.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="15-schedule-from-real-dependencies-and-honest-critical-path"><a class="header" href="#15-schedule-from-real-dependencies-and-honest-critical-path">15. Schedule from Real Dependencies and Honest Critical Path</a></h1>
 <p>Friday, 5:20 p.m.</p>
 <p>The launch date on the slide has not moved in three months.</p>
@@ -694,9 +712,6 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <li>ownership map (who closes blockers).</li>
 </ul>
 <p>If these are weak, schedule updates drift into negotiation instead of model updates.</p>
-<h3 id="bridge-to-chapter-9"><a class="header" href="#bridge-to-chapter-9">Bridge to Chapter 9</a></h3>
-<p>Dependencies are only as honest as the requirements and evidence feeding them.</p>
-<p>Next in reading order: requirements lifecycle - hypothesis, bless, evidence, revise. That lifecycle keeps schedule assumptions tied to measured reality.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="9-requirements-lifecycle-hypothesis---bless---evidence---revise"><a class="header" href="#9-requirements-lifecycle-hypothesis---bless---evidence---revise">9. Requirements Lifecycle (Hypothesis -&gt; Bless -&gt; Evidence -&gt; Revise)</a></h1>
 <p>Monday, 3:15 p.m., the thermal verification log shows requirement <code>RQ-THERM-014</code> set to 85 C while chamber run <code>T-117</code> fails above 78 C.</p>
 <p>The systems requirements owner set <code>RQ-THERM-014</code> to 85 C, and last week's full-load chamber test showed the assembly drifting out of spec above 78 C.</p>
@@ -768,9 +783,6 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <li>downstream artifact update status.</li>
 </ul>
 <p>The requirement owner should finish this review in minutes and publish one delta note, not run a half-day meeting.</p>
-<h3 id="bridge-to-chapter-10"><a class="header" href="#bridge-to-chapter-10">Bridge to Chapter 10</a></h3>
-<p>Lifecycle control determines when requirement values move; the next decision is which values must be anchored first.</p>
-<p>Chapter 10 introduces physics-first requirement definition so requirement owners anchor limits before teams stack unmanaged buffers onto weak assumptions.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="10-requirements-from-physics-not-stacked-buffers"><a class="header" href="#10-requirements-from-physics-not-stacked-buffers">10. Requirements from Physics (Not Stacked Buffers)</a></h1>
 <p>Tuesday, 2:00 p.m., requirement <code>RQ-LOAD-022</code> carries three stacked safety factors while the latest build misses weight and yield targets.</p>
 <p>The systems requirement <code>RQ-LOAD-022</code> now includes three separate safety factors added by component, system, and operations leads.</p>
@@ -831,9 +843,6 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <p>Better requirement line:
 "At condition set X/Y/Z, measured by method M, value shall be &lt;= N. Program buffer B covers uncertainty U, is owned by O, and is reviewed at gate G."</p>
 <p>The intent is the same, but the owner, uncertainty source, and gate review trigger are now explicit and auditable.</p>
-<h3 id="bridge-to-chapter-11"><a class="header" href="#bridge-to-chapter-11">Bridge to Chapter 11</a></h3>
-<p>Physics-first framing works best when one variable dominates and the requirement owner can isolate that limit.</p>
-<p>When many factors interact, one-axis reasoning fails; Chapter 11 introduces decision-scoped multi-factor analysis that improves limit-setting decisions without turning this book into a statistics text.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="11-many-factors-one-honest-limit"><a class="header" href="#11-many-factors-one-honest-limit">11. Many Factors, One Honest Limit</a></h1>
 <p>Wednesday, 9:40 a.m., subsystem verification report <code>SVR-31</code> is green on single-factor tests while integrated run <code>INT-07</code> fails the requirement boundary.</p>
 <p>The subsystem passes every single-factor check in <code>SVR-31</code>.</p>
@@ -908,9 +917,6 @@ It is the best current boundary supported by evidence, explicit assumptions, and
 <li>require output in program language, not only specialist language.</li>
 </ul>
 <p>Lead responsibility remains: the lead still owns the decision question, artifact quality bar, and closure date.</p>
-<h3 id="bridge-to-chapter-12"><a class="header" href="#bridge-to-chapter-12">Bridge to Chapter 12</a></h3>
-<p>Now that combined-factor work is decision-scoped, the next challenge is traceability persistence:</p>
-<p>models and tests must stay linked across revisions so each new run changes a decision instead of restarting arguments.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="12-models-and-tests-that-change-decisions"><a class="header" href="#12-models-and-tests-that-change-decisions">12. Models and Tests That Change Decisions</a></h1>
 <p>Thursday, 6:45 p.m., the decision review packet contains 20 model runs and 12 test reports but still cannot resolve requirement <code>RQ-THERM-014</code>.</p>
 <p>The verification team produced twenty model runs and twelve test reports for the same requirement decision.</p>
@@ -978,9 +984,6 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>assign residual risk and next evidence step.</li>
 </ul>
 <p>This package keeps technical depth available while giving exec and PM reviewers a clear, fair decision frame.</p>
-<h3 id="bridge-to-chapter-7-fleet-as-instrumented-experiment"><a class="header" href="#bridge-to-chapter-7-fleet-as-instrumented-experiment">Bridge to Chapter 7 (fleet as instrumented experiment)</a></h3>
-<p>Model and test traceability at component and subsystem level scales directly into fleet-level decision learning.</p>
-<p>Next chapter in this reading order uses fleet instrumentation to improve rollout and risk-priority decisions by feeding field deltas into the same evidence-to-decision loop.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="7-fleet-as-instrumented-experiment"><a class="header" href="#7-fleet-as-instrumented-experiment">7. Fleet as Instrumented Experiment</a></h1>
 <p>Monday, 7:10 a.m.</p>
 <p>Five prototype units are built.</p>
@@ -1048,9 +1051,6 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>Chapter 12 established delta and traceability discipline.
 Fleet work applies the same discipline across physical units in real variation.</p>
 <p>When done well, fleet turns uncertainty into bounded decisions before major spend.</p>
-<h3 id="bridge-to-chapter-13"><a class="header" href="#bridge-to-chapter-13">Bridge to Chapter 13</a></h3>
-<p>Fleet evidence is only useful if "done" criteria on paper reflect what the program truly knows.</p>
-<p>Next chapter: risk and how we define done on paper, where fleet deltas must change written "done" and release calls.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="13-risk-and-how-we-define-done-on-paper"><a class="header" href="#13-risk-and-how-we-define-done-on-paper">13. Risk and How We Define Done on Paper</a></h1>
 <p>Friday, 8:50 a.m., the gate review package marks all actions closed while two critical failure modes remain open in current lab evidence.</p>
 <p>The gate review package artifact states "all actions closed."</p>
@@ -1122,9 +1122,6 @@ Fleet work applies the same discipline across physical units in real variation.<
 <li>Which dependent decisions changed because of this closure?</li>
 </ol>
 <p>If questions 3 and 4 are blank, closure is likely cosmetic and should not be treated as done.</p>
-<h3 id="bridge-to-chapter-14"><a class="header" href="#bridge-to-chapter-14">Bridge to Chapter 14</a></h3>
-<p>Part III focused on technical evidence quality and artifact honesty as decision controls.</p>
-<p>Now we move to organization-level coordination: Chapter 14 defines cross-tier interface contracts that improve scaled decisions across exec, PM, engineering, and suppliers.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="14-what-every-tier-wants-exec-to-supplier"><a class="header" href="#14-what-every-tier-wants-exec-to-supplier">14. What Every Tier Wants (Exec to Supplier)</a></h1>
 <p>Tuesday, 12:20 p.m., the weekly review stalls because each tier reads a different "current truth" artifact.</p>
 <p>The executive asks for confidence in the decision packet; engineering asks for protected technical closure time; PM asks for stable inputs and early risk flags; the supplier asks for one released package with one owner.</p>
@@ -1203,9 +1200,6 @@ It is interface-contract ambiguity:</p>
 <li>assign who must decide by when.</li>
 </ul>
 <p>That path resolves blockers faster than personality-driven escalation because decision authority and artifact gaps are explicit.</p>
-<h3 id="bridge-to-chapter-16"><a class="header" href="#bridge-to-chapter-16">Bridge to Chapter 16</a></h3>
-<p>Tier contracts are tested hardest at first article, where technical uncertainty and schedule pressure peak in the same decision window.</p>
-<p>Next chapter: first-article execution uses disciplined iteration loops to improve build-release decisions under peak uncertainty.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="16-first-article-fast-disciplined-iteration"><a class="header" href="#16-first-article-fast-disciplined-iteration">16. First Article: Fast, Disciplined Iteration</a></h1>
 <p>Wednesday, 7:30 p.m.</p>
 <p>The first article build starts rough, as expected.</p>
@@ -1274,9 +1268,6 @@ It is interface-contract ambiguity:</p>
 <li>Should scope or sequence change now?</li>
 </ul>
 <p>This protects speed while preserving decision quality.</p>
-<h3 id="bridge-to-chapter-17"><a class="header" href="#bridge-to-chapter-17">Bridge to Chapter 17</a></h3>
-<p>First-article learning collapses if supplier data and producibility signals are weak.</p>
-<p>Next chapter: supplier data, critical characteristics, and producibility - how to keep make/buy reality synchronized with your iteration loop.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="17-supplier-data-critical-characteristics-and-producibility"><a class="header" href="#17-supplier-data-critical-characteristics-and-producibility">17. Supplier Data, Critical Characteristics, and Producibility</a></h1>
 <p>Thursday, 9:00 a.m.</p>
 <p>The supplier says the process is stable.</p>
@@ -1349,9 +1340,6 @@ It is interface-contract ambiguity:</p>
 <li>design change impacts.</li>
 </ul>
 <p>This keeps make/buy reality coupled to program decisions.</p>
-<h3 id="bridge-to-chapter-18"><a class="header" href="#bridge-to-chapter-18">Bridge to Chapter 18</a></h3>
-<p>You now have the core controls and technical loops.</p>
-<p>Next chapter: how to install this OS in real organizations without overloading active teams during rollout.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="18-rollout-sequence-triage-then-system"><a class="header" href="#18-rollout-sequence-triage-then-system">18. Rollout Sequence: Triage Then System</a></h1>
 <p>Monday, 8:40 a.m.</p>
 <p>The program is already behind, with unresolved blockers accumulating every cycle.</p>
@@ -1414,10 +1402,6 @@ It is interface-contract ambiguity:</p>
 <li>reopen rate on closed decisions.</li>
 </ul>
 <p>If these are improving, adoption is real.</p>
-<h3 id="bridge-to-chapter-19"><a class="header" href="#bridge-to-chapter-19">Bridge to Chapter 19</a></h3>
-<p>Rollout installs controls.</p>
-<p>Training and cadence make them stick after launch urgency fades.</p>
-<p>Next chapter: how to train, run rhythm, and recover when teams relapse into old patterns.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="19-training-cadence-and-failure-recovery"><a class="header" href="#19-training-cadence-and-failure-recovery">19. Training, Cadence, and Failure Recovery</a></h1>
 <p>Friday, 4:55 p.m.</p>
 <p>The rollout looked good for six weeks.</p>
@@ -1486,10 +1470,6 @@ It is interface-contract ambiguity:</p>
 <li>strict on ownership and traceability,</li>
 <li>flexible on meeting format and local workflow details.</li>
 </ul>
-<h3 id="bridge-to-chapter-20"><a class="header" href="#bridge-to-chapter-20">Bridge to Chapter 20</a></h3>
-<p>You now have a full operating system pattern.</p>
-<p>Final step is boundary honesty:</p>
-<p>what this OS does not replace, and where specialist or regulated frameworks remain non-negotiable.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="20-what-this-os-does-not-cover"><a class="header" href="#20-what-this-os-does-not-cover">20. What This OS Does Not Cover</a></h1>
 <p>Boundary honesty is part of credibility at gate and status reviews.</p>
 <p>This OS is an operating layer for decision quality, truth integrity, and cross-team closure.</p>
