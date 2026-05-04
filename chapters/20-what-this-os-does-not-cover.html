@@ -1,0 +1,261 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>20. What This OS Does Not Cover - The Hardware OS</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Hardware OS</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="20-what-this-os-does-not-cover"><a class="header" href="#20-what-this-os-does-not-cover">20. What This OS Does Not Cover</a></h1>
+<p>Boundary honesty is part of credibility at gate and status reviews.</p>
+<p>This OS is an operating layer for decision quality, truth integrity, and cross-team closure.</p>
+<p>It does not replace specialist depth or legal obligations.</p>
+<hr />
+<h3 id="out-of-scope-explicitly"><a class="header" href="#out-of-scope-explicitly">Out of scope (explicitly)</a></h3>
+<p>This OS does <strong>not</strong> replace:</p>
+<ul>
+<li>domain safety lifecycles and safety case obligations,</li>
+<li>regulatory compliance frameworks and certification requirements,</li>
+<li>detailed design-history / quality-system requirements,</li>
+<li>specialist technical disciplines taught in dedicated texts,</li>
+<li>contract/legal governance obligations with customers or suppliers.</li>
+</ul>
+<p>If your product sits in a regulated domain, those obligations remain primary and non-negotiable.</p>
+<h3 id="what-this-os-is-for"><a class="header" href="#what-this-os-is-for">What this OS is for</a></h3>
+<p>This OS helps teams run those obligations with less chaos:</p>
+<ul>
+<li>clearer ownership,</li>
+<li>cleaner requirement/revision truth,</li>
+<li>faster risk signal propagation,</li>
+<li>more credible gate and status decisions.</li>
+</ul>
+<p>It is a coordination layer that links specialists, records, and decisions without replacing domain frameworks.</p>
+<h3 id="where-specialist-depth-must-enter"><a class="header" href="#where-specialist-depth-must-enter">Where specialist depth must enter</a></h3>
+<p>You will still need specialists for:</p>
+<ul>
+<li>advanced tolerance and variation work,</li>
+<li>reliability/life and statistical confidence planning,</li>
+<li>safety and hazard analysis rigor,</li>
+<li>manufacturing capability and measurement systems depth.</li>
+</ul>
+<p>Lead responsibility is to scope the question, own the decision linkage, and ensure outputs update program records.</p>
+<h3 id="non-negotiables-that-apply-everywhere"><a class="header" href="#non-negotiables-that-apply-everywhere">Non-negotiables that apply everywhere</a></h3>
+<p>Regardless of domain, keep these habits:</p>
+<ol>
+<li>one owner per decision path,</li>
+<li>one source of truth for live values,</li>
+<li>explicit decision records,</li>
+<li>risk and status tied to source evidence,</li>
+<li>clear escalation triggers.</li>
+</ol>
+<p>These are portable across product classes and org structures.</p>
+<h3 id="failure-mode-if-boundaries-are-ignored"><a class="header" href="#failure-mode-if-boundaries-are-ignored">Failure mode if boundaries are ignored</a></h3>
+<p>Two common errors:</p>
+<ul>
+<li>treating this OS as complete compliance (dangerous overreach),</li>
+<li>treating this OS as optional soft process (missed leverage).</li>
+</ul>
+<p>The right stance is explicit: run this OS as a control layer under real domain obligations.</p>
+<h3 id="final-promise"><a class="header" href="#final-promise">Final promise</a></h3>
+<p>This book does not promise frictionless programs.</p>
+<p>Hardware work will stay uncertain, cross-functional, and time-constrained.</p>
+<p>The promise is narrower and more useful:</p>
+<ul>
+<li>fewer repeated arguments,</li>
+<li>earlier truth on risk and dependencies,</li>
+<li>faster closure on real decisions,</li>
+<li>fewer expensive surprises caused by preventable process failure.</li>
+</ul>
+<p>If your team can see the same truth, decide faster, and revise honestly, this OS is doing its job.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../chapters/19-training-cadence-failure-recovery.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../chapters/19-training-cadence-failure-recovery.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

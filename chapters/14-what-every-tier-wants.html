@@ -1,0 +1,287 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>14. What Every Tier Wants (Exec to Supplier) - The Hardware OS</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Hardware OS</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="14-what-every-tier-wants-exec-to-supplier"><a class="header" href="#14-what-every-tier-wants-exec-to-supplier">14. What Every Tier Wants (Exec to Supplier)</a></h1>
+<p>Tuesday, 12:20 p.m., the weekly review stalls because each tier reads a different "current truth" artifact.</p>
+<p>The executive asks for confidence in the decision packet; engineering asks for protected technical closure time; PM asks for stable inputs and early risk flags; the supplier asks for one released package with one owner.</p>
+<p>Each ask is legitimate on its own, and friction starts when those asks stay implicit and compete through mismatched artifacts.</p>
+<hr />
+<h3 id="alignment-fails-at-interface-contracts"><a class="header" href="#alignment-fails-at-interface-contracts">Alignment fails at interface contracts</a></h3>
+<p>Most cross-tier conflict is not ideology.
+It is interface-contract ambiguity:</p>
+<ul>
+<li>what each tier needs to make a decision,</li>
+<li>when that input is needed,</li>
+<li>which quality bar applies to the artifact.</li>
+</ul>
+<p>When a named owner publishes these contracts in one shared artifact, blame loops drop quickly.</p>
+<h3 id="what-each-tier-usually-needs"><a class="header" href="#what-each-tier-usually-needs">What each tier usually needs</a></h3>
+<p>Keep each tier contract plain, operational, and tied to one decision artifact.</p>
+<p><strong>Executive</strong></p>
+<ul>
+<li>leading indicators of risk and dependency,</li>
+<li>clear decision asks,</li>
+<li>tradeoff framing when date/cost/scope conflict.</li>
+</ul>
+<p><strong>PM</strong></p>
+<ul>
+<li>stable owner map,</li>
+<li>decision-ready updates,</li>
+<li>early signal when assumptions break.</li>
+</ul>
+<p><strong>Engineering lead</strong></p>
+<ul>
+<li>clear requirement/risk state,</li>
+<li>authority boundaries,</li>
+<li>protected closure windows for technical decisions.</li>
+</ul>
+<p><strong>Manufacturing/operations</strong></p>
+<ul>
+<li>unambiguous release package,</li>
+<li>process-critical characteristics,</li>
+<li>change notice with impact timing.</li>
+</ul>
+<p><strong>Supplier</strong></p>
+<ul>
+<li>one current revision source,</li>
+<li>expected evidence and acceptance criteria,</li>
+<li>single owner for technical/commercial closure path.</li>
+</ul>
+<h3 id="reciprocal-obligations"><a class="header" href="#reciprocal-obligations">Reciprocal obligations</a></h3>
+<p>Needs without reciprocal obligations become entitlement and eventually gridlock.</p>
+<p>Pair each ask with an owed output artifact:</p>
+<ul>
+<li>Exec asks for confidence -&gt; owes timely trade decisions in the decision log.</li>
+<li>PM asks for predictability -&gt; owes transparent escalation and dependency hygiene in the one-page update.</li>
+<li>Engineering asks for room to solve -&gt; owes explicit risk state and closure dates in requirement and risk records.</li>
+<li>Supplier asks for clarity -&gt; owes capability evidence and issue response cadence in the release package.</li>
+</ul>
+<p>This framing keeps fairness visible by balancing each tier's ask with a concrete, auditable obligation.</p>
+<h3 id="pm-fairness-explicitly"><a class="header" href="#pm-fairness-explicitly">PM fairness, explicitly</a></h3>
+<p>When record quality is low, PM becomes the human sync engine compensating for missing system behavior in formal artifacts.</p>
+<p>With clean ownership, requirement truth, and one-page integrity, PM work shifts from chasing contradictions to clearing real blockers.</p>
+<p>That is the contract to protect: an efficient PM, backed by a process that does not waste people's time, is a PM teams trust and respect.</p>
+<h3 id="one-meeting-format-that-surfaces-gaps-early"><a class="header" href="#one-meeting-format-that-surfaces-gaps-early">One meeting format that surfaces gaps early</a></h3>
+<p>Run a short cross-tier interface review against one shared contract sheet:</p>
+<ol>
+<li>confirm what each tier needs this week,</li>
+<li>verify what each tier received,</li>
+<li>identify where contract quality failed,</li>
+<li>assign which owner closes the gap by when.</li>
+</ol>
+<p>Skip long debate; focus on interface quality, owner assignment, and dated closure commitments.</p>
+<h3 id="escalation-becomes-cleaner"><a class="header" href="#escalation-becomes-cleaner">Escalation becomes cleaner</a></h3>
+<p>When tier contracts are explicit, escalation becomes factual and auditable:</p>
+<ul>
+<li>identify which contract failed,</li>
+<li>state what decision is blocked,</li>
+<li>quantify current risk and date impact,</li>
+<li>assign who must decide by when.</li>
+</ul>
+<p>That path resolves blockers faster than personality-driven escalation because decision authority and artifact gaps are explicit.</p>
+<h3 id="bridge-to-chapter-16"><a class="header" href="#bridge-to-chapter-16">Bridge to Chapter 16</a></h3>
+<p>Tier contracts are tested hardest at first article, where technical uncertainty and schedule pressure peak in the same decision window.</p>
+<p>Next chapter: first-article execution uses disciplined iteration loops to improve build-release decisions under peak uncertainty.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../chapters/13-risk-and-how-we-define-done-on-paper.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../chapters/16-first-article-fast-disciplined-iteration.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../chapters/13-risk-and-how-we-define-done-on-paper.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../chapters/16-first-article-fast-disciplined-iteration.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>

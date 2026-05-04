@@ -1,0 +1,245 @@
+<!DOCTYPE HTML>
+<html lang="en" class="light sidebar-visible" dir="ltr">
+    <head>
+        <!-- Book generated using mdBook -->
+        <meta charset="UTF-8">
+        <title>1. The Missing Manual - The Hardware OS</title>
+
+
+        <!-- Custom HTML head -->
+
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <meta name="theme-color" content="#ffffff">
+
+        <link rel="icon" href="../favicon.svg">
+        <link rel="shortcut icon" href="../favicon.png">
+        <link rel="stylesheet" href="../css/variables.css">
+        <link rel="stylesheet" href="../css/general.css">
+        <link rel="stylesheet" href="../css/chrome.css">
+        <link rel="stylesheet" href="../css/print.css" media="print">
+
+        <!-- Fonts -->
+        <link rel="stylesheet" href="../FontAwesome/css/font-awesome.css">
+        <link rel="stylesheet" href="../fonts/fonts.css">
+
+        <!-- Highlight.js Stylesheets -->
+        <link rel="stylesheet" href="../highlight.css">
+        <link rel="stylesheet" href="../tomorrow-night.css">
+        <link rel="stylesheet" href="../ayu-highlight.css">
+
+        <!-- Custom theme stylesheets -->
+
+
+        <!-- Provide site root to javascript -->
+        <script>
+            var path_to_root = "../";
+            var default_theme = window.matchMedia("(prefers-color-scheme: dark)").matches ? "navy" : "light";
+        </script>
+        <!-- Start loading toc.js asap -->
+        <script src="../toc.js"></script>
+    </head>
+    <body>
+    <div id="body-container">
+        <!-- Work around some values being stored in localStorage wrapped in quotes -->
+        <script>
+            try {
+                var theme = localStorage.getItem('mdbook-theme');
+                var sidebar = localStorage.getItem('mdbook-sidebar');
+
+                if (theme.startsWith('"') && theme.endsWith('"')) {
+                    localStorage.setItem('mdbook-theme', theme.slice(1, theme.length - 1));
+                }
+
+                if (sidebar.startsWith('"') && sidebar.endsWith('"')) {
+                    localStorage.setItem('mdbook-sidebar', sidebar.slice(1, sidebar.length - 1));
+                }
+            } catch (e) { }
+        </script>
+
+        <!-- Set the theme before any content is loaded, prevents flash -->
+        <script>
+            var theme;
+            try { theme = localStorage.getItem('mdbook-theme'); } catch(e) { }
+            if (theme === null || theme === undefined) { theme = default_theme; }
+            const html = document.documentElement;
+            html.classList.remove('light')
+            html.classList.add(theme);
+            html.classList.add("js");
+        </script>
+
+        <input type="checkbox" id="sidebar-toggle-anchor" class="hidden">
+
+        <!-- Hide / unhide sidebar before it is displayed -->
+        <script>
+            var sidebar = null;
+            var sidebar_toggle = document.getElementById("sidebar-toggle-anchor");
+            if (document.body.clientWidth >= 1080) {
+                try { sidebar = localStorage.getItem('mdbook-sidebar'); } catch(e) { }
+                sidebar = sidebar || 'visible';
+            } else {
+                sidebar = 'hidden';
+            }
+            sidebar_toggle.checked = sidebar === 'visible';
+            html.classList.remove('sidebar-visible');
+            html.classList.add("sidebar-" + sidebar);
+        </script>
+
+        <nav id="sidebar" class="sidebar" aria-label="Table of contents">
+            <!-- populated by js -->
+            <mdbook-sidebar-scrollbox class="sidebar-scrollbox"></mdbook-sidebar-scrollbox>
+            <noscript>
+                <iframe class="sidebar-iframe-outer" src="../toc.html"></iframe>
+            </noscript>
+            <div id="sidebar-resize-handle" class="sidebar-resize-handle">
+                <div class="sidebar-resize-indicator"></div>
+            </div>
+        </nav>
+
+        <div id="page-wrapper" class="page-wrapper">
+
+            <div class="page">
+                <div id="menu-bar-hover-placeholder"></div>
+                <div id="menu-bar" class="menu-bar sticky">
+                    <div class="left-buttons">
+                        <label id="sidebar-toggle" class="icon-button" for="sidebar-toggle-anchor" title="Toggle Table of Contents" aria-label="Toggle Table of Contents" aria-controls="sidebar">
+                            <i class="fa fa-bars"></i>
+                        </label>
+                        <button id="theme-toggle" class="icon-button" type="button" title="Change theme" aria-label="Change theme" aria-haspopup="true" aria-expanded="false" aria-controls="theme-list">
+                            <i class="fa fa-paint-brush"></i>
+                        </button>
+                        <ul id="theme-list" class="theme-popup" aria-label="Themes" role="menu">
+                            <li role="none"><button role="menuitem" class="theme" id="light">Light</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="rust">Rust</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="coal">Coal</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="navy">Navy</button></li>
+                            <li role="none"><button role="menuitem" class="theme" id="ayu">Ayu</button></li>
+                        </ul>
+                        <button id="search-toggle" class="icon-button" type="button" title="Search. (Shortkey: s)" aria-label="Toggle Searchbar" aria-expanded="false" aria-keyshortcuts="S" aria-controls="searchbar">
+                            <i class="fa fa-search"></i>
+                        </button>
+                    </div>
+
+                    <h1 class="menu-title">The Hardware OS</h1>
+
+                    <div class="right-buttons">
+                        <a href="../print.html" title="Print this book" aria-label="Print this book">
+                            <i id="print-button" class="fa fa-print"></i>
+                        </a>
+
+                    </div>
+                </div>
+
+                <div id="search-wrapper" class="hidden">
+                    <form id="searchbar-outer" class="searchbar-outer">
+                        <input type="search" id="searchbar" name="searchbar" placeholder="Search this book ..." aria-controls="searchresults-outer" aria-describedby="searchresults-header">
+                    </form>
+                    <div id="searchresults-outer" class="searchresults-outer hidden">
+                        <div id="searchresults-header" class="searchresults-header"></div>
+                        <ul id="searchresults">
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Apply ARIA attributes after the sidebar and the sidebar toggle button are added to the DOM -->
+                <script>
+                    document.getElementById('sidebar-toggle').setAttribute('aria-expanded', sidebar === 'visible');
+                    document.getElementById('sidebar').setAttribute('aria-hidden', sidebar !== 'visible');
+                    Array.from(document.querySelectorAll('#sidebar a')).forEach(function(link) {
+                        link.setAttribute('tabIndex', sidebar === 'visible' ? 0 : -1);
+                    });
+                </script>
+
+                <div id="content" class="content">
+                    <main>
+                        <h1 id="1-the-missing-manual"><a class="header" href="#1-the-missing-manual">1. The Missing Manual</a></h1>
+<p>Tuesday, 7:42 a.m.</p>
+<p>The thermal limit changed again.</p>
+<p>Mechanical already cut metal to last week’s number. Electrical has a new test trace that says the old number was optimistic. The supplier says they never got the last revision anyway. The program manager is trying to hold the date everyone committed in the first quarter. Your executive wants a one-page update by noon: <em>Are we still on track or not?</em></p>
+<p>Everyone is working. Nobody is slacking.</p>
+<p>The program is still drifting.</p>
+<p>You have watched this movie. It is usually not weak engineers. It is usually no manual for the process: no agreed way for work to cross team lines, no shared rule for what “locked” means when new data shows up, no honest tie between the schedule and long leads plus what test actually saw, and no single page where that story stays true before the room invents a new one.</p>
+<p>Process means the written habits: who owns the handoff, where the number lives that the factory is allowed to build to, who may change that number after a test, and how everyone who needs to know finds out before they order steel. Not paperwork stapled on after the design is “done.” The thing that keeps the design from quietly forking inside three different inboxes.</p>
+<p>Most engineering leads earn the role on technical judgment, then get judged on skills nobody prints in the promotion packet: who owns the step when mechanical’s output becomes electrical’s constraint; what has to exist after a meeting so people actually build to the same assumption; what belongs on a one-page status; how a limit moves when evidence says it must; when to pull an executive in before a week turns into a quarter. Nobody hands you a course for that bundle. The industry still behaves as if you learn it by walking past the right cubicles long enough.</p>
+<p>That gap costs money the same way bad parts cost money: slips, rework, supplier scrap, trust thinning with the people paying the bills. Same scenes on repeat: prints where the interface line is nobody’s job, executive-facing pages that read confident and skip what build and test already know is still open, suppliers going quiet when the drawing set forks, the stretch of calendar where cheap learning turns into expensive metal.</p>
+<p>This book closes that gap.</p>
+<hr />
+<h3 id="the-pm-in-the-room"><a class="header" href="#the-pm-in-the-room">The PM in the room</a></h3>
+<p>In the 7:42 scene the PM is usually the easiest face to blame when the review gets loud. They are also the one left holding ship windows someone already showed a paying customer while the technical facts are still moving. When what the team knows and what leadership sees do not match, someone still has to turn what actually happened into a plan someone can fund. Facts in hallway fragments and slide footnotes mean the PM keeps asking “where are we?” while mechanical, electrical, and supply each carry a different piece of the answer.</p>
+<p>Usually not a personality failure. Missing process: named owner for the handoff, one-page story that matches build and test, written decision when a tradeoff changes, early pull on risk and long leads while you can still steer. When the week stops burning on the same unanswered question, PMs get room to clear blockers instead of running the same worry past everyone again. Habits and records for that, starting with leads because that is where those habits get installed first, or not at all.</p>
+<p>From the outside it can look like temperament. It is almost always facts that never landed in one place. Back to the list you can actually fix.</p>
+<h3 id="what-missing-manual-looks-like"><a class="header" href="#what-missing-manual-looks-like">What “missing manual” looks like</a></h3>
+<p>You see the same failure modes often enough to stop calling them bad luck.</p>
+<p>Handoffs nobody owns. Interfaces, limits, and supplier cut-ins sit between org charts. Everyone assumes someone checked. Nobody can point to the sheet that is supposed to be true tomorrow morning.</p>
+<p>Paper locked, reality unlocked. Numbers and dates live in mail threads or decks, not where build, test, and supply chain actually run.</p>
+<p>Heroic individuals, fragile program. Progress rides on who remembers to ask whom. That person travels or burns out, the same questions reopen.</p>
+<p>Late truth. Risk and dependency never land in writing where PM and executives can help early, so the surprise shows up first in metal, in the field, or in an exec review. Wrong altitude for cheap fixes.</p>
+<p>Schedule theater: the physics, procurement, and test facts that drive the date moved weeks ago, but the shared plan never caught up. The meeting defends loyalty to a number instead of updating the plan to match the facts. Name it that way and you can refuse to perform it.</p>
+<p>None of those get fixed by working harder on the same scattered pattern. I did not always believe that. A few different employers showed me otherwise.</p>
+<hr />
+<h3 id="three-programs-one-lesson"><a class="header" href="#three-programs-one-lesson">Three programs, one lesson</a></h3>
+<p>Three stretches of work. Same lesson as the list above.</p>
+<p>Same people, different written habits. What changed was control discipline: one controlled source for the build limit instead of four slide versions, a named signer and date for post-test changes, and direct reporting from the engineer who did the work instead of each layer rewriting the message upward.</p>
+<p>Early in my career I saw programs where timelines slid again and again with very little forcing function: no single story of one plan, one date, one record people actually used. People were busy. The program still did not decide.</p>
+<p>Later I touched energy hardware where right-to-left schedule pressure was not a slide. Survival. Long leads and thermal work landed in the same month as procurement. PMs there were doing real work keeping motion visible while engineering learned what had to be named before it burned the path. Risk and dependency still hurt when they arrived late. Expensive in time and metal.</p>
+<p>The strongest program rhythm I have seen personally was on a cell program: tight requirements, real phase gates, a PM who made state obvious to everyone, engineers who owned critical work in front of leadership without each manager filtering and re-editing the message on the way up. Strong process, and the program still needed a technical lead to keep the team from circling the same narrow pocket in the design space for a quarter. Good process did not erase leadership. It focused it.</p>
+<p>Now I work with a large industrial org on power electronics. Wins matter less like a clever topology tweak and more like pulling the program out of opaque reporting, soft requirements, timelines that slip without anyone writing down why. Biggest gain is often process, not a missing genius in the room.</p>
+<p>Those sketches point at the same conclusion as the opening: nobody in that 7:42 scene is trying to fail. The operating manual for how decisions and numbers move is what is missing.</p>
+<h3 id="what-this-book-is--and-is-not"><a class="header" href="#what-this-book-is--and-is-not">What this book is — and is not</a></h3>
+<p>Operating habits and records for hardware programs: ownership, spec integrity, gates that mean something, risk you can read, fleet and factory learning used as instruments, automation choices made early enough to matter, schedules tied to real dependencies, supplier truth that matches what build and test see. Order follows <code>SUMMARY.md</code>.</p>
+<p>Primary reader: the engineering lead, the person who ends up owning integration whether or not the title caught up. PMs and executives too. Same facts in the same order the lead needs, without inventing another standing meeting to get them.</p>
+<p>Not a textbook on formal drawing rules, structured multi-factor experiments, or simulation theory. Those tools matter; pull specialists when the program needs them. You get when to insist on that class of work, what “good enough to decide” looks like, how the result feeds a gate and a one-pager. Not twelve chapters you must finish before the rest makes sense.</p>
+<p>Not a replacement for design history, functional safety, or regulatory paperwork. The last chapter names what this book does not cover so nobody confuses habits with compliance.</p>
+<p>The next chapter states the thesis: in development, process is the product. The system you are building while you build the hardware. After that: how to run that system without turning it into religion.</p>
+
+                    </main>
+
+                    <nav class="nav-wrapper" aria-label="Page navigation">
+                        <!-- Mobile navigation buttons -->
+                            <a rel="prev" href="../index.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                                <i class="fa fa-angle-left"></i>
+                            </a>
+
+                            <a rel="next prefetch" href="../chapters/02-process-is-the-product.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                                <i class="fa fa-angle-right"></i>
+                            </a>
+
+                        <div style="clear: both"></div>
+                    </nav>
+                </div>
+            </div>
+
+            <nav class="nav-wide-wrapper" aria-label="Page navigation">
+                    <a rel="prev" href="../index.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                        <i class="fa fa-angle-left"></i>
+                    </a>
+
+                    <a rel="next prefetch" href="../chapters/02-process-is-the-product.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                        <i class="fa fa-angle-right"></i>
+                    </a>
+            </nav>
+
+        </div>
+
+
+
+
+        <script>
+            window.playground_copyable = true;
+        </script>
+
+
+        <script src="../elasticlunr.min.js"></script>
+        <script src="../mark.min.js"></script>
+        <script src="../searcher.js"></script>
+
+        <script src="../clipboard.min.js"></script>
+        <script src="../highlight.js"></script>
+        <script src="../book.js"></script>
+
+        <!-- Custom JS scripts -->
+
+
+    </div>
+    </body>
+</html>
