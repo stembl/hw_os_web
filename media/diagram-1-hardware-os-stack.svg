@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="900" viewBox="0 0 1600 900">
+<rect width="100%" height="100%" fill="#f8fafc"/>
+<text x="800.0" y="72" font-family="Inter, Arial, Helvetica, sans-serif" font-size="34" font-weight="700" fill="#0f172a" text-anchor="middle">Hardware OS Stack</text>
+<text x="800.0" y="108" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#475569" text-anchor="middle">The chapters build from program truth to durable installation.</text>
+<line x1="115" y1="745" x2="115" y2="150" stroke="#334155" stroke-width="3" marker-end="url(#arrowhead)"/>
+<text x="97" y="455.0" font-family="Inter, Arial, sans-serif" font-size="17" fill="#334155" transform="rotate(-90 97,455.0)" text-anchor="middle">builds on</text>
+<defs>
+  <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="8" refY="3.5" orient="auto">
+    <polygon points="0 0, 10 3.5, 0 7" fill="#334155"/>
+  </marker>
+</defs>
+<polygon points="1330,130 1354,150 1354,275 1330,255" fill="#cbd5e1" opacity="0.65"/>
+<rect x="210" y="130" width="1120" height="125" rx="8" fill="#dbeafe" stroke="#ffffff" stroke-width="3"/>
+<text x="254" y="210" font-family="Inter, Arial, Helvetica, sans-serif" font-size="54" font-weight="800" fill="#0f172a" text-anchor="start">5</text>
+<text x="360" y="182" font-family="Inter, Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#0f172a" text-anchor="start">Installation and Durability</text>
+<text x="360" y="218" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155" text-anchor="start">Rollout · Cadence · Failure recovery</text>
+<text x="1282" y="185" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#475569" text-anchor="end">Chapters</text>
+<text x="1282" y="216" font-family="Inter, Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#0f172a" text-anchor="end">18, 19, 20</text>
+<polygon points="1348,255 1372,275 1372,400 1348,380" fill="#cbd5e1" opacity="0.65"/>
+<rect x="228" y="255" width="1120" height="125" rx="8" fill="#bfdbfe" stroke="#ffffff" stroke-width="3"/>
+<text x="272" y="335" font-family="Inter, Arial, Helvetica, sans-serif" font-size="54" font-weight="800" fill="#0f172a" text-anchor="start">4</text>
+<text x="378" y="307" font-family="Inter, Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#0f172a" text-anchor="start">Forecast You Can Defend</text>
+<text x="378" y="343" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155" text-anchor="start">Schedule · Cross-tier contracts · One-page truth</text>
+<text x="1300" y="310" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#475569" text-anchor="end">Chapters</text>
+<text x="1300" y="341" font-family="Inter, Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#0f172a" text-anchor="end">6, 14, 15</text>
+<polygon points="1366,380 1390,400 1390,525 1366,505" fill="#cbd5e1" opacity="0.65"/>
+<rect x="246" y="380" width="1120" height="125" rx="8" fill="#93c5fd" stroke="#ffffff" stroke-width="3"/>
+<text x="290" y="460" font-family="Inter, Arial, Helvetica, sans-serif" font-size="54" font-weight="800" fill="#0f172a" text-anchor="start">3</text>
+<text x="396" y="432" font-family="Inter, Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#0f172a" text-anchor="start">Execution Evidence</text>
+<text x="396" y="468" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155" text-anchor="start">Supplier data · Automation · Factory · Test · Fleet</text>
+<text x="1318" y="435" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#475569" text-anchor="end">Chapters</text>
+<text x="1318" y="466" font-family="Inter, Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#0f172a" text-anchor="end">7, 8, 12, 16, 17</text>
+<polygon points="1384,505 1408,525 1408,650 1384,630" fill="#cbd5e1" opacity="0.65"/>
+<rect x="264" y="505" width="1120" height="125" rx="8" fill="#60a5fa" stroke="#ffffff" stroke-width="3"/>
+<text x="308" y="585" font-family="Inter, Arial, Helvetica, sans-serif" font-size="54" font-weight="800" fill="#0f172a" text-anchor="start">2</text>
+<text x="414" y="557" font-family="Inter, Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#0f172a" text-anchor="start">Decision Discipline</text>
+<text x="414" y="593" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#334155" text-anchor="start">DRI · Gates · Risk rows · Escalation triggers</text>
+<text x="1336" y="560" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#475569" text-anchor="end">Chapters</text>
+<text x="1336" y="591" font-family="Inter, Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#0f172a" text-anchor="end">3, 4, 6, 11, 13</text>
+<polygon points="1402,630 1426,650 1426,775 1402,755" fill="#cbd5e1" opacity="0.65"/>
+<rect x="282" y="630" width="1120" height="125" rx="8" fill="#1d4ed8" stroke="#ffffff" stroke-width="3"/>
+<text x="326" y="710" font-family="Inter, Arial, Helvetica, sans-serif" font-size="54" font-weight="800" fill="#ffffff" text-anchor="start">1</text>
+<text x="432" y="682" font-family="Inter, Arial, Helvetica, sans-serif" font-size="30" font-weight="700" fill="#ffffff" text-anchor="start">Program Truth</text>
+<text x="432" y="718" font-family="Inter, Arial, Helvetica, sans-serif" font-size="18" font-weight="400" fill="#e0f2fe" text-anchor="start">Requirements · Limits · Ownership · Evidence</text>
+<text x="1354" y="685" font-family="Inter, Arial, Helvetica, sans-serif" font-size="15" font-weight="600" fill="#dbeafe" text-anchor="end">Chapters</text>
+<text x="1354" y="716" font-family="Inter, Arial, Helvetica, sans-serif" font-size="20" font-weight="600" fill="#ffffff" text-anchor="end">1, 2, 4, 5, 9, 10</text>
+</svg>
