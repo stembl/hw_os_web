@@ -153,10 +153,11 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="16-first-article-fast-disciplined-iteration"><a class="header" href="#16-first-article-fast-disciplined-iteration">16. First Article: Fast, Disciplined Iteration</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Thursday, 4:48 p.m., first-article scramble still running, someone’s kid’s practice already texted on the lock screen.</p>
 <p>The first article build starts rough, as expected.</p>
 <p>By day three, every shift has made "small improvements."</p>
-<p>Yield is still unstable and no one can say which change helped or hurt.</p>
+<p>Yield is still unstable and no one can say which change helped or hurt. The two-shift delta cost three days of root-cause investigation because the configuration was not locked between shifts — every build had a different unknown baseline.</p>
 <p>Build throughput increased, but the run log did not produce decision-ready learning.</p>
 <hr />
 <h3 id="objective-of-first-article"><a class="header" href="#objective-of-first-article">Objective of first article</a></h3>
@@ -220,6 +221,7 @@
 <li>Should scope or sequence change now?</li>
 </ul>
 <p>This protects speed while preserving decision quality.</p>
+<p>Thursday, second week, same time of day. The change log is posted on the workbench before the next shift arrives. The incoming lead reads it in five minutes, starts from a known baseline, and when yield drops on run 14, the delta investigation takes twenty minutes — not three days — because the configuration is locked and the prior decision is on paper.</p>
 
                     </main>
 

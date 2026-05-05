@@ -153,6 +153,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="7-fleet-as-instrumented-experiment"><a class="header" href="#7-fleet-as-instrumented-experiment">7. Fleet as Instrumented Experiment</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Thursday, 7:02 a.m., early fleet readout before the cross-site call.</p>
 <p>Five prototype units are built.</p>
 <p>By Friday, the team has stories about each one and no comparable record of what was different between them.</p>
@@ -195,8 +196,12 @@
 <li>one-page status deltas,</li>
 <li>next decision queue.</li>
 </ul>
-<p>Unit 03 measured leak rate +18% versus Unit 01 at hot soak, moved <code>REQ-217</code> confidence to red, and changed the next gate call from go to hold pending seal redesign evidence.</p>
+<p>Unit 03 measured a leak rate well above Unit 01 at hot soak, moved <code>REQ-217</code> confidence to red, and changed the next gate call from go to hold pending seal redesign evidence.</p>
 <p>If fleet data stays in test notes, the program keeps running on stale assumptions.</p>
+<hr />
+<p>At a battery-adjacent program, five prototype units were built and instrumented over several weeks. Unit 03 measured a leak rate substantially above Unit 01 at hot soak — not a sensor artifact, the same delta across multiple test runs. The discrepancy sat in the test engineer's notes for nearly two weeks before it reached the program's risk register, because there was no per-unit record requirement that forced the delta into the risk log. The thermal requirement moved to red only after the team had already placed tooling orders on the assumption that Unit 01 was representative.</p>
+<p>The program added a per-unit record requirement and a weekly fleet review cadence to its program controls. The next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth. The eleven-day gap in the first campaign had cost tooling decisions made on unrepresentative data — decisions that required a correction order once the real distribution of results was visible.</p>
+<hr />
 <h3 id="failure-patterns-in-fleet-execution"><a class="header" href="#failure-patterns-in-fleet-execution">Failure patterns in fleet execution</a></h3>
 <p>Common misses:</p>
 <ul>
@@ -219,6 +224,8 @@
 <p>Chapter 12 established delta and traceability discipline.
 Fleet work applies the same discipline across physical units in real variation.</p>
 <p>When done well, fleet turns uncertainty into bounded decisions before major spend.</p>
+<hr />
+<p>If your weekly fleet review this week can name one risk-register row that moved because of a specific unit's measured delta, the campaign is doing its job. If it cannot, you are collecting prototypes, not evidence.</p>
 
                     </main>
 

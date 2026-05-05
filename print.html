@@ -157,7 +157,37 @@
 <p><strong>Author:</strong> Steve Embleton</p>
 <p>Short, direct guidance for engineering leads: operating habits and records for hardware programs — so decisions, limits, and status stay tied to what build and test actually see.</p>
 <p><strong>Start reading:</strong> use the sidebar for the full outline, or open <a href="chapters/01-the-missing-manual.html">1. The Missing Manual</a>.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="the-hardware-os-in-one-page"><a class="header" href="#the-hardware-os-in-one-page">The Hardware OS, in one page</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>.</em></p>
+<p>This book is twenty short chapters. Read them in order. But the twenty chapters are not twenty separate ideas — they sit on five operating layers. Knowing the layer a chapter belongs to tells you what it is <em>for</em>, and what it is <strong>not</strong> for.</p>
+<div class="table-wrapper"><table><thead><tr><th>Layer</th><th>What this layer guarantees</th><th>Chapters</th></tr></thead><tbody>
+<tr><td>1. Program truth</td><td>One source of truth, one ownership rule, requirements as managed values, decisions as records</td><td>1, 2, 4, 5, 9, 10</td></tr>
+<tr><td>2. Decision discipline</td><td>DRI authority, gates as decision events, risk rows as decision artifacts, escalation triggers</td><td>3, 4, 6, 11, 13</td></tr>
+<tr><td>3. Execution evidence</td><td>Supplier data, automation choices at concept, factory and test reality, fleet learning</td><td>7, 8, 12, 16, 17</td></tr>
+<tr><td>4. Forecast you can defend</td><td>Schedule from real dependencies, cross-tier reciprocal contracts, executive one-page truth</td><td>6, 14, 15</td></tr>
+<tr><td>5. Installation and durability</td><td>Rollout sequence, training and cadence, failure recovery, where the OS does not reach</td><td>18, 19, 20</td></tr>
+</tbody></table>
+</div>
+<p>A chapter can appear on more than one layer when its mechanism genuinely spans them. Gates show up in decision discipline and in forecast because a gate decision both changes a controlled baseline <em>and</em> moves the forecast. The layer is not a category; it is a declaration of what the chapter must guarantee for the OS above it to hold.</p>
+<p>If you read this book straight through, the layers assemble in order: truth first, then decisions about truth, then evidence that supports the decisions, then a forecast that holds the evidence and decisions together, then the install plan that makes the whole system survive contact with the next program.</p>
+<hr />
+<h2 id="what-this-operating-system-looks-like-working"><a class="header" href="#what-this-operating-system-looks-like-working">What this operating system looks like working</a></h2>
+<p>The concrete test is not a metric. It is a set of people doing their jobs without friction.</p>
+<p><strong>Your exec can leave Friday afternoon.</strong> Not because the program is done, but because the gate status is real, the risk register surfaces what would otherwise surprise them, and every open decision has a named owner and a date. They are not anxious because they are not holding the program truth in their head. The one-page status is holding it for them, and they trust it.</p>
+<p><strong>Your PM stops asking "where are we?"</strong> A PM who trusts the schedule and the risk log shifts from chasing daily status to clearing real blockers. The artifacts answer the question before it is asked. That is not a nice-to-have — it is the measurable output of Layers 3 and 4 working. A PM who stops pinging is a PM who has something reliable to read.</p>
+<p><strong>Your engineering team makes decisions, not presentations.</strong> When requirements are managed hypotheses with visible evidence, when gate packets come from live records instead of slide heroics, and when the schedule is built from real dependencies, the team spends its time on the technical problem — not on reconciling contradictions between what the slides say and what the test floor sees.</p>
+<p>These are the outcomes the OS is designed to produce. The chapters that follow are the mechanism.</p>
+<hr />
+<h2 id="how-to-use-this-map"><a class="header" href="#how-to-use-this-map">How to use this map</a></h2>
+<p>Use this page as a map you come back to. Each chapter states which mechanism it introduces; this page says which layer that mechanism lives in. If a chapter feels repetitive, check which layer it is on — it may be introducing the same vocabulary in a different operating context (a different scale, a different tier, a different phase of the program).</p>
+<p>If you are in a specific role:</p>
+<ul>
+<li><strong>Engineering lead:</strong> start with Layer 1 (program truth). Everything else is scaffolding on top of that foundation.</li>
+<li><strong>PM:</strong> Layers 4 and 5 will resonate immediately; go back to Layer 2 to understand why the gates and risk rows are built the way they are.</li>
+<li><strong>Executive or sponsor:</strong> the one-page truth (Ch. 6), cross-tier contracts (Ch. 14), and schedule integrity (Ch. 15) are the direct executive-facing chapters. The chapters around them explain why the artifacts work when they work.</li>
+</ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="1-the-missing-manual"><a class="header" href="#1-the-missing-manual">1. The Missing Manual</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Monday, 6:47 a.m., parking-lot light still on, first messages already stacking before standup.</p>
 <p>The thermal limit changed again.</p>
 <p>Mechanical already cut metal to last week’s number. Electrical has a new test trace that says the old number was optimistic. The supplier says they never got the last revision anyway. The program manager is trying to hold the date everyone committed in the first quarter. Your executive wants a one-page update by noon: <em>Are we still on track or not?</em></p>
@@ -196,6 +226,7 @@
 <p>Not a textbook on formal drawing rules, structured multi-factor experiments, or simulation theory. Those tools matter; pull specialists when the program needs them. You get when to insist on that class of work, what “good enough to decide” looks like, how the result feeds a gate and a one-pager. Not twelve chapters you must finish before the rest makes sense.</p>
 <p>Not a replacement for design history, functional safety, or regulatory paperwork. The last chapter names what this book does not cover so nobody confuses habits with compliance.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="2-process-is-the-product"><a class="header" href="#2-process-is-the-product">2. Process Is the Product</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Monday, 9:35 a.m., test floor lights at half, second shift still cleaning up yesterday’s run.</p>
 <p>Two programs just failed the same end-of-line leak test.</p>
 <p>Both teams have competent engineers, a supplier in the loop, and a date that will not move without consequences. Both have test data that says the current build is not stable enough to ship.</p>
@@ -243,6 +274,7 @@
 <p>That is enough to expose whether your current process is implemented or cosmetic.</p>
 <p>Do not widen scope in Chapter 2. Install one narrow control loop, prove it reduces argument and lag, then extend.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="3-failure-patterns-chaos-drift-and-unowned-decisions"><a class="header" href="#3-failure-patterns-chaos-drift-and-unowned-decisions">3. Failure Patterns: Chaos, Drift, and Unowned Decisions</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Monday, 12:50 p.m., afternoon already drags, coffee going cold in the conference room.</p>
 <p>Day 19 of an EVT build for a handheld controller, and this is the third meeting on the same leakage-limit decision; every slip keeps a $42k fixture order on hold.</p>
 <p>Test says one thing. The status page says another. Procurement already acted on a third version because nobody marked which number was live.</p>
@@ -322,6 +354,7 @@
 </ul>
 <p>That single loop reduces all three failure patterns at once.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="4-dri-ownership-and-decision-authority"><a class="header" href="#4-dri-ownership-and-decision-authority">4. DRI Ownership and Decision Authority</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Monday, 3:55 p.m., late sun on the whiteboard, decision still hanging open.</p>
 <p>The question is clear. The data is good enough. The room still does not decide.</p>
 <p>Everyone has input. Nobody has closure authority.</p>
@@ -348,7 +381,7 @@
 <li>and enforce update of the one-page status and dependent records.</li>
 </ul>
 <p>Authority does not mean unilateral control over everything. It means a known decision boundary and a known escalation boundary.</p>
-<p>A battery-pack team hit this exact gap when a thermal-limit decision stayed open for eight days. The assigned DRI could gather evidence but could not call a hold on pilot build, so purchasing kept ordering cells to the old limit.</p>
+<p>A battery-pack team hit this exact gap when a thermal-limit decision stayed open for eight days. The assigned DRI could gather evidence but could not call a hold on pilot build — the authority boundary was not written into the ownership map, so the DRI waited for a consensus that never arrived. Purchasing kept ordering cells to the old thermal limit for all eight days. The fix was a one-line revision to the ownership record: the DRI was given explicit hold authority when the chamber-evidence threshold was crossed. The next thermal revision — same decision type — closed in four hours. The eight-day cost was not analysis time; it was two status meetings, one gate-prep review, and eight days of cell orders that had to be redirected.</p>
 <h3 id="what-breaks-when-ownership-is-fuzzy"><a class="header" href="#what-breaks-when-ownership-is-fuzzy">What breaks when ownership is fuzzy</a></h3>
 <p>Shared ownership sounds collaborative and often behaves like delay.</p>
 <p>Failure signatures:</p>
@@ -381,6 +414,17 @@
 <li>downstream artifacts updated.</li>
 </ul>
 <p>No long memo required. One durable record is enough to stop re-litigation.</p>
+<p>Acceptable implementations for the decision record include a lightweight Architectural Decision Record (ADR) markdown file under version control for small engineering-led teams, a Confluence page using a structured template with Owner / Decision / Rationale / Downstream-updates fields, a Jira issue type with custom fields for decision authority and evidence link, or a PLM Engineering Change Order when the decision is product-data-controlling. The OS does not care which; it cares that the fields — owner, decision question, evidence, rationale, affected artifacts, approver, date — are all in one place and reachable by anyone on the program.</p>
+<p><strong>Decision record: bad vs corrected</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad (incomplete)</th><th>Good (decision-grade)</th></tr></thead><tbody>
+<tr><td>Decision</td><td>Revise thermal limit</td><td>Revise RQ-THERM-014 from 85 °C to 78 °C per T-117 chamber evidence</td></tr>
+<tr><td>Owner</td><td>TBD</td><td>Thermal lead</td></tr>
+<tr><td>Rationale</td><td><em>(blank)</em></td><td>T-117 measured 78 °C steady-state; boundary condition error found in model; contact-resistance verified by M-23</td></tr>
+<tr><td>Downstream updates</td><td><em>(blank)</em></td><td>Supplier package flagged for re-qual (ECO-2027-031), schedule R-14 row updated, Gate 3 one-page revised</td></tr>
+<tr><td>Approver</td><td><em>(blank)</em></td><td>Program lead</td></tr>
+<tr><td>Date</td><td><em>(blank)</em></td><td>Day 9 post-T-117</td></tr>
+</tbody></table>
+</div>
 <h3 id="escalation-without-drama"><a class="header" href="#escalation-without-drama">Escalation without drama</a></h3>
 <p>Escalation is a design feature, not a social failure: it fires when trigger conditions are hit, not when room politics allow it.</p>
 <p>Define escalation triggers in advance:</p>
@@ -391,7 +435,9 @@
 <li>customer/compliance impact.</li>
 </ul>
 <p>When trigger conditions are objective, escalation is faster and less political.</p>
+<p>If you can name the DRI for every open program decision today, and each DRI has proposed a decision by a date, the OS is doing its job. If any question is 'TBD / team / committee,' it is not.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="5-spec-integrity-and-requirement-hygiene"><a class="header" href="#5-spec-integrity-and-requirement-hygiene">5. Spec Integrity and Requirement Hygiene</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Tuesday, 7:20 a.m., half the room still on their first coffee, ship windows already on the screen.</p>
 <p>Manufacturing asks which revision is real. Test says they validated Rev C assumptions. Procurement already placed orders against Rev B.</p>
 <p>The drawing package is "released." The program still has three definitions of done.</p>
@@ -407,9 +453,8 @@
 </ol>
 <p>If answers differ by function, the program does not have a spec. It has parallel interpretations.</p>
 <h3 id="hygiene-failures-that-look-small-and-cost-big"><a class="header" href="#hygiene-failures-that-look-small-and-cost-big">Hygiene failures that look small and cost big</a></h3>
-<p>Most failures are not dramatic. They are quiet mismatches.
-Rev C.2 changed the leak-test dwell value, but manufacturing work instructions still referenced Rev C.1 while test benches used the new value.
-That one mismatch forced three days of teardown and retest, and the team then found REQ-117 had no owner and no rationale trail for the original dwell change.</p>
+<p>Most failures are not dramatic. They are quiet mismatches.</p>
+<p>Rev C.2 changed the leak-test dwell value, but manufacturing work instructions still referenced Rev C.1 while test benches used the new value. That one mismatch forced three days of teardown and retest, and the team then found REQ-117 had no owner and no rationale trail for the original dwell change. Once REQ-117 was assigned an owner and a controlled revision record was created with the rationale for the dwell change, the next revision — a ten-second dwell adjustment — was processed in four hours and reached all affected work instructions the same day.</p>
 <p>Each one is manageable alone. Together they make gate decisions soft and supplier execution unpredictable.</p>
 <h3 id="requirement-statement-quality-minimum-bar"><a class="header" href="#requirement-statement-quality-minimum-bar">Requirement statement quality (minimum bar)</a></h3>
 <p>A requirement is usable when it is:</p>
@@ -450,12 +495,15 @@ Last change rationale captured</li>
 Downstream artifacts updated (test plan, one-pager, supplier packet)</li>
 </ul>
 <p>This is not paperwork for paperwork. It is a control loop for decision quality.</p>
+<p>Acceptable implementations for the requirement record include a PLM module with controlled revision fields (Windchill, Teamcenter, Arena) when design data is already PLM-controlled, a Jira issue type with locked fields for Owner / Evidence / Acceptance-method / Revision-history for smaller programs, a shared spreadsheet with locked columns and a named owner for every row for very early-stage work, or a controlled markdown requirements log under version control when the team is small and engineering-led. The OS cares about six fields — owner, current value, evidence link, acceptance method, rationale, and downstream-update record — not about the tool that holds them.</p>
 <h3 id="why-this-chapter-sits-before-gates"><a class="header" href="#why-this-chapter-sits-before-gates">Why this chapter sits before gates</a></h3>
 <p>Gates cannot be strong if requirement quality is weak.</p>
 <p>A gate asks, "Are we ready to commit?"
 If requirement truth is ambiguous, the gate becomes theater regardless of slide quality.</p>
 <p>Spec integrity is the substrate under every later control: risk scoring, one-page truth, supplier alignment, and schedule realism.</p>
+<p>If a requirement in your current baseline has no evidence link, no named acceptance method, and no revision history, it is not a requirement. It is a wish with a number. Find three of those today and fix them.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="6-gates-risk-registers-and-one-page-truth"><a class="header" href="#6-gates-risk-registers-and-one-page-truth">6. Gates, Risk Registers, and One-Page Truth</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Tuesday, 10:45 a.m., gate slides on the projector, room still smelling like someone’s takeout from an hour ago.</p>
 <p>The gate deck looks clean. The room still cannot answer one simple question: what changed since last gate that alters risk to launch.</p>
 <p>If a gate cannot produce that answer in two minutes, the program is performing confidence, not making decisions.</p>
@@ -470,6 +518,7 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 <li>artifact delta list (what records changed as a result).</li>
 </ol>
 <p>No decision, no gate. Just a meeting.</p>
+<p>Not every gate is a decision gate. A <strong>readiness review</strong> confirms that planned next-phase inputs are in place — no controlled value needs to change. An <strong>evidence review</strong> surfaces test or analysis results without forcing a decision yet — useful when the data is new and the team needs to absorb it before proposing a change. An <strong>alignment meeting</strong> reconciles cross-tier expectations without triggering a baseline change. A <strong>regulatory or customer staging gate</strong> moves a formal record forward in a controlled lifecycle. All of these have legitimate jobs. The rule "no decision, no gate" applies specifically to events on the program plan named "gate" that are expected to change a controlled baseline, requirement, or release — when those events happen but no controlled value changes, the gate is mislabeled. Rename it accurately: call it a review, write down what it produces, and stop treating it as a gate.</p>
 <h3 id="risk-register-from-decorative-list-to-control-tool"><a class="header" href="#risk-register-from-decorative-list-to-control-tool">Risk register: from decorative list to control tool</a></h3>
 <p>Most risk registers fail because they track nouns, not decisions.</p>
 <p>A usable risk row needs:</p>
@@ -483,6 +532,18 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 <li>current status with evidence link.</li>
 </ul>
 <p>If "owner" is a team name and "status" is a color, the register will look active and behave inert.</p>
+<p><strong>Risk register: bad row vs decision-grade row</strong></p>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad row</th><th>Decision-grade row</th></tr></thead><tbody>
+<tr><td>ID</td><td>R-14</td><td>R-14</td></tr>
+<tr><td>Statement</td><td>Thermal</td><td>Thermal margin insufficient at full-duty 40 °C ambient</td></tr>
+<tr><td>Owner</td><td>Engineering team</td><td>Thermal lead</td></tr>
+<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Likelihood: medium (T-117 showed 78 °C vs 85 °C limit) / Impact: high (gate hold, supplier re-qual)</td></tr>
+<tr><td>Trigger</td><td><em>(blank)</em></td><td>Any chamber run exceeding 77 °C</td></tr>
+<tr><td>Mitigation</td><td>In progress</td><td>Revise RQ-THERM-014, re-qual supplier package</td></tr>
+<tr><td>Decision date</td><td><em>(blank)</em></td><td>Gate 3</td></tr>
+<tr><td>Evidence</td><td><em>(blank)</em></td><td>T-117, M-23</td></tr>
+</tbody></table>
+</div>
 <h3 id="one-page-truth-executive-view-tied-to-source-records"><a class="header" href="#one-page-truth-executive-view-tied-to-source-records">One-page truth: executive view tied to source records</a></h3>
 <p>The one-page status is not a summary slide. It is the control surface for shared truth.</p>
 <p>Minimum one-page sections:</p>
@@ -494,6 +555,17 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 <li>asks/escalations with owners.</li>
 </ol>
 <p>Every line should trace to a source artifact. If leadership cannot drill down from line to record, confidence will exceed reality.</p>
+<p>A one-page status that traces every line to a live record is the artifact that lets an executive leave for the weekend without anxiety. Not because the program has no risk — every hardware program has risk — but because the risk is named, owned, and visible in the register. The exec does not need to call because the register will surface what would otherwise surprise them. An engineering lead who has built a traceable one-page is an engineering lead whose exec has something reliable to read.</p>
+<p>Acceptable implementations for the one-page status include a Confluence page with embedded live links to the risk register, gate packet, and requirement log — refreshed weekly by a named owner — when the team uses Confluence. A generated PDF or slide refreshed automatically from a dashboard tool (Power BI, Tableau, or a simple data connector) works when the source records are already in structured systems. A controlled markdown file under version control, refreshed weekly with named source citations, works for small teams. The OS cares that each line traces to a live source artifact — not that the page is beautiful.</p>
+<p><strong>One-page status: bad line vs traceable line</strong></p>
+<p>Bad:</p>
+<blockquote>
+<p>Thermal: 🟡 On track — team working the issue</p>
+</blockquote>
+<p>Good:</p>
+<blockquote>
+<p>Thermal: RQ-THERM-014 revised to 78 °C per T-117 | R-14 closed at Gate 3 | Supplier re-qual in progress per ECO-2027-031 | Cold-plate extrusion: 11-day slip, recovery in schedule rev 4</p>
+</blockquote>
 <h3 id="update-rhythm-that-keeps-it-honest"><a class="header" href="#update-rhythm-that-keeps-it-honest">Update rhythm that keeps it honest</a></h3>
 <p>Cadence matters more than formatting.</p>
 <p>Recommended rhythm:</p>
@@ -525,9 +597,11 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 <li>run next gate using artifact delta list,</li>
 <li>reject items that cannot trace to source.</li>
 </ul>
-<p>Before Gate G3, risk row R-14 listed "supplier CpK pending" with no decision date, and the one-page line still read "launch confidence: green." After the gate decision to hold launch lot and fund gauge redesign, R-14 gained an owner/date and the one-page delta changed to "launch at risk until CpK &gt;= 1.33 evidence dated 2026-05-12."</p>
+<p>Before Gate G3, risk row R-14 listed "supplier CpK pending" with no decision date, and the one-page line still read "launch confidence: green." The decision had been deferred through two prior gate cycles — each cycle the row stayed yellow and no action date was set. After the gate decision to hold the launch lot and fund gauge redesign, R-14 gained an owner and a decision date and the one-page delta changed to "launch at risk until CpK ≥ 1.33 evidence dated 2026-05-12." The R-14 decision, once it carried a named decision date, closed in one meeting. Gauge data collected two weeks later confirmed the launch lot would have produced a 12% first-pass yield miss at the customer — a containment action that would have cost more than the gate hold.</p>
 <p>Two weeks is enough to expose whether your current rhythm is decision-grade.</p>
+<p>If every line on your one-page status this week traces to a named live record — not a slide, not memory, not a color — the status can be trusted without a phone call. If any line is unsourced, that is the gap to close before the next gate.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="8-automation-decisions-at-concept-stage"><a class="header" href="#8-automation-decisions-at-concept-stage">8. Automation Decisions at Concept Stage</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Tuesday, 2:20 p.m., concept review optimism still on the whiteboard from this morning.</p>
 <p>The design review celebrates fit, function, and cost.</p>
 <p>Six months later, the line cannot probe one critical node without custom fixture workarounds that add 40 seconds per unit and destabilize yield.</p>
@@ -545,7 +619,7 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 <li>traceability architecture.</li>
 </ul>
 <p>Delay those decisions and the program pays in cycle time, scrap, and heroic workaround engineering.</p>
-<p>On one actuator program, the concept team chose recessed test-pad geometry to save enclosure space. At ramp, that choice forced a manual probing station between ICT and final test and added 52 seconds per unit.</p>
+<p>On one actuator program, the concept team chose recessed test-pad geometry to save enclosure space. At ramp, that choice forced a manual probing station between ICT and final test and added 52 seconds per unit. At 10,000 units per month, 52 seconds per unit added 144 hours of test-floor time; when the team attempted to automate after tooling was fixed, fixture redesign consumed six additional weeks.</p>
 <h3 id="concept-stage-questions-that-prevent-late-pain"><a class="header" href="#concept-stage-questions-that-prevent-late-pain">Concept-stage questions that prevent late pain</a></h3>
 <p>Before architecture freeze, answer:</p>
 <ol>
@@ -597,7 +671,9 @@ They are usually requirement and ownership failures:</p>
 </ul>
 <p>Treat automation as part of the operating system and it becomes predictable.
 Treat it as "integration detail" and it becomes late-stage volatility.</p>
+<p>If the test coverage plan for your current program includes unit counts, cost per unit, and a pass/fail threshold for automation — and that calculation was done before the concept was locked — the decision was made at the right time. If the test coverage is still 'TBD at D-phase,' the decision is already late.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="15-schedule-from-real-dependencies-and-honest-critical-path"><a class="header" href="#15-schedule-from-real-dependencies-and-honest-critical-path">15. Schedule from Real Dependencies and Honest Critical Path</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Tuesday, 5:50 p.m., long shadows in the program office, dependency chart finally honest.</p>
 <p>The launch date on the slide has not moved in three months.</p>
 <p>The dependency chain under it has moved every week.</p>
@@ -636,6 +712,10 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <li>reporting completion percent instead of decision readiness.</li>
 </ul>
 <p>These behaviors protect optics and destroy forecast quality.</p>
+<hr />
+<p>At an energy storage program, the announced launch date had not moved in three months on the program slide. Underneath, three thermal-related long-leads had quietly slipped: the cold-plate extrusion (11 working days, triggered by the <code>RQ-THERM-014</code> revision that changed the geometry requirement), the thermal interface material qualification (8 days, triggered by the contact-resistance finding), and a chamber booking for the revised configuration (6 days, because the test queue had moved). The cold-plate extrusion slip (11 days) was triggered by the <code>RQ-THERM-014</code> revision described in Ch. 9. None of the slips were visible on the schedule because the schedule had been built date-to-date, not dependency-to-dependency.</p>
+<p>When the team recomputed the chain — what depends on what, with honest durations and buffer for uncertainty — the new date was 19 working days beyond the announced date. The recovery conversation that followed was real: cut one product variant from the launch scope, change the supplier extrusion sequence to overlap with qualification, fund a parallel chamber booking. The conversation was hard. It was also the first honest program conversation in three months. Old process: schedule defended date-to-date with narrative compression. Artifact changed: the dependency chain rebuilt from real durations with three named recovery levers (scope, sequence, resources). Measured improvement: 19-day date revision discovered and communicated four months before launch, rather than two weeks before. Cost of the gap: four months of decision-making downstream of a date everyone knew was wrong.</p>
+<hr />
 <h3 id="weekly-cadence-for-schedule-truth"><a class="header" href="#weekly-cadence-for-schedule-truth">Weekly cadence for schedule truth</a></h3>
 <p>A useful weekly cycle:</p>
 <ol>
@@ -646,6 +726,8 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <li>Trigger escalation where recovery needs scope/resource decision.</li>
 </ol>
 <p>If the team does not recompute dependencies each cycle, the status packet is not decision-grade.</p>
+<p>A PM who trusts the schedule stops asking for daily status. That shift is not a sign of disengagement — it is the signal that the artifacts are doing their job. When the dependency chain is live and the weekly cadence publishes a delta note, the PM has something reliable to read before the review. The engineering lead who has earned that trust has bought themselves protected time to solve the technical problem instead of presenting it repeatedly.</p>
+<p>Acceptable implementations for the dependency-based schedule include Smartsheet or MS Project when the team already has one and will maintain the dependency links, Jira Advanced Roadmaps for teams whose work is tracked in Jira, an Excel model with a named dependency-notes column when the program is small and the PM will own the model, or a simple markdown dependency list under version control for very small programs where a Gantt is overhead. The OS does not care which tool; it cares that the date is derived from the dependency chain and uncertainty fields — not set first and defended by narrative compression.</p>
 <h3 id="what-real-recovery-requires"><a class="header" href="#what-real-recovery-requires">What real recovery requires</a></h3>
 <p>Recovery has only three levers:</p>
 <ul>
@@ -671,9 +753,12 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <li>ownership map (who closes blockers).</li>
 </ul>
 <p>If these are weak, schedule updates drift into negotiation instead of model updates.</p>
+<hr />
+<p>If your plan has no visible float and no recovery lever named in writing, you do not have a schedule. You have a date with a story around it.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="9-requirements-lifecycle-hypothesis---bless---evidence---revise"><a class="header" href="#9-requirements-lifecycle-hypothesis---bless---evidence---revise">9. Requirements Lifecycle (Hypothesis -&gt; Bless -&gt; Evidence -&gt; Revise)</a></h1>
-<p>Wednesday, 6:50 a.m., lab hallway quiet, the thermal verification log shows requirement <code>RQ-THERM-014</code> set to 85 C while chamber run <code>T-117</code> fails above 78 C.</p>
-<p>The systems requirements owner set <code>RQ-THERM-014</code> to 85 C, and last week's full-load chamber test showed the assembly drifting out of spec above 78 C.</p>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
+<p>Wednesday, 6:50 a.m., lab hallway quiet, the thermal verification log shows requirement <code>RQ-THERM-014</code> set to 85 °C while chamber run <code>T-117</code> fails above 78 °C. (This case appears again in Ch. 12, where the chamber evidence that forced the revision is the model-vs-chamber gap, and in Ch. 13 where the gate closure logic is the point of failure.)</p>
+<p>The systems requirements owner set <code>RQ-THERM-014</code> to 85 °C, and last week's full-load chamber test showed the assembly drifting out of spec above 78 °C.</p>
 <p>The change board leaves <code>RQ-THERM-014</code> unchanged because leads fear a revision will be labeled "moving goalposts" before Gate 3.</p>
 <p>Design, test, and supplier teams keep building to a known-wrong value until the next gate review forces a contradiction.</p>
 <p>That is delay debt paid by integration and gate owners when hardware evidence collides with an obsolete requirement at formal review.</p>
@@ -709,6 +794,10 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <li>and "surprise" gate failures that were visible earlier in data.</li>
 </ul>
 <p>Revision discipline in the requirement log prevents both uncontrolled churn and evidence denial.</p>
+<hr />
+<p>The thermal limit <code>RQ-THERM-014</code> sat at 85 °C for six weeks after chamber test <code>T-117</code> showed the assembly drifting out of spec above 78 °C. The change board held the value because no one wanted to be accused of moving goalposts before Gate 3. Design, test, and the power-stage supplier kept building to 85 °C. Nine working days after T-117, the program lead brought the revision to the gate chair. The revision took one day to process. The frozen-wrong period had cost nine days of work against an obsolete value — plus a supplier package that had to be flagged for re-qualification.</p>
+<p>Old process: frozen requirement protected by schedule optics, with no predeclared revision trigger forcing the question. What changed: <code>RQ-THERM-014</code> in the requirement log, revised to ≤ 78 °C, with revision record <code>DR-2026-014</code> naming the evidence source (<code>T-117</code>), rationale, impact scope, approver, and date. Measured improvement: revision processing took one day once formally proposed; the frozen-wrong period consumed nine days of design, test, and supplier work against a known-wrong value.</p>
+<hr />
 <h3 id="revision-criteria-minimum"><a class="header" href="#revision-criteria-minimum">Revision criteria (minimum)</a></h3>
 <p>Revise a requirement only when predeclared decision thresholds are met:</p>
 <ol>
@@ -725,6 +814,7 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <li>impact scope (design, test, cost, schedule),</li>
 <li>approver and date.</li>
 </ul>
+<p>Acceptable implementations for the requirement lifecycle log include a PLM revision workflow (Windchill, Teamcenter, Arena) when product-data control is already required, a Jira issue type with field-level controls for owner/evidence/revision-history for smaller programs, a locked shared spreadsheet with named owners and protected history columns for early-stage work, or a controlled markdown log under version control when the team is small and engineering-led. The OS does not care which; it cares that old value, new value, evidence source, rationale, impact scope, approver, and date are all in the same row.</p>
 <h3 id="preventing-moving-goalpost-behavior"><a class="header" href="#preventing-moving-goalpost-behavior">Preventing moving-goalpost behavior</a></h3>
 <p>Teams resist revisions when the change record looks arbitrary.</p>
 <p>Prevent goalpost behavior by separating two artifacts:</p>
@@ -742,7 +832,10 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <li>downstream artifact update status.</li>
 </ul>
 <p>The requirement owner should finish this review in minutes and publish one delta note, not run a half-day meeting.</p>
+<hr />
+<p>If you cannot point at one requirement ID in your current program that revised in the last quarter with evidence in the log, an approver on record, and a downstream-update note, you are running on frozen-but-wrong values somewhere. Re-read <em>Frozen-but-wrong is worse than revised-with-evidence</em>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="10-requirements-from-physics-not-stacked-buffers"><a class="header" href="#10-requirements-from-physics-not-stacked-buffers">10. Requirements from Physics (Not Stacked Buffers)</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Wednesday, 11:15 a.m., people already trading rumors about who pulls the weekend build, requirement <code>RQ-LOAD-022</code> carries three stacked safety factors while the latest build misses weight and yield targets.</p>
 <p>The systems requirement <code>RQ-LOAD-022</code> now includes three separate safety factors added by component, system, and operations leads.</p>
 <p>No named owner can show which uncertainty each factor covers in the requirement rationale table.</p>
@@ -766,6 +859,10 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <li>operations lead adds margin for process uncertainty in release criteria.</li>
 </ul>
 <p>Each margin looks reasonable in isolation, but combined they can exceed the product's weight, cost, or manufacturability limits.</p>
+<hr />
+<p>At an energy storage program, three teams each added a thermal margin to the switching-stage requirement. The thermal lead added 5 °C for component tolerance. The systems lead added 3 °C for ambient worst-case. The manufacturing lead added 2 °C for process variation. All three margins were honest engineering judgments. Combined, the requirement was 10 °C tighter than any single physical driver justified — and the chosen architecture could not satisfy it. When the teams traced each margin to its physical source and its uncertainty basis, 7 °C of the buffer was recoverable without increasing real risk. The requirement moved from unmeetable to achievable without changing the architecture.</p>
+<p>The old process: each team adds a margin independently, with no shared traceability column linking each buffer to a named physical source. What changed: a margin-breakdown table in the requirement record, with each additive buffer attributed to a named physical source and an uncertainty basis. Measured improvement: 7 °C of recoverable margin found; program architecture unchanged. Cost of the gap: the program had been holding a two-month design study for a thermal architecture change that became unnecessary once the margins were untangled.</p>
+<hr />
 <h3 id="fake-safety-vs-real-safety"><a class="header" href="#fake-safety-vs-real-safety">Fake safety vs real safety</a></h3>
 <p>More margin in a requirement line is not automatically safer for the delivered product.</p>
 <p>Unexamined margin in the requirement can:</p>
@@ -802,7 +899,10 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <p>Better requirement line:
 "At condition set X/Y/Z, measured by method M, value shall be &lt;= N. Program buffer B covers uncertainty U, is owned by O, and is reviewed at gate G."</p>
 <p>The intent is the same, but the owner, uncertainty source, and gate review trigger are now explicit and auditable.</p>
+<hr />
+<p>If you can name the physical source and the uncertainty basis for each buffer in your tightest requirement, the requirement is grounded. If you cannot, you have stacked buffers — and you do not know how much design margin you actually have.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="11-many-factors-one-honest-limit"><a class="header" href="#11-many-factors-one-honest-limit">11. Many Factors, One Honest Limit</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Wednesday, 2:35 p.m., afternoon energy burned on factor-table noise, subsystem verification report <code>SVR-31</code> is green on single-factor tests while integrated run <code>INT-07</code> fails the requirement boundary.</p>
 <p>The subsystem passes every single-factor check in <code>SVR-31</code>.</p>
 <p>It still fails in integrated operation during <code>INT-07</code> at combined load and temperature.</p>
@@ -819,7 +919,8 @@ It fails when interaction effects dominate the decision boundary.</p>
 <li>response is highly sensitive near operating boundaries,</li>
 <li>multiple coupled assumptions sit inside one requirement decision.</li>
 </ul>
-<p>If these signs are present, additional one-factor testing usually burns time without reducing uncertainty enough to support a real decision.</p>
+<p>EMI is a common second example: you can model the source with good accuracy, but coupling to other structures depends on layout, ground return paths, and shield geometry all at once. Shielding effectiveness calculated for a single source is only useful if you have correctly identified every significant source. Early testing with physical hardware can locate the coupling paths that single-domain analysis missed; catching that late means architectural changes after routing and mechanical design are fixed.</p>
+<p>If any of these signs are present, additional one-factor testing usually burns time without reducing uncertainty enough to support a real decision.</p>
 <h3 id="leads-job-scope-the-decision-question"><a class="header" href="#leads-job-scope-the-decision-question">Lead's job: scope the decision question</a></h3>
 <p>The lead does not need to run the analysis personally.
 The lead must scope a decision-ready ask with a named owner and due date.</p>
@@ -833,6 +934,10 @@ The lead must scope a decision-ready ask with a named owner and due date.</p>
 <li>assign date and owner.</li>
 </ol>
 <p>Without this framing, teams can generate impressive activity artifacts that still produce no bounded conclusion for the decision log.</p>
+<p>A heat-generating module was mounted to a cooling structure. The thermal model predicted it would stay within its limit at full operating load. Three early prototype builds ran consistently hotter than predicted — not scattered results, the same gap every time.</p>
+<p>The root cause was in what neither model was told to talk to the other about. At room temperature, the mounting assembly held good contact pressure across the thermal interface. At operating temperature, differential expansion between the module and the frame reduced that pressure at the interface edges. Lower pressure meant less effective contact. Less effective contact meant higher thermal resistance than the thermal model had assumed as a fixed input. Higher resistance meant higher temperature — which drove more expansion — a feedback loop no single-domain model could see.</p>
+<p>Each model was valid given its own boundary conditions. The thermal model used a room-temperature interface measurement. The mechanical model validated contact at room temperature only. Neither was wrong. The interaction between them was the missing factor.</p>
+<p>Fix: simplified geometry prototypes with one variable controlled at a time, each modeled to match before adding the next. The coupled model, validated against those steps, predicted peak temperature within a few degrees of measured across the operating range. <strong>Old process:</strong> fixed interface assumption in the thermal model; mechanical contact validated at room temperature only. <strong>Artifact changed:</strong> a coupled model treating contact pressure as a temperature-dependent input to the thermal boundary condition. <strong>Measured improvement:</strong> prediction error reduced from a consistent overshoot of roughly one temperature class to within a few degrees at full load. <strong>Cost of catching it in early prototyping:</strong> a handful of controlled builds and model cycles; the same discovery post-tooling would have required a geometry change to the mounting architecture.</p>
 <h3 id="rejecting-activity-theater"><a class="header" href="#rejecting-activity-theater">Rejecting activity theater</a></h3>
 <p>Reject analysis summaries that report:</p>
 <ul>
@@ -877,6 +982,7 @@ It is the best current boundary supported by evidence, explicit assumptions, and
 </ul>
 <p>Lead responsibility remains: the lead still owns the decision question, artifact quality bar, and closure date.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="12-models-and-tests-that-change-decisions"><a class="header" href="#12-models-and-tests-that-change-decisions">12. Models and Tests That Change Decisions</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Wednesday, 6:40 p.m., empty hallway outside the war room, the decision review packet contains 20 model runs and 12 test reports but still cannot resolve requirement <code>RQ-THERM-014</code>.</p>
 <p>The verification team produced twenty model runs and twelve test reports for the same requirement decision.</p>
 <p>The gate decision still hangs because no owner can show baseline, delta, and effect size in one traceable artifact.</p>
@@ -914,6 +1020,10 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>What decision can be made now despite remaining uncertainty?</li>
 </ul>
 <p>The goal is not perfect correlation before every move; the goal is honest confidence for the next dated decision.</p>
+<hr />
+<p>A thermal model for a power-electronics module predicted the switching-stage case temperature would hold at 83 °C at full duty — safely below the 85 °C limit <code>RQ-THERM-014</code>. Chamber test <code>T-117</code> measured 78 °C steady-state. The team's first interpretation was that the chamber was measuring something different than the model. The calibration finding was narrower: the model's contact-resistance boundary condition assumed a thermal-grease application that the actual mounting jig could not deliver. The jig had been designed for a different module family. The model was correct given its boundary condition. The boundary condition was wrong given the actual assembly. One boundary-condition correction and a re-run later, the model predicted 79 °C — matching the chamber within measurement uncertainty. The requirement revised to 78 °C. (The revision arc is described in Ch. 9.)</p>
+<p>Old process: model and chamber treated as independent confidence votes; discrepancies resolved by negotiation. Artifact changed: the model's boundary-condition log, with the contact-resistance value traced to measurement <code>M-23</code> rather than assumed from a different module family. Measured improvement: model-chamber delta reduced from 7 °C to 1 °C after one boundary-condition correction. Cost of the gap: one week of "the chamber must be wrong" investigation before the boundary condition was examined. The revision that this chamber result forces is described in Ch. 9 (requirements lifecycle); the gate-closure logic that depends on the evidence is in Ch. 13.</p>
+<hr />
 <h3 id="evidence-threshold-for-requirement-changes"><a class="header" href="#evidence-threshold-for-requirement-changes">Evidence threshold for requirement changes</a></h3>
 <p>Do not revise a requirement on one attractive chart without corroborating evidence.</p>
 <p>Set requirement-change thresholds in advance:</p>
@@ -943,7 +1053,10 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>assign residual risk and next evidence step.</li>
 </ul>
 <p>This package keeps technical depth available while giving exec and PM reviewers a clear, fair decision frame.</p>
+<hr />
+<p>The boundary-condition correction is confirmed. The model re-run matches the chamber within measurement uncertainty. The gate decision changes from hold to proceed — one week after the chamber result that everyone initially attributed to measurement error. The requirement is 78 °C, the model predicts 79 °C, and the boundary-condition log now carries the contact-resistance value traced to <code>M-23</code>. The decision packet is one page. The technical backup is three.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="7-fleet-as-instrumented-experiment"><a class="header" href="#7-fleet-as-instrumented-experiment">7. Fleet as Instrumented Experiment</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Thursday, 7:02 a.m., early fleet readout before the cross-site call.</p>
 <p>Five prototype units are built.</p>
 <p>By Friday, the team has stories about each one and no comparable record of what was different between them.</p>
@@ -986,8 +1099,12 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>one-page status deltas,</li>
 <li>next decision queue.</li>
 </ul>
-<p>Unit 03 measured leak rate +18% versus Unit 01 at hot soak, moved <code>REQ-217</code> confidence to red, and changed the next gate call from go to hold pending seal redesign evidence.</p>
+<p>Unit 03 measured a leak rate well above Unit 01 at hot soak, moved <code>REQ-217</code> confidence to red, and changed the next gate call from go to hold pending seal redesign evidence.</p>
 <p>If fleet data stays in test notes, the program keeps running on stale assumptions.</p>
+<hr />
+<p>At a battery-adjacent program, five prototype units were built and instrumented over several weeks. Unit 03 measured a leak rate substantially above Unit 01 at hot soak — not a sensor artifact, the same delta across multiple test runs. The discrepancy sat in the test engineer's notes for nearly two weeks before it reached the program's risk register, because there was no per-unit record requirement that forced the delta into the risk log. The thermal requirement moved to red only after the team had already placed tooling orders on the assumption that Unit 01 was representative.</p>
+<p>The program added a per-unit record requirement and a weekly fleet review cadence to its program controls. The next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth. The eleven-day gap in the first campaign had cost tooling decisions made on unrepresentative data — decisions that required a correction order once the real distribution of results was visible.</p>
+<hr />
 <h3 id="failure-patterns-in-fleet-execution"><a class="header" href="#failure-patterns-in-fleet-execution">Failure patterns in fleet execution</a></h3>
 <p>Common misses:</p>
 <ul>
@@ -1010,12 +1127,16 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>Chapter 12 established delta and traceability discipline.
 Fleet work applies the same discipline across physical units in real variation.</p>
 <p>When done well, fleet turns uncertainty into bounded decisions before major spend.</p>
+<hr />
+<p>If your weekly fleet review this week can name one risk-register row that moved because of a specific unit's measured delta, the campaign is doing its job. If it cannot, you are collecting prototypes, not evidence.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="13-risk-and-how-we-define-done-on-paper"><a class="header" href="#13-risk-and-how-we-define-done-on-paper">13. Risk and How We Define Done on Paper</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Thursday, 9:40 a.m., gate prep table covered in coffee rings, the gate review package marks all actions closed while two critical failure modes remain open in current lab evidence.</p>
 <p>The gate review package artifact states "all actions closed."</p>
 <p>In the lab log, verification and reliability owners still track two unresolved critical failure modes with no accepted closure evidence.</p>
 <p>The paper package says done, but the program state is not done.</p>
 <p>That gap is where late cost, schedule slips, and credibility damage enter through integration and executive review.</p>
+<p>This is the gate-closure logic that depends on the chamber evidence in Ch. 12 and the requirement revision in Ch. 9 — in the canonical case, the closure that must happen before <code>RQ-THERM-014</code> and risk row <code>R-14</code> can close at Gate 3.</p>
 <hr />
 <h3 id="done-on-paper-must-match-decision-reality"><a class="header" href="#done-on-paper-must-match-decision-reality">"Done on paper" must match decision reality</a></h3>
 <p>Artifacts are useful only when a named owner uses them to change a specific decision and downstream behavior.</p>
@@ -1062,6 +1183,10 @@ Fleet work applies the same discipline across physical units in real variation.<
 <li>map to active decisions,</li>
 <li>make tradeoffs legible across tiers.</li>
 </ul>
+<hr />
+<p>A gate package at a large industrial program marked all thermal actions closed. Two critical failure modes — thermal runaway propagation and connector derating under field humidity — were still under active investigation in the test lab. The disconnect: the action tracker was PM-owned and tracked action-item status by ID. The failure-mode log was engineering-owned and tracked investigation state by failure mode. No artifact required a closure entry to cite a failure-mode log entry rather than just an action ID. One internal audit caught the gap three days before the gate review. If the gate had proceeded, the program would have released a build configuration while two unresolved failure modes were still in active investigation — a six-to-eight-week integration cost if either materialized in production.</p>
+<p>Old process: closure based on action-item status, not failure-mode investigation status. Artifact changed: a requirement in the gate-packet template that closure evidence must cite the failure-mode log entry (not just the action ID) and state the investigation disposition. Measured improvement: three days of gate-prep found the gap; the alternative was 6–8 weeks of post-release investigation. Cost of the gap: the organization had been running this way for two gate cycles and had closed gates with unresolved failure modes at least twice before the audit caught it.</p>
+<hr />
 <h3 id="tie-ins-to-gates-and-one-page-truth"><a class="header" href="#tie-ins-to-gates-and-one-page-truth">Tie-ins to gates and one-page truth</a></h3>
 <p>Risk artifacts should not stay in a technical silo; they must drive shared program controls.</p>
 <p>They must feed four decision artifacts:</p>
@@ -1072,6 +1197,7 @@ Fleet work applies the same discipline across physical units in real variation.<
 <li>trigger escalation with named owners.</li>
 </ul>
 <p>If this propagation is weak, paper confidence drifts from the real program state and misleads leadership decisions.</p>
+<p>Acceptable implementations for the failure-mode tracker include a dedicated FRACAS (Failure Reporting, Analysis, and Corrective Action System) when the organization already has one, a separate Jira project with issue type "Failure Mode" linked to the main action tracker by a custom field, a controlled spreadsheet with a named failure-mode ID column that action items must reference at closure, or a markdown file under version control with explicit closure dispositions. The OS cares that the failure-mode investigation status and the action-item closure status are cross-referenced — not that they live in the same tool.</p>
 <h3 id="practical-done-review-in-15-minutes"><a class="header" href="#practical-done-review-in-15-minutes">Practical "done" review in 15 minutes</a></h3>
 <p>For each high-impact closure item, ask:</p>
 <ol>
@@ -1081,89 +1207,96 @@ Fleet work applies the same discipline across physical units in real variation.<
 <li>Which dependent decisions changed because of this closure?</li>
 </ol>
 <p>If questions 3 and 4 are blank, closure is likely cosmetic and should not be treated as done.</p>
+<hr />
+<p>Done means the failure mode is dispositioned, not the action item is closed.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="14-what-every-tier-wants-exec-to-supplier"><a class="header" href="#14-what-every-tier-wants-exec-to-supplier">14. What Every Tier Wants (Exec to Supplier)</a></h1>
-<p>Thursday, 12:55 p.m., lunch bags rustling, the weekly review stalls because each tier reads a different "current truth" artifact.</p>
-<p>The executive asks for confidence in the decision packet; engineering asks for protected technical closure time; PM asks for stable inputs and early risk flags; the supplier asks for one released package with one owner.</p>
-<p>Each ask is legitimate on its own, and friction starts when those asks stay implicit and compete through mismatched artifacts.</p>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
+<p>Thursday, 12:55 p.m., and the weekly review has already run long.</p>
+<p>The exec pulled the status from last week's board deck. The PM has the project tracker open on one screen. Engineering is working from an email thread that captured the last three decisions. The supplier's rep is in the room with a spec revision they received three weeks ago, which has since been superseded twice.</p>
+<p>Nobody is wrong about what they brought. Each person is reading a legitimate artifact. The problem is that the artifacts are not the same artifact.</p>
+<p>The review stalls forty minutes in because a decision that everyone assumed was made — a packaging change affecting the supplier — had never been recorded in a form any two tiers could read together. The exec asks for a confidence number. Engineering needs two more weeks of closure time. PM needs a stable input to forecast. The supplier needs one released package with one owner. All four needs are legitimate. None of them can be met in this meeting because the four tiers are navigating by different maps.</p>
+<p>The old process: implicit contracts — each tier knew what it needed but had never written down what it would deliver in exchange, nor what artifact form that delivery had to take. <strong>The artifact that changed:</strong> a single cross-tier contract sheet, one page, listing what each tier needs each week and what each tier delivers in return, with a named owner and a dated commitment. <strong>The measured improvement:</strong> the next week's review ran forty minutes instead of ninety, and three blocked decisions surfaced in the first fifteen minutes instead of the final five. <strong>The cost of the gap:</strong> an average of one and a half decisions per week carried unresolved from one review to the next, each adding between two and five days of downstream delay in the quarter.</p>
 <hr />
 <h3 id="alignment-fails-at-interface-contracts"><a class="header" href="#alignment-fails-at-interface-contracts">Alignment fails at interface contracts</a></h3>
-<p>Most cross-tier conflict is not ideology.
-It is interface-contract ambiguity:</p>
-<ul>
-<li>what each tier needs to make a decision,</li>
-<li>when that input is needed,</li>
-<li>which quality bar applies to the artifact.</li>
-</ul>
-<p>When a named owner publishes these contracts in one shared artifact, blame loops drop quickly.</p>
+<p>Most cross-tier conflict is not ideology. It is interface-contract ambiguity: what each tier needs to make a decision, when that input is needed, and which quality bar applies to the artifact. When those three things are not written down, every tier improvises. Improvisation looks like friction.</p>
+<p>When a named owner publishes these contracts in one shared artifact, the friction does not disappear — but it becomes auditable. An auditable gap gets assigned and closed. An invisible gap becomes a personality conflict.</p>
 <h3 id="what-each-tier-usually-needs"><a class="header" href="#what-each-tier-usually-needs">What each tier usually needs</a></h3>
 <p>Keep each tier contract plain, operational, and tied to one decision artifact.</p>
-<p><strong>Executive</strong></p>
+<p><strong>Executive / sponsor</strong></p>
 <ul>
-<li>leading indicators of risk and dependency,</li>
-<li>clear decision asks,</li>
-<li>tradeoff framing when date/cost/scope conflict.</li>
+<li>leading indicators of risk and dependency — not a confidence score, but a named risk row with an owner and a trigger</li>
+<li>clear decision asks — one binary question with a date, not a discussion topic</li>
+<li>tradeoff framing when date/cost/scope conflict — their job is to make that call, not to infer it from color-coded slides</li>
 </ul>
+<p><strong>What the exec owes downward:</strong> stable goals that do not shift weekly, in-room tradeoff decisions when engineering brings the evidence (not hallway overrides), day-grade resource unblocking when the engineering lead names a blocker, and a clear definition of "done enough to ship." An executive who only consumes without delivering these outputs is an exec whose team will stop surfacing real risk.</p>
 <p><strong>PM</strong></p>
 <ul>
-<li>stable owner map,</li>
-<li>decision-ready updates,</li>
-<li>early signal when assumptions break.</li>
+<li>stable owner map — who has each decision, one row per open item</li>
+<li>decision-ready updates — the PM should not have to chase an answer; the owner posts it before the review</li>
+<li>early signal when assumptions break — a PM who hears about a schedule shift from the exec is a PM who has failed in the system design, not as a person</li>
 </ul>
+<p><strong>What the PM owes downward:</strong> transparent escalation when a contract breaks (not a complaint — a named artifact gap, a blocked decision, a date), dependency hygiene in the one-page update, and a cadence that does not add overhead faster than it removes ambiguity.</p>
 <p><strong>Engineering lead</strong></p>
 <ul>
-<li>clear requirement/risk state,</li>
-<li>authority boundaries,</li>
-<li>protected closure windows for technical decisions.</li>
+<li>clear requirement and risk state — one live record, not email</li>
+<li>authority boundaries — which decisions belong to the lead and which need approval; ambiguity here is expensive</li>
+<li>protected closure windows for technical decisions — time to think is not a luxury; an engineering lead interrupted every thirty minutes cannot hold a consistent technical thread</li>
 </ul>
 <p><strong>Manufacturing/operations</strong></p>
 <ul>
-<li>unambiguous release package,</li>
-<li>process-critical characteristics,</li>
-<li>change notice with impact timing.</li>
+<li>unambiguous release package with revision-locked content</li>
+<li>process-critical characteristics called out explicitly, not scattered through engineering notes</li>
+<li>change notice with timing — not just "we changed it" but "this revision affects your build starting with lot N"</li>
 </ul>
 <p><strong>Supplier</strong></p>
 <ul>
-<li>one current revision source,</li>
-<li>expected evidence and acceptance criteria,</li>
-<li>single owner for technical/commercial closure path.</li>
+<li>one current revision source — not "check the portal, the email, and the drop folder"</li>
+<li>expected evidence and acceptance criteria before the program needs the data, not when inspection fails</li>
+<li>single owner for both technical and commercial closure — two different people owning the same conversation is not coverage, it is an orphaned decision waiting to happen</li>
 </ul>
 <h3 id="reciprocal-obligations"><a class="header" href="#reciprocal-obligations">Reciprocal obligations</a></h3>
-<p>Needs without reciprocal obligations become entitlement and eventually gridlock.</p>
+<p>Needs without reciprocal obligations become entitlement and eventually gridlock. The contract is not "here is what I need from you." It is "here is what I need, here is what I deliver in return, and here is the artifact that makes both visible."</p>
 <p>Pair each ask with an owed output artifact:</p>
 <ul>
-<li>Exec asks for confidence -&gt; owes timely trade decisions in the decision log.</li>
-<li>PM asks for predictability -&gt; owes transparent escalation and dependency hygiene in the one-page update.</li>
-<li>Engineering asks for room to solve -&gt; owes explicit risk state and closure dates in requirement and risk records.</li>
-<li>Supplier asks for clarity -&gt; owes capability evidence and issue response cadence in the release package.</li>
+<li>Exec asks for confidence → owes timely trade decisions recorded in the decision log and stable goals that do not drift week-to-week.</li>
+<li>PM asks for predictability → owes transparent escalation and dependency hygiene in the one-page update, and a cadence the team can trust.</li>
+<li>Engineering asks for room to solve → owes explicit risk state and closure dates in requirement and risk records, and a commitment to surface surprises before the weekly review, not at it.</li>
+<li>Supplier asks for clarity → owes capability evidence and issue response cadence in the release package.</li>
 </ul>
 <p>This framing keeps fairness visible by balancing each tier's ask with a concrete, auditable obligation.</p>
 <h3 id="pm-fairness-explicitly"><a class="header" href="#pm-fairness-explicitly">PM fairness, explicitly</a></h3>
-<p>When record quality is low, PM becomes the human sync engine compensating for missing system behavior in formal artifacts.</p>
-<p>With clean ownership, requirement truth, and one-page integrity, PM work shifts from chasing contradictions to clearing real blockers.</p>
-<p>That is the contract to protect: an efficient PM, backed by a process that does not waste people's time, is a PM teams trust and respect.</p>
-<h3 id="one-meeting-format-that-surfaces-gaps-early"><a class="header" href="#one-meeting-format-that-surfaces-gaps-early">One meeting format that surfaces gaps early</a></h3>
-<p>Run a short cross-tier interface review against one shared contract sheet:</p>
-<ol>
-<li>confirm what each tier needs this week,</li>
-<li>verify what each tier received,</li>
-<li>identify where contract quality failed,</li>
-<li>assign which owner closes the gap by when.</li>
-</ol>
-<p>Skip long debate; focus on interface quality, owner assignment, and dated closure commitments.</p>
-<h3 id="escalation-becomes-cleaner"><a class="header" href="#escalation-becomes-cleaner">Escalation becomes cleaner</a></h3>
-<p>When tier contracts are explicit, escalation becomes factual and auditable:</p>
+<p>When record quality is low, PM becomes the human sync engine compensating for missing system behavior in formal artifacts. The PM pings because the artifact does not answer the question. That is a system failure, not a PM failure.</p>
+<p>With clean ownership, requirement truth, and one-page integrity, PM work shifts from chasing contradictions to clearing real blockers. That shift has a concrete payoff for the engineering lead: <strong>a PM who trusts the schedule and the risk register stops asking for daily status.</strong> Not because they stopped caring, but because they have something reliable to read. An engineering lead who has earned that trust has bought themselves a working environment — time to solve the technical problem instead of presenting it repeatedly.</p>
+<p>That is the contract to protect. An efficient PM, backed by a process that does not waste their time, is a PM teams respect. More concretely: a PM who stops pinging is a measurement. It is the signal that the artifacts are doing their job.</p>
+<h3 id="what-the-exec-leaving-early-looks-like"><a class="header" href="#what-the-exec-leaving-early-looks-like">What the exec leaving early looks like</a></h3>
+<p>There is a simple field test for whether the program's one-page status and gate truth are working: <strong>can your exec leave for the weekend without anxiety?</strong></p>
+<p>Not because the program has no risk. Every hardware program has risk. But because:</p>
 <ul>
-<li>identify which contract failed,</li>
-<li>state what decision is blocked,</li>
-<li>quantify current risk and date impact,</li>
-<li>assign who must decide by when.</li>
+<li>the risk register surfaces the risks that would otherwise surprise them</li>
+<li>every open decision has a named owner and a date</li>
+<li>the one-page status line traces to a real artifact, not to a slide that was polished to look calm</li>
+<li>the gate status reflects what the test floor actually saw, not what the team hoped to see</li>
 </ul>
-<p>That path resolves blockers faster than personality-driven escalation because decision authority and artifact gaps are explicit.</p>
+<p>When those four things are true, an exec who leaves Friday afternoon is not checking out. They are making a rational decision that the information they need will surface through the artifact, not through a weekend phone call. That is the payoff for having built the OS. The fact that the exec can leave early is the measurement.</p>
+<p>If your exec calls you on Saturday, the OS has a gap. Find it.</p>
+<h3 id="one-review-format-that-surfaces-gaps-early"><a class="header" href="#one-review-format-that-surfaces-gaps-early">One review format that surfaces gaps early</a></h3>
+<p>Run a short cross-tier interface review against one shared contract sheet — not a status update, a contract-quality check:</p>
+<ol>
+<li>Confirm what each tier needs this week (read from the contract sheet, not from memory).</li>
+<li>Verify what each tier received (not what was sent — what actually landed in usable form).</li>
+<li>Identify where contract quality failed (which artifact was missing, late, or incomplete).</li>
+<li>Assign which owner closes the gap by when.</li>
+</ol>
+<p>Skip long debate. Focus on interface quality, owner assignment, and dated closure commitments. The meeting produces a short delta note: gaps found, gaps owned, gaps closed. That note is the input to next week's check.</p>
+<h3 id="escalation-becomes-cleaner"><a class="header" href="#escalation-becomes-cleaner">Escalation becomes cleaner</a></h3>
+<p>When tier contracts are explicit, escalation becomes factual and auditable: identify which contract failed, state what decision is blocked, quantify the current risk and date impact, assign who must decide by when.</p>
+<p>That path resolves blockers faster than personality-driven escalation because decision authority and artifact gaps are explicit. An engineering lead who escalates with a named artifact gap and a dated decision need is not complaining — they are running the process. An exec who receives that escalation has a job to do, not a people problem to manage.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="16-first-article-fast-disciplined-iteration"><a class="header" href="#16-first-article-fast-disciplined-iteration">16. First Article: Fast, Disciplined Iteration</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Thursday, 4:48 p.m., first-article scramble still running, someone’s kid’s practice already texted on the lock screen.</p>
 <p>The first article build starts rough, as expected.</p>
 <p>By day three, every shift has made "small improvements."</p>
-<p>Yield is still unstable and no one can say which change helped or hurt.</p>
+<p>Yield is still unstable and no one can say which change helped or hurt. The two-shift delta cost three days of root-cause investigation because the configuration was not locked between shifts — every build had a different unknown baseline.</p>
 <p>Build throughput increased, but the run log did not produce decision-ready learning.</p>
 <hr />
 <h3 id="objective-of-first-article"><a class="header" href="#objective-of-first-article">Objective of first article</a></h3>
@@ -1227,7 +1360,9 @@ It is interface-contract ambiguity:</p>
 <li>Should scope or sequence change now?</li>
 </ul>
 <p>This protects speed while preserving decision quality.</p>
+<p>Thursday, second week, same time of day. The change log is posted on the workbench before the next shift arrives. The incoming lead reads it in five minutes, starts from a known baseline, and when yield drops on run 14, the delta investigation takes twenty minutes — not three days — because the configuration is locked and the prior decision is on paper.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="17-supplier-data-critical-characteristics-and-producibility"><a class="header" href="#17-supplier-data-critical-characteristics-and-producibility">17. Supplier Data, Critical Characteristics, and Producibility</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Friday, 8:28 a.m., supplier package spread next to internal Cpk charts.</p>
 <p>The supplier says the process is stable.</p>
 <p>Incoming variation says otherwise.</p>
@@ -1289,6 +1424,12 @@ It is interface-contract ambiguity:</p>
 <li>update risk register and one-page status.</li>
 </ol>
 <p>Delay usually comes from unclear ownership at step 3.</p>
+<p>A program sourcing custom precision components got the same answer from every supplier when asking about process tolerance: the process held a stated tolerance regardless of feature size. Multiple suppliers, independently, the same number. It had the feel of an industry rule of thumb repeated often enough that most programs treat it as settled.</p>
+<p>The claim did not follow basic manufacturing physics. Process tolerances on formed or machined features typically depend on feature size because the relative contribution of variation is larger at smaller scales. Rather than accept the blanket number, dimensional data was requested across a range of feature sizes and geometries — not just the program's nominal part.</p>
+<p>The data showed a clear size dependence. On large features, the supplier achieved roughly half the stated blanket tolerance — they were underselling their capability. On small features, the actual achieved tolerance was roughly double the stated value — they were overselling it. The blanket number was approximately their average across the range, misleading in both directions and most misleading at the feature sizes that governed the design constraints.</p>
+<p><strong>Old process:</strong> blanket tolerance accepted at face value, applied uniformly across all feature sizes in the design. <strong>Artifact changed:</strong> a tolerance specification written as a function of feature size, derived from the supplier's own measurement data. <strong>Measured improvement:</strong> an optimized component geometry fit the available form-factor envelope, cleared assembly placement requirements, and was physically sized to also benefit peak operating temperature — three constraints that had appeared to be in conflict under the blanket specification, resolved simultaneously. <strong>Cost of the gap:</strong> without the size-dependent specification, the design would have been either over-constrained on large features (producing a component unnecessarily large for its envelope) or under-constrained on small features (relying on a tolerance the supplier could not hold, found during qualification).</p>
+<p>The supplier discrepancy pattern here is the downstream consequence of the <code>RQ-THERM-014</code> revision (Ch. 9) — the power-stage supplier built to the 85 °C derating assumption; after the requirement revised to 78 °C, the receiving inspection flagged the discrepancy. The discrepancy playbook is what surfaces it as a capability gap, not a supplier failure.</p>
+<p>Acceptable implementations for the supplier capability data exchange include an APQP or PPAP packet structure when the customer-supplier relationship is formal enough to require it, a supplier-portal module in PLM (Arena, Windchill) that tracks revision-locked data packages, a controlled exchange folder with revision-stamped attachments and a named review log for smaller programs, or a shared Cpk dashboard with defined refresh cadence. The OS cares that the capability data (Cpk values, measurement methods, sample sizes, and control chart history) arrives with the same revision control as the design requirements — not that it arrives through any particular tool.</p>
 <h3 id="producibility-as-a-continuous-signal"><a class="header" href="#producibility-as-a-continuous-signal">Producibility as a continuous signal</a></h3>
 <p>Producibility is not a one-time pre-launch checkbox.</p>
 <p>Track it through:</p>
@@ -1299,7 +1440,10 @@ It is interface-contract ambiguity:</p>
 <li>design change impacts.</li>
 </ul>
 <p>This keeps make/buy reality coupled to program decisions.</p>
+<hr />
+<p>Supplier capability discussions happen inside a program; the next chapter is what happens when you try to install the OS across an organization that has its own existing habits.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="18-rollout-sequence-triage-then-system"><a class="header" href="#18-rollout-sequence-triage-then-system">18. Rollout Sequence: Triage Then System</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Friday, 11:12 a.m., quiet hallway before the next customer visit, someone still pitching a big-bang rollout.</p>
 <p>The program is already behind, with unresolved blockers accumulating every cycle.</p>
 <p>Someone proposes a full OS rollout with new templates, role changes, and weekly governance meetings starting immediately.</p>
@@ -1362,6 +1506,7 @@ It is interface-contract ambiguity:</p>
 </ul>
 <p>If these are improving, adoption is real.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="19-training-cadence-and-failure-recovery"><a class="header" href="#19-training-cadence-and-failure-recovery">19. Training, Cadence, and Failure Recovery</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Friday, 2:18 p.m., low sun through the blinds, the habits already starting to slip before people scatter.</p>
 <p>The rollout looked good for six weeks.</p>
 <p>Then one lead change, one urgent supplier issue, and one skipped review cycle later, old behavior is back.</p>
@@ -1388,6 +1533,7 @@ It is interface-contract ambiguity:</p>
 <li>monthly retro on control-loop failures.</li>
 </ul>
 <p>Cadence should be predictable and short enough to survive workload spikes.</p>
+<p>A PM who has a reliable weekly cadence stops pinging for status between reviews. Not because they stopped caring about the program — because the cadence has given them a predictable artifact update they can trust. The engineering lead who has locked a working cadence has bought themselves a working environment.</p>
 <h3 id="failure-recovery-without-blame-loops"><a class="header" href="#failure-recovery-without-blame-loops">Failure recovery without blame loops</a></h3>
 <p>When the system slips:</p>
 <ol>
@@ -1430,6 +1576,7 @@ It is interface-contract ambiguity:</p>
 <li>flexible on meeting format and local workflow details.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="20-what-this-os-does-not-cover"><a class="header" href="#20-what-this-os-does-not-cover">20. What This OS Does Not Cover</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Friday, 3:38 p.m., the gate room clears with nods instead of another circular fight.</p>
 <p>The one-page status matches the risk register for the first time in a month. Someone mutters they might actually make the school pickup — nobody rolls their eyes, because the window they guarded is still the one on the controlled plan.</p>
 <hr />
@@ -1445,6 +1592,16 @@ It is interface-contract ambiguity:</p>
 <li>contract/legal governance obligations with customers or suppliers.</li>
 </ul>
 <p>If your product sits in a regulated domain, those obligations remain primary and non-negotiable.</p>
+<h3 id="if-you-work-under-design-controls-here-is-how-the-os-sits-underneath"><a class="header" href="#if-you-work-under-design-controls-here-is-how-the-os-sits-underneath">If you work under design controls, here is how the OS sits underneath</a></h3>
+<p>The OS does not replace your design history file, your safety case, or your audit obligations. It mounts underneath them. Use the OS layer to keep ownership, requirement truth, gate output, and one-page status legible to your engineering team while the regulated artifacts continue to be the authoritative record for the auditor.</p>
+<p>Practical mount points:</p>
+<ul>
+<li><strong>Decision records</strong> (Ch. 4 in SUMMARY order) feed the rationale fields your DHF or design-history equivalent already requires — write the rationale once, cite it twice.</li>
+<li><strong>Requirement lifecycle</strong> (Ch. 9) and <strong>physics-first requirements</strong> (Ch. 10) sit upstream of your formal verification trace; the controlled hypothesis becomes the verified requirement once evidence closes.</li>
+<li><strong>Risk register and "done on paper"</strong> (Ch. 13) is the engineering view; your formal safety analysis (FMEA, FTA, hazard analysis) is the regulatory view. The same closure evidence supports both, but the regulatory artifact is authoritative for the auditor.</li>
+<li><strong>One-page truth</strong> (Ch. 6) is internal program control, not a regulated artifact. Do not confuse the two.</li>
+</ul>
+<p>If a regulator or notified body asks for evidence, the OS does not produce it. Your formal lifecycle does. The OS makes sure your team is not running on fiction while that lifecycle runs.</p>
 <h3 id="what-this-os-is-for"><a class="header" href="#what-this-os-is-for">What this OS is for</a></h3>
 <p>This OS helps teams run those obligations with less chaos:</p>
 <ul>
@@ -1480,6 +1637,17 @@ It is interface-contract ambiguity:</p>
 <li>treating this OS as optional soft process (missed leverage).</li>
 </ul>
 <p>The right stance is explicit: run this OS as a control layer under real domain obligations.</p>
+<h3 id="how-the-os-itself-can-degrade"><a class="header" href="#how-the-os-itself-can-degrade">How the OS itself can degrade</a></h3>
+<p>Every operating system has failure modes of its own. Name them so you can spot the drift early and correct it as a system problem, not a personal one.</p>
+<ul>
+<li><strong>Process becomes bureaucracy.</strong> When operating habits start collecting their own approvals, audits, and meetings <em>about</em> the habits, you have rebuilt the dysfunction one layer up. Fix: every operating artifact must trace to a decision the program would otherwise miss. If it does not, retire the artifact.</li>
+<li><strong>DRIs become bottlenecks.</strong> A named owner becomes the only path, and decisions stall on one calendar. Fix: the DRI's job is to frame and record, not to be present at every conversation. Delegated decision frames are still controlled.</li>
+<li><strong>The source of truth goes stale.</strong> The live record stops being live. Status meetings start running from copies. Fix: the weekly evidence update is the live record, not the slide. If the slide is the primary artifact, the live record has already failed.</li>
+<li><strong>Executives override the decision record.</strong> A controlled decision is reversed in a hallway; no record is updated. Fix: hallway reversals are decisions. If they are not recorded with the same fields as a formal decision, the OS is being undermined and the program is back on personalities.</li>
+<li><strong>Teams game the risk register.</strong> Risks are written to look acceptable rather than to surface what is actually fragile. Fix: audit the register against what the test floor and supplier emails are saying. Risks that no one would write a second time are the real ones.</li>
+<li><strong>Too many gates slow learning.</strong> Gates exist to change controlled values. If every cross-functional checkpoint becomes a gate, the program loses iteration speed without gaining decision quality. Fix: prune gates that have no controlled value to change (see the gate taxonomy in <em>Gates, Risk Registers, and One-Page Truth</em>).</li>
+</ul>
+<p>If two or more of these are visible at once, the OS is in maintenance debt. Spend a week on the OS itself before spending it on the program. The program will move faster afterward.</p>
 <h3 id="final-promise"><a class="header" href="#final-promise">Final promise</a></h3>
 <p>This book does not promise frictionless programs.</p>
 <p>Hardware work will stay uncertain, cross-functional, and time-constrained.</p>

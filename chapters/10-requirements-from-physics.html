@@ -153,6 +153,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="10-requirements-from-physics-not-stacked-buffers"><a class="header" href="#10-requirements-from-physics-not-stacked-buffers">10. Requirements from Physics (Not Stacked Buffers)</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Wednesday, 11:15 a.m., people already trading rumors about who pulls the weekend build, requirement <code>RQ-LOAD-022</code> carries three stacked safety factors while the latest build misses weight and yield targets.</p>
 <p>The systems requirement <code>RQ-LOAD-022</code> now includes three separate safety factors added by component, system, and operations leads.</p>
 <p>No named owner can show which uncertainty each factor covers in the requirement rationale table.</p>
@@ -176,6 +177,10 @@
 <li>operations lead adds margin for process uncertainty in release criteria.</li>
 </ul>
 <p>Each margin looks reasonable in isolation, but combined they can exceed the product's weight, cost, or manufacturability limits.</p>
+<hr />
+<p>At an energy storage program, three teams each added a thermal margin to the switching-stage requirement. The thermal lead added 5 °C for component tolerance. The systems lead added 3 °C for ambient worst-case. The manufacturing lead added 2 °C for process variation. All three margins were honest engineering judgments. Combined, the requirement was 10 °C tighter than any single physical driver justified — and the chosen architecture could not satisfy it. When the teams traced each margin to its physical source and its uncertainty basis, 7 °C of the buffer was recoverable without increasing real risk. The requirement moved from unmeetable to achievable without changing the architecture.</p>
+<p>The old process: each team adds a margin independently, with no shared traceability column linking each buffer to a named physical source. What changed: a margin-breakdown table in the requirement record, with each additive buffer attributed to a named physical source and an uncertainty basis. Measured improvement: 7 °C of recoverable margin found; program architecture unchanged. Cost of the gap: the program had been holding a two-month design study for a thermal architecture change that became unnecessary once the margins were untangled.</p>
+<hr />
 <h3 id="fake-safety-vs-real-safety"><a class="header" href="#fake-safety-vs-real-safety">Fake safety vs real safety</a></h3>
 <p>More margin in a requirement line is not automatically safer for the delivered product.</p>
 <p>Unexamined margin in the requirement can:</p>
@@ -212,6 +217,8 @@
 <p>Better requirement line:
 "At condition set X/Y/Z, measured by method M, value shall be &lt;= N. Program buffer B covers uncertainty U, is owned by O, and is reviewed at gate G."</p>
 <p>The intent is the same, but the owner, uncertainty source, and gate review trigger are now explicit and auditable.</p>
+<hr />
+<p>If you can name the physical source and the uncertainty basis for each buffer in your tightest requirement, the requirement is grounded. If you cannot, you have stacked buffers — and you do not know how much design margin you actually have.</p>
 
                     </main>
 

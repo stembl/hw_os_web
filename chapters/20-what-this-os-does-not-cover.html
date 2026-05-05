@@ -153,6 +153,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="20-what-this-os-does-not-cover"><a class="header" href="#20-what-this-os-does-not-cover">20. What This OS Does Not Cover</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Friday, 3:38 p.m., the gate room clears with nods instead of another circular fight.</p>
 <p>The one-page status matches the risk register for the first time in a month. Someone mutters they might actually make the school pickup — nobody rolls their eyes, because the window they guarded is still the one on the controlled plan.</p>
 <hr />
@@ -168,6 +169,16 @@
 <li>contract/legal governance obligations with customers or suppliers.</li>
 </ul>
 <p>If your product sits in a regulated domain, those obligations remain primary and non-negotiable.</p>
+<h3 id="if-you-work-under-design-controls-here-is-how-the-os-sits-underneath"><a class="header" href="#if-you-work-under-design-controls-here-is-how-the-os-sits-underneath">If you work under design controls, here is how the OS sits underneath</a></h3>
+<p>The OS does not replace your design history file, your safety case, or your audit obligations. It mounts underneath them. Use the OS layer to keep ownership, requirement truth, gate output, and one-page status legible to your engineering team while the regulated artifacts continue to be the authoritative record for the auditor.</p>
+<p>Practical mount points:</p>
+<ul>
+<li><strong>Decision records</strong> (Ch. 4 in SUMMARY order) feed the rationale fields your DHF or design-history equivalent already requires — write the rationale once, cite it twice.</li>
+<li><strong>Requirement lifecycle</strong> (Ch. 9) and <strong>physics-first requirements</strong> (Ch. 10) sit upstream of your formal verification trace; the controlled hypothesis becomes the verified requirement once evidence closes.</li>
+<li><strong>Risk register and "done on paper"</strong> (Ch. 13) is the engineering view; your formal safety analysis (FMEA, FTA, hazard analysis) is the regulatory view. The same closure evidence supports both, but the regulatory artifact is authoritative for the auditor.</li>
+<li><strong>One-page truth</strong> (Ch. 6) is internal program control, not a regulated artifact. Do not confuse the two.</li>
+</ul>
+<p>If a regulator or notified body asks for evidence, the OS does not produce it. Your formal lifecycle does. The OS makes sure your team is not running on fiction while that lifecycle runs.</p>
 <h3 id="what-this-os-is-for"><a class="header" href="#what-this-os-is-for">What this OS is for</a></h3>
 <p>This OS helps teams run those obligations with less chaos:</p>
 <ul>
@@ -203,6 +214,17 @@
 <li>treating this OS as optional soft process (missed leverage).</li>
 </ul>
 <p>The right stance is explicit: run this OS as a control layer under real domain obligations.</p>
+<h3 id="how-the-os-itself-can-degrade"><a class="header" href="#how-the-os-itself-can-degrade">How the OS itself can degrade</a></h3>
+<p>Every operating system has failure modes of its own. Name them so you can spot the drift early and correct it as a system problem, not a personal one.</p>
+<ul>
+<li><strong>Process becomes bureaucracy.</strong> When operating habits start collecting their own approvals, audits, and meetings <em>about</em> the habits, you have rebuilt the dysfunction one layer up. Fix: every operating artifact must trace to a decision the program would otherwise miss. If it does not, retire the artifact.</li>
+<li><strong>DRIs become bottlenecks.</strong> A named owner becomes the only path, and decisions stall on one calendar. Fix: the DRI's job is to frame and record, not to be present at every conversation. Delegated decision frames are still controlled.</li>
+<li><strong>The source of truth goes stale.</strong> The live record stops being live. Status meetings start running from copies. Fix: the weekly evidence update is the live record, not the slide. If the slide is the primary artifact, the live record has already failed.</li>
+<li><strong>Executives override the decision record.</strong> A controlled decision is reversed in a hallway; no record is updated. Fix: hallway reversals are decisions. If they are not recorded with the same fields as a formal decision, the OS is being undermined and the program is back on personalities.</li>
+<li><strong>Teams game the risk register.</strong> Risks are written to look acceptable rather than to surface what is actually fragile. Fix: audit the register against what the test floor and supplier emails are saying. Risks that no one would write a second time are the real ones.</li>
+<li><strong>Too many gates slow learning.</strong> Gates exist to change controlled values. If every cross-functional checkpoint becomes a gate, the program loses iteration speed without gaining decision quality. Fix: prune gates that have no controlled value to change (see the gate taxonomy in <em>Gates, Risk Registers, and One-Page Truth</em>).</li>
+</ul>
+<p>If two or more of these are visible at once, the OS is in maintenance debt. Spend a week on the OS itself before spending it on the program. The program will move faster afterward.</p>
 <h3 id="final-promise"><a class="header" href="#final-promise">Final promise</a></h3>
 <p>This book does not promise frictionless programs.</p>
 <p>Hardware work will stay uncertain, cross-functional, and time-constrained.</p>

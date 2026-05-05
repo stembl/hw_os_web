@@ -153,8 +153,9 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="9-requirements-lifecycle-hypothesis---bless---evidence---revise"><a class="header" href="#9-requirements-lifecycle-hypothesis---bless---evidence---revise">9. Requirements Lifecycle (Hypothesis -&gt; Bless -&gt; Evidence -&gt; Revise)</a></h1>
-<p>Wednesday, 6:50 a.m., lab hallway quiet, the thermal verification log shows requirement <code>RQ-THERM-014</code> set to 85 C while chamber run <code>T-117</code> fails above 78 C.</p>
-<p>The systems requirements owner set <code>RQ-THERM-014</code> to 85 C, and last week's full-load chamber test showed the assembly drifting out of spec above 78 C.</p>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
+<p>Wednesday, 6:50 a.m., lab hallway quiet, the thermal verification log shows requirement <code>RQ-THERM-014</code> set to 85 °C while chamber run <code>T-117</code> fails above 78 °C. (This case appears again in Ch. 12, where the chamber evidence that forced the revision is the model-vs-chamber gap, and in Ch. 13 where the gate closure logic is the point of failure.)</p>
+<p>The systems requirements owner set <code>RQ-THERM-014</code> to 85 °C, and last week's full-load chamber test showed the assembly drifting out of spec above 78 °C.</p>
 <p>The change board leaves <code>RQ-THERM-014</code> unchanged because leads fear a revision will be labeled "moving goalposts" before Gate 3.</p>
 <p>Design, test, and supplier teams keep building to a known-wrong value until the next gate review forces a contradiction.</p>
 <p>That is delay debt paid by integration and gate owners when hardware evidence collides with an obsolete requirement at formal review.</p>
@@ -190,6 +191,10 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <li>and "surprise" gate failures that were visible earlier in data.</li>
 </ul>
 <p>Revision discipline in the requirement log prevents both uncontrolled churn and evidence denial.</p>
+<hr />
+<p>The thermal limit <code>RQ-THERM-014</code> sat at 85 °C for six weeks after chamber test <code>T-117</code> showed the assembly drifting out of spec above 78 °C. The change board held the value because no one wanted to be accused of moving goalposts before Gate 3. Design, test, and the power-stage supplier kept building to 85 °C. Nine working days after T-117, the program lead brought the revision to the gate chair. The revision took one day to process. The frozen-wrong period had cost nine days of work against an obsolete value — plus a supplier package that had to be flagged for re-qualification.</p>
+<p>Old process: frozen requirement protected by schedule optics, with no predeclared revision trigger forcing the question. What changed: <code>RQ-THERM-014</code> in the requirement log, revised to ≤ 78 °C, with revision record <code>DR-2026-014</code> naming the evidence source (<code>T-117</code>), rationale, impact scope, approver, and date. Measured improvement: revision processing took one day once formally proposed; the frozen-wrong period consumed nine days of design, test, and supplier work against a known-wrong value.</p>
+<hr />
 <h3 id="revision-criteria-minimum"><a class="header" href="#revision-criteria-minimum">Revision criteria (minimum)</a></h3>
 <p>Revise a requirement only when predeclared decision thresholds are met:</p>
 <ol>
@@ -206,6 +211,7 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <li>impact scope (design, test, cost, schedule),</li>
 <li>approver and date.</li>
 </ul>
+<p>Acceptable implementations for the requirement lifecycle log include a PLM revision workflow (Windchill, Teamcenter, Arena) when product-data control is already required, a Jira issue type with field-level controls for owner/evidence/revision-history for smaller programs, a locked shared spreadsheet with named owners and protected history columns for early-stage work, or a controlled markdown log under version control when the team is small and engineering-led. The OS does not care which; it cares that old value, new value, evidence source, rationale, impact scope, approver, and date are all in the same row.</p>
 <h3 id="preventing-moving-goalpost-behavior"><a class="header" href="#preventing-moving-goalpost-behavior">Preventing moving-goalpost behavior</a></h3>
 <p>Teams resist revisions when the change record looks arbitrary.</p>
 <p>Prevent goalpost behavior by separating two artifacts:</p>
@@ -223,6 +229,8 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <li>downstream artifact update status.</li>
 </ul>
 <p>The requirement owner should finish this review in minutes and publish one delta note, not run a half-day meeting.</p>
+<hr />
+<p>If you cannot point at one requirement ID in your current program that revised in the last quarter with evidence in the log, an approver on record, and a downstream-update note, you are running on frozen-but-wrong values somewhere. Re-read <em>Frozen-but-wrong is worse than revised-with-evidence</em>.</p>
 
                     </main>
 

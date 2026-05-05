@@ -153,6 +153,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="11-many-factors-one-honest-limit"><a class="header" href="#11-many-factors-one-honest-limit">11. Many Factors, One Honest Limit</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Wednesday, 2:35 p.m., afternoon energy burned on factor-table noise, subsystem verification report <code>SVR-31</code> is green on single-factor tests while integrated run <code>INT-07</code> fails the requirement boundary.</p>
 <p>The subsystem passes every single-factor check in <code>SVR-31</code>.</p>
 <p>It still fails in integrated operation during <code>INT-07</code> at combined load and temperature.</p>
@@ -169,7 +170,8 @@ It fails when interaction effects dominate the decision boundary.</p>
 <li>response is highly sensitive near operating boundaries,</li>
 <li>multiple coupled assumptions sit inside one requirement decision.</li>
 </ul>
-<p>If these signs are present, additional one-factor testing usually burns time without reducing uncertainty enough to support a real decision.</p>
+<p>EMI is a common second example: you can model the source with good accuracy, but coupling to other structures depends on layout, ground return paths, and shield geometry all at once. Shielding effectiveness calculated for a single source is only useful if you have correctly identified every significant source. Early testing with physical hardware can locate the coupling paths that single-domain analysis missed; catching that late means architectural changes after routing and mechanical design are fixed.</p>
+<p>If any of these signs are present, additional one-factor testing usually burns time without reducing uncertainty enough to support a real decision.</p>
 <h3 id="leads-job-scope-the-decision-question"><a class="header" href="#leads-job-scope-the-decision-question">Lead's job: scope the decision question</a></h3>
 <p>The lead does not need to run the analysis personally.
 The lead must scope a decision-ready ask with a named owner and due date.</p>
@@ -183,6 +185,10 @@ The lead must scope a decision-ready ask with a named owner and due date.</p>
 <li>assign date and owner.</li>
 </ol>
 <p>Without this framing, teams can generate impressive activity artifacts that still produce no bounded conclusion for the decision log.</p>
+<p>A heat-generating module was mounted to a cooling structure. The thermal model predicted it would stay within its limit at full operating load. Three early prototype builds ran consistently hotter than predicted — not scattered results, the same gap every time.</p>
+<p>The root cause was in what neither model was told to talk to the other about. At room temperature, the mounting assembly held good contact pressure across the thermal interface. At operating temperature, differential expansion between the module and the frame reduced that pressure at the interface edges. Lower pressure meant less effective contact. Less effective contact meant higher thermal resistance than the thermal model had assumed as a fixed input. Higher resistance meant higher temperature — which drove more expansion — a feedback loop no single-domain model could see.</p>
+<p>Each model was valid given its own boundary conditions. The thermal model used a room-temperature interface measurement. The mechanical model validated contact at room temperature only. Neither was wrong. The interaction between them was the missing factor.</p>
+<p>Fix: simplified geometry prototypes with one variable controlled at a time, each modeled to match before adding the next. The coupled model, validated against those steps, predicted peak temperature within a few degrees of measured across the operating range. <strong>Old process:</strong> fixed interface assumption in the thermal model; mechanical contact validated at room temperature only. <strong>Artifact changed:</strong> a coupled model treating contact pressure as a temperature-dependent input to the thermal boundary condition. <strong>Measured improvement:</strong> prediction error reduced from a consistent overshoot of roughly one temperature class to within a few degrees at full load. <strong>Cost of catching it in early prototyping:</strong> a handful of controlled builds and model cycles; the same discovery post-tooling would have required a geometry change to the mounting architecture.</p>
 <h3 id="rejecting-activity-theater"><a class="header" href="#rejecting-activity-theater">Rejecting activity theater</a></h3>
 <p>Reject analysis summaries that report:</p>
 <ul>

@@ -153,6 +153,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="15-schedule-from-real-dependencies-and-honest-critical-path"><a class="header" href="#15-schedule-from-real-dependencies-and-honest-critical-path">15. Schedule from Real Dependencies and Honest Critical Path</a></h1>
+<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Tuesday, 5:50 p.m., long shadows in the program office, dependency chart finally honest.</p>
 <p>The launch date on the slide has not moved in three months.</p>
 <p>The dependency chain under it has moved every week.</p>
@@ -191,6 +192,10 @@
 <li>reporting completion percent instead of decision readiness.</li>
 </ul>
 <p>These behaviors protect optics and destroy forecast quality.</p>
+<hr />
+<p>At an energy storage program, the announced launch date had not moved in three months on the program slide. Underneath, three thermal-related long-leads had quietly slipped: the cold-plate extrusion (11 working days, triggered by the <code>RQ-THERM-014</code> revision that changed the geometry requirement), the thermal interface material qualification (8 days, triggered by the contact-resistance finding), and a chamber booking for the revised configuration (6 days, because the test queue had moved). The cold-plate extrusion slip (11 days) was triggered by the <code>RQ-THERM-014</code> revision described in Ch. 9. None of the slips were visible on the schedule because the schedule had been built date-to-date, not dependency-to-dependency.</p>
+<p>When the team recomputed the chain — what depends on what, with honest durations and buffer for uncertainty — the new date was 19 working days beyond the announced date. The recovery conversation that followed was real: cut one product variant from the launch scope, change the supplier extrusion sequence to overlap with qualification, fund a parallel chamber booking. The conversation was hard. It was also the first honest program conversation in three months. Old process: schedule defended date-to-date with narrative compression. Artifact changed: the dependency chain rebuilt from real durations with three named recovery levers (scope, sequence, resources). Measured improvement: 19-day date revision discovered and communicated four months before launch, rather than two weeks before. Cost of the gap: four months of decision-making downstream of a date everyone knew was wrong.</p>
+<hr />
 <h3 id="weekly-cadence-for-schedule-truth"><a class="header" href="#weekly-cadence-for-schedule-truth">Weekly cadence for schedule truth</a></h3>
 <p>A useful weekly cycle:</p>
 <ol>
@@ -201,6 +206,8 @@
 <li>Trigger escalation where recovery needs scope/resource decision.</li>
 </ol>
 <p>If the team does not recompute dependencies each cycle, the status packet is not decision-grade.</p>
+<p>A PM who trusts the schedule stops asking for daily status. That shift is not a sign of disengagement — it is the signal that the artifacts are doing their job. When the dependency chain is live and the weekly cadence publishes a delta note, the PM has something reliable to read before the review. The engineering lead who has earned that trust has bought themselves protected time to solve the technical problem instead of presenting it repeatedly.</p>
+<p>Acceptable implementations for the dependency-based schedule include Smartsheet or MS Project when the team already has one and will maintain the dependency links, Jira Advanced Roadmaps for teams whose work is tracked in Jira, an Excel model with a named dependency-notes column when the program is small and the PM will own the model, or a simple markdown dependency list under version control for very small programs where a Gantt is overhead. The OS does not care which tool; it cares that the date is derived from the dependency chain and uncertainty fields — not set first and defended by narrative compression.</p>
 <h3 id="what-real-recovery-requires"><a class="header" href="#what-real-recovery-requires">What real recovery requires</a></h3>
 <p>Recovery has only three levers:</p>
 <ul>
@@ -226,6 +233,8 @@
 <li>ownership map (who closes blockers).</li>
 </ul>
 <p>If these are weak, schedule updates drift into negotiation instead of model updates.</p>
+<hr />
+<p>If your plan has no visible float and no recovery lever named in writing, you do not have a schedule. You have a date with a story around it.</p>
 
                     </main>
 
