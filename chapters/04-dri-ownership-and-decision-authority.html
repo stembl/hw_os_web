@@ -154,6 +154,7 @@
                     <main>
                         <h1 id="4-dri-ownership-and-decision-authority"><a class="header" href="#4-dri-ownership-and-decision-authority">4. DRI Ownership and Decision Authority</a></h1>
 <p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
+<p><em>Ch. 3 named the failure patterns. Unowned decisions are the first break point because without a named person accountable for closure, the control loop from Ch. 2 has no one to run it.</em></p>
 <p>Monday, 3:55 p.m., late sun on the whiteboard, decision still hanging open.</p>
 <p>The question is clear. The data is good enough. The room still does not decide.</p>
 <p>Everyone has input. Nobody has closure authority.</p>
@@ -235,6 +236,12 @@
 </ul>
 <p>When trigger conditions are objective, escalation is faster and less political.</p>
 <p>If you can name the DRI for every open program decision today, and each DRI has proposed a decision by a date, the OS is doing its job. If any question is 'TBD / team / committee,' it is not.</p>
+<h3 id="decision-classes-not-every-call-needs-the-same-overhead"><a class="header" href="#decision-classes-not-every-call-needs-the-same-overhead">Decision classes: not every call needs the same overhead</a></h3>
+<p>Not every decision warrants the full DRI machinery. The overhead should match the reversibility.</p>
+<p>A <strong>reversible decision</strong> — component selection before tooling, test parameter adjustment during EVT — can move fast with a lighter record and a lower authority threshold. The DRI still owns closure, but speed is the right bias. The cost of being wrong is small; the cost of being slow is real.</p>
+<p>An <strong>irreversible decision</strong> — tooling release, supplier qualification, customer specification commitment — requires the full map: written authority boundary, decision record, downstream artifact updates. Replaying an irreversible decision is expensive enough to justify the added friction before calling it.</p>
+<p>A <strong>build-to-learn unit</strong> is a third class. The acceptance criterion is "what did we learn?" not "did it pass the requirement?" Treating a build-to-learn result as a production failure is a scope error. Name the unit's class before it hits the floor. The DRI for a build-to-learn unit owns the learning extraction, not the conformance call.</p>
+<p>If you are not sure which class a decision falls in, ask one question: if we call this wrong, can we undo it before purchasing and build decisions fan out? If yes, it is reversible. If no, treat it as irreversible until proven otherwise.</p>
 
                     </main>
 

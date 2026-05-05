@@ -3,7 +3,7 @@
     <head>
         <!-- Book generated using mdBook -->
         <meta charset="UTF-8">
-        <title>The Hardware OS, in one page - The Hardware OS</title>
+        <title>Artifact examples: bad vs. good - The Hardware OS</title>
 
 
         <!-- Custom HTML head -->
@@ -152,45 +152,72 @@
 
                 <div id="content" class="content">
                     <main>
-                        <h1 id="the-hardware-os-in-one-page"><a class="header" href="#the-hardware-os-in-one-page">The Hardware OS, in one page</a></h1>
-<p><em>Reading order: see <code>book/SUMMARY.md</code>.</em></p>
-<p>This book is twenty short chapters. Read them in order. But the twenty chapters are not twenty separate ideas — they sit on five operating layers. Knowing the layer a chapter belongs to tells you what it is <em>for</em>, and what it is <strong>not</strong> for.</p>
-<div class="table-wrapper"><table><thead><tr><th>Layer</th><th>What this layer guarantees</th><th>Chapters</th></tr></thead><tbody>
-<tr><td>1. Program truth</td><td>One source of truth, one ownership rule, requirements as managed values, decisions as records</td><td>1, 2, 4, 5, 9, 10</td></tr>
-<tr><td>2. Decision discipline</td><td>DRI authority, gates as decision events, risk rows as decision artifacts, escalation triggers</td><td>3, 4, 6, 11, 13</td></tr>
-<tr><td>3. Execution evidence</td><td>Supplier data, automation choices at concept, factory and test reality, fleet learning</td><td>7, 8, 12, 16, 17</td></tr>
-<tr><td>4. Forecast you can defend</td><td>Schedule from real dependencies, cross-tier reciprocal contracts, executive one-page truth</td><td>6, 14, 15</td></tr>
-<tr><td>5. Installation and durability</td><td>Rollout sequence, training and cadence, failure recovery, where the OS does not reach</td><td>18, 19, 20</td></tr>
+                        <h1 id="artifact-examples-bad-vs-good"><a class="header" href="#artifact-examples-bad-vs-good">Artifact examples: bad vs. good</a></h1>
+<p><em>Use this page as a quick-reference alongside the main chapters. Each chapter explains why the bad version fails and what the good version controls.</em></p>
+<p>The four artifacts below are the core surfaces the Hardware OS runs on. Every chapter that mentions "decision record," "requirement," "risk row," or "one-page status" is referring to these shapes.</p>
+<hr />
+<h2 id="requirement"><a class="header" href="#requirement">Requirement</a></h2>
+<p>The bad version has a value but gives the team nothing to test, no condition to bound it, and no way to know who approved the current number or why.</p>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad</th><th>Good</th></tr></thead><tbody>
+<tr><td>Statement</td><td>"System shall be robust"</td><td>"Leak rate shall be ≤ 0.5 sccm at 1.2 bar differential, ambient 0–40 °C, measured by Method M-04"</td></tr>
+<tr><td>Owner</td><td><em>(blank)</em></td><td>Named engineer, week of last review</td></tr>
+<tr><td>Evidence</td><td><em>(blank)</em></td><td>Link to test result or physics derivation that bounds the value</td></tr>
+<tr><td>Acceptance method</td><td>"TBD"</td><td>Specific test method, sample size, pass criterion</td></tr>
+<tr><td>Revision history</td><td><em>(blank)</em></td><td>Change log with rationale and approver for each revision</td></tr>
 </tbody></table>
 </div>
-<p>A chapter can appear on more than one layer when its mechanism genuinely spans them. Gates show up in decision discipline and in forecast because a gate decision both changes a controlled baseline <em>and</em> moves the forecast. The layer is not a category; it is a declaration of what the chapter must guarantee for the OS above it to hold.</p>
-<p>If you read this book straight through, the layers assemble in order: truth first, then decisions about truth, then evidence that supports the decisions, then a forecast that holds the evidence and decisions together, then the install plan that makes the whole system survive contact with the next program.</p>
+<p><em>See Ch. 5 for revision discipline and the hygiene checklist.</em></p>
 <hr />
-<h2 id="what-this-operating-system-looks-like-working"><a class="header" href="#what-this-operating-system-looks-like-working">What this operating system looks like working</a></h2>
-<p>The concrete test is not a metric. It is a set of people doing their jobs without friction.</p>
-<p><strong>Your exec can leave Friday afternoon.</strong> Not because the program is done, but because the gate status is real, the risk register surfaces what would otherwise surprise them, and every open decision has a named owner and a date. They are not anxious because they are not holding the program truth in their head. The one-page status is holding it for them, and they trust it.</p>
-<p><strong>Your PM stops asking "where are we?"</strong> A PM who trusts the schedule and the risk log shifts from chasing daily status to clearing real blockers. The artifacts answer the question before it is asked. That is not a nice-to-have — it is the measurable output of Layers 3 and 4 working. A PM who stops pinging is a PM who has something reliable to read.</p>
-<p><strong>Your engineering team makes decisions, not presentations.</strong> When requirements are managed hypotheses with visible evidence, when gate packets come from live records instead of slide heroics, and when the schedule is built from real dependencies, the team spends its time on the technical problem — not on reconciling contradictions between what the slides say and what the test floor sees.</p>
-<p>These are the outcomes the OS is designed to produce. The chapters that follow are the mechanism.</p>
+<h2 id="decision-record"><a class="header" href="#decision-record">Decision record</a></h2>
+<p>The bad version records an outcome with no trail. Anyone who reads it six weeks later cannot reconstruct the trade, cannot tell who approved it, and cannot find what else changed as a result.</p>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad</th><th>Good</th></tr></thead><tbody>
+<tr><td>Decision</td><td>"Team aligned to update thermal limit"</td><td>"Revise RQ-THERM-014 from 85 °C to 78 °C per T-117 chamber evidence"</td></tr>
+<tr><td>Owner</td><td>TBD</td><td>Thermal lead</td></tr>
+<tr><td>Rationale</td><td><em>(blank)</em></td><td>"T-117 measured 78 °C steady-state; boundary condition error in model confirmed by M-23"</td></tr>
+<tr><td>Alternatives</td><td><em>(blank)</em></td><td>"Considered 80 °C with derating margin — rejected: supplier cannot hold derating at current geometry"</td></tr>
+<tr><td>Downstream artifacts updated</td><td><em>(blank)</em></td><td>"Supplier package flagged for re-qual (ECO-2027-031), schedule R-14 row updated, Gate 3 one-page revised"</td></tr>
+<tr><td>Approver / date</td><td><em>(blank)</em></td><td>Program lead, Day 9 post-T-117</td></tr>
+</tbody></table>
+</div>
+<p><em>See Ch. 4 for DRI ownership and minimum decision record fields.</em></p>
 <hr />
-<h2 id="how-to-use-this-map"><a class="header" href="#how-to-use-this-map">How to use this map</a></h2>
-<p>Use this page as a map you come back to. Each chapter states which mechanism it introduces; this page says which layer that mechanism lives in. If a chapter feels repetitive, check which layer it is on — it may be introducing the same vocabulary in a different operating context (a different scale, a different tier, a different phase of the program).</p>
-<p>If you are in a specific role:</p>
-<ul>
-<li><strong>Engineering lead:</strong> start with Layer 1 (program truth). Everything else is scaffolding on top of that foundation.</li>
-<li><strong>PM:</strong> Layers 4 and 5 will resonate immediately; go back to Layer 2 to understand why the gates and risk rows are built the way they are.</li>
-<li><strong>Executive or sponsor:</strong> the one-page truth (Ch. 6), cross-tier contracts (Ch. 14), and schedule integrity (Ch. 15) are the direct executive-facing chapters. The chapters around them explain why the artifacts work when they work.</li>
-</ul>
+<h2 id="risk-row"><a class="header" href="#risk-row">Risk row</a></h2>
+<p>The bad version looks like an active register. It behaves inert: no one can trigger a decision from it, and "yellow" carries no evidence anyone can challenge or update.</p>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad row</th><th>Decision-grade row</th></tr></thead><tbody>
+<tr><td>Statement</td><td>"Thermal"</td><td>"Thermal margin insufficient at full-duty 40 °C ambient"</td></tr>
+<tr><td>Owner</td><td>Engineering team</td><td>Thermal lead</td></tr>
+<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Medium (T-117 showed 78 °C vs 85 °C limit) / High (gate hold, supplier re-qual)</td></tr>
+<tr><td>Trigger</td><td><em>(blank)</em></td><td>Any chamber run exceeding 77 °C</td></tr>
+<tr><td>Mitigation</td><td>In progress</td><td>Revise RQ-THERM-014; re-qual supplier package by Gate 3</td></tr>
+<tr><td>Decision date</td><td><em>(blank)</em></td><td>Gate 3</td></tr>
+<tr><td>Evidence</td><td><em>(blank)</em></td><td>T-117, M-23</td></tr>
+</tbody></table>
+</div>
+<p><em>See Ch. 6 for the full risk-row schema and gate decision logic.</em></p>
+<hr />
+<h2 id="one-page-status"><a class="header" href="#one-page-status">One-page status</a></h2>
+<p>The bad version compresses uncertainty into confidence. An exec or PM who reads it cannot tell whether the calm tone reflects real evidence or polished slides. When the bad version is wrong, nobody finds out until it is too late to act cheaply.</p>
+<div class="table-wrapper"><table><thead><tr><th>Section</th><th>Bad</th><th>Good</th></tr></thead><tbody>
+<tr><td>Current state</td><td>"Program tracking to plan"</td><td>"Gate 3 on track; thermal risk open — RQ-THERM-014 revision decision due Friday; supplier re-qual starts Monday"</td></tr>
+<tr><td>Top risks</td><td>"Thermal risk tracking green"</td><td>"R-14 thermal: medium/high — T-117 measured 78 °C vs 85 °C limit; owner: thermal lead; decision: Gate 3"</td></tr>
+<tr><td>Decision log deltas</td><td><em>(blank)</em></td><td>"DR-2026-014 closed: thermal limit revised to 78 °C; supplier notified"</td></tr>
+<tr><td>Critical dependencies</td><td>"Supplier on track"</td><td>"Cold-plate extrusion: slip of 8 working days; replanned to Week 22; critical path impact: none if Gate 3 holds"</td></tr>
+<tr><td>Asks / escalations</td><td>"None"</td><td>"Need program lead approval on revised supplier qualification plan by Thursday"</td></tr>
+</tbody></table>
+</div>
+<p><em>See Ch. 6 for the minimum one-page schema and source-record traceability requirement.</em></p>
+<hr />
+<p><em>These examples use the canonical <code>RQ-THERM-014</code> case that runs through Chs. 4, 6, 9, 10, 12, 13, 15, and 17. Substitute your program's artifacts; the field shapes hold.</em></p>
 
                     </main>
 
                     <nav class="nav-wrapper" aria-label="Page navigation">
                         <!-- Mobile navigation buttons -->
-                            <a rel="prev" href="title-page.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                            <a rel="prev" href="hardware-os-stack.html" class="mobile-nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                                 <i class="fa fa-angle-left"></i>
                             </a>
 
-                            <a rel="next prefetch" href="artifact-examples.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                            <a rel="next prefetch" href="chapters/01-the-missing-manual.html" class="mobile-nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                                 <i class="fa fa-angle-right"></i>
                             </a>
 
@@ -200,11 +227,11 @@
             </div>
 
             <nav class="nav-wide-wrapper" aria-label="Page navigation">
-                    <a rel="prev" href="title-page.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
+                    <a rel="prev" href="hardware-os-stack.html" class="nav-chapters previous" title="Previous chapter" aria-label="Previous chapter" aria-keyshortcuts="Left">
                         <i class="fa fa-angle-left"></i>
                     </a>
 
-                    <a rel="next prefetch" href="artifact-examples.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
+                    <a rel="next prefetch" href="chapters/01-the-missing-manual.html" class="nav-chapters next" title="Next chapter" aria-label="Next chapter" aria-keyshortcuts="Right">
                         <i class="fa fa-angle-right"></i>
                     </a>
             </nav>

@@ -154,6 +154,7 @@
                     <main>
                         <h1 id="5-spec-integrity-and-requirement-hygiene"><a class="header" href="#5-spec-integrity-and-requirement-hygiene">5. Spec Integrity and Requirement Hygiene</a></h1>
 <p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
+<p><em>Ch. 4 defined who closes decisions. What those decisions close on is the requirement record — and a decision is only as good as the requirement it references.</em></p>
 <p>Tuesday, 7:20 a.m., half the room still on their first coffee, ship windows already on the screen.</p>
 <p>Manufacturing asks which revision is real. Test says they validated Rev C assumptions. Procurement already placed orders against Rev B.</p>
 <p>The drawing package is "released." The program still has three definitions of done.</p>
@@ -185,13 +186,12 @@
 "Leak rate shall be &lt;= X under conditions Y and Z, measured by method M" is.</p>
 <h3 id="revision-discipline"><a class="header" href="#revision-discipline">Revision discipline</a></h3>
 <p>Revision control is where integrity usually breaks.</p>
-<p>Minimum discipline:</p>
+<p>Minimum discipline, applied to each requirement:</p>
 <ol>
-<li>One controlled source of truth.</li>
-<li>Change log entry for every requirement change.</li>
-<li>Rationale captured with evidence link.</li>
-<li>Explicit impact note (test, cost, schedule, supplier).</li>
-<li>Approval/sign-off path by change class.</li>
+<li>One controlled source — same location, same revision label, across every function.</li>
+<li>Change log entry with rationale and evidence link.</li>
+<li>Explicit impact note: which tests, supplier packets, and schedule rows must update.</li>
+<li>Approval path by change class — small adjustments differ from requirement redefinition.</li>
 </ol>
 <p>If a value changes without this chain, treat the change as unofficial until cleaned up.</p>
 <h3 id="requirement-hygiene-checklist-for-active-programs"><a class="header" href="#requirement-hygiene-checklist-for-active-programs">Requirement hygiene checklist for active programs</a></h3>

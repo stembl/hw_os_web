@@ -155,7 +155,7 @@
                     <main>
                         <h1 id="the-hardware-os"><a class="header" href="#the-hardware-os">The Hardware OS</a></h1>
 <p><strong>Author:</strong> Steve Embleton</p>
-<p>Short, direct guidance for engineering leads: operating habits and records for hardware programs — so decisions, limits, and status stay tied to what build and test actually see.</p>
+<p>How engineering leads keep requirements, decisions, risks, and schedules tied to build-and-test truth.</p>
 <p><strong>Start reading:</strong> use the sidebar for the full outline, or open <a href="chapters/01-the-missing-manual.html">1. The Missing Manual</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-hardware-os-in-one-page"><a class="header" href="#the-hardware-os-in-one-page">The Hardware OS, in one page</a></h1>
 <p><em>Reading order: see <code>book/SUMMARY.md</code>.</em></p>
@@ -186,6 +186,62 @@
 <li><strong>PM:</strong> Layers 4 and 5 will resonate immediately; go back to Layer 2 to understand why the gates and risk rows are built the way they are.</li>
 <li><strong>Executive or sponsor:</strong> the one-page truth (Ch. 6), cross-tier contracts (Ch. 14), and schedule integrity (Ch. 15) are the direct executive-facing chapters. The chapters around them explain why the artifacts work when they work.</li>
 </ul>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="artifact-examples-bad-vs-good"><a class="header" href="#artifact-examples-bad-vs-good">Artifact examples: bad vs. good</a></h1>
+<p><em>Use this page as a quick-reference alongside the main chapters. Each chapter explains why the bad version fails and what the good version controls.</em></p>
+<p>The four artifacts below are the core surfaces the Hardware OS runs on. Every chapter that mentions "decision record," "requirement," "risk row," or "one-page status" is referring to these shapes.</p>
+<hr />
+<h2 id="requirement"><a class="header" href="#requirement">Requirement</a></h2>
+<p>The bad version has a value but gives the team nothing to test, no condition to bound it, and no way to know who approved the current number or why.</p>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad</th><th>Good</th></tr></thead><tbody>
+<tr><td>Statement</td><td>"System shall be robust"</td><td>"Leak rate shall be ≤ 0.5 sccm at 1.2 bar differential, ambient 0–40 °C, measured by Method M-04"</td></tr>
+<tr><td>Owner</td><td><em>(blank)</em></td><td>Named engineer, week of last review</td></tr>
+<tr><td>Evidence</td><td><em>(blank)</em></td><td>Link to test result or physics derivation that bounds the value</td></tr>
+<tr><td>Acceptance method</td><td>"TBD"</td><td>Specific test method, sample size, pass criterion</td></tr>
+<tr><td>Revision history</td><td><em>(blank)</em></td><td>Change log with rationale and approver for each revision</td></tr>
+</tbody></table>
+</div>
+<p><em>See Ch. 5 for revision discipline and the hygiene checklist.</em></p>
+<hr />
+<h2 id="decision-record"><a class="header" href="#decision-record">Decision record</a></h2>
+<p>The bad version records an outcome with no trail. Anyone who reads it six weeks later cannot reconstruct the trade, cannot tell who approved it, and cannot find what else changed as a result.</p>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad</th><th>Good</th></tr></thead><tbody>
+<tr><td>Decision</td><td>"Team aligned to update thermal limit"</td><td>"Revise RQ-THERM-014 from 85 °C to 78 °C per T-117 chamber evidence"</td></tr>
+<tr><td>Owner</td><td>TBD</td><td>Thermal lead</td></tr>
+<tr><td>Rationale</td><td><em>(blank)</em></td><td>"T-117 measured 78 °C steady-state; boundary condition error in model confirmed by M-23"</td></tr>
+<tr><td>Alternatives</td><td><em>(blank)</em></td><td>"Considered 80 °C with derating margin — rejected: supplier cannot hold derating at current geometry"</td></tr>
+<tr><td>Downstream artifacts updated</td><td><em>(blank)</em></td><td>"Supplier package flagged for re-qual (ECO-2027-031), schedule R-14 row updated, Gate 3 one-page revised"</td></tr>
+<tr><td>Approver / date</td><td><em>(blank)</em></td><td>Program lead, Day 9 post-T-117</td></tr>
+</tbody></table>
+</div>
+<p><em>See Ch. 4 for DRI ownership and minimum decision record fields.</em></p>
+<hr />
+<h2 id="risk-row"><a class="header" href="#risk-row">Risk row</a></h2>
+<p>The bad version looks like an active register. It behaves inert: no one can trigger a decision from it, and "yellow" carries no evidence anyone can challenge or update.</p>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad row</th><th>Decision-grade row</th></tr></thead><tbody>
+<tr><td>Statement</td><td>"Thermal"</td><td>"Thermal margin insufficient at full-duty 40 °C ambient"</td></tr>
+<tr><td>Owner</td><td>Engineering team</td><td>Thermal lead</td></tr>
+<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Medium (T-117 showed 78 °C vs 85 °C limit) / High (gate hold, supplier re-qual)</td></tr>
+<tr><td>Trigger</td><td><em>(blank)</em></td><td>Any chamber run exceeding 77 °C</td></tr>
+<tr><td>Mitigation</td><td>In progress</td><td>Revise RQ-THERM-014; re-qual supplier package by Gate 3</td></tr>
+<tr><td>Decision date</td><td><em>(blank)</em></td><td>Gate 3</td></tr>
+<tr><td>Evidence</td><td><em>(blank)</em></td><td>T-117, M-23</td></tr>
+</tbody></table>
+</div>
+<p><em>See Ch. 6 for the full risk-row schema and gate decision logic.</em></p>
+<hr />
+<h2 id="one-page-status"><a class="header" href="#one-page-status">One-page status</a></h2>
+<p>The bad version compresses uncertainty into confidence. An exec or PM who reads it cannot tell whether the calm tone reflects real evidence or polished slides. When the bad version is wrong, nobody finds out until it is too late to act cheaply.</p>
+<div class="table-wrapper"><table><thead><tr><th>Section</th><th>Bad</th><th>Good</th></tr></thead><tbody>
+<tr><td>Current state</td><td>"Program tracking to plan"</td><td>"Gate 3 on track; thermal risk open — RQ-THERM-014 revision decision due Friday; supplier re-qual starts Monday"</td></tr>
+<tr><td>Top risks</td><td>"Thermal risk tracking green"</td><td>"R-14 thermal: medium/high — T-117 measured 78 °C vs 85 °C limit; owner: thermal lead; decision: Gate 3"</td></tr>
+<tr><td>Decision log deltas</td><td><em>(blank)</em></td><td>"DR-2026-014 closed: thermal limit revised to 78 °C; supplier notified"</td></tr>
+<tr><td>Critical dependencies</td><td>"Supplier on track"</td><td>"Cold-plate extrusion: slip of 8 working days; replanned to Week 22; critical path impact: none if Gate 3 holds"</td></tr>
+<tr><td>Asks / escalations</td><td>"None"</td><td>"Need program lead approval on revised supplier qualification plan by Thursday"</td></tr>
+</tbody></table>
+</div>
+<p><em>See Ch. 6 for the minimum one-page schema and source-record traceability requirement.</em></p>
+<hr />
+<p><em>These examples use the canonical <code>RQ-THERM-014</code> case that runs through Chs. 4, 6, 9, 10, 12, 13, 15, and 17. Substitute your program's artifacts; the field shapes hold.</em></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="1-the-missing-manual"><a class="header" href="#1-the-missing-manual">1. The Missing Manual</a></h1>
 <p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
 <p>Monday, 6:47 a.m., parking-lot light still on, first messages already stacking before standup.</p>
@@ -262,6 +318,7 @@
 <p>Treat process artifacts as product artifacts.</p>
 <p>If a limit, dependency, or risk can change build, cost, or date, it needs an owner, a controlled record, and a visible decision path. If it has no owner or no record, treat it as not real yet.</p>
 <p>This rule is strict on purpose. Hardware programs punish ambiguity late. Remove ambiguity when evidence first appears, before purchasing and build decisions fan out.</p>
+<p>A corollary worth keeping visible: every artifact in this system should reduce latency, rework, or ambiguity. If a record, checklist, or status field does not demonstrably do one of those three things, retire it. The minimum system listed above is exactly that — minimum. Do not add to it until the minimum proves it reduces argument and lag on your program.</p>
 <h3 id="what-changes-this-week"><a class="header" href="#what-changes-this-week">What changes this week</a></h3>
 <p>If your program is already moving, do this before adding new templates:</p>
 <ol>
@@ -275,6 +332,7 @@
 <p>Do not widen scope in Chapter 2. Install one narrow control loop, prove it reduces argument and lag, then extend.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="3-failure-patterns-chaos-drift-and-unowned-decisions"><a class="header" href="#3-failure-patterns-chaos-drift-and-unowned-decisions">3. Failure Patterns: Chaos, Drift, and Unowned Decisions</a></h1>
 <p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
+<p><em>Ch. 2 installed one control loop. What that loop cannot do on its own is tell you which failure pattern is breaking it — or where to look first.</em></p>
 <p>Monday, 12:50 p.m., afternoon already drags, coffee going cold in the conference room.</p>
 <p>Day 19 of an EVT build for a handheld controller, and this is the third meeting on the same leakage-limit decision; every slip keeps a $42k fixture order on hold.</p>
 <p>Test says one thing. The status page says another. Procurement already acted on a third version because nobody marked which number was live.</p>
@@ -345,16 +403,10 @@
 <p>If your team cannot answer all five in under ten minutes, you are not dealing with one bad meeting. You are inside one or more of these patterns.</p>
 <h3 id="what-to-fix-first"><a class="header" href="#what-to-fix-first">What to fix first</a></h3>
 <p>Do not try to solve chaos, drift, and ownership with three separate initiatives.</p>
-<p>Start with ownership on one decision path:</p>
-<ul>
-<li>name one owner,</li>
-<li>define done for that decision,</li>
-<li>require one decision record entry,</li>
-<li>and force the one-pager to reflect that record.</li>
-</ul>
-<p>That single loop reduces all three failure patterns at once.</p>
+<p>The install is the single control loop from Ch. 2 — owner, record, one-pager — applied to your most stuck decision. The three patterns are not three separate problems; they share one root and one fix. Close the ownership gap on one active decision path, and all three patterns shrink at once.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="4-dri-ownership-and-decision-authority"><a class="header" href="#4-dri-ownership-and-decision-authority">4. DRI Ownership and Decision Authority</a></h1>
 <p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
+<p><em>Ch. 3 named the failure patterns. Unowned decisions are the first break point because without a named person accountable for closure, the control loop from Ch. 2 has no one to run it.</em></p>
 <p>Monday, 3:55 p.m., late sun on the whiteboard, decision still hanging open.</p>
 <p>The question is clear. The data is good enough. The room still does not decide.</p>
 <p>Everyone has input. Nobody has closure authority.</p>
@@ -436,8 +488,15 @@
 </ul>
 <p>When trigger conditions are objective, escalation is faster and less political.</p>
 <p>If you can name the DRI for every open program decision today, and each DRI has proposed a decision by a date, the OS is doing its job. If any question is 'TBD / team / committee,' it is not.</p>
+<h3 id="decision-classes-not-every-call-needs-the-same-overhead"><a class="header" href="#decision-classes-not-every-call-needs-the-same-overhead">Decision classes: not every call needs the same overhead</a></h3>
+<p>Not every decision warrants the full DRI machinery. The overhead should match the reversibility.</p>
+<p>A <strong>reversible decision</strong> — component selection before tooling, test parameter adjustment during EVT — can move fast with a lighter record and a lower authority threshold. The DRI still owns closure, but speed is the right bias. The cost of being wrong is small; the cost of being slow is real.</p>
+<p>An <strong>irreversible decision</strong> — tooling release, supplier qualification, customer specification commitment — requires the full map: written authority boundary, decision record, downstream artifact updates. Replaying an irreversible decision is expensive enough to justify the added friction before calling it.</p>
+<p>A <strong>build-to-learn unit</strong> is a third class. The acceptance criterion is "what did we learn?" not "did it pass the requirement?" Treating a build-to-learn result as a production failure is a scope error. Name the unit's class before it hits the floor. The DRI for a build-to-learn unit owns the learning extraction, not the conformance call.</p>
+<p>If you are not sure which class a decision falls in, ask one question: if we call this wrong, can we undo it before purchasing and build decisions fan out? If yes, it is reversible. If no, treat it as irreversible until proven otherwise.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="5-spec-integrity-and-requirement-hygiene"><a class="header" href="#5-spec-integrity-and-requirement-hygiene">5. Spec Integrity and Requirement Hygiene</a></h1>
 <p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
+<p><em>Ch. 4 defined who closes decisions. What those decisions close on is the requirement record — and a decision is only as good as the requirement it references.</em></p>
 <p>Tuesday, 7:20 a.m., half the room still on their first coffee, ship windows already on the screen.</p>
 <p>Manufacturing asks which revision is real. Test says they validated Rev C assumptions. Procurement already placed orders against Rev B.</p>
 <p>The drawing package is "released." The program still has three definitions of done.</p>
@@ -469,13 +528,12 @@
 "Leak rate shall be &lt;= X under conditions Y and Z, measured by method M" is.</p>
 <h3 id="revision-discipline"><a class="header" href="#revision-discipline">Revision discipline</a></h3>
 <p>Revision control is where integrity usually breaks.</p>
-<p>Minimum discipline:</p>
+<p>Minimum discipline, applied to each requirement:</p>
 <ol>
-<li>One controlled source of truth.</li>
-<li>Change log entry for every requirement change.</li>
-<li>Rationale captured with evidence link.</li>
-<li>Explicit impact note (test, cost, schedule, supplier).</li>
-<li>Approval/sign-off path by change class.</li>
+<li>One controlled source — same location, same revision label, across every function.</li>
+<li>Change log entry with rationale and evidence link.</li>
+<li>Explicit impact note: which tests, supplier packets, and schedule rows must update.</li>
+<li>Approval path by change class — small adjustments differ from requirement redefinition.</li>
 </ol>
 <p>If a value changes without this chain, treat the change as unofficial until cleaned up.</p>
 <h3 id="requirement-hygiene-checklist-for-active-programs"><a class="header" href="#requirement-hygiene-checklist-for-active-programs">Requirement hygiene checklist for active programs</a></h3>
@@ -504,6 +562,7 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 <p>If a requirement in your current baseline has no evidence link, no named acceptance method, and no revision history, it is not a requirement. It is a wish with a number. Find three of those today and fix them.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="6-gates-risk-registers-and-one-page-truth"><a class="header" href="#6-gates-risk-registers-and-one-page-truth">6. Gates, Risk Registers, and One-Page Truth</a></h1>
 <p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
+<p><em>Ch. 5 installed requirement quality. Gates, risk rows, and one-page status are the synchronization mechanism that keeps requirements, decisions, and evidence in one shared view across all functions.</em></p>
 <p>Tuesday, 10:45 a.m., gate slides on the projector, room still smelling like someone’s takeout from an hour ago.</p>
 <p>The gate deck looks clean. The room still cannot answer one simple question: what changed since last gate that alters risk to launch.</p>
 <p>If a gate cannot produce that answer in two minutes, the program is performing confidence, not making decisions.</p>
