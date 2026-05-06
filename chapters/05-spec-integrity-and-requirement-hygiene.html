@@ -153,8 +153,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="5-spec-integrity-and-requirement-hygiene"><a class="header" href="#5-spec-integrity-and-requirement-hygiene">5. Spec Integrity and Requirement Hygiene</a></h1>
-<p><em>Reading order: see <code>book/SUMMARY.md</code>. Cross-references in this chapter use SUMMARY order, not filename number.</em></p>
-<p><em>Ch. 4 defined who closes decisions. What those decisions close on is the requirement record — and a decision is only as good as the requirement it references.</em></p>
+<p><em>Ownership defines who closes decisions. What those decisions close on is the requirement record — and a decision is only as good as the requirement it references.</em></p>
 <p>Tuesday, 7:20 a.m., half the room still on their first coffee, ship windows already on the screen.</p>
 <p>Manufacturing asks which revision is real. Test says they validated Rev C assumptions. Procurement already placed orders against Rev B.</p>
 <p>The drawing package is "released." The program still has three definitions of done.</p>
@@ -172,7 +171,7 @@
 <h3 id="hygiene-failures-that-look-small-and-cost-big"><a class="header" href="#hygiene-failures-that-look-small-and-cost-big">Hygiene failures that look small and cost big</a></h3>
 <p>Most failures are not dramatic. They are quiet mismatches.</p>
 <p>Rev C.2 changed the leak-test dwell value, but manufacturing work instructions still referenced Rev C.1 while test benches used the new value. That one mismatch forced three days of teardown and retest, and the team then found REQ-117 had no owner and no rationale trail for the original dwell change. Once REQ-117 was assigned an owner and a controlled revision record was created with the rationale for the dwell change, the next revision — a ten-second dwell adjustment — was processed in four hours and reached all affected work instructions the same day.</p>
-<p>Each one is manageable alone. Together they make gate decisions soft and supplier execution unpredictable.</p>
+<p>The dwell mismatch was one of those. Each is manageable when the revision chain is intact; together, unresolved mismatches make gate decisions soft and supplier execution unpredictable.</p>
 <h3 id="requirement-statement-quality-minimum-bar"><a class="header" href="#requirement-statement-quality-minimum-bar">Requirement statement quality (minimum bar)</a></h3>
 <p>A requirement is usable when it is:</p>
 <ul>
@@ -193,6 +192,7 @@
 <li>Explicit impact note: which tests, supplier packets, and schedule rows must update.</li>
 <li>Approval path by change class — small adjustments differ from requirement redefinition.</li>
 </ol>
+<p>On one program, a stress analyst revised a structural load limit after a test result, notified manufacturing verbally, and considered the revision complete. REQ-STRUCT-08 remained at the old value in the controlled record. Manufacturing built to the revised limit; the supplier qualification test ran against the original. The gap surfaced at first-article acceptance: a three-week hold while the record, the build, and the supplier notification were reconciled.</p>
 <p>If a value changes without this chain, treat the change as unofficial until cleaned up.</p>
 <h3 id="requirement-hygiene-checklist-for-active-programs"><a class="header" href="#requirement-hygiene-checklist-for-active-programs">Requirement hygiene checklist for active programs</a></h3>
 <p>Run this weekly on active high-risk requirements:</p>
@@ -212,7 +212,7 @@ Downstream artifacts updated (test plan, one-pager, supplier packet)</li>
 </ul>
 <p>This is not paperwork for paperwork. It is a control loop for decision quality.</p>
 <p>Acceptable implementations for the requirement record include a PLM module with controlled revision fields (Windchill, Teamcenter, Arena) when design data is already PLM-controlled, a Jira issue type with locked fields for Owner / Evidence / Acceptance-method / Revision-history for smaller programs, a shared spreadsheet with locked columns and a named owner for every row for very early-stage work, or a controlled markdown requirements log under version control when the team is small and engineering-led. The OS cares about six fields — owner, current value, evidence link, acceptance method, rationale, and downstream-update record — not about the tool that holds them.</p>
-<h3 id="why-this-chapter-sits-before-gates"><a class="header" href="#why-this-chapter-sits-before-gates">Why this chapter sits before gates</a></h3>
+<h3 id="why-requirement-quality-comes-before-gate-design"><a class="header" href="#why-requirement-quality-comes-before-gate-design">Why requirement quality comes before gate design</a></h3>
 <p>Gates cannot be strong if requirement quality is weak.</p>
 <p>A gate asks, "Are we ready to commit?"
 If requirement truth is ambiguous, the gate becomes theater regardless of slide quality.</p>
