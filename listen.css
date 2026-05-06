@@ -1,0 +1,69 @@
+/* Chapter narration bar — stays above mdBook UI without hiding the whole page */
+#hw-os-listen {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+  padding: 0.45rem 1rem calc(0.45rem + env(safe-area-inset-bottom));
+  background: rgba(255, 255, 255, 0.96);
+  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.06);
+  font-family: system-ui, sans-serif;
+  font-size: 0.85rem;
+}
+
+#hw-os-listen[hidden] {
+  display: none !important;
+}
+
+#hw-os-listen .hw-os-listen-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: #222;
+  white-space: nowrap;
+}
+
+#hw-os-listen audio {
+  flex: 1 1 220px;
+  min-width: min(100%, 280px);
+  height: 34px;
+}
+
+#hw-os-listen .hw-os-autonext {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  color: #444;
+  user-select: none;
+  white-space: nowrap;
+}
+
+#hw-os-listen .hw-os-autonext input {
+  margin: 0;
+}
+
+/* Leave space so the last paragraph isn't hidden behind the audio bar */
+body.hw-os-listen-active {
+  padding-bottom: 5.25rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  #hw-os-listen {
+    background: rgba(30, 30, 30, 0.97);
+    border-top-color: rgba(255, 255, 255, 0.12);
+    box-shadow: 0 -4px 14px rgba(0, 0, 0, 0.35);
+  }
+  #hw-os-listen .hw-os-listen-label {
+    color: #eee;
+  }
+  #hw-os-listen .hw-os-autonext {
+    color: #bbb;
+  }
+}
