@@ -80,6 +80,51 @@
     } catch (_) {}
   }
 
+  /** Same-tab chapter advance: next page should start narration if autoplay is on. */
+  var CHAIN_PLAY_KEY = "hw-os-narration-chain";
+
+  function markNarrationChainHandoff() {
+    try {
+      sessionStorage.setItem(CHAIN_PLAY_KEY, "1");
+    } catch (_) {}
+  }
+
+  function consumeNarrationChainHandoff() {
+    try {
+      if (sessionStorage.getItem(CHAIN_PLAY_KEY) !== "1") return false;
+      sessionStorage.removeItem(CHAIN_PLAY_KEY);
+      return true;
+    } catch (_) {
+      return false;
+    }
+  }
+
+  function tryPlayAfterLoad(audio, shouldChain) {
+    if (!shouldChain || !loadAutonextPref()) return;
+
+    function attempt() {
+      var p = audio.play();
+      if (p && typeof p.then === "function") {
+        p.catch(function () {
+          /* Browser autoplay policy — controls remain for manual play. */
+        });
+      }
+    }
+
+    if (audio.readyState >= 3) {
+      attempt();
+      return;
+    }
+    audio.addEventListener(
+      "canplay",
+      function onReady() {
+        audio.removeEventListener("canplay", onReady);
+        attempt();
+      },
+      false
+    );
+  }
+
   function mount() {
     var url = chapterMp3Url();
     var stem = pageStem();
@@ -105,17 +150,21 @@
 
       var audio = wrap.querySelector("audio");
       audio.src = url;
+      audio.preload = "auto";
       var cb = wrap.querySelector("#hw-os-autonext-cb");
       cb.checked = loadAutonextPref();
       cb.addEventListener("change", function () {
         saveAutonextPref(cb.checked);
       });
 
+      tryPlayAfterLoad(audio, consumeNarrationChainHandoff());
+
       audio.addEventListener("ended", function () {
         if (!cb.checked) return;
         var urls = orderedChapterUrls();
         var i = currentChapterIndex(urls);
         if (i < 0 || i >= urls.length - 1) return;
+        markNarrationChainHandoff();
         window.location.href = urls[i + 1];
       });
     });
