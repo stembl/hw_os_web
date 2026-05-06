@@ -97,7 +97,7 @@
         "</svg> Listen</span>" +
         "<audio preload=\"metadata\" controls playsinline></audio>" +
         '<label class="hw-os-autonext">' +
-        '<input type="checkbox" id="hw-os-autonext-cb" /> Next chapter when finished' +
+        '<input type="checkbox" id="hw-os-autonext-cb" /> Autoplay' +
         "</label>";
 
       document.body.appendChild(wrap);
