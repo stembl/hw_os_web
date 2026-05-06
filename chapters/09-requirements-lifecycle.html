@@ -179,6 +179,7 @@
 <li><strong>Revise</strong>: requirement updated (or reaffirmed) with rationale and impact.</li>
 </ul>
 <p><img src="../media/diagram-3-requirements-lifecycle-arc.svg" alt="Requirements Lifecycle Arc — four states cycling through controlled evidence and revision; the dead-end &quot;Frozen but Wrong&quot; path shows what happens when the loop is broken" /></p>
+<p>Each state requires an explicit move condition: Hypothesis advances to Bless on a named authority sign-off with stated confidence for the current phase. Bless advances to Evidence when the first data record is attached to the requirement ID. Evidence advances to Revise when data crosses a predeclared threshold or operating conditions change materially. Revise re-enters Bless once the revision record is complete — old value, new value, evidence source, rationale, approver, and date.</p>
 <p>The requirement owner repeats this loop after each evidence update, gate review, or operating-condition change.</p>
 <p>This loop makes changes legible in the log and mandatory for every downstream decision that consumes the value.</p>
 <h3 id="frozen-but-wrong-is-worse-than-revised-with-evidence"><a class="header" href="#frozen-but-wrong-is-worse-than-revised-with-evidence">Frozen-but-wrong is worse than revised-with-evidence</a></h3>
@@ -186,10 +187,10 @@
 The opposite failure is also common: freezing wrong values in the requirement register to protect schedule optics.</p>
 <p>A frozen-but-wrong requirement baseline causes:</p>
 <ul>
-<li>hidden divergence between design and test reality,</li>
-<li>late design turns,</li>
-<li>supplier misalignment,</li>
-<li>and "surprise" gate failures that were visible earlier in data.</li>
+<li>hidden divergence between design and test reality — the requirement log and the test record reference different values with no revision entry connecting them,</li>
+<li>late design turns — design is built to a known-wrong bound until a gate exception forces the change after commitment,</li>
+<li>supplier misalignment — supplier inspection criteria reference the frozen value, not the test-confirmed limit,</li>
+<li>and "surprise" gate failures — visible earlier in data, masked by a requirement record that stayed frozen.</li>
 </ul>
 <p>Revision discipline in the requirement log prevents both uncontrolled churn and evidence denial.</p>
 <hr />
@@ -202,7 +203,7 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <li>evidence crosses a pre-defined threshold,</li>
 <li>operating conditions changed materially,</li>
 <li>supplier/process capability data invalidates prior assumption,</li>
-<li>downstream decision quality depends on the update now.</li>
+<li>a pending gate decision or design release depends on confirming or correcting the current value before commitment.</li>
 </ol>
 <p>Each revision entry in the requirement log should include:</p>
 <ul>
@@ -217,8 +218,8 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <p>Teams resist revisions when the change record looks arbitrary.</p>
 <p>Prevent goalpost behavior by separating two artifacts:</p>
 <ul>
-<li><strong>decision criteria</strong> (defined before data arrives),</li>
-<li><strong>decision outcome</strong> (chosen after criteria are evaluated).</li>
+<li><strong>decision criteria</strong> (requirement ID, revision threshold, and decision owner — defined and locked in the revision memo before data arrives),</li>
+<li><strong>decision outcome</strong> (revised value or reaffirmation — recorded after criteria are evaluated, with evidence source and approver).</li>
 </ul>
 <p>If criteria stay stable in the decision memo, revisions read as disciplined learning rather than political drift.</p>
 <h3 id="weekly-lifecycle-review"><a class="header" href="#weekly-lifecycle-review">Weekly lifecycle review</a></h3>

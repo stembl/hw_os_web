@@ -182,7 +182,7 @@
 <h3 id="entryexit-criteria"><a class="header" href="#entryexit-criteria">Entry/exit criteria</a></h3>
 <p>Define triage done criteria before starting:</p>
 <ul>
-<li>top decision backlog reduced below threshold,</li>
+<li>top decision backlog reduced below the threshold declared at triage start,</li>
 <li>one-page and source records aligned for two consecutive cycles,</li>
 <li>escalation path functioning with response SLA,</li>
 <li>no unresolved "which value is live" conflicts on critical threads.</li>
@@ -200,19 +200,19 @@
 <p>System controls without triage stability feel like overhead and trigger resistance.</p>
 <h3 id="common-rollout-mistakes"><a class="header" href="#common-rollout-mistakes">Common rollout mistakes</a></h3>
 <ul>
-<li>launching policy before proving value on one thread,</li>
-<li>adding templates without owner behavior change,</li>
-<li>measuring activity count instead of decision quality,</li>
-<li>ignoring local context and forcing one-size sequence.</li>
+<li>launching policy before proving value on one thread (no documented evidence package from a first-thread pilot in the rollout log),</li>
+<li>adding templates without owner behavior change (template completion rate rising while decision closure time unchanged),</li>
+<li>measuring activity count instead of decision quality (rollout metric is document count or meeting attendance, not closure rate or surprise rate),</li>
+<li>ignoring local context and forcing one-size sequence (single triage plan applied identically across programs with different distress patterns).</li>
 </ul>
 <p>Each mistake lowers trust in the OS.</p>
 <h3 id="adoption-metric-that-matters"><a class="header" href="#adoption-metric-that-matters">Adoption metric that matters</a></h3>
 <p>Track behavior change, not document count:</p>
 <ul>
-<li>decision closure time,</li>
-<li>late surprise rate,</li>
-<li>one-page/record mismatch rate,</li>
-<li>reopen rate on closed decisions.</li>
+<li>decision closure time (timestamp delta between decision logged and decision closed in the decision log),</li>
+<li>late surprise rate (count of risk register additions made after the last gate without prior flagging),</li>
+<li>one-page/record mismatch rate (comparison of one-page status to source record at weekly cadence),</li>
+<li>reopen rate on closed decisions (count of items returned to open status in the decision log).</li>
 </ul>
 <p>If these are improving, adoption is real.</p>
 

@@ -154,7 +154,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="16-first-article-fast-disciplined-iteration"><a class="header" href="#16-first-article-fast-disciplined-iteration">16. First Article: Fast, Disciplined Iteration</a></h1>
-<p>Thursday, 4:48 p.m., first-article scramble still running, someone’s kid’s practice already texted on the lock screen.</p>
+<p>Thursday, 4:48 p.m., first-article scramble still running, someone's kid's practice already texted on the lock screen.</p>
 <p>The first article build starts rough, as expected.</p>
 <p>By day three, every shift has made "small improvements."</p>
 <p>Yield is still unstable and no one can say which change helped or hurt. The two-shift delta cost three days of root-cause investigation because the configuration was not locked between shifts — every build had a different unknown baseline.</p>
@@ -169,6 +169,7 @@
 <li>expose process and design failure modes early,</li>
 <li>convert findings into controlled changes with measurable outcomes.</li>
 </ol>
+<p>A run log that carries decision-ready findings before the next commitment is made is the observable evidence that the phase ran as learning, not throughput.</p>
 <p>If the phase optimizes only for throughput, it hides the very information you need most.</p>
 <h3 id="iteration-loop-that-actually-learns"><a class="header" href="#iteration-loop-that-actually-learns">Iteration loop that actually learns</a></h3>
 <p>Use a repeatable cycle:</p>
@@ -204,11 +205,11 @@
 <p>If logs are optional, memory becomes the system and confidence outruns evidence.</p>
 <h3 id="common-anti-patterns"><a class="header" href="#common-anti-patterns">Common anti-patterns</a></h3>
 <ul>
-<li>random edits between runs,</li>
-<li>lost baselines,</li>
-<li>vague pass/fail definitions,</li>
-<li>"good enough" calls without criteria,</li>
-<li>fixes merged before isolated effect is understood.</li>
+<li>random edits between runs (change-introduced field blank or absent between runs),</li>
+<li>lost baselines (baseline-state field blank at run start),</li>
+<li>vague pass/fail definitions (result-against-criteria field contains narrative instead of a named criterion),</li>
+<li>"good enough" calls without criteria (decision field names no predeclared threshold),</li>
+<li>fixes merged before isolated effect is understood (decision field reads "keep" while anomaly-notes field remains open).</li>
 </ul>
 <p>These patterns feel energetic and usually lengthen ramp.</p>
 <h3 id="decision-gates-inside-first-article"><a class="header" href="#decision-gates-inside-first-article">Decision gates inside first article</a></h3>
@@ -216,7 +217,7 @@
 <p>Use mini-gates within first article:</p>
 <ul>
 <li>Is the change repeatable?</li>
-<li>Did risk move enough to proceed?</li>
+<li>Did risk move enough to proceed (relative to the predeclared entry criterion or the prior-run baseline)?</li>
 <li>Do we need deeper analysis before next run?</li>
 <li>Should scope or sequence change now?</li>
 </ul>

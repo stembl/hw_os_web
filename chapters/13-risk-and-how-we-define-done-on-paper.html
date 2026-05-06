@@ -165,10 +165,10 @@
 <p>Artifacts are useful only when a named owner uses them to change a specific decision and downstream behavior.</p>
 <p>A credible "done" statement is a decision object that must:</p>
 <ol>
-<li>state explicit criteria,</li>
-<li>cite evidence references,</li>
+<li>state explicit criteria (gate chair's pass condition),</li>
+<li>cite evidence references (gate chair's confidence source),</li>
 <li>include owner sign-off,</li>
-<li>declare residual risk,</li>
+<li>declare residual risk (gate chair's accept-or-escalate input),</li>
 <li>confirm downstream updates are complete.</li>
 </ol>
 <p>If any element is missing, "done" is only a status label and fails as a decision condition at gate.</p>
@@ -204,7 +204,7 @@
 <ul>
 <li>expose uncertainty honestly,</li>
 <li>map to active decisions,</li>
-<li>make tradeoffs legible across tiers.</li>
+<li>summarize tradeoffs in language each tier can evaluate without follow-up questions.</li>
 </ul>
 <hr />
 <p>A gate package at a large industrial program marked all thermal actions closed. Two critical failure modes — thermal runaway propagation and connector derating under field humidity — were still under active investigation in the test lab. The disconnect: the action tracker was PM-owned and tracked action-item status by ID. The failure-mode log was engineering-owned and tracked investigation state by failure mode. No artifact required a closure entry to cite a failure-mode log entry rather than just an action ID. One internal audit caught the gap three days before the gate review. If the gate had proceeded, the program would have released a build configuration while two unresolved failure modes were still in active investigation — a six-to-eight-week integration cost if either materialized in production.</p>
@@ -229,7 +229,7 @@
 <li>What risk remains despite closure?</li>
 <li>Which dependent decisions changed because of this closure?</li>
 </ol>
-<p>If questions 3 and 4 are blank, closure is likely cosmetic and should not be treated as done.</p>
+<p>If questions 3 and 4 are blank, closure is cosmetic — do not treat as done; return the item to the evidence owner before the gate proceeds.</p>
 <hr />
 <p>Done means the failure mode is dispositioned, not the action item is closed.</p>
 
