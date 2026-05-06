@@ -49,6 +49,18 @@
   margin: 0;
 }
 
+#hw-os-listen .hw-os-autoplay-blocked {
+  flex: 1 1 100%;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: #8a5a00;
+  line-height: 1.25;
+}
+
+#hw-os-listen .hw-os-autoplay-blocked[hidden] {
+  display: none !important;
+}
+
 /* Leave space so the last paragraph isn't hidden behind the audio bar */
 body.hw-os-listen-active {
   padding-bottom: 5.25rem;
@@ -65,5 +77,8 @@ body.hw-os-listen-active {
   }
   #hw-os-listen .hw-os-autonext {
     color: #bbb;
+  }
+  #hw-os-listen .hw-os-autoplay-blocked {
+    color: #e0b765;
   }
 }

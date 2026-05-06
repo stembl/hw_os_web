@@ -99,14 +99,33 @@
     }
   }
 
-  function tryPlayAfterLoad(audio, shouldChain) {
+  function tryPlayAfterLoad(audio, shouldChain, wrap) {
     if (!shouldChain || !loadAutonextPref()) return;
+
+    var hint = wrap.querySelector(".hw-os-autoplay-blocked");
+
+    function hideAutoplayHint() {
+      if (hint) hint.hidden = true;
+    }
+
+    audio.addEventListener(
+      "playing",
+      function () {
+        hideAutoplayHint();
+      },
+      false
+    );
 
     function attempt() {
       var p = audio.play();
       if (p && typeof p.then === "function") {
-        p.catch(function () {
-          /* Browser autoplay policy — controls remain for manual play. */
+        p.catch(function (err) {
+          var blocked =
+            err &&
+            (err.name === "NotAllowedError" || err.name === "NotSupportedError");
+          if (blocked && hint) {
+            hint.hidden = false;
+          }
         });
       }
     }
@@ -143,7 +162,10 @@
         "<audio preload=\"metadata\" controls playsinline></audio>" +
         '<label class="hw-os-autonext">' +
         '<input type="checkbox" id="hw-os-autonext-cb" /> Autoplay' +
-        "</label>";
+        "</label>" +
+        '<span class="hw-os-autoplay-blocked" role="status" aria-live="polite" hidden>' +
+        "Tap play — this browser blocked autoplay after chapter advance." +
+        "</span>";
 
       document.body.appendChild(wrap);
       document.body.classList.add("hw-os-listen-active");
@@ -157,7 +179,7 @@
         saveAutonextPref(cb.checked);
       });
 
-      tryPlayAfterLoad(audio, consumeNarrationChainHandoff());
+      tryPlayAfterLoad(audio, consumeNarrationChainHandoff(), wrap);
 
       audio.addEventListener("ended", function () {
         if (!cb.checked) return;
