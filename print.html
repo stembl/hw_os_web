@@ -189,62 +189,6 @@
 <li><strong>Executive or sponsor:</strong> the one-page truth (Ch. 6), cross-tier contracts (Ch. 14), and schedule integrity (Ch. 15) are the direct executive-facing chapters. The chapters in Layers 1 and 2 explain why those artifacts hold when the program is under pressure.</li>
 <li><strong>Hardware founder or technical lead running their own program:</strong> start with Layer 1 — the gap between a technically strong founder and a program that survives the first handoff or scale-up is almost always missing ownership records and requirement locks, not missing technical depth. Layer 5 (Ch. 18–20) names where the OS does not substitute for regulated or specialist obligations.</li>
 </ul>
-<div style="break-before: page; page-break-before: always;"></div><h1 id="artifact-examples-inert-vs-decision-grade"><a class="header" href="#artifact-examples-inert-vs-decision-grade">Artifact examples: inert vs. decision-grade</a></h1>
-<p><em>Use this page as a quick-reference alongside the main chapters. Each chapter explains why the inert version cannot drive a decision and what makes the decision-grade version controllable.</em></p>
-<p>The four artifacts below are the core surfaces the Hardware OS runs on. Every chapter that mentions "decision record," "requirement," "risk row," or "one-page status" is referring to these shapes.</p>
-<hr />
-<h2 id="requirement"><a class="header" href="#requirement">Requirement</a></h2>
-<p>The inert version has a value but gives the team nothing to test, no condition to bound it, and no way to know who approved the current number or why.</p>
-<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Statement</td><td>"System shall be robust"</td><td>"Leak rate shall be ≤ 0.5 sccm at 1.2 bar differential, ambient 0–40 °C, measured by Method M-04"</td></tr>
-<tr><td>Owner</td><td><em>(blank)</em></td><td>Named engineer, week of last review</td></tr>
-<tr><td>Evidence</td><td><em>(blank)</em></td><td>Link to test result or physics derivation that bounds the value</td></tr>
-<tr><td>Acceptance method</td><td>"TBD"</td><td>Specific test method, sample size, pass criterion</td></tr>
-<tr><td>Revision history</td><td><em>(blank)</em></td><td>Change log with rationale and approver for each revision</td></tr>
-</tbody></table>
-</div>
-<p><em>See Ch. 5 for revision discipline and the hygiene checklist.</em></p>
-<hr />
-<h2 id="decision-record"><a class="header" href="#decision-record">Decision record</a></h2>
-<p>The inert version records an outcome with no trail. Anyone who reads it six weeks later cannot reconstruct the trade, cannot tell who approved it, and cannot find what else changed as a result.</p>
-<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Decision</td><td>"Team aligned to update thermal limit"</td><td>"Revise RQ-THERM-014 from 85 °C to 78 °C per T-117 chamber evidence"</td></tr>
-<tr><td>Owner</td><td>TBD</td><td>Thermal lead</td></tr>
-<tr><td>Rationale</td><td><em>(blank)</em></td><td>"T-117 measured 78 °C steady-state; boundary condition error in model confirmed by M-23"</td></tr>
-<tr><td>Alternatives</td><td><em>(blank)</em></td><td>"Considered 80 °C with derating margin — rejected: supplier cannot hold derating at current geometry"</td></tr>
-<tr><td>Downstream artifacts updated</td><td><em>(blank)</em></td><td>"Supplier package flagged for re-qual (ECO-2027-031), schedule R-14 row updated, Gate 3 one-page revised"</td></tr>
-<tr><td>Approver / date</td><td><em>(blank)</em></td><td>Program lead, Day 9 post-T-117</td></tr>
-</tbody></table>
-</div>
-<p><em>See Ch. 4 for DRI ownership and minimum decision record fields.</em></p>
-<hr />
-<h2 id="risk-row"><a class="header" href="#risk-row">Risk row</a></h2>
-<p>The inert version looks like an active register. No one can trigger a decision from it, and "yellow" carries no evidence anyone can challenge or update.</p>
-<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Statement</td><td>"Thermal"</td><td>"Thermal margin insufficient at full-duty 40 °C ambient"</td></tr>
-<tr><td>Owner</td><td>Engineering team</td><td>Thermal lead</td></tr>
-<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Medium (T-117 showed 78 °C vs 85 °C limit) / High (gate hold, supplier re-qual)</td></tr>
-<tr><td>Trigger</td><td><em>(blank)</em></td><td>Any chamber run exceeding 77 °C</td></tr>
-<tr><td>Mitigation</td><td>In progress</td><td>Revise RQ-THERM-014; re-qual supplier package by Gate 3</td></tr>
-<tr><td>Decision date</td><td><em>(blank)</em></td><td>Gate 3</td></tr>
-<tr><td>Evidence</td><td><em>(blank)</em></td><td>T-117, M-23</td></tr>
-</tbody></table>
-</div>
-<p><em>See Ch. 6 for the full risk-row schema and gate decision logic.</em></p>
-<hr />
-<h2 id="one-page-status"><a class="header" href="#one-page-status">One-page status</a></h2>
-<p>The inert version compresses uncertainty into confidence — an exec or PM reading it cannot tell whether the calm tone reflects real evidence or polished slides. When it is wrong, nobody finds out until it is too late to act cheaply.</p>
-<div class="table-wrapper"><table><thead><tr><th>Section</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Current state</td><td>"Program tracking to plan"</td><td>"Gate 3 on track; thermal risk open — RQ-THERM-014 revision decision due Friday; supplier re-qual starts Monday"</td></tr>
-<tr><td>Top risks</td><td>"Thermal risk tracking green"</td><td>"R-14 thermal: medium/high — T-117 measured 78 °C vs 85 °C limit; owner: thermal lead; decision: Gate 3"</td></tr>
-<tr><td>Decision log deltas</td><td><em>(blank)</em></td><td>"DR-2026-014 closed: thermal limit revised to 78 °C; supplier notified"</td></tr>
-<tr><td>Critical dependencies</td><td>"Supplier on track"</td><td>"Cold-plate extrusion: slip of 8 working days; replanned to Week 22; critical path impact: none if Gate 3 holds"</td></tr>
-<tr><td>Asks / escalations</td><td>"None"</td><td>"Need program lead approval on revised supplier qualification plan by Thursday"</td></tr>
-</tbody></table>
-</div>
-<p><em>See Ch. 6 for the minimum one-page schema and source-record traceability requirement.</em></p>
-<hr />
-<p><em>These examples use the canonical <code>RQ-THERM-014</code> case that runs through Chs. 4, 6, 9, 10, 12, 13, 15, and 17. Substitute your program's artifacts; the field shapes hold.</em></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="1-the-missing-manual"><a class="header" href="#1-the-missing-manual">1. The Missing Manual</a></h1>
 <p>Monday.</p>
 <p>6:47 a.m.</p>
@@ -1716,6 +1660,62 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 </ul>
 <p>If your team can see the same truth, decide faster, and revise honestly, this OS is doing its job.</p>
 <p>If that is true, shut the lid. Go home.</p>
+<div style="break-before: page; page-break-before: always;"></div><h1 id="artifact-examples-inert-vs-decision-grade"><a class="header" href="#artifact-examples-inert-vs-decision-grade">Artifact examples: inert vs. decision-grade</a></h1>
+<p><em>Use this page when you are building your own artifacts. The chapters explain the mechanism behind each field; this page shows what the four core surfaces look like when they are working.</em></p>
+<p>The four artifacts below are the core surfaces the Hardware OS runs on. Every chapter that mentions "decision record," "requirement," "risk row," or "one-page status" is referring to these shapes.</p>
+<hr />
+<h2 id="requirement"><a class="header" href="#requirement">Requirement</a></h2>
+<p>The inert version has a value but gives the team nothing to test, no condition to bound it, and no way to know who approved the current number or why.</p>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
+<tr><td>Statement</td><td>"System shall be robust"</td><td>"Leak rate shall be ≤ 0.5 sccm at 1.2 bar differential, ambient 0–40 °C, measured by Method M-04"</td></tr>
+<tr><td>Owner</td><td><em>(blank)</em></td><td>Named engineer, week of last review</td></tr>
+<tr><td>Evidence</td><td><em>(blank)</em></td><td>Link to test result or physics derivation that bounds the value</td></tr>
+<tr><td>Acceptance method</td><td>"TBD"</td><td>Specific test method, sample size, pass criterion</td></tr>
+<tr><td>Revision history</td><td><em>(blank)</em></td><td>Change log with rationale and approver for each revision</td></tr>
+</tbody></table>
+</div>
+<p><em>See Ch. 5 for revision discipline and the hygiene checklist.</em></p>
+<hr />
+<h2 id="decision-record"><a class="header" href="#decision-record">Decision record</a></h2>
+<p>The inert version records an outcome with no trail. Anyone who reads it six weeks later cannot reconstruct the trade, cannot tell who approved it, and cannot find what else changed as a result.</p>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
+<tr><td>Decision</td><td>"Team aligned to update thermal limit"</td><td>"Revise RQ-THERM-014 from 85 °C to 78 °C per T-117 chamber evidence"</td></tr>
+<tr><td>Owner</td><td>TBD</td><td>Thermal lead</td></tr>
+<tr><td>Rationale</td><td><em>(blank)</em></td><td>"T-117 measured 78 °C steady-state; boundary condition error in model confirmed by M-23"</td></tr>
+<tr><td>Alternatives</td><td><em>(blank)</em></td><td>"Considered 80 °C with derating margin — rejected: supplier cannot hold derating at current geometry"</td></tr>
+<tr><td>Downstream artifacts updated</td><td><em>(blank)</em></td><td>"Supplier package flagged for re-qual (ECO-2027-031), schedule R-14 row updated, Gate 3 one-page revised"</td></tr>
+<tr><td>Approver / date</td><td><em>(blank)</em></td><td>Program lead, Day 9 post-T-117</td></tr>
+</tbody></table>
+</div>
+<p><em>See Ch. 4 for DRI ownership and minimum decision record fields.</em></p>
+<hr />
+<h2 id="risk-row"><a class="header" href="#risk-row">Risk row</a></h2>
+<p>The inert version looks like an active register. No one can trigger a decision from it, and "yellow" carries no evidence anyone can challenge or update.</p>
+<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
+<tr><td>Statement</td><td>"Thermal"</td><td>"Thermal margin insufficient at full-duty 40 °C ambient"</td></tr>
+<tr><td>Owner</td><td>Engineering team</td><td>Thermal lead</td></tr>
+<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Medium (T-117 showed 78 °C vs 85 °C limit) / High (gate hold, supplier re-qual)</td></tr>
+<tr><td>Trigger</td><td><em>(blank)</em></td><td>Any chamber run exceeding 77 °C</td></tr>
+<tr><td>Mitigation</td><td>In progress</td><td>Revise RQ-THERM-014; re-qual supplier package by Gate 3</td></tr>
+<tr><td>Decision date</td><td><em>(blank)</em></td><td>Gate 3</td></tr>
+<tr><td>Evidence</td><td><em>(blank)</em></td><td>T-117, M-23</td></tr>
+</tbody></table>
+</div>
+<p><em>See Ch. 6 for the full risk-row schema and gate decision logic.</em></p>
+<hr />
+<h2 id="one-page-status"><a class="header" href="#one-page-status">One-page status</a></h2>
+<p>The inert version compresses uncertainty into confidence — an exec or PM reading it cannot tell whether the calm tone reflects real evidence or polished slides. When it is wrong, nobody finds out until it is too late to act cheaply.</p>
+<div class="table-wrapper"><table><thead><tr><th>Section</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
+<tr><td>Current state</td><td>"Program tracking to plan"</td><td>"Gate 3 on track; thermal risk open — RQ-THERM-014 revision decision due Friday; supplier re-qual starts Monday"</td></tr>
+<tr><td>Top risks</td><td>"Thermal risk tracking green"</td><td>"R-14 thermal: medium/high — T-117 measured 78 °C vs 85 °C limit; owner: thermal lead; decision: Gate 3"</td></tr>
+<tr><td>Decision log deltas</td><td><em>(blank)</em></td><td>"DR-2026-014 closed: thermal limit revised to 78 °C; supplier notified"</td></tr>
+<tr><td>Critical dependencies</td><td>"Supplier on track"</td><td>"Cold-plate extrusion: slip of 8 working days; replanned to Week 22; critical path impact: none if Gate 3 holds"</td></tr>
+<tr><td>Asks / escalations</td><td>"None"</td><td>"Need program lead approval on revised supplier qualification plan by Thursday"</td></tr>
+</tbody></table>
+</div>
+<p><em>See Ch. 6 for the minimum one-page schema and source-record traceability requirement.</em></p>
+<hr />
+<p><em>These examples use the canonical <code>RQ-THERM-014</code> case that runs through Chs. 4, 6, 9, 10, 12, 13, 15, and 17. Substitute your program's artifacts; the field shapes hold.</em></p>
 
                     </main>
 
