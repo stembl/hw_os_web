@@ -515,9 +515,9 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 <p>If a requirement in your current baseline has no evidence link, no named acceptance method, and no revision history, it is not a requirement. It is a wish with a number. Find three of those today and fix them.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="6-gates-risk-registers-and-one-page-truth"><a class="header" href="#6-gates-risk-registers-and-one-page-truth">6. Gates, Risk Registers, and One-Page Truth</a></h1>
 <p><em>Requirement quality is the floor. Gates, risk rows, and one-page status are the synchronization mechanism that keeps requirements, decisions, and evidence in one shared view across all functions.</em></p>
-<p>Tuesday, 10:45 a.m., gate slides on the projector, room still smelling like someone’s takeout from an hour ago.</p>
+<p>Tuesday, 10:45 a.m., gate slides on the projector, whiteboard in the corner still covered in someone else's diagram from the session before.</p>
 <p>The gate deck looks clean. The room still cannot answer one simple question: what changed since last gate that alters risk to launch.</p>
-<p>If a gate cannot produce that answer in two minutes, the program is performing confidence, not making decisions.</p>
+<p>If the team cannot produce that answer in two minutes from the gate record, the program is performing confidence, not making decisions.</p>
 <hr />
 <h3 id="gate-reviews-decision-points-not-slide-events"><a class="header" href="#gate-reviews-decision-points-not-slide-events">Gate reviews: decision points, not slide events</a></h3>
 <p>A gate is useful only if it closes explicit decisions.</p>
@@ -526,8 +526,9 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 <li>decision taken (go/hold/re-scope),</li>
 <li>owner for each follow-up action,</li>
 <li>date and criteria for closure,</li>
-<li>artifact delta list (what records changed as a result).</li>
+<li>artifact delta list — what controlled records changed as a result.</li>
 </ol>
+<p>The artifact delta list is the implementation trail: RQ-THERM-014 revised from 85 °C to 78 °C | ECO-2027-031 opened | R-14 closed | schedule baseline updated to rev 4. Without it, a decision taken in the room has no verified follow-through.</p>
 <p>No decision, no gate. Just a meeting.</p>
 <p>Not every gate is a decision gate. A <strong>readiness review</strong> confirms that planned next-phase inputs are in place — no controlled value needs to change. An <strong>evidence review</strong> surfaces test or analysis results without forcing a decision yet — useful when the data is new and the team needs to absorb it before proposing a change. An <strong>alignment meeting</strong> reconciles cross-tier expectations without triggering a baseline change. A <strong>regulatory or customer staging gate</strong> moves a formal record forward in a controlled lifecycle. All of these have legitimate jobs. The rule "no decision, no gate" applies specifically to events on the program plan named "gate" that are expected to change a controlled baseline, requirement, or release — when those events happen but no controlled value changes, the gate is mislabeled. Rename it accurately: call it a review, write down what it produces, and stop treating it as a gate.</p>
 <h3 id="risk-register-from-decorative-list-to-control-tool"><a class="header" href="#risk-register-from-decorative-list-to-control-tool">Risk register: from decorative list to control tool</a></h3>
@@ -535,18 +536,25 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 <p>A usable risk row needs:</p>
 <ul>
 <li>risk statement,</li>
+<li>risk category (schedule / technical / regulatory — name it explicitly),</li>
 <li>owner,</li>
 <li>likelihood/impact basis,</li>
 <li>trigger signal,</li>
+</ul>
+<p>A trigger signal names the specific observable condition that forces an action. Example: "any chamber run exceeding 77 °C" — if that reading appears, R-14 escalates to a gate hold regardless of where the schedule stands. Without a named trigger, a risk row stays yellow indefinitely — acknowledged but never forcing action.</p>
+<ul>
 <li>mitigation action,</li>
 <li>decision date,</li>
 <li>current status with evidence link.</li>
 </ul>
 <p>If "owner" is a team name and "status" is a color, the register will look active and behave inert.</p>
+<p>Risk is not monolithic. A schedule risk — supplier lead-time uncertainty, tariff exposure, a dependency that has not been confirmed — moves through procurement decisions, buffer management, and contract terms. A technical risk — a thermal margin built on a back-of-envelope assumption, a structural calculation awaiting simulation, a supplier process not yet characterized at production rate — moves through testing, simulation, and supplier qualification. The mitigation actions for each are different, the owners are different, and the trigger signals are different. A register that collapses both under a single color produces the worst outcome: owners who are unclear on what kind of action will actually reduce the risk, and leadership reading one signal that covers two completely different problem types.</p>
+<p>Each mitigation action should be specific enough that completing it demonstrably reduces the stated risk. When the action closes, the row carries the evidence — test data, simulation result, supplier Cpk, confirmed lead time — not just a status color flip. That evidence is what makes the risk register a decision artifact rather than a status decoration.</p>
 <p><strong>Risk register: bad row vs decision-grade row</strong></p>
 <div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad row</th><th>Decision-grade row</th></tr></thead><tbody>
 <tr><td>ID</td><td>R-14</td><td>R-14</td></tr>
 <tr><td>Statement</td><td>Thermal</td><td>Thermal margin insufficient at full-duty 40 °C ambient</td></tr>
+<tr><td>Category</td><td><em>(blank)</em></td><td>Technical — thermal margin pending supplier re-qual</td></tr>
 <tr><td>Owner</td><td>Engineering team</td><td>Thermal lead</td></tr>
 <tr><td>Likelihood / Impact</td><td>Yellow</td><td>Likelihood: medium (T-117 showed 78 °C vs 85 °C limit) / Impact: high (gate hold, supplier re-qual)</td></tr>
 <tr><td>Trigger</td><td><em>(blank)</em></td><td>Any chamber run exceeding 77 °C</td></tr>
@@ -567,7 +575,7 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 </ol>
 <p>Every line should trace to a source artifact. If leadership cannot drill down from line to record, confidence will exceed reality.</p>
 <p>A one-page status that traces every line to a live record is the artifact that lets an executive leave for the weekend without anxiety. Not because the program has no risk — every hardware program has risk — but because the risk is named, owned, and visible in the register. The exec does not need to call because the register will surface what would otherwise surprise them. An engineering lead who has built a traceable one-page is an engineering lead whose exec has something reliable to read.</p>
-<p>Acceptable implementations for the one-page status include a Confluence page with embedded live links to the risk register, gate packet, and requirement log — refreshed weekly by a named owner — when the team uses Confluence. A generated PDF or slide refreshed automatically from a dashboard tool (Power BI, Tableau, or a simple data connector) works when the source records are already in structured systems. A controlled markdown file under version control, refreshed weekly with named source citations, works for small teams. The OS cares that each line traces to a live source artifact — not that the page is beautiful.</p>
+<p>The one-page can live in any shared location that supports a stable link and a named owner: a wiki page, a version-controlled doc, a live dashboard, a weekly-refreshed slide. The format does not determine quality. What determines quality is whether each line links to a live source record — test result, risk row, decision entry, schedule baseline — and whether a reader can follow that link to verify the claim without asking anyone.</p>
 <p><strong>One-page status: bad line vs traceable line</strong></p>
 <p>Bad:</p>
 <blockquote>
@@ -587,14 +595,15 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 </ul>
 <p>Late updates are not neutral. They create drift by definition.</p>
 <h3 id="failure-mode-deck-replaces-record"><a class="header" href="#failure-mode-deck-replaces-record">Failure mode: deck replaces record</a></h3>
-<p>When decks become the source of truth:</p>
+<p>A deck works fine as the one-page status surface if it is updated by its owners on a fixed cadence, links to source records rather than restating them, lives at a permanent shared link, and is accessible to every tier. The failure mode is not the format.</p>
+<p>When any artifact — deck, wiki, dashboard, or shared doc — stops holding the current state and becomes the thing teams optimize for narrative coherence:</p>
 <ul>
 <li>decisions disappear after the meeting,</li>
 <li>risk ownership blurs,</li>
-<li>teams optimize for narrative coherence over state accuracy,</li>
+<li>status reflects what the room agreed to say, not what the records show,</li>
 <li>and escalations arrive as surprises.</li>
 </ul>
-<p>The fix is not "better decks." The fix is record discipline and traceable one-page lines.</p>
+<p>The fix is not a different format. The fix is that whatever format carries the one-page must trace every line to a live record — and the tool holding that record must not be ephemeral. Specs need revision control so two people cannot be working from different versions of the same requirement. The one-page needs a stable, shared link so no one has to ask where it is. Data citations belong in a traceable location — a linked ticket, a controlled test record, a versioned log — not in a chat thread or an email chain. If the team has to reconstruct a decision by searching message history, the information was stored in the wrong place.</p>
 <h3 id="practical-install-in-two-weeks"><a class="header" href="#practical-install-in-two-weeks">Practical install in two weeks</a></h3>
 <p>Week 1:</p>
 <ul>
@@ -611,6 +620,8 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 <p>Before Gate G3, risk row R-14 listed "supplier CpK pending" with no decision date, and the one-page line still read "launch confidence: green." The decision had been deferred through two prior gate cycles — each cycle the row stayed yellow and no action date was set. After the gate decision to hold the launch lot and fund gauge redesign, R-14 gained an owner and a decision date and the one-page delta changed to "launch at risk until CpK ≥ 1.33 evidence dated 2026-05-12." The R-14 decision, once it carried a named decision date, closed in one meeting. Gauge data collected two weeks later confirmed the launch lot would have produced a 12% first-pass yield miss at the customer — a containment action that would have cost more than the gate hold.</p>
 <p>Two weeks is enough to expose whether your current rhythm is decision-grade.</p>
 <p>If every line on your one-page status this week traces to a named live record — not a slide, not memory, not a color — the status can be trusted without a phone call. If any line is unsourced, that is the gap to close before the next gate.</p>
+<h3 id="status-is-not-forecast"><a class="header" href="#status-is-not-forecast">Status is not forecast</a></h3>
+<p>Gates and one-page truth tell you what is true now. They cannot tell you when it will be done — not unless the schedule is built from actual dependencies with named owners and real lead times. A traceable status is not the same as a defensible forecast.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="8-automation-decisions-at-concept-stage"><a class="header" href="#8-automation-decisions-at-concept-stage">8. Automation Decisions at Concept Stage</a></h1>
 <p>Tuesday, 2:20 p.m., concept review optimism still on the whiteboard from this morning.</p>
 <p>The design review celebrates fit, function, and cost.</p>
