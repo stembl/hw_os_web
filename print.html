@@ -157,10 +157,9 @@
                         <h1 id="the-hardware-os"><a class="header" href="#the-hardware-os">The Hardware OS</a></h1>
 <p><img src="media/hw_os_front_2.png" alt="The Hardware OS — front cover" /></p>
 <p><strong>Author:</strong> Steve Embleton</p>
-<p>How engineering leads keep requirements, decisions, risks, and schedules tied to build-and-test truth.</p>
+<p>How engineering leads keep requirements, decisions, evidence, and executive truth tied to what the build actually proves — and what to do when drift starts.</p>
 <p><strong>Start reading:</strong> use the sidebar for the full outline, or open <a href="chapters/01-the-missing-manual.html">1. The Missing Manual</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-hardware-os-in-one-page"><a class="header" href="#the-hardware-os-in-one-page">The Hardware OS, in one page</a></h1>
-<p><em>Reading order: see <code>book/SUMMARY.md</code>.</em></p>
 <p>Twenty short chapters. Read them in order. They are not twenty separate ideas — they sit on five operating layers. Knowing the layer a chapter belongs to tells you what it is <em>for</em>, and what it is <strong>not</strong> for.</p>
 <p><img src="media/diagram-1-hardware-os-stack.svg" alt="Hardware OS Stack — five layers from Program Truth at the foundation to Installation and Durability at the top" /></p>
 <div class="table-wrapper"><table><thead><tr><th>Layer</th><th>What this layer guarantees</th><th>Chapters</th></tr></thead><tbody>
@@ -188,6 +187,7 @@
 <li><strong>Engineering lead:</strong> start with Layer 1 (program truth). Everything else is scaffolding on top of that foundation.</li>
 <li><strong>PM:</strong> Start with Layer 4 — the schedule, cross-tier contracts, and one-page status are the artifacts a PM reads and defends daily; Layer 2 explains why the gates and risk rows that feed those artifacts are built the way they are.</li>
 <li><strong>Executive or sponsor:</strong> the one-page truth (Ch. 6), cross-tier contracts (Ch. 14), and schedule integrity (Ch. 15) are the direct executive-facing chapters. The chapters in Layers 1 and 2 explain why those artifacts hold when the program is under pressure.</li>
+<li><strong>Hardware founder or technical lead running their own program:</strong> start with Layer 1 — the gap between a technically strong founder and a program that survives the first handoff or scale-up is almost always missing ownership records and requirement locks, not missing technical depth. Layer 5 (Ch. 18–20) names where the OS does not substitute for regulated or specialist obligations.</li>
 </ul>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="artifact-examples-inert-vs-decision-grade"><a class="header" href="#artifact-examples-inert-vs-decision-grade">Artifact examples: inert vs. decision-grade</a></h1>
 <p><em>Use this page as a quick-reference alongside the main chapters. Each chapter explains why the inert version cannot drive a decision and what makes the decision-grade version controllable.</em></p>
@@ -670,6 +670,7 @@ If requirement truth is ambiguous, the gate becomes theater regardless of slide 
 <p>The design review celebrates fit, function, and cost.</p>
 <p>Six months later, the line cannot probe one critical node without custom fixture workarounds that add 40 seconds per unit and destabilize yield.</p>
 <p>Nothing is "wrong" with the product design. The automation path was never designed into it.</p>
+<p>The automation decision belongs at concept stage, where the per-unit test cost can still change the design.</p>
 <hr />
 <h3 id="the-core-mistake"><a class="header" href="#the-core-mistake">The core mistake</a></h3>
 <p>Teams treat automation as a downstream implementation problem.</p>
@@ -1355,6 +1356,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>By day three, every shift has made "small improvements."</p>
 <p>Yield is still unstable and no one can say which change helped or hurt. The two-shift delta cost three days of root-cause investigation because the configuration was not locked between shifts — every build had a different unknown baseline.</p>
 <p>Build throughput increased, but the run log did not produce decision-ready learning.</p>
+<p>One change per build, locked baseline, readable run log — without that discipline, first article produces throughput, not learning.</p>
 <hr />
 <h3 id="objective-of-first-article"><a class="header" href="#objective-of-first-article">Objective of first article</a></h3>
 <p>First article is not a demo milestone.</p>
