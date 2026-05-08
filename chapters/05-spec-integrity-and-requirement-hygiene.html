@@ -155,7 +155,7 @@
                     <main>
                         <h1 id="5-spec-integrity-and-requirement-hygiene"><a class="header" href="#5-spec-integrity-and-requirement-hygiene">5. Spec Integrity and Requirement Hygiene</a></h1>
 <p><em>Ownership defines who closes decisions. What those decisions close on is the requirement record — and a decision is only as good as the requirement it references.</em></p>
-<p>Tuesday, 7:20 a.m., half the room still on their first coffee, ship windows already on the screen.</p>
+<p>Tuesday, 7:20 a.m., half the room still on their first coffee, the committed ship dates already on the screen.</p>
 <p>Manufacturing asks which revision is real. Test says they validated Rev C assumptions. Procurement already placed orders against Rev B.</p>
 <p>The drawing package is "released." The program still has three definitions of done.</p>
 <p>Spec integrity is not about prettier documents. It is about one build reality.</p>
@@ -179,22 +179,23 @@
 <li>specific (single unambiguous statement),</li>
 <li>measurable (clear units and method),</li>
 <li>bounded (conditions/scope explicit),</li>
-<li>traceable (stable ID and source),</li>
+<li>traceable (stable unique ID; named origin),</li>
 <li>owned (named person accountable for quality).</li>
 </ul>
+<p>Traceable means the requirement has an identifier that does not change when the value changes — downstream artifacts reference the ID, not the number — and a named origin: the customer spec, test result, or engineering decision that justifies why this requirement exists.</p>
 <p>"System shall be robust" is not a requirement.
 "Leak rate shall be &lt;= X under conditions Y and Z, measured by method M" is.</p>
 <h3 id="revision-discipline"><a class="header" href="#revision-discipline">Revision discipline</a></h3>
 <p>Revision control is where integrity usually breaks.</p>
-<p>Minimum discipline, applied to each requirement:</p>
-<ol>
-<li>One controlled source — same location, same revision label, across every function.</li>
+<p>The minimum: one controlled source — same location, same revision label — that every function reads from. If the value lives in a chat message or a personal folder, it is not controlled.</p>
+<p>The rest adds durability:</p>
+<ul>
 <li>Change log entry with rationale and evidence link.</li>
 <li>Explicit impact note: which tests, supplier packets, and schedule rows must update.</li>
-<li>Approval path by change class — small adjustments differ from requirement redefinition.</li>
-</ol>
+<li>Named approver matched to change scope — adjusting a tolerance within a validated range needs the requirement owner's sign-off; redefining what a requirement measures needs broader authority because every artifact built against it is affected.</li>
+</ul>
 <p>On one program, a stress analyst revised a structural load limit after a test result, notified manufacturing verbally, and considered the revision complete. REQ-STRUCT-08 remained at the old value in the controlled record. Manufacturing built to the revised limit; the supplier qualification test ran against the original. The gap surfaced at first-article acceptance: a three-week hold while the record, the build, and the supplier notification were reconciled.</p>
-<p>If a value changes without this chain, treat the change as unofficial until cleaned up.</p>
+<p>If a value changes without the controlled source updated, treat the change as unofficial until cleaned up.</p>
 <h3 id="requirement-hygiene-checklist-for-active-programs"><a class="header" href="#requirement-hygiene-checklist-for-active-programs">Requirement hygiene checklist for active programs</a></h3>
 <p>Run this weekly on active high-risk requirements:</p>
 <ul>
@@ -212,11 +213,17 @@ Last change rationale captured</li>
 Downstream artifacts updated (test plan, one-pager, supplier packet)</li>
 </ul>
 <p>This is not paperwork for paperwork. It is a control loop for decision quality.</p>
-<p>Acceptable implementations for the requirement record include a PLM module with controlled revision fields (Windchill, Teamcenter, Arena) when design data is already PLM-controlled, a Jira issue type with locked fields for Owner / Evidence / Acceptance-method / Revision-history for smaller programs, a shared spreadsheet with locked columns and a named owner for every row for very early-stage work, or a controlled markdown requirements log under version control when the team is small and engineering-led. The OS cares about six fields — owner, current value, evidence link, acceptance method, rationale, and downstream-update record — not about the tool that holds them.</p>
+<p>Three implementations that work:</p>
+<ul>
+<li>A spreadsheet with a named-owner column, a current-value column, an evidence column, and a change-log tab — sufficient for most programs and requires nothing to set up.</li>
+<li>A shared document with a fixed requirements table and a change history section at the bottom — works when the team already has a shared document location everyone reads from.</li>
+<li>A version-controlled plain-text file in the same repository as design files — works for small engineering-led teams where file history serves as the revision record.</li>
+</ul>
+<p>All three share the same requirement: six fields in one stable location — owner, current value, evidence link, acceptance method, change rationale, and downstream-update record — and a history that shows what changed and when. What disqualifies a tool is behavior: if the current value is in a message thread and the approval is in an email, there is no controlled requirement. There is only a number floating in conversations with no way to confirm which version is live.</p>
 <h3 id="why-requirement-quality-comes-before-gate-design"><a class="header" href="#why-requirement-quality-comes-before-gate-design">Why requirement quality comes before gate design</a></h3>
 <p>Gates cannot be strong if requirement quality is weak.</p>
 <p>A gate asks, "Are we ready to commit?"
-If requirement truth is ambiguous, the gate becomes theater regardless of slide quality.</p>
+If requirement truth is ambiguous, the gate is a well-prepared presentation over hollow data — the review happens, the questions get answered, and nothing said in the room is reliable.</p>
 <p>Spec integrity is the substrate under every later control: risk scoring, one-page truth, supplier alignment, and schedule realism.</p>
 <p>If a requirement in your current baseline has no evidence link, no named acceptance method, and no revision history, it is not a requirement. It is a wish with a number. Find three of those today and fix them.</p>
 

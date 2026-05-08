@@ -363,7 +363,7 @@
 <p>This is not a communication problem. It is an ownership design problem.</p>
 <hr />
 <h3 id="dri-means-closure-not-coordination"><a class="header" href="#dri-means-closure-not-coordination">DRI means closure, not coordination</a></h3>
-<p>A DRI is not "the person who schedules the meeting."</p>
+<p>A Directly Responsible Individual (DRI) is not "the person who schedules the meeting."</p>
 <p>A DRI is the person accountable for:</p>
 <ol>
 <li>framing the decision question,</li>
@@ -374,6 +374,8 @@
 </ol>
 <p><img src="chapters/../media/diagram-2-dri-decision-flow.svg" alt="DRI Decision Flow — five duties with an explicit escalation branch when criteria are not met" /></p>
 <p>If those five are not explicit, you do not have a DRI. You have a coordinator.</p>
+<p>The lead does not need to personally own every DRI role. Naming a DRI is itself a lead responsibility. An engineering lead who surfaces an electromagnetic interference (EMI) concern can frame the decision question — what does this component need to meet, against what test condition, by what date — and assign that question to another engineer. That engineer becomes the DRI: they own defining the requirements, assessing the risk, setting next actions, and driving to a date.</p>
+<p>What the lead does not do after that assignment is re-own the path. In reviews, the lead's questions are limited to three: is the closure criterion met, do you need help escalating with another team, and does the one-pager need updating? The lead does not have enough context to judge whether the work is at risk, whether a due date is realistic, or whether escalation is warranted. Those calls belong to the DRI. The lead relies on the owner to surface them.</p>
 <h3 id="authority-must-match-responsibility"><a class="header" href="#authority-must-match-responsibility">Authority must match responsibility</a></h3>
 <p>The most common ownership failure is giving responsibility without authority.</p>
 <p>"You own this thread" means nothing if the owner cannot:</p>
@@ -383,7 +385,8 @@
 <li>and enforce update of the one-page status and dependent records.</li>
 </ul>
 <p>Authority does not mean unilateral control over everything. It means a known decision boundary and a known escalation boundary.</p>
-<p>A battery-pack team hit this exact gap when a thermal-limit decision stayed open for eight days. The assigned DRI could gather evidence but could not call a hold on pilot build — the authority boundary was not written into the ownership map, so the DRI waited for a consensus that never arrived. Purchasing kept ordering cells to the old thermal limit for all eight days. The fix was a one-line revision to the ownership record: the DRI was given explicit hold authority when the chamber-evidence threshold was crossed. The next thermal revision (same decision class) closed in four hours. The eight-day cost was not analysis time; it was two status meetings, one gate-prep review, and eight days of cell orders that had to be redirected.</p>
+<p>A battery-pack team hit this exact gap during a stretch where several problems were running in parallel: cell components were arriving out of expected formation tolerance, one material was on allocation, and the laser welding process was generating consistent leak-test failures that nobody could pin to a single root cause. Three functions — process engineering, materials, and the cell supplier — each had a stated position, but no one had a named date or closure authority. For ten days, procurement held orders to two different material specifications while the debate continued. The weld failures in particular were resisting quick resolution; each team's proposed fix was blocked or qualified by another team's constraint.</p>
+<p>The fix was not a task-force. It was a one-line revision to the ownership record: one process engineer was named DRI for the weld-process decision with explicit authority to call the hold on any build lot when leak-test failure rate exceeded a stated threshold — without waiting for cross-function consensus. The authority boundary was written, not assumed. Once it was, the process engineer called the hold, drove the weld parameter validation without waiting for permission, and closed the leak issue in the next build cycle. The earlier delay was not an analysis problem. It was the absence of a named person who could call the hold.</p>
 <h3 id="what-breaks-when-ownership-is-fuzzy"><a class="header" href="#what-breaks-when-ownership-is-fuzzy">What breaks when ownership is fuzzy</a></h3>
 <p>Shared ownership sounds collaborative and often behaves like delay.</p>
 <p>Failure signatures:</p>
@@ -417,7 +420,10 @@
 <li>downstream artifacts updated.</li>
 </ul>
 <p>No long memo required. One durable record is enough to stop re-litigation.</p>
-<p>Acceptable implementations for the decision record include a lightweight Architectural Decision Record (ADR) markdown file under version control for small engineering-led teams, a Confluence page with a fixed template when the team's primary documentation home is already Confluence, a Jira issue type with locked decision-authority and evidence-link fields for programs where tickets are the main engineering work tracker, or a PLM Engineering Change Order when the decision is product-data-controlling. The OS does not care which; it cares that the fields — owner, decision question, evidence, rationale, affected artifacts, approver, date — are all in one place and reachable by anyone on the program.</p>
+<p>The decision record can live in any format — a plain text file, a shared document, a wiki page — as long as it has three properties: a static link anyone on the program can reach today and six months from now, a date stamp or edit history that shows when it was last changed, and a location that is not buried in a conversation thread.</p>
+<p>What disqualifies a tool is not its name but its behavior. Chat and email fail as decision records because state drifts — the decision is somewhere in a scroll of messages with no stable address, no clear owner field, and no way to confirm which version is current. A decision sent in a chat message is invisible to anyone who joined the thread late and unrecoverable once the channel is archived.</p>
+<p>The question to ask of any tool: can I send someone a direct link to this record right now, and will that link still resolve in a year? If the answer is no, that tool is not suitable for decision records regardless of what else it is used for.</p>
+<p>The fields that must be present — owner, decision question, evidence, rationale, affected artifacts, approver, date — are the requirement. The container is implementation detail.</p>
 <p><strong>Decision record: bad vs corrected</strong></p>
 <div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad (incomplete)</th><th>Good (decision-grade)</th></tr></thead><tbody>
 <tr><td>Decision</td><td>Revise thermal limit</td><td>Revise RQ-THERM-014 from 85 °C to 78 °C per T-117 chamber evidence</td></tr>
@@ -441,13 +447,13 @@
 <p>If you can name the DRI for every open program decision today, and each DRI has proposed a decision by a date, the OS is doing its job. If any question is 'TBD / team / committee,' it is not.</p>
 <h3 id="decision-classes-not-every-call-needs-the-same-overhead"><a class="header" href="#decision-classes-not-every-call-needs-the-same-overhead">Decision classes: not every call needs the same overhead</a></h3>
 <p>Not every decision warrants the full DRI machinery. The overhead should match the reversibility.</p>
-<p>A <strong>reversible decision</strong> — component selection before tooling, test parameter adjustment during EVT — can move fast with a lighter record and a lower authority threshold. The DRI still owns closure, but speed is the right bias. The cost of being wrong is small; the cost of being slow is real.</p>
+<p>A <strong>reversible decision</strong> — component selection before tooling, test parameter adjustment during Engineering Verification Testing (EVT) — can move fast with a lighter record and a lower authority threshold. The DRI still owns closure, but speed is the right bias. The cost of being wrong is small; the cost of being slow is real.</p>
 <p>An <strong>irreversible decision</strong> — tooling release, supplier qualification, customer specification commitment — requires the full map: written authority boundary, decision record, downstream artifact updates. Replaying an irreversible decision is expensive enough to justify the added friction before calling it.</p>
 <p>A <strong>build-to-learn unit</strong> is a third class. The acceptance criterion is "what did we learn?" not "did it pass the requirement?" Treating a build-to-learn result as a production failure is a scope error. Name the unit's class before it hits the floor. The DRI for a build-to-learn unit owns the learning extraction, not the conformance call.</p>
 <p>If you are not sure which class a decision falls in, ask one question: if we call this wrong, can we undo it before purchasing and build decisions fan out? If yes, it is reversible. If no, treat it as irreversible until proven otherwise.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="5-spec-integrity-and-requirement-hygiene"><a class="header" href="#5-spec-integrity-and-requirement-hygiene">5. Spec Integrity and Requirement Hygiene</a></h1>
 <p><em>Ownership defines who closes decisions. What those decisions close on is the requirement record — and a decision is only as good as the requirement it references.</em></p>
-<p>Tuesday, 7:20 a.m., half the room still on their first coffee, ship windows already on the screen.</p>
+<p>Tuesday, 7:20 a.m., half the room still on their first coffee, the committed ship dates already on the screen.</p>
 <p>Manufacturing asks which revision is real. Test says they validated Rev C assumptions. Procurement already placed orders against Rev B.</p>
 <p>The drawing package is "released." The program still has three definitions of done.</p>
 <p>Spec integrity is not about prettier documents. It is about one build reality.</p>
@@ -471,22 +477,23 @@
 <li>specific (single unambiguous statement),</li>
 <li>measurable (clear units and method),</li>
 <li>bounded (conditions/scope explicit),</li>
-<li>traceable (stable ID and source),</li>
+<li>traceable (stable unique ID; named origin),</li>
 <li>owned (named person accountable for quality).</li>
 </ul>
+<p>Traceable means the requirement has an identifier that does not change when the value changes — downstream artifacts reference the ID, not the number — and a named origin: the customer spec, test result, or engineering decision that justifies why this requirement exists.</p>
 <p>"System shall be robust" is not a requirement.
 "Leak rate shall be &lt;= X under conditions Y and Z, measured by method M" is.</p>
 <h3 id="revision-discipline"><a class="header" href="#revision-discipline">Revision discipline</a></h3>
 <p>Revision control is where integrity usually breaks.</p>
-<p>Minimum discipline, applied to each requirement:</p>
-<ol>
-<li>One controlled source — same location, same revision label, across every function.</li>
+<p>The minimum: one controlled source — same location, same revision label — that every function reads from. If the value lives in a chat message or a personal folder, it is not controlled.</p>
+<p>The rest adds durability:</p>
+<ul>
 <li>Change log entry with rationale and evidence link.</li>
 <li>Explicit impact note: which tests, supplier packets, and schedule rows must update.</li>
-<li>Approval path by change class — small adjustments differ from requirement redefinition.</li>
-</ol>
+<li>Named approver matched to change scope — adjusting a tolerance within a validated range needs the requirement owner's sign-off; redefining what a requirement measures needs broader authority because every artifact built against it is affected.</li>
+</ul>
 <p>On one program, a stress analyst revised a structural load limit after a test result, notified manufacturing verbally, and considered the revision complete. REQ-STRUCT-08 remained at the old value in the controlled record. Manufacturing built to the revised limit; the supplier qualification test ran against the original. The gap surfaced at first-article acceptance: a three-week hold while the record, the build, and the supplier notification were reconciled.</p>
-<p>If a value changes without this chain, treat the change as unofficial until cleaned up.</p>
+<p>If a value changes without the controlled source updated, treat the change as unofficial until cleaned up.</p>
 <h3 id="requirement-hygiene-checklist-for-active-programs"><a class="header" href="#requirement-hygiene-checklist-for-active-programs">Requirement hygiene checklist for active programs</a></h3>
 <p>Run this weekly on active high-risk requirements:</p>
 <ul>
@@ -504,11 +511,17 @@ Last change rationale captured</li>
 Downstream artifacts updated (test plan, one-pager, supplier packet)</li>
 </ul>
 <p>This is not paperwork for paperwork. It is a control loop for decision quality.</p>
-<p>Acceptable implementations for the requirement record include a PLM module with controlled revision fields (Windchill, Teamcenter, Arena) when design data is already PLM-controlled, a Jira issue type with locked fields for Owner / Evidence / Acceptance-method / Revision-history for smaller programs, a shared spreadsheet with locked columns and a named owner for every row for very early-stage work, or a controlled markdown requirements log under version control when the team is small and engineering-led. The OS cares about six fields — owner, current value, evidence link, acceptance method, rationale, and downstream-update record — not about the tool that holds them.</p>
+<p>Three implementations that work:</p>
+<ul>
+<li>A spreadsheet with a named-owner column, a current-value column, an evidence column, and a change-log tab — sufficient for most programs and requires nothing to set up.</li>
+<li>A shared document with a fixed requirements table and a change history section at the bottom — works when the team already has a shared document location everyone reads from.</li>
+<li>A version-controlled plain-text file in the same repository as design files — works for small engineering-led teams where file history serves as the revision record.</li>
+</ul>
+<p>All three share the same requirement: six fields in one stable location — owner, current value, evidence link, acceptance method, change rationale, and downstream-update record — and a history that shows what changed and when. What disqualifies a tool is behavior: if the current value is in a message thread and the approval is in an email, there is no controlled requirement. There is only a number floating in conversations with no way to confirm which version is live.</p>
 <h3 id="why-requirement-quality-comes-before-gate-design"><a class="header" href="#why-requirement-quality-comes-before-gate-design">Why requirement quality comes before gate design</a></h3>
 <p>Gates cannot be strong if requirement quality is weak.</p>
 <p>A gate asks, "Are we ready to commit?"
-If requirement truth is ambiguous, the gate becomes theater regardless of slide quality.</p>
+If requirement truth is ambiguous, the gate is a well-prepared presentation over hollow data — the review happens, the questions get answered, and nothing said in the room is reliable.</p>
 <p>Spec integrity is the substrate under every later control: risk scoring, one-page truth, supplier alignment, and schedule realism.</p>
 <p>If a requirement in your current baseline has no evidence link, no named acceptance method, and no revision history, it is not a requirement. It is a wish with a number. Find three of those today and fix them.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="6-gates-risk-registers-and-one-page-truth"><a class="header" href="#6-gates-risk-registers-and-one-page-truth">6. Gates, Risk Registers, and One-Page Truth</a></h1>

@@ -162,7 +162,7 @@
 <p>This is not a communication problem. It is an ownership design problem.</p>
 <hr />
 <h3 id="dri-means-closure-not-coordination"><a class="header" href="#dri-means-closure-not-coordination">DRI means closure, not coordination</a></h3>
-<p>A DRI is not "the person who schedules the meeting."</p>
+<p>A Directly Responsible Individual (DRI) is not "the person who schedules the meeting."</p>
 <p>A DRI is the person accountable for:</p>
 <ol>
 <li>framing the decision question,</li>
@@ -173,6 +173,8 @@
 </ol>
 <p><img src="../media/diagram-2-dri-decision-flow.svg" alt="DRI Decision Flow — five duties with an explicit escalation branch when criteria are not met" /></p>
 <p>If those five are not explicit, you do not have a DRI. You have a coordinator.</p>
+<p>The lead does not need to personally own every DRI role. Naming a DRI is itself a lead responsibility. An engineering lead who surfaces an electromagnetic interference (EMI) concern can frame the decision question — what does this component need to meet, against what test condition, by what date — and assign that question to another engineer. That engineer becomes the DRI: they own defining the requirements, assessing the risk, setting next actions, and driving to a date.</p>
+<p>What the lead does not do after that assignment is re-own the path. In reviews, the lead's questions are limited to three: is the closure criterion met, do you need help escalating with another team, and does the one-pager need updating? The lead does not have enough context to judge whether the work is at risk, whether a due date is realistic, or whether escalation is warranted. Those calls belong to the DRI. The lead relies on the owner to surface them.</p>
 <h3 id="authority-must-match-responsibility"><a class="header" href="#authority-must-match-responsibility">Authority must match responsibility</a></h3>
 <p>The most common ownership failure is giving responsibility without authority.</p>
 <p>"You own this thread" means nothing if the owner cannot:</p>
@@ -182,7 +184,8 @@
 <li>and enforce update of the one-page status and dependent records.</li>
 </ul>
 <p>Authority does not mean unilateral control over everything. It means a known decision boundary and a known escalation boundary.</p>
-<p>A battery-pack team hit this exact gap when a thermal-limit decision stayed open for eight days. The assigned DRI could gather evidence but could not call a hold on pilot build — the authority boundary was not written into the ownership map, so the DRI waited for a consensus that never arrived. Purchasing kept ordering cells to the old thermal limit for all eight days. The fix was a one-line revision to the ownership record: the DRI was given explicit hold authority when the chamber-evidence threshold was crossed. The next thermal revision (same decision class) closed in four hours. The eight-day cost was not analysis time; it was two status meetings, one gate-prep review, and eight days of cell orders that had to be redirected.</p>
+<p>A battery-pack team hit this exact gap during a stretch where several problems were running in parallel: cell components were arriving out of expected formation tolerance, one material was on allocation, and the laser welding process was generating consistent leak-test failures that nobody could pin to a single root cause. Three functions — process engineering, materials, and the cell supplier — each had a stated position, but no one had a named date or closure authority. For ten days, procurement held orders to two different material specifications while the debate continued. The weld failures in particular were resisting quick resolution; each team's proposed fix was blocked or qualified by another team's constraint.</p>
+<p>The fix was not a task-force. It was a one-line revision to the ownership record: one process engineer was named DRI for the weld-process decision with explicit authority to call the hold on any build lot when leak-test failure rate exceeded a stated threshold — without waiting for cross-function consensus. The authority boundary was written, not assumed. Once it was, the process engineer called the hold, drove the weld parameter validation without waiting for permission, and closed the leak issue in the next build cycle. The earlier delay was not an analysis problem. It was the absence of a named person who could call the hold.</p>
 <h3 id="what-breaks-when-ownership-is-fuzzy"><a class="header" href="#what-breaks-when-ownership-is-fuzzy">What breaks when ownership is fuzzy</a></h3>
 <p>Shared ownership sounds collaborative and often behaves like delay.</p>
 <p>Failure signatures:</p>
@@ -216,7 +219,10 @@
 <li>downstream artifacts updated.</li>
 </ul>
 <p>No long memo required. One durable record is enough to stop re-litigation.</p>
-<p>Acceptable implementations for the decision record include a lightweight Architectural Decision Record (ADR) markdown file under version control for small engineering-led teams, a Confluence page with a fixed template when the team's primary documentation home is already Confluence, a Jira issue type with locked decision-authority and evidence-link fields for programs where tickets are the main engineering work tracker, or a PLM Engineering Change Order when the decision is product-data-controlling. The OS does not care which; it cares that the fields — owner, decision question, evidence, rationale, affected artifacts, approver, date — are all in one place and reachable by anyone on the program.</p>
+<p>The decision record can live in any format — a plain text file, a shared document, a wiki page — as long as it has three properties: a static link anyone on the program can reach today and six months from now, a date stamp or edit history that shows when it was last changed, and a location that is not buried in a conversation thread.</p>
+<p>What disqualifies a tool is not its name but its behavior. Chat and email fail as decision records because state drifts — the decision is somewhere in a scroll of messages with no stable address, no clear owner field, and no way to confirm which version is current. A decision sent in a chat message is invisible to anyone who joined the thread late and unrecoverable once the channel is archived.</p>
+<p>The question to ask of any tool: can I send someone a direct link to this record right now, and will that link still resolve in a year? If the answer is no, that tool is not suitable for decision records regardless of what else it is used for.</p>
+<p>The fields that must be present — owner, decision question, evidence, rationale, affected artifacts, approver, date — are the requirement. The container is implementation detail.</p>
 <p><strong>Decision record: bad vs corrected</strong></p>
 <div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad (incomplete)</th><th>Good (decision-grade)</th></tr></thead><tbody>
 <tr><td>Decision</td><td>Revise thermal limit</td><td>Revise RQ-THERM-014 from 85 °C to 78 °C per T-117 chamber evidence</td></tr>
@@ -240,7 +246,7 @@
 <p>If you can name the DRI for every open program decision today, and each DRI has proposed a decision by a date, the OS is doing its job. If any question is 'TBD / team / committee,' it is not.</p>
 <h3 id="decision-classes-not-every-call-needs-the-same-overhead"><a class="header" href="#decision-classes-not-every-call-needs-the-same-overhead">Decision classes: not every call needs the same overhead</a></h3>
 <p>Not every decision warrants the full DRI machinery. The overhead should match the reversibility.</p>
-<p>A <strong>reversible decision</strong> — component selection before tooling, test parameter adjustment during EVT — can move fast with a lighter record and a lower authority threshold. The DRI still owns closure, but speed is the right bias. The cost of being wrong is small; the cost of being slow is real.</p>
+<p>A <strong>reversible decision</strong> — component selection before tooling, test parameter adjustment during Engineering Verification Testing (EVT) — can move fast with a lighter record and a lower authority threshold. The DRI still owns closure, but speed is the right bias. The cost of being wrong is small; the cost of being slow is real.</p>
 <p>An <strong>irreversible decision</strong> — tooling release, supplier qualification, customer specification commitment — requires the full map: written authority boundary, decision record, downstream artifact updates. Replaying an irreversible decision is expensive enough to justify the added friction before calling it.</p>
 <p>A <strong>build-to-learn unit</strong> is a third class. The acceptance criterion is "what did we learn?" not "did it pass the requirement?" Treating a build-to-learn result as a production failure is a scope error. Name the unit's class before it hits the floor. The DRI for a build-to-learn unit owns the learning extraction, not the conformance call.</p>
 <p>If you are not sure which class a decision falls in, ask one question: if we call this wrong, can we undo it before purchasing and build decisions fan out? If yes, it is reversible. If no, treat it as irreversible until proven otherwise.</p>
