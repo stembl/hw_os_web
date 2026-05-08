@@ -649,20 +649,21 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 <li>tolerance and stack assumptions,</li>
 <li>test point location,</li>
 <li>part presentation,</li>
-<li>traceability architecture.</li>
+<li>traceability architecture — how each serialized unit ties to calibrated measurement records, rework history, release documentation, and field-return learning so automation is asked to capture the right data once, not bolted on as an afterthought.</li>
 </ul>
 <p>Delay those decisions and the program pays in cycle time, scrap, and heroic workaround engineering.</p>
 <p>On one actuator program, the concept team chose recessed test-pad geometry to save enclosure space. At ramp, that choice forced a manual probing station between ICT and final test and added 52 seconds per unit. At 10,000 units per month, 52 seconds per unit added 144 hours of test-floor time; when the team attempted to automate after tooling was fixed, fixture redesign consumed six additional weeks. <strong>Old process:</strong> geometry locked without a probe-access check; no automation path review at concept. <strong>Artifact changed:</strong> a mandatory concept-stage automation review added to the Phase 1 gate, requiring each critical characteristic mapped to a physical probe strategy before geometry froze. <strong>Measured improvement:</strong> on the following program, the same class of pad access conflict was caught in week two of concept and resolved with a geometry adjustment before tooling; no manual station appeared in that line plan. <strong>Cost of the gap:</strong> 52 seconds per unit added permanently to the line, plus six weeks of fixture redesign after tooling was already fixed.</p>
+<p>That receipt is the mechanism in miniature: per-unit seconds scaled to monthly floor demand—arithmetic to own at concept while geometry and tooling still trade, not after ramp turns it into a permanent line tax.</p>
 <h3 id="concept-stage-questions-that-prevent-late-pain"><a class="header" href="#concept-stage-questions-that-prevent-late-pain">Concept-stage questions that prevent late pain</a></h3>
-<p>Before architecture freeze, answer:</p>
+<p>Before concept closes, settle targets on:</p>
 <ol>
 <li>What critical characteristics must be measured in production?</li>
 <li>How will each be accessed physically?</li>
-<li>What cycle-time target constrains station design?</li>
+<li>Throughput envelope — order-of-magnitude cycle-time / rate that the line family must sustain (fine station-cycle budgeting comes after functioning prototype builds, before a test production run).</li>
 <li>What data must be captured per unit for release and field learning?</li>
-<li>Which steps are likely manual at launch and automatable later?</li>
+<li>Which steps are manual at launch and automatable later?</li>
 </ol>
-<p>If these answers are absent, automation is already a schedule and yield risk.</p>
+<p>If these targets are unset or fuzzy, automation is already a schedule and yield risk.</p>
 <h3 id="minimum-design-to-automation-handoff"><a class="header" href="#minimum-design-to-automation-handoff">Minimum design-to-automation handoff</a></h3>
 <p>You do not need full line design at concept stage.</p>
 <p>You do need a minimum handoff package:</p>
@@ -691,12 +692,13 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 <li>Classify each as design change, fixture change, or process workaround.</li>
 <li>Quantify cost of each workaround in cycle time and yield impact.</li>
 <li>Escalate one design change if workaround cost exceeds threshold.</li>
-<li>Capture lessons as mandatory inputs for next concept phase.</li>
+<li>Capture lessons as mandatory inputs for the next concept phase.</li>
 </ol>
-<p>Each item the triage surfaces is a mandatory input to the next concept stage — the same geometry miss is expensive only once if the lesson arrives before architecture freeze.</p>
+<p>Use triage outputs to decide <strong>this</strong> program — design changes, fixtures, workarounds, and what ships. Treat the systemic lessons from that work as binding inputs for <strong>the next concept</strong> on the next program (or major platform refresh), so the same class of geometry miss is expensive once across the portfolio, not twice.</p>
 <h3 id="automation-is-a-decision-quality-topic"><a class="header" href="#automation-is-a-decision-quality-topic">Automation is a decision-quality topic</a></h3>
-<p>Automation arguments are often framed as tooling preference.
-They are usually requirement and ownership failures:</p>
+<p>Automation arguments are often miscast as tooling brand or robotics preference.</p>
+<p>The sharper failure mode is sequencing: “automation last” pushes someone toward line and casting-level commitments before product geometry, packaging, presentation, conveyance, fixture points, or tolerance envelopes are settled — then the conversation is improvised and brittle. Decide automation when those edges are treated as known inputs — e.g., can this geometry be self-centered and probed reliably on this datum — and the residual question is narrower.</p>
+<p>Under that sequencing failure, what looks like a tooling fight is usually requirement and ownership failure:</p>
 <ul>
 <li>unclear measurable targets,</li>
 <li>late closure on critical characteristics,</li>
