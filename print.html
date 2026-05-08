@@ -711,7 +711,7 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <p>Tuesday, 5:50 p.m., long shadows in the program office, dependency chart finally honest.</p>
 <p>The launch date on the slide has not moved in three months.</p>
 <p>The dependency chain under it has moved every week.</p>
-<p>This is date reporting without dependency control.</p>
+<p>This is date reporting without dependency control: leadership still sees a fixed milestone and "progress" language while nobody owns a live predecessor graph — the tasks, durations, buffers, and handoffs that would force the date to move when the work underneath moves.</p>
 <hr />
 <h3 id="a-schedule-is-a-model-not-a-promise"><a class="header" href="#a-schedule-is-a-model-not-a-promise">A schedule is a model, not a promise</a></h3>
 <p>The launch date is an output of the dependency model.</p>
@@ -723,7 +723,7 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <li>prerequisite tasks,</li>
 <li>ownership of each task,</li>
 <li>uncertainty ranges,</li>
-<li>integration constraints between streams.</li>
+<li>integration constraints between streams — where work in parallel has to meet (interface freezes, shared builds or fixtures, hardware–software bring-up order, qualification artifacts that block the next stream).</li>
 </ol>
 <p>Then the planning lead computes the date from that model instead of declaring it in advance.</p>
 <h3 id="honest-critical-path"><a class="header" href="#honest-critical-path">Honest critical path</a></h3>
@@ -732,7 +732,7 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <p>Rules for honest path management:</p>
 <ul>
 <li>recalculate path when task state changes,</li>
-<li>include external dependencies (supplier lead, compliance, tooling),</li>
+<li>include external dependencies (supplier lead time — procurement and qualification clock from order or release to usable parts — plus compliance, tooling),</li>
 <li>include integration and validation tasks (not only build tasks),</li>
 <li>show float explicitly.</li>
 </ul>
@@ -743,7 +743,7 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <li>compressing non-critical tasks and calling it recovery,</li>
 <li>hiding blocked dependencies in "in progress" buckets,</li>
 <li>assuming parallelism where shared people/equipment make it serial,</li>
-<li>reporting completion percent instead of decision readiness.</li>
+<li>reporting roll-up percent complete while gate or sign-off prerequisites stay blocked — percent complete tracks effort and checklist breadth; decision readiness tracks whether the next honest gate, signature, or integration step is unblocked. Optimizing for the first lets teams paint progress green while prerequisites for the real decision are still missing.</li>
 </ul>
 <p>These behaviors protect optics and destroy forecast quality.</p>
 <hr />
@@ -756,14 +756,14 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <li>Refresh task state from owners.</li>
 <li>Recompute dependency chain and current critical path.</li>
 <li>Identify path deltas since last cycle.</li>
-<li>Update one-page status with specific impact.</li>
+<li>Publish schedule delta (path and date impact) in the one-page status.</li>
 <li>Trigger escalation where recovery needs scope/resource decision.</li>
 </ol>
 <p>If the team does not recompute dependencies each cycle, the status packet is not decision-grade.</p>
-<p>A PM who trusts the schedule stops asking for daily status. That shift is not a sign of disengagement — it is the signal that the artifacts are doing their job. When the dependency chain is live and the weekly cadence publishes a delta note, the PM has something reliable to read before the review. The engineering lead who has earned that trust has bought themselves protected time to solve the technical problem instead of presenting it repeatedly.</p>
-<p>Acceptable implementations for the dependency-based schedule include Smartsheet or MS Project when the team already has one and will maintain the dependency links, Jira Advanced Roadmaps for teams whose work is tracked in Jira, an Excel model with a named dependency-notes column when the program is small and the PM will own the model, or a simple markdown dependency list under version control for very small programs where a Gantt is overhead. The OS does not care which tool; it cares that the date is derived from the dependency chain and uncertainty fields — not set first and defended by narrative compression.</p>
+<p>A PM who trusts the schedule stops chasing daily status. That shift is not a sign of disengagement — it is the signal that the artifacts are doing their job. When the dependency chain is live and the weekly cadence publishes a delta note, the PM has something reliable to read before the review. The engineering lead who has earned that trust has bought themselves protected time to solve the technical problem instead of presenting it repeatedly.</p>
+<p>Acceptable homes for the dependency-based schedule are those where the program can rely on the same facts: one place everyone can open without hunting, a stable reference link from your program hub, predecessor links or an equivalent explicit dependency map that is maintained when work changes, and a visible history of plan churn (what moved, when, and why) so weekly deltas are not argued from memory. That can be a Gantt file, a table with a maintained dependency column, or a version-controlled outline — scale and ceremony should match program size. The OS does not care which format holds the model; it cares that the date is derived from the dependency chain and uncertainty fields — not set first and defended by narrative compression.</p>
 <h3 id="what-real-recovery-requires"><a class="header" href="#what-real-recovery-requires">What real recovery requires</a></h3>
-<p>Recovery has only three levers:</p>
+<p>Recovery has three levers:</p>
 <ul>
 <li>change scope,</li>
 <li>change sequence,</li>
