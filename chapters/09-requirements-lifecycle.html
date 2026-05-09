@@ -155,10 +155,9 @@
                     <main>
                         <h1 id="9-requirements-lifecycle-hypothesis---bless---evidence---revise"><a class="header" href="#9-requirements-lifecycle-hypothesis---bless---evidence---revise">9. Requirements Lifecycle (Hypothesis -&gt; Bless -&gt; Evidence -&gt; Revise)</a></h1>
 <p>Wednesday, 6:50 a.m., lab hallway quiet, the thermal verification log shows the board thermal limit (<code>RQ-THERM-047</code>) set to 65 °C while the full-load chamber test (<code>T-218</code>) at 40 °C ambient shows the control board measuring above 70 °C.</p>
-<p>The board thermal limit was 65 °C. Full-load testing at 40 °C ambient measured the control board above 70 °C.</p>
-<p>The program spent three weeks on thermal management — airflow changes, component placement, layout iterations — trying to bring the board temperature below the limit.</p>
-<p>The 65 °C requirement was a lifetime estimate, not a decomposed component case temperature limit. It did not apply to the UL qualification test scenario the team had been running.</p>
-<p>Three weeks of design work committed against a requirement whose scenario scope was never confirmed.</p>
+<p>The program ran thermal management work — redesigning airflow, shifting components, iterating the layout — trying to bring the board temperature below the limit.</p>
+<p>The requirement had a value and an owner. It did not have a scope note naming which operating scenario it applied to, or a rationale connecting the limit to actual component requirements.</p>
+<p>Three weeks of committed design work against a requirement whose basis had never been confirmed.</p>
 <hr />
 <h3 id="requirements-are-managed-hypotheses"><a class="header" href="#requirements-are-managed-hypotheses">Requirements are managed hypotheses</a></h3>
 <p>A requirement starts as a controlled hypothesis in the requirement log: this value must hold for a named operating condition. Both the value and the operating condition are part of the hypothesis. Changing the understanding of the bounding scenario — what worst-case actually looks like in field deployment — is itself a revision trigger, not only a measurement that crosses a threshold.</p>
