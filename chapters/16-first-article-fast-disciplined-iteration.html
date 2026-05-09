@@ -155,12 +155,8 @@
                     <main>
                         <h1 id="16-first-article-fast-disciplined-iteration"><a class="header" href="#16-first-article-fast-disciplined-iteration">16. First Article: Fast, Disciplined Iteration</a></h1>
 <p>Thursday, 4:48 p.m., first-article scramble still running, someone's kid's practice already texted on the lock screen.</p>
-<p>The first article build starts rough, as expected.</p>
-<p>By day three, every shift has made "small improvements."</p>
-<p>Yield is still unstable and no one can say which change helped or hurt. The two-shift delta cost three days of root-cause investigation because the configuration was not locked between shifts — every build had a different unknown baseline.</p>
-<p>Build throughput increased, but the run log did not produce decision-ready learning.</p>
-<p>One change per build, locked baseline, readable run log — without that discipline, first article produces throughput, not learning.</p>
-<hr />
+<p>The first article build starts rough, as expected. By day three, every shift has made "small improvements." Yield is still unstable and no one can say which change helped or hurt. The two-shift delta cost three days of root-cause investigation because the configuration was not locked between shifts — every build had a different unknown baseline. Build throughput increased, but the run log did not produce decision-ready learning.</p>
+<p>The team locked the build configuration at shift handoff: one baseline, one change per build cycle, signed off at handover. The first run log produced under that discipline answered two questions the previous log could not — which change moved yield and which did not. Root-cause investigation eliminated. The throughput was lower than the unlocked approach for the first two cycles; the learning was usable starting from cycle one. <strong>Old process:</strong> build configuration unlocked between shifts; multiple simultaneous changes per cycle; run log captured throughput but could not attribute yield results to specific changes. <strong>Artifact changed:</strong> locked-baseline discipline at shift handoff — one change per build cycle, configuration signed at handover, run log structured to answer what changed and what the yield result was. <strong>Measured improvement:</strong> decision-ready learning from the first disciplined run cycle; three days of root-cause investigation for the prior shift delta eliminated. <strong>Cost of the gap:</strong> three days of root-cause investigation to recover from two shifts of simultaneous, untracked changes — throughput without learning, not a substitute for it.</p>
 <h3 id="objective-of-first-article"><a class="header" href="#objective-of-first-article">Objective of first article</a></h3>
 <p>First article is not a demo milestone.</p>
 <p>It is a structured learning phase that reduces uncertainty fast enough to decide next commitments.</p>

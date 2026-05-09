@@ -159,7 +159,7 @@
 <p>In the lab log, verification and reliability owners still track two unresolved critical failure modes with no accepted closure evidence.</p>
 <p>The paper package says done, but the program state is not done.</p>
 <p>That gap is where late cost, schedule slips, and credibility damage enter through integration and executive review.</p>
-<p>This is the gate-closure logic that depends on calibrated chamber evidence and a controlled requirement revision — in the canonical case, the closure that must happen before <code>RQ-THERM-014</code> and risk row <code>R-14</code> can close at Gate 3.</p>
+<p>This is the gate-closure logic that depends on calibrated chamber evidence and a controlled requirement revision â€” in the canonical case, the closure that must happen before the thermal case temperature requirement and the supplier CpK risk row can close at Gate 3.</p>
 <hr />
 <h3 id="done-on-paper-must-match-decision-reality"><a class="header" href="#done-on-paper-must-match-decision-reality">"Done on paper" must match decision reality</a></h3>
 <p>Artifacts are useful only when a named owner uses them to change a specific decision and downstream behavior.</p>
@@ -207,8 +207,8 @@
 <li>summarize tradeoffs in language each tier can evaluate without follow-up questions.</li>
 </ul>
 <hr />
-<p>A gate package at a large industrial program marked all thermal actions closed. Two critical failure modes — thermal runaway propagation and connector derating under field humidity — were still under active investigation in the test lab. The disconnect: the action tracker was PM-owned and tracked action-item status by ID. The failure-mode log was engineering-owned and tracked investigation state by failure mode. No artifact required a closure entry to cite a failure-mode log entry rather than just an action ID. One internal audit caught the gap three days before the gate review. If the gate had proceeded, the program would have released a build configuration while two unresolved failure modes were still in active investigation — a six-to-eight-week integration cost if either materialized in production.</p>
-<p>Old process: closure based on action-item status, not failure-mode investigation status. Artifact changed: a requirement in the gate-packet template that closure evidence must cite the failure-mode log entry (not just the action ID) and state the investigation disposition. Measured improvement: three days of gate-prep found the gap; the alternative was 6–8 weeks of post-release investigation. Cost of the gap: the organization had been running this way for two gate cycles and had closed gates with unresolved failure modes at least twice before the audit caught it.</p>
+<p>A gate package at a large industrial program marked all thermal actions closed. Two critical failure modes â€” thermal runaway propagation and connector derating under field humidity â€” were still under active investigation in the test lab. The disconnect: the action tracker was PM-owned and tracked action-item status by ID. The failure-mode log was engineering-owned and tracked investigation state by failure mode. No artifact required a closure entry to cite a failure-mode log entry rather than just an action ID. One internal audit caught the gap three days before the gate review. If the gate had proceeded, the program would have released a build configuration while two unresolved failure modes were still in active investigation â€” a six-to-eight-week integration cost if either materialized in production.</p>
+<p><strong>Old process:</strong> closure based on action-item status, not failure-mode investigation status. <strong>Artifact changed:</strong> a requirement in the gate-packet template that closure evidence must cite the failure-mode log entry (not just the action ID) and state the investigation disposition. <strong>Measured improvement:</strong> three days of gate-prep found the gap; the alternative was 6â€“8 weeks of post-release investigation. <strong>Cost of the gap:</strong> the organization had been running this way for two gate cycles and had closed gates with unresolved failure modes at least twice before the audit caught it.</p>
 <hr />
 <h3 id="tie-ins-to-gates-and-one-page-truth"><a class="header" href="#tie-ins-to-gates-and-one-page-truth">Tie-ins to gates and one-page truth</a></h3>
 <p>Risk artifacts should not stay in a technical silo; they must drive shared program controls.</p>
@@ -220,7 +220,7 @@
 <li>trigger escalation with named owners.</li>
 </ul>
 <p>If this propagation is weak, paper confidence drifts from the real program state and misleads leadership decisions.</p>
-<p>Acceptable implementations for the failure-mode tracker include a dedicated FRACAS (Failure Reporting, Analysis, and Corrective Action System) when the organization already has one, a separate backlog slice that models failure modes as first-class records linked bidirectionally to mitigation actions via a keyed join field, a controlled spreadsheet with a named failure-mode ID column that action items must reference at closure, or a markdown file under version control with explicit closure dispositions. The OS cares that the failure-mode investigation status and the action-item closure status are cross-referenced — not that they live in the same tool.</p>
+<p>Acceptable implementations for the failure-mode tracker include a dedicated FRACAS (Failure Reporting, Analysis, and Corrective Action System) when the organization already has one, a separate backlog slice that models failure modes as first-class records linked bidirectionally to mitigation actions via a keyed join field, a controlled spreadsheet with a named failure-mode ID column that action items must reference at closure, or a markdown file under version control with explicit closure dispositions. The OS cares that the failure-mode investigation status and the action-item closure status are cross-referenced â€” not that they live in the same tool.</p>
 <h3 id="practical-done-review-in-15-minutes"><a class="header" href="#practical-done-review-in-15-minutes">Practical "done" review in 15 minutes</a></h3>
 <p>For each high-impact closure item, ask:</p>
 <ol>
@@ -229,7 +229,7 @@
 <li>What risk remains despite closure?</li>
 <li>Which dependent decisions changed because of this closure?</li>
 </ol>
-<p>If questions 3 and 4 are blank, closure is cosmetic — do not treat as done; return the item to the evidence owner before the gate proceeds.</p>
+<p>If questions 3 and 4 are blank, closure is cosmetic â€” do not treat as done; return the item to the evidence owner before the gate proceeds.</p>
 <hr />
 <p>Done means the failure mode is dispositioned, not the action item is closed.</p>
 
