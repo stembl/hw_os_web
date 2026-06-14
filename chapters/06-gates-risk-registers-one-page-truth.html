@@ -168,7 +168,7 @@
 <li>date and criteria for closure,</li>
 <li>artifact delta list — what controlled records changed as a result.</li>
 </ol>
-<p>The artifact delta list is the implementation trail: RQ-THERM-014 revised from 85 °C to 78 °C | ECO-2027-031 opened | R-14 closed | schedule baseline updated to rev 4. Without it, a decision taken in the room has no verified follow-through.</p>
+<p>The artifact delta list is the implementation trail: thermal limit revised from 85 °C to 78 °C | supplier re-qual opened | thermal risk row closed | schedule baseline updated to rev 4. Without it, a decision taken in the room has no verified follow-through.</p>
 <p>No decision, no gate. Just a meeting.</p>
 <p>Not every gate is a decision gate. A <strong>readiness review</strong> confirms that planned next-phase inputs are in place — no controlled value needs to change. An <strong>evidence review</strong> surfaces test or analysis results without forcing a decision yet — useful when the data is new and the team needs to absorb it before proposing a change. An <strong>alignment meeting</strong> reconciles cross-tier expectations without triggering a baseline change. A <strong>regulatory or customer staging gate</strong> moves a formal record forward in a controlled lifecycle. All of these have legitimate jobs. The rule "no decision, no gate" applies specifically to events on the program plan named "gate" that are expected to change a controlled baseline, requirement, or release — when those events happen but no controlled value changes, the gate is mislabeled. Rename it accurately: call it a review, write down what it produces, and stop treating it as a gate.</p>
 <h3 id="risk-register-from-decorative-list-to-control-tool"><a class="header" href="#risk-register-from-decorative-list-to-control-tool">Risk register: from decorative list to control tool</a></h3>
@@ -181,7 +181,7 @@
 <li>likelihood/impact basis,</li>
 <li>trigger signal,</li>
 </ul>
-<p>A trigger signal names the specific observable condition that forces an action. Example: "any chamber run exceeding 77 °C" — if that reading appears, R-14 escalates to a gate hold regardless of where the schedule stands. Without a named trigger, a risk row stays yellow indefinitely — acknowledged but never forcing action.</p>
+<p>A trigger signal names the specific observable condition that forces an action. Example: "any chamber run exceeding 77 °C" — if that reading appears, the thermal risk row escalates to a gate hold regardless of where the schedule stands. Without a named trigger, a risk row stays yellow indefinitely — acknowledged but never forcing action.</p>
 <ul>
 <li>mitigation action,</li>
 <li>decision date,</li>
@@ -192,15 +192,14 @@
 <p>Each mitigation action should be specific enough that completing it demonstrably reduces the stated risk. When the action closes, the row carries the evidence — test data, simulation result, supplier Cpk, confirmed lead time — not just a status color flip. That evidence is what makes the risk register a decision artifact rather than a status decoration.</p>
 <p><strong>Risk register: bad row vs decision-grade row</strong></p>
 <div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad row</th><th>Decision-grade row</th></tr></thead><tbody>
-<tr><td>ID</td><td>R-14</td><td>R-14</td></tr>
 <tr><td>Statement</td><td>Thermal</td><td>Thermal margin insufficient at full-duty 40 °C ambient</td></tr>
 <tr><td>Category</td><td><em>(blank)</em></td><td>Technical — thermal margin pending supplier re-qual</td></tr>
 <tr><td>Owner</td><td>Engineering team</td><td>Thermal lead</td></tr>
-<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Likelihood: medium (T-117 showed 78 °C vs 85 °C limit) / Impact: high (gate hold, supplier re-qual)</td></tr>
+<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Likelihood: medium (chamber showed 78 °C vs 85 °C limit) / Impact: high (gate hold, supplier re-qual)</td></tr>
 <tr><td>Trigger</td><td><em>(blank)</em></td><td>Any chamber run exceeding 77 °C</td></tr>
-<tr><td>Mitigation</td><td>In progress</td><td>Revise RQ-THERM-014, re-qual supplier package</td></tr>
-<tr><td>Decision date</td><td><em>(blank)</em></td><td>Gate 3</td></tr>
-<tr><td>Evidence</td><td><em>(blank)</em></td><td>T-117, M-23</td></tr>
+<tr><td>Mitigation</td><td>In progress</td><td>Revise thermal limit, re-qual supplier package</td></tr>
+<tr><td>Decision date</td><td><em>(blank)</em></td><td>Named gate date</td></tr>
+<tr><td>Evidence</td><td><em>(blank)</em></td><td>Chamber run, contact-resistance measurement</td></tr>
 </tbody></table>
 </div>
 <h3 id="one-page-truth-executive-view-tied-to-source-records"><a class="header" href="#one-page-truth-executive-view-tied-to-source-records">One-page truth: executive view tied to source records</a></h3>
@@ -223,7 +222,7 @@
 </blockquote>
 <p>Good:</p>
 <blockquote>
-<p>Thermal: RQ-THERM-014 revised to 78 °C per T-117 | R-14 closed at Gate 3 | Supplier re-qual in progress per ECO-2027-031 | Cold-plate extrusion: 11-day slip, recovery in schedule rev 4</p>
+<p>Thermal: limit revised to 78 °C per chamber | thermal risk row closed at gate | supplier re-qual in progress | Cold-plate extrusion: 11-day slip, recovery in schedule rev 4</p>
 </blockquote>
 <h3 id="update-rhythm-that-keeps-it-honest"><a class="header" href="#update-rhythm-that-keeps-it-honest">Update rhythm that keeps it honest</a></h3>
 <p>Cadence matters more than formatting.</p>
@@ -257,7 +256,7 @@
 <li>run next gate using artifact delta list,</li>
 <li>reject items that cannot trace to source.</li>
 </ul>
-<p>Before Gate G3, risk row R-14 listed "supplier CpK pending" with no decision date, and the one-page line still read "launch confidence: green." The decision had been deferred through two prior gate cycles — each cycle the row stayed yellow and no action date was set. After the gate decision to hold the launch lot and fund gauge redesign, R-14 gained an owner and a decision date and the one-page delta changed to "launch at risk until CpK ≥ 1.33 evidence dated 2026-05-12." The R-14 decision, once it carried a named decision date, closed in one meeting. Gauge data collected two weeks later confirmed the launch lot would have produced a 12% first-pass yield miss at the customer — a containment action that would have cost more than the gate hold. <strong>Old process:</strong> risk rows deferred with no action date; one-page status held green while risk rows stayed yellow through two consecutive gate cycles. <strong>Artifact changed:</strong> each risk row required a named owner and a decision date before the gate could proceed; one-page delta updated to a named risk statement with an evidence date. <strong>Measured improvement:</strong> R-14 decision closed in one meeting once it carried a decision date; a 12% first-pass yield miss caught before the launch lot shipped. <strong>Cost of the gap:</strong> two prior gate cycles where risk rows deferred without action — the yield miss that would have materialized as a customer containment action.</p>
+<p>Before Gate G3, the thermal risk row listed "supplier CpK pending" with no decision date, and the one-page line still read "launch confidence: green." The decision had been deferred through two prior gate cycles — each cycle the row stayed yellow and no action date was set. After the gate decision to hold the launch lot and fund gauge redesign, the row gained an owner and a decision date and the one-page delta changed to "launch at risk until CpK ≥ 1.33 evidence dated 2026-05-12." The decision, once it carried a named decision date, closed in one meeting. Gauge data collected two weeks later confirmed the launch lot would have produced a 12% first-pass yield miss at the customer — a containment action that would have cost more than the gate hold. <strong>Old process:</strong> risk rows deferred with no action date; one-page status held green while risk rows stayed yellow through two consecutive gate cycles. <strong>Artifact changed:</strong> each risk row required a named owner and a decision date before the gate could proceed; one-page delta updated to a named risk statement with an evidence date. <strong>Measured improvement:</strong> the decision closed in one meeting once it carried a decision date; a 12% first-pass yield miss caught before the launch lot shipped. <strong>Cost of the gap:</strong> two prior gate cycles where risk rows deferred without action — the yield miss that would have materialized as a customer containment action.</p>
 <h3 id="status-is-not-forecast"><a class="header" href="#status-is-not-forecast">Status is not forecast</a></h3>
 <p>Gates and one-page truth tell you what is true now. They cannot tell you when it will be done. Whether the evidence they need at the next gate will exist — whether the test coverage was designed to produce it — was decided before this gate opened.</p>
 

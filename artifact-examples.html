@@ -159,56 +159,52 @@
 <hr />
 <h2 id="requirement"><a class="header" href="#requirement">Requirement</a></h2>
 <p>The inert version has a value but gives the team nothing to test, no condition to bound it, and no way to know who approved the current number or why.</p>
-<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Statement</td><td>"System shall be robust"</td><td>"Leak rate shall be ≤ 0.5 sccm at 1.2 bar differential, ambient 0–40 °C, measured by Method M-04"</td></tr>
-<tr><td>Owner</td><td><em>(blank)</em></td><td>Named engineer, week of last review</td></tr>
-<tr><td>Evidence</td><td><em>(blank)</em></td><td>Link to test result or physics derivation that bounds the value</td></tr>
-<tr><td>Acceptance method</td><td>"TBD"</td><td>Specific test method, sample size, pass criterion</td></tr>
-<tr><td>Revision history</td><td><em>(blank)</em></td><td>Change log with rationale and approver for each revision</td></tr>
-</tbody></table>
-</div>
+<p>| Field | Inert | Decision-grade |</p>
+<p>|---|---|---|</p>
+<p>| Statement | "System shall be robust" | "Leak rate shall be = 0.5 sccm at 1.2 bar differential, ambient 0–40 °C, measured by Method M-04" |</p>
+<p>| Owner | <em>(blank)</em> | Named engineer, week of last review |</p>
+<p>| Evidence | <em>(blank)</em> | Link to test result or physics derivation that bounds the value |</p>
+<p>| Acceptance method | "TBD" | Specific test method, sample size, pass criterion |</p>
+<p>| Revision history | <em>(blank)</em> | Change log with rationale and approver for each revision |</p>
 <p><em>See Ch. 5 for revision discipline and the hygiene checklist.</em></p>
 <hr />
 <h2 id="decision-record"><a class="header" href="#decision-record">Decision record</a></h2>
 <p>The inert version records an outcome with no trail. Anyone who reads it six weeks later cannot reconstruct the trade, cannot tell who approved it, and cannot find what else changed as a result.</p>
-<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Decision</td><td>"Team aligned to update thermal limit"</td><td>"Revise RQ-THERM-014 from 85 °C to 78 °C per T-117 chamber evidence"</td></tr>
-<tr><td>Owner</td><td>TBD</td><td>Thermal lead</td></tr>
-<tr><td>Rationale</td><td><em>(blank)</em></td><td>"T-117 measured 78 °C steady-state; boundary condition error in model confirmed by M-23"</td></tr>
-<tr><td>Alternatives</td><td><em>(blank)</em></td><td>"Considered 80 °C with derating margin — rejected: supplier cannot hold derating at current geometry"</td></tr>
-<tr><td>Downstream artifacts updated</td><td><em>(blank)</em></td><td>"Supplier package flagged for re-qual (ECO-2027-031), schedule R-14 row updated, Gate 3 one-page revised"</td></tr>
-<tr><td>Approver / date</td><td><em>(blank)</em></td><td>Program lead, Day 9 post-T-117</td></tr>
-</tbody></table>
-</div>
+<p>| Field | Inert | Decision-grade |</p>
+<p>|---|---|---|</p>
+<p>| Decision | "Team aligned to update thermal limit" | "Revise RQ-THERM-0 from 85 °C to 78 °C per T-0 chamber evidence" |</p>
+<p>| Owner | TBD | Thermal lead |</p>
+<p>| Rationale | <em>(blank)</em> | "T-0 measured 78 °C steady-state; boundary condition error in model confirmed by M-0" |</p>
+<p>| Alternatives | <em>(blank)</em> | "Considered 80 °C with derating margin — rejected: supplier cannot hold derating at current geometry" |</p>
+<p>| Downstream artifacts updated | <em>(blank)</em> | "Supplier package flagged for re-qual (ECO-0), schedule R-0 row updated, Gate-0 one-page revised" |</p>
+<p>| Approver / date | <em>(blank)</em> | Program lead, Day 9 post-T-0 |</p>
 <p><em>See Ch. 4 for DRI ownership and minimum decision record fields.</em></p>
 <hr />
 <h2 id="risk-row"><a class="header" href="#risk-row">Risk row</a></h2>
 <p>The inert version looks like an active register. No one can trigger a decision from it, and "yellow" carries no evidence anyone can challenge or update.</p>
-<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Statement</td><td>"Thermal"</td><td>"Thermal margin insufficient at full-duty 40 °C ambient"</td></tr>
-<tr><td>Owner</td><td>Engineering team</td><td>Thermal lead</td></tr>
-<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Medium (T-117 showed 78 °C vs 85 °C limit) / High (gate hold, supplier re-qual)</td></tr>
-<tr><td>Trigger</td><td><em>(blank)</em></td><td>Any chamber run exceeding 77 °C</td></tr>
-<tr><td>Mitigation</td><td>In progress</td><td>Revise RQ-THERM-014; re-qual supplier package by Gate 3</td></tr>
-<tr><td>Decision date</td><td><em>(blank)</em></td><td>Gate 3</td></tr>
-<tr><td>Evidence</td><td><em>(blank)</em></td><td>T-117, M-23</td></tr>
-</tbody></table>
-</div>
+<p>| Field | Inert | Decision-grade |</p>
+<p>|---|---|---|</p>
+<p>| Statement | "Thermal" | "Thermal margin insufficient at full-duty 40 °C ambient" |</p>
+<p>| Owner | Engineering team | Thermal lead |</p>
+<p>| Likelihood / Impact | Yellow | Medium (T-0 showed 78 °C vs 85 °C limit) / High (gate hold, supplier re-qual) |</p>
+<p>| Trigger | <em>(blank)</em> | Any chamber run exceeding 77 °C |</p>
+<p>| Mitigation | In progress | Revise RQ-THERM-0; re-qual supplier package by Gate-0 |</p>
+<p>| Decision date | <em>(blank)</em> | Gate-0 |</p>
+<p>| Evidence | <em>(blank)</em> | T-0, M-0 |</p>
 <p><em>See Ch. 6 for the full risk-row schema and gate decision logic.</em></p>
 <hr />
 <h2 id="one-page-status"><a class="header" href="#one-page-status">One-page status</a></h2>
 <p>The inert version compresses uncertainty into confidence — an exec or PM reading it cannot tell whether the calm tone reflects real evidence or polished slides. When it is wrong, nobody finds out until it is too late to act cheaply.</p>
-<div class="table-wrapper"><table><thead><tr><th>Section</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Current state</td><td>"Program tracking to plan"</td><td>"Gate 3 on track; thermal risk open — RQ-THERM-014 revision decision due Friday; supplier re-qual starts Monday"</td></tr>
-<tr><td>Top risks</td><td>"Thermal risk tracking green"</td><td>"R-14 thermal: medium/high — T-117 measured 78 °C vs 85 °C limit; owner: thermal lead; decision: Gate 3"</td></tr>
-<tr><td>Decision log deltas</td><td><em>(blank)</em></td><td>"DR-2026-014 closed: thermal limit revised to 78 °C; supplier notified"</td></tr>
-<tr><td>Critical dependencies</td><td>"Supplier on track"</td><td>"Cold-plate extrusion: slip of 8 working days; replanned to Week 22; critical path impact: none if Gate 3 holds"</td></tr>
-<tr><td>Asks / escalations</td><td>"None"</td><td>"Need program lead approval on revised supplier qualification plan by Thursday"</td></tr>
-</tbody></table>
-</div>
+<p>| Section | Inert | Decision-grade |</p>
+<p>|---|---|---|</p>
+<p>| Current state | "Program tracking to plan" | "Gate-0 on track; thermal risk open — RQ-THERM-0 revision decision due Friday; supplier re-qual starts Monday" |</p>
+<p>| Top risks | "Thermal risk tracking green" | "R-0 thermal: medium/high — T-0 measured 78 °C vs 85 °C limit; owner: thermal lead; decision: Gate-0" |</p>
+<p>| Decision log deltas | <em>(blank)</em> | "DR-0 closed: thermal limit revised to 78 °C; supplier notified" |</p>
+<p>| Critical dependencies | "Supplier on track" | "Cold-plate extrusion: slip of 8 working days; replanned to Week 22; critical path impact: none if Gate-0 holds" |</p>
+<p>| Asks / escalations | "None" | "Need program lead approval on revised supplier qualification plan by Thursday" |</p>
 <p><em>See Ch. 6 for the minimum one-page schema and source-record traceability requirement.</em></p>
 <hr />
-<p><em>These examples use the canonical <code>RQ-THERM-014</code> case that runs through Chs. 4, 6, 9, 10, 12, 13, 15, and 17. Substitute your program's artifacts; the field shapes hold.</em></p>
+<p><em>These examples use the canonical <code>RQ-THERM-0</code> case that runs through Chs. 4, 6, 9, 10, 12, 13, 15, and 17. Substitute your program's artifacts; the field shapes hold.</em></p>
 
                     </main>
 

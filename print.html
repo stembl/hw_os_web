@@ -425,12 +425,12 @@
 <p>The fields that must be present — owner, decision question, evidence, rationale, affected artifacts, approver, date — are the requirement. The container is implementation detail.</p>
 <p><strong>Decision record: bad vs corrected</strong></p>
 <div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad (incomplete)</th><th>Good (decision-grade)</th></tr></thead><tbody>
-<tr><td>Decision</td><td>Revise thermal limit</td><td>Revise RQ-THERM-014 from 85 °C to 78 °C per T-117 chamber evidence</td></tr>
+<tr><td>Decision</td><td>Revise thermal limit</td><td>Revise thermal limit from 85 °C to 78 °C per chamber measurement</td></tr>
 <tr><td>Owner</td><td>TBD</td><td>Thermal lead</td></tr>
-<tr><td>Rationale</td><td><em>(blank)</em></td><td>T-117 measured 78 °C steady-state; boundary condition error found in model; contact-resistance verified by M-23</td></tr>
-<tr><td>Downstream updates</td><td><em>(blank)</em></td><td>Supplier package flagged for re-qual (ECO-2027-031), schedule R-14 row updated, Gate 3 one-page revised</td></tr>
+<tr><td>Rationale</td><td><em>(blank)</em></td><td>Chamber measured 78 °C steady-state; boundary condition error found in model; contact-resistance verified by direct measurement</td></tr>
+<tr><td>Downstream updates</td><td><em>(blank)</em></td><td>Supplier package flagged for re-qual, thermal risk row updated, gate one-page revised</td></tr>
 <tr><td>Approver</td><td><em>(blank)</em></td><td>Program lead</td></tr>
-<tr><td>Date</td><td><em>(blank)</em></td><td>Day 9 post-T-117</td></tr>
+<tr><td>Date</td><td><em>(blank)</em></td><td>Day 9 post-chamber run</td></tr>
 </tbody></table>
 </div>
 <h3 id="escalation-without-drama"><a class="header" href="#escalation-without-drama">Escalation without drama</a></h3>
@@ -536,7 +536,7 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 <li>date and criteria for closure,</li>
 <li>artifact delta list — what controlled records changed as a result.</li>
 </ol>
-<p>The artifact delta list is the implementation trail: RQ-THERM-014 revised from 85 °C to 78 °C | ECO-2027-031 opened | R-14 closed | schedule baseline updated to rev 4. Without it, a decision taken in the room has no verified follow-through.</p>
+<p>The artifact delta list is the implementation trail: thermal limit revised from 85 °C to 78 °C | supplier re-qual opened | thermal risk row closed | schedule baseline updated to rev 4. Without it, a decision taken in the room has no verified follow-through.</p>
 <p>No decision, no gate. Just a meeting.</p>
 <p>Not every gate is a decision gate. A <strong>readiness review</strong> confirms that planned next-phase inputs are in place — no controlled value needs to change. An <strong>evidence review</strong> surfaces test or analysis results without forcing a decision yet — useful when the data is new and the team needs to absorb it before proposing a change. An <strong>alignment meeting</strong> reconciles cross-tier expectations without triggering a baseline change. A <strong>regulatory or customer staging gate</strong> moves a formal record forward in a controlled lifecycle. All of these have legitimate jobs. The rule "no decision, no gate" applies specifically to events on the program plan named "gate" that are expected to change a controlled baseline, requirement, or release — when those events happen but no controlled value changes, the gate is mislabeled. Rename it accurately: call it a review, write down what it produces, and stop treating it as a gate.</p>
 <h3 id="risk-register-from-decorative-list-to-control-tool"><a class="header" href="#risk-register-from-decorative-list-to-control-tool">Risk register: from decorative list to control tool</a></h3>
@@ -549,7 +549,7 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 <li>likelihood/impact basis,</li>
 <li>trigger signal,</li>
 </ul>
-<p>A trigger signal names the specific observable condition that forces an action. Example: "any chamber run exceeding 77 °C" — if that reading appears, R-14 escalates to a gate hold regardless of where the schedule stands. Without a named trigger, a risk row stays yellow indefinitely — acknowledged but never forcing action.</p>
+<p>A trigger signal names the specific observable condition that forces an action. Example: "any chamber run exceeding 77 °C" — if that reading appears, the thermal risk row escalates to a gate hold regardless of where the schedule stands. Without a named trigger, a risk row stays yellow indefinitely — acknowledged but never forcing action.</p>
 <ul>
 <li>mitigation action,</li>
 <li>decision date,</li>
@@ -560,15 +560,14 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 <p>Each mitigation action should be specific enough that completing it demonstrably reduces the stated risk. When the action closes, the row carries the evidence — test data, simulation result, supplier Cpk, confirmed lead time — not just a status color flip. That evidence is what makes the risk register a decision artifact rather than a status decoration.</p>
 <p><strong>Risk register: bad row vs decision-grade row</strong></p>
 <div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad row</th><th>Decision-grade row</th></tr></thead><tbody>
-<tr><td>ID</td><td>R-14</td><td>R-14</td></tr>
 <tr><td>Statement</td><td>Thermal</td><td>Thermal margin insufficient at full-duty 40 °C ambient</td></tr>
 <tr><td>Category</td><td><em>(blank)</em></td><td>Technical — thermal margin pending supplier re-qual</td></tr>
 <tr><td>Owner</td><td>Engineering team</td><td>Thermal lead</td></tr>
-<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Likelihood: medium (T-117 showed 78 °C vs 85 °C limit) / Impact: high (gate hold, supplier re-qual)</td></tr>
+<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Likelihood: medium (chamber showed 78 °C vs 85 °C limit) / Impact: high (gate hold, supplier re-qual)</td></tr>
 <tr><td>Trigger</td><td><em>(blank)</em></td><td>Any chamber run exceeding 77 °C</td></tr>
-<tr><td>Mitigation</td><td>In progress</td><td>Revise RQ-THERM-014, re-qual supplier package</td></tr>
-<tr><td>Decision date</td><td><em>(blank)</em></td><td>Gate 3</td></tr>
-<tr><td>Evidence</td><td><em>(blank)</em></td><td>T-117, M-23</td></tr>
+<tr><td>Mitigation</td><td>In progress</td><td>Revise thermal limit, re-qual supplier package</td></tr>
+<tr><td>Decision date</td><td><em>(blank)</em></td><td>Named gate date</td></tr>
+<tr><td>Evidence</td><td><em>(blank)</em></td><td>Chamber run, contact-resistance measurement</td></tr>
 </tbody></table>
 </div>
 <h3 id="one-page-truth-executive-view-tied-to-source-records"><a class="header" href="#one-page-truth-executive-view-tied-to-source-records">One-page truth: executive view tied to source records</a></h3>
@@ -591,7 +590,7 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 </blockquote>
 <p>Good:</p>
 <blockquote>
-<p>Thermal: RQ-THERM-014 revised to 78 °C per T-117 | R-14 closed at Gate 3 | Supplier re-qual in progress per ECO-2027-031 | Cold-plate extrusion: 11-day slip, recovery in schedule rev 4</p>
+<p>Thermal: limit revised to 78 °C per chamber | thermal risk row closed at gate | supplier re-qual in progress | Cold-plate extrusion: 11-day slip, recovery in schedule rev 4</p>
 </blockquote>
 <h3 id="update-rhythm-that-keeps-it-honest"><a class="header" href="#update-rhythm-that-keeps-it-honest">Update rhythm that keeps it honest</a></h3>
 <p>Cadence matters more than formatting.</p>
@@ -625,7 +624,7 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 <li>run next gate using artifact delta list,</li>
 <li>reject items that cannot trace to source.</li>
 </ul>
-<p>Before Gate G3, risk row R-14 listed "supplier CpK pending" with no decision date, and the one-page line still read "launch confidence: green." The decision had been deferred through two prior gate cycles — each cycle the row stayed yellow and no action date was set. After the gate decision to hold the launch lot and fund gauge redesign, R-14 gained an owner and a decision date and the one-page delta changed to "launch at risk until CpK ≥ 1.33 evidence dated 2026-05-12." The R-14 decision, once it carried a named decision date, closed in one meeting. Gauge data collected two weeks later confirmed the launch lot would have produced a 12% first-pass yield miss at the customer — a containment action that would have cost more than the gate hold. <strong>Old process:</strong> risk rows deferred with no action date; one-page status held green while risk rows stayed yellow through two consecutive gate cycles. <strong>Artifact changed:</strong> each risk row required a named owner and a decision date before the gate could proceed; one-page delta updated to a named risk statement with an evidence date. <strong>Measured improvement:</strong> R-14 decision closed in one meeting once it carried a decision date; a 12% first-pass yield miss caught before the launch lot shipped. <strong>Cost of the gap:</strong> two prior gate cycles where risk rows deferred without action — the yield miss that would have materialized as a customer containment action.</p>
+<p>Before Gate G3, the thermal risk row listed "supplier CpK pending" with no decision date, and the one-page line still read "launch confidence: green." The decision had been deferred through two prior gate cycles — each cycle the row stayed yellow and no action date was set. After the gate decision to hold the launch lot and fund gauge redesign, the row gained an owner and a decision date and the one-page delta changed to "launch at risk until CpK ≥ 1.33 evidence dated 2026-05-12." The decision, once it carried a named decision date, closed in one meeting. Gauge data collected two weeks later confirmed the launch lot would have produced a 12% first-pass yield miss at the customer — a containment action that would have cost more than the gate hold. <strong>Old process:</strong> risk rows deferred with no action date; one-page status held green while risk rows stayed yellow through two consecutive gate cycles. <strong>Artifact changed:</strong> each risk row required a named owner and a decision date before the gate could proceed; one-page delta updated to a named risk statement with an evidence date. <strong>Measured improvement:</strong> the decision closed in one meeting once it carried a decision date; a 12% first-pass yield miss caught before the launch lot shipped. <strong>Cost of the gap:</strong> two prior gate cycles where risk rows deferred without action — the yield miss that would have materialized as a customer containment action.</p>
 <h3 id="status-is-not-forecast"><a class="header" href="#status-is-not-forecast">Status is not forecast</a></h3>
 <p>Gates and one-page truth tell you what is true now. They cannot tell you when it will be done. Whether the evidence they need at the next gate will exist — whether the test coverage was designed to produce it — was decided before this gate opened.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="7-automation-decisions-at-concept-stage"><a class="header" href="#7-automation-decisions-at-concept-stage">7. Automation Decisions at Concept Stage</a></h1>
@@ -741,7 +740,7 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 </ul>
 <p>These behaviors protect optics and destroy forecast quality.</p>
 <hr />
-<p>At an energy storage program, the announced launch date had not moved in three months on the program slide. Underneath, three thermal-related long-leads had quietly slipped: the cold-plate extrusion (11 working days, triggered by the <code>RQ-THERM-014</code> revision that changed the geometry requirement), the thermal interface material qualification (8 days, triggered by the contact-resistance finding), and a chamber booking for the revised configuration (6 days, because the test queue had moved). That geometry revision forced a new extrusion cross-section the original schedule had no entry for. None of the slips were visible on the schedule because the schedule had been built date-to-date, not dependency-to-dependency.</p>
+<p>At an energy storage program, the announced launch date had not moved in three months on the program slide. Underneath, three thermal-related long-leads had quietly slipped: the cold-plate extrusion (11 working days, triggered by the thermal limit revision that changed the geometry requirement), the thermal interface material qualification (8 days, triggered by the contact-resistance finding), and a chamber booking for the revised configuration (6 days, because the test queue had moved). That geometry revision forced a new extrusion cross-section the original schedule had no entry for. None of the slips were visible on the schedule because the schedule had been built date-to-date, not dependency-to-dependency.</p>
 <p>When the team recomputed the chain — what depends on what, with honest durations and buffer for uncertainty — the new date was 19 working days beyond the announced date. The recovery conversation that followed was real: cut one product variant from the launch scope, change the supplier extrusion sequence to overlap with qualification, fund a parallel chamber booking. The conversation was hard. It was also the first honest program conversation in three months. Old process: schedule defended date-to-date with narrative compression. Artifact changed: the dependency chain rebuilt from real durations with three named recovery levers (scope, sequence, resources). Measured improvement: 19-day date revision discovered and communicated four months before launch, rather than two weeks before. Cost of the gap: four months of decision-making downstream of a date everyone knew was wrong.</p>
 <hr />
 <h3 id="weekly-cadence-for-schedule-truth"><a class="header" href="#weekly-cadence-for-schedule-truth">Weekly cadence for schedule truth</a></h3>
@@ -784,7 +783,7 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <hr />
 <p>If your plan has no visible float and no recovery lever named in writing, you do not have a schedule. You have a date with a story around it.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="9-requirements-lifecycle-hypothesis---bless---evidence---revise"><a class="header" href="#9-requirements-lifecycle-hypothesis---bless---evidence---revise">9. Requirements Lifecycle (Hypothesis -&gt; Bless -&gt; Evidence -&gt; Revise)</a></h1>
-<p>Wednesday, 6:50 a.m., lab hallway quiet, the thermal verification log shows the board thermal limit (<code>RQ-THERM-047</code>) set to 65 °C while the full-load chamber test (<code>T-218</code>) at 40 °C ambient shows the control board measuring above 70 °C.</p>
+<p>Wednesday, 6:50 a.m., lab hallway quiet, the thermal verification log shows the board thermal limit set to 65 °C while the full-load chamber test at 40 °C ambient shows the control board measuring above 70 °C.</p>
 <p>The program ran thermal management work — redesigning airflow, shifting components, iterating the layout — trying to bring the board temperature below the limit.</p>
 <p>The requirement had a value and an owner. It did not have a scope note naming which operating scenario it applied to, or a rationale connecting the limit to actual component requirements.</p>
 <p>Three weeks of committed design work against a requirement whose basis had never been confirmed.</p>
@@ -823,10 +822,10 @@ The opposite failure is also common: freezing wrong values in the requirement re
 </ul>
 <p>Revision discipline in the requirement log prevents both uncontrolled churn and evidence denial.</p>
 <hr />
-<p>The board thermal limit (<code>RQ-THERM-047</code>) was set to 65 °C by the electrical engineering team — a conservative estimate intended to protect component lifetime across the product's operating range. It was not decomposed to the case temperature limits of the specific components on the board, and no scope note identified which operating scenario it applied to.</p>
-<p>Chamber test <code>T-218</code> ran at full power and 40 °C ambient — the scenario defined for UL qualification — and measured the control board approaching 70 °C. The limit said 65 °C. The program ran three weeks of thermal management work: airflow changes, layout iterations, component placement. None of it was targeted, because the requirement had not been tied to the actual components at risk.</p>
+<p>The board thermal limit was set to 65 °C by the electrical engineering team — a conservative estimate intended to protect component lifetime across the product's operating range. It was not decomposed to the case temperature limits of the specific components on the board, and no scope note identified which operating scenario it applied to.</p>
+<p>The full-load chamber test ran at full power and 40 °C ambient — the scenario defined for UL qualification — and measured the control board approaching 70 °C. The limit said 65 °C. The program ran three weeks of thermal management work: airflow changes, layout iterations, component placement. None of it was targeted, because the requirement had not been tied to the actual components at risk.</p>
 <p>When the requirement owner pulled the 65 °C limit back to its basis, two questions surfaced: which components it was protecting, and which scenario it applied to. The answers changed the problem. The 65 °C estimate was a lifetime operating condition limit — it applied to sustained load in worst-case ambient across the product service life, not to a one-time UL qualification test at 40 °C. No component case temperature limit was being violated under the qualification test scenario. For the lifetime scenario, the question became which specific components were at risk and what their case temperature limits were — a decomposed set of requirements the 65 °C proxy had been standing in for.</p>
-<p>Old process: a single board-level temperature estimate applied as a requirement across both the lifetime operating scenario and the UL qualification scenario, without decomposition to component case temperature limits and without a scope note identifying which scenario it applied to. What changed: <code>RQ-THERM-047</code> in the requirement log revised — the proxy replaced by a decomposed set of component case temperature limits for the lifetime scenario, with the qualification test scenario confirmed out of scope for that requirement; revision record <code>DR-2026-047</code> named the evidence source (<code>T-218</code>), rationale, impact scope, approver, and date. Measured improvement: three weeks of whole-assembly thermal management work redirected to targeted mitigation on the two components whose case temperatures were actually at risk under lifetime operating conditions.</p>
+<p>Old process: a single board-level temperature estimate applied as a requirement across both the lifetime operating scenario and the UL qualification scenario, without decomposition to component case temperature limits and without a scope note identifying which scenario it applied to. What changed: the board thermal limit in the requirement log revised — the proxy replaced by a decomposed set of component case temperature limits for the lifetime scenario, with the qualification test scenario confirmed out of scope for that requirement; the revision record named the evidence source, rationale, impact scope, approver, and date. Measured improvement: three weeks of whole-assembly thermal management work redirected to targeted mitigation on the two components whose case temperatures were actually at risk under lifetime operating conditions.</p>
 <hr />
 <h3 id="revision-criteria-minimum"><a class="header" href="#revision-criteria-minimum">Revision criteria (minimum)</a></h3>
 <p>Revise a requirement only when predeclared decision thresholds are met:</p>
@@ -1081,7 +1080,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 </ul>
 <p>This package keeps technical depth available while giving exec and PM reviewers a clear, fair decision frame.</p>
 <hr />
-<p>The boundary-condition correction is confirmed. The model re-run matches the chamber within measurement uncertainty. The gate decision changes from hold to proceed — one week after the chamber result that everyone initially attributed to measurement error. The requirement is 78 °C, the model predicts 79 °C, and the boundary-condition log now carries the contact-resistance value traced to the direct contact-resistance measurement (<code>M-23</code>). The decision packet is one page. The technical backup is three.</p>
+<p>The boundary-condition correction is confirmed. The model re-run matches the chamber within measurement uncertainty. The gate decision changes from hold to proceed — one week after the chamber result that everyone initially attributed to measurement error. The requirement is 78 °C, the model predicts 79 °C, and the boundary-condition log now carries the contact-resistance value traced to the direct contact-resistance measurement. The decision packet is one page. The technical backup is three.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="13-fleet-as-instrumented-experiment"><a class="header" href="#13-fleet-as-instrumented-experiment">13. Fleet as Instrumented Experiment</a></h1>
 <p>Thursday, 7:02 a.m., five units on the bench, cross-site call connecting, no two run logs with the same fields.</p>
 <p>By Friday, the team has stories about each one and no comparable record of what was different between them.</p>
@@ -1160,7 +1159,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>In the lab log, verification and reliability owners still track two unresolved critical failure modes with no accepted closure evidence.</p>
 <p>The paper package says done, but the program state is not done.</p>
 <p>That gap is where late cost, schedule slips, and credibility damage enter through integration and executive review.</p>
-<p>This is the gate-closure logic that depends on calibrated chamber evidence and a controlled requirement revision â€” in the canonical case, the closure that must happen before the thermal case temperature requirement and the supplier CpK risk row can close at Gate 3.</p>
+<p>This is the gate-closure logic that depends on calibrated chamber evidence and a controlled requirement revision â€” in the canonical case, the closure that must happen before the thermal case temperature requirement and the supplier CpK risk row can close at the release gate.</p>
 <hr />
 <h3 id="done-on-paper-must-match-decision-reality"><a class="header" href="#done-on-paper-must-match-decision-reality">"Done on paper" must match decision reality</a></h3>
 <p>Artifacts are useful only when a named owner uses them to change a specific decision and downstream behavior.</p>
@@ -1447,7 +1446,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>The claim did not follow basic manufacturing physics. Process tolerances on formed or machined features typically depend on feature size because the relative contribution of variation is larger at smaller scales. Rather than accept the blanket number, dimensional data was requested across a range of feature sizes and geometries — not just the program's nominal part.</p>
 <p>The data showed a clear size dependence. On large features, the supplier achieved roughly half the stated blanket tolerance — they were underselling their capability. On small features, the actual achieved tolerance was roughly double the stated value — they were overselling it. The blanket number was approximately their average across the range, misleading in both directions and most misleading at the feature sizes that governed the design constraints.</p>
 <p><strong>Old process:</strong> blanket tolerance accepted at face value, applied uniformly across all feature sizes in the design. <strong>Artifact changed:</strong> a tolerance specification written as a function of feature size, derived from the supplier's own measurement data. <strong>Measured improvement:</strong> an optimized component geometry fit the available form-factor envelope, cleared assembly placement requirements, and was physically sized to also benefit peak operating temperature — three constraints that had appeared to be in conflict under the blanket specification, resolved simultaneously. <strong>Cost of the gap:</strong> without the size-dependent specification, the design would have been either over-constrained on large features (producing a component unnecessarily large for its envelope) or under-constrained on small features (relying on a tolerance the supplier could not hold, found during qualification).</p>
-<p>The supplier discrepancy pattern here is the downstream consequence of the <code>RQ-THERM-014</code> requirement revision — the power-stage supplier built to the 85 °C derating assumption; after the requirement revised to 78 °C, the receiving inspection flagged the discrepancy. The discrepancy playbook is what surfaces it as a capability gap, not a supplier failure.</p>
+<p>The supplier discrepancy pattern here is the downstream consequence of the thermal limit revision — the power-stage supplier built to the 85 °C derating assumption; after the requirement revised to 78 °C, the receiving inspection flagged the discrepancy. The discrepancy playbook is what surfaces it as a capability gap, not a supplier failure.</p>
 <p>Acceptable implementations for the supplier capability data exchange include an APQP or PPAP packet structure when the customer-supplier relationship is formal enough to require it, a supplier-collaboration object under product-data control when revision-locked handoffs are mandatory, a controlled exchange folder with revision-stamped attachments and a named review log for smaller programs, or a shared Cpk dashboard with defined refresh cadence. The OS cares that the capability data (Cpk values, measurement methods, sample sizes, and control chart history) arrives with the same revision control as the design requirements — not that it arrives through any particular tool.</p>
 <h3 id="producibility-as-a-continuous-signal"><a class="header" href="#producibility-as-a-continuous-signal">Producibility as a continuous signal</a></h3>
 <p>Producibility is not a one-time pre-launch checkbox.</p>
@@ -1683,56 +1682,52 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <hr />
 <h2 id="requirement"><a class="header" href="#requirement">Requirement</a></h2>
 <p>The inert version has a value but gives the team nothing to test, no condition to bound it, and no way to know who approved the current number or why.</p>
-<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Statement</td><td>"System shall be robust"</td><td>"Leak rate shall be ≤ 0.5 sccm at 1.2 bar differential, ambient 0–40 °C, measured by Method M-04"</td></tr>
-<tr><td>Owner</td><td><em>(blank)</em></td><td>Named engineer, week of last review</td></tr>
-<tr><td>Evidence</td><td><em>(blank)</em></td><td>Link to test result or physics derivation that bounds the value</td></tr>
-<tr><td>Acceptance method</td><td>"TBD"</td><td>Specific test method, sample size, pass criterion</td></tr>
-<tr><td>Revision history</td><td><em>(blank)</em></td><td>Change log with rationale and approver for each revision</td></tr>
-</tbody></table>
-</div>
+<p>| Field | Inert | Decision-grade |</p>
+<p>|---|---|---|</p>
+<p>| Statement | "System shall be robust" | "Leak rate shall be = 0.5 sccm at 1.2 bar differential, ambient 0–40 °C, measured by Method M-04" |</p>
+<p>| Owner | <em>(blank)</em> | Named engineer, week of last review |</p>
+<p>| Evidence | <em>(blank)</em> | Link to test result or physics derivation that bounds the value |</p>
+<p>| Acceptance method | "TBD" | Specific test method, sample size, pass criterion |</p>
+<p>| Revision history | <em>(blank)</em> | Change log with rationale and approver for each revision |</p>
 <p><em>See Ch. 5 for revision discipline and the hygiene checklist.</em></p>
 <hr />
 <h2 id="decision-record"><a class="header" href="#decision-record">Decision record</a></h2>
 <p>The inert version records an outcome with no trail. Anyone who reads it six weeks later cannot reconstruct the trade, cannot tell who approved it, and cannot find what else changed as a result.</p>
-<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Decision</td><td>"Team aligned to update thermal limit"</td><td>"Revise RQ-THERM-014 from 85 °C to 78 °C per T-117 chamber evidence"</td></tr>
-<tr><td>Owner</td><td>TBD</td><td>Thermal lead</td></tr>
-<tr><td>Rationale</td><td><em>(blank)</em></td><td>"T-117 measured 78 °C steady-state; boundary condition error in model confirmed by M-23"</td></tr>
-<tr><td>Alternatives</td><td><em>(blank)</em></td><td>"Considered 80 °C with derating margin — rejected: supplier cannot hold derating at current geometry"</td></tr>
-<tr><td>Downstream artifacts updated</td><td><em>(blank)</em></td><td>"Supplier package flagged for re-qual (ECO-2027-031), schedule R-14 row updated, Gate 3 one-page revised"</td></tr>
-<tr><td>Approver / date</td><td><em>(blank)</em></td><td>Program lead, Day 9 post-T-117</td></tr>
-</tbody></table>
-</div>
+<p>| Field | Inert | Decision-grade |</p>
+<p>|---|---|---|</p>
+<p>| Decision | "Team aligned to update thermal limit" | "Revise RQ-THERM-0 from 85 °C to 78 °C per T-0 chamber evidence" |</p>
+<p>| Owner | TBD | Thermal lead |</p>
+<p>| Rationale | <em>(blank)</em> | "T-0 measured 78 °C steady-state; boundary condition error in model confirmed by M-0" |</p>
+<p>| Alternatives | <em>(blank)</em> | "Considered 80 °C with derating margin — rejected: supplier cannot hold derating at current geometry" |</p>
+<p>| Downstream artifacts updated | <em>(blank)</em> | "Supplier package flagged for re-qual (ECO-0), schedule R-0 row updated, Gate-0 one-page revised" |</p>
+<p>| Approver / date | <em>(blank)</em> | Program lead, Day 9 post-T-0 |</p>
 <p><em>See Ch. 4 for DRI ownership and minimum decision record fields.</em></p>
 <hr />
 <h2 id="risk-row"><a class="header" href="#risk-row">Risk row</a></h2>
 <p>The inert version looks like an active register. No one can trigger a decision from it, and "yellow" carries no evidence anyone can challenge or update.</p>
-<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Statement</td><td>"Thermal"</td><td>"Thermal margin insufficient at full-duty 40 °C ambient"</td></tr>
-<tr><td>Owner</td><td>Engineering team</td><td>Thermal lead</td></tr>
-<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Medium (T-117 showed 78 °C vs 85 °C limit) / High (gate hold, supplier re-qual)</td></tr>
-<tr><td>Trigger</td><td><em>(blank)</em></td><td>Any chamber run exceeding 77 °C</td></tr>
-<tr><td>Mitigation</td><td>In progress</td><td>Revise RQ-THERM-014; re-qual supplier package by Gate 3</td></tr>
-<tr><td>Decision date</td><td><em>(blank)</em></td><td>Gate 3</td></tr>
-<tr><td>Evidence</td><td><em>(blank)</em></td><td>T-117, M-23</td></tr>
-</tbody></table>
-</div>
+<p>| Field | Inert | Decision-grade |</p>
+<p>|---|---|---|</p>
+<p>| Statement | "Thermal" | "Thermal margin insufficient at full-duty 40 °C ambient" |</p>
+<p>| Owner | Engineering team | Thermal lead |</p>
+<p>| Likelihood / Impact | Yellow | Medium (T-0 showed 78 °C vs 85 °C limit) / High (gate hold, supplier re-qual) |</p>
+<p>| Trigger | <em>(blank)</em> | Any chamber run exceeding 77 °C |</p>
+<p>| Mitigation | In progress | Revise RQ-THERM-0; re-qual supplier package by Gate-0 |</p>
+<p>| Decision date | <em>(blank)</em> | Gate-0 |</p>
+<p>| Evidence | <em>(blank)</em> | T-0, M-0 |</p>
 <p><em>See Ch. 6 for the full risk-row schema and gate decision logic.</em></p>
 <hr />
 <h2 id="one-page-status"><a class="header" href="#one-page-status">One-page status</a></h2>
 <p>The inert version compresses uncertainty into confidence — an exec or PM reading it cannot tell whether the calm tone reflects real evidence or polished slides. When it is wrong, nobody finds out until it is too late to act cheaply.</p>
-<div class="table-wrapper"><table><thead><tr><th>Section</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Current state</td><td>"Program tracking to plan"</td><td>"Gate 3 on track; thermal risk open — RQ-THERM-014 revision decision due Friday; supplier re-qual starts Monday"</td></tr>
-<tr><td>Top risks</td><td>"Thermal risk tracking green"</td><td>"R-14 thermal: medium/high — T-117 measured 78 °C vs 85 °C limit; owner: thermal lead; decision: Gate 3"</td></tr>
-<tr><td>Decision log deltas</td><td><em>(blank)</em></td><td>"DR-2026-014 closed: thermal limit revised to 78 °C; supplier notified"</td></tr>
-<tr><td>Critical dependencies</td><td>"Supplier on track"</td><td>"Cold-plate extrusion: slip of 8 working days; replanned to Week 22; critical path impact: none if Gate 3 holds"</td></tr>
-<tr><td>Asks / escalations</td><td>"None"</td><td>"Need program lead approval on revised supplier qualification plan by Thursday"</td></tr>
-</tbody></table>
-</div>
+<p>| Section | Inert | Decision-grade |</p>
+<p>|---|---|---|</p>
+<p>| Current state | "Program tracking to plan" | "Gate-0 on track; thermal risk open — RQ-THERM-0 revision decision due Friday; supplier re-qual starts Monday" |</p>
+<p>| Top risks | "Thermal risk tracking green" | "R-0 thermal: medium/high — T-0 measured 78 °C vs 85 °C limit; owner: thermal lead; decision: Gate-0" |</p>
+<p>| Decision log deltas | <em>(blank)</em> | "DR-0 closed: thermal limit revised to 78 °C; supplier notified" |</p>
+<p>| Critical dependencies | "Supplier on track" | "Cold-plate extrusion: slip of 8 working days; replanned to Week 22; critical path impact: none if Gate-0 holds" |</p>
+<p>| Asks / escalations | "None" | "Need program lead approval on revised supplier qualification plan by Thursday" |</p>
 <p><em>See Ch. 6 for the minimum one-page schema and source-record traceability requirement.</em></p>
 <hr />
-<p><em>These examples use the canonical <code>RQ-THERM-014</code> case that runs through Chs. 4, 6, 9, 10, 12, 13, 15, and 17. Substitute your program's artifacts; the field shapes hold.</em></p>
+<p><em>These examples use the canonical <code>RQ-THERM-0</code> case that runs through Chs. 4, 6, 9, 10, 12, 13, 15, and 17. Substitute your program's artifacts; the field shapes hold.</em></p>
 
                     </main>
 
