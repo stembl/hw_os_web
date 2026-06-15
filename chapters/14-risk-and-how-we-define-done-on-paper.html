@@ -208,7 +208,12 @@
 </ul>
 <hr />
 <p>A gate package at a large industrial program marked all thermal actions closed. Two critical failure modes â€” thermal runaway propagation and connector derating under field humidity â€” were still under active investigation in the test lab. The disconnect: the action tracker was PM-owned and tracked action-item status by ID. The failure-mode log was engineering-owned and tracked investigation state by failure mode. No artifact required a closure entry to cite a failure-mode log entry rather than just an action ID. One internal audit caught the gap three days before the gate review. If the gate had proceeded, the program would have released a build configuration while two unresolved failure modes were still in active investigation â€” a six-to-eight-week integration cost if either materialized in production.</p>
-<p><strong>Old process:</strong> closure based on action-item status, not failure-mode investigation status. <strong>Artifact changed:</strong> a requirement in the gate-packet template that closure evidence must cite the failure-mode log entry (not just the action ID) and state the investigation disposition. <strong>Measured improvement:</strong> three days of gate-prep found the gap; the alternative was 6â€“8 weeks of post-release investigation. <strong>Cost of the gap:</strong> the organization had been running this way for two gate cycles and had closed gates with unresolved failure modes at least twice before the audit caught it.</p>
+<ul>
+<li><strong>Old process:</strong> closure based on action-item status, not failure-mode investigation status.</li>
+<li><strong>Artifact changed:</strong> a requirement in the gate-packet template that closure evidence must cite the failure-mode log entry (not just the action ID) and state the investigation disposition.</li>
+<li><strong>Measured improvement:</strong> three days of gate-prep found the gap; the alternative was 6–8 weeks of post-release investigation.</li>
+<li><strong>Cost of the gap:</strong> the organization had been running this way for two gate cycles and had closed gates with unresolved failure modes at least twice before the audit caught it.</li>
+</ul>
 <hr />
 <h3 id="tie-ins-to-gates-and-one-page-truth"><a class="header" href="#tie-ins-to-gates-and-one-page-truth">Tie-ins to gates and one-page truth</a></h3>
 <p>Risk artifacts should not stay in a technical silo; they must drive shared program controls.</p>
