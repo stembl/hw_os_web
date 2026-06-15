@@ -351,7 +351,9 @@
 <p>If your team cannot answer all five in under ten minutes, you are not dealing with one bad meeting. You are inside one or more of these patterns.</p>
 <h3 id="what-to-fix-first"><a class="header" href="#what-to-fix-first">What to fix first</a></h3>
 <p>Do not try to solve chaos, drift, and ownership with three separate initiatives.</p>
+<hr />
 <p>Day 19 of the handheld-controller EVT — the $42k fixture order on hold, the third meeting on the same leakage-limit decision — resolved when one owner was named for the live value. A single field was added to the existing status record: current live value, owner, and date last confirmed. The next week's review ran the five-question check in seven minutes. The fixture order cleared. The decision did not come back to a meeting. <strong>Old process:</strong> three channels carrying different values, no truth-state owner. <strong>Artifact changed:</strong> one field added to the live decision record — owner name, confirmed value, confirmation date. <strong>Measured improvement:</strong> two repeat meetings eliminated; the $42k fixture order cleared in the same week as the ownership assignment. <strong>Cost of the gap:</strong> nineteen days of delayed procurement action and a third repeat meeting that could have been the last.</p>
+<hr />
 <div style="break-before: page; page-break-before: always;"></div><h1 id="4-dri-ownership-and-decision-authority"><a class="header" href="#4-dri-ownership-and-decision-authority">4. DRI Ownership and Decision Authority</a></h1>
 <p><em>Three failure patterns run together in hardware programs: chaos, drift, and unowned decisions. Unowned decisions are the first break point because without a named person accountable for closure, the minimum control loop has no one to run it.</em></p>
 <p>Monday, 3:55 p.m., late sun on the whiteboard, decision still hanging open.</p>
@@ -467,7 +469,9 @@
 <p>If answers differ by function, the program does not have a spec. It has parallel interpretations.</p>
 <h3 id="hygiene-failures-that-look-small-and-cost-big"><a class="header" href="#hygiene-failures-that-look-small-and-cost-big">Hygiene failures that look small and cost big</a></h3>
 <p>Most failures are not dramatic. They are quiet mismatches.</p>
+<hr />
 <p>Rev C.2 changed the leak-test dwell value, but manufacturing work instructions still referenced Rev C.1 while test benches used the new value. That one mismatch forced three days of teardown and retest. The team then found the dwell requirement had no owner and no rationale trail for the original dwell change. Once an owner was assigned and a controlled revision record was created with the rationale, the next revision — a ten-second dwell adjustment — was processed in four hours and reached all affected work instructions the same day. <strong>Old process:</strong> no owner on the dwell requirement, no rationale trail, revision chain broken — manufacturing, test, and supplier each building to a different value. <strong>Artifact changed:</strong> an owner assigned to the dwell requirement and a controlled revision record created, with the rationale for the change documented. <strong>Measured improvement:</strong> the next revision processed in four hours and distributed to all affected work instructions the same day. <strong>Cost of the gap:</strong> three days of teardown and retest before the mismatch source was found and the requirement baseline was trustworthy.</p>
+<hr />
 <h3 id="requirement-statement-quality-minimum-bar"><a class="header" href="#requirement-statement-quality-minimum-bar">Requirement statement quality (minimum bar)</a></h3>
 <p>A requirement is usable when it is:</p>
 <ul>
@@ -953,17 +957,19 @@ The lead must scope a decision-ready ask with a named owner and due date.</p>
 <p>Use this minimum ask format for the analysis request artifact:</p>
 <ol>
 <li>Name the decision to support,</li>
-<li>cite the impacted requirement ID,</li>
+<li>cite the impacted requirement,</li>
 <li>define factors and ranges to study,</li>
 <li>specify output needed (limit, window, or pass/fail region),</li>
 <li>set confidence/evidence threshold,</li>
 <li>assign date and owner.</li>
 </ol>
 <p>Without this framing, teams can generate impressive activity artifacts that still produce no bounded conclusion for the decision log.</p>
+<hr />
 <p>A heat-generating module was mounted to a cooling structure. The thermal model predicted it would stay within its limit at full operating load. Three early prototype builds ran consistently hotter than predicted — not scattered results, the same gap every time.</p>
 <p>The root cause was in what neither model was told to talk to the other about. At room temperature, the mounting assembly held good contact pressure across the thermal interface. At operating temperature, differential expansion between the module and the frame reduced that pressure at the interface edges. Lower pressure meant less effective contact. Less effective contact meant higher thermal resistance than the thermal model had assumed as a fixed input. Higher resistance meant higher temperature — which drove more expansion — a feedback loop no single-domain model could see.</p>
 <p>Each model was valid given its own boundary conditions. The thermal model used a room-temperature interface measurement. The mechanical model validated contact at room temperature only. Neither was wrong. The interaction between them was the missing factor.</p>
 <p>Fix: simplified geometry prototypes with one variable controlled at a time, each modeled to match before adding the next. The coupled model, validated against those steps, predicted peak temperature within a few degrees of measured across the operating range. <strong>Old process:</strong> fixed interface assumption in the thermal model; mechanical contact validated at room temperature only. <strong>Artifact changed:</strong> a coupled model treating contact pressure as a temperature-dependent input to the thermal boundary condition. <strong>Measured improvement:</strong> prediction error reduced from a consistent overshoot of roughly one temperature class to within a few degrees at full load. <strong>Cost of catching it in early prototyping:</strong> a handful of controlled builds and model cycles; the same discovery post-tooling would have required a geometry change to the mounting architecture.</p>
+<hr />
 <h3 id="rejecting-activity-theater"><a class="header" href="#rejecting-activity-theater">Rejecting activity theater</a></h3>
 <p>Reject analysis summaries that report:</p>
 <ul>
@@ -1441,11 +1447,13 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>update risk register and one-page status.</li>
 </ol>
 <p>Delay usually comes from unclear ownership at step 3.</p>
+<hr />
 <p>A program sourcing custom precision components got the same answer from every supplier when asking about process tolerance: the process held a stated tolerance regardless of feature size. Multiple suppliers, independently, the same number. It had the feel of an industry rule of thumb repeated often enough that most programs treat it as settled.</p>
 <p>The claim did not follow basic manufacturing physics. Process tolerances on formed or machined features typically depend on feature size because the relative contribution of variation is larger at smaller scales. Rather than accept the blanket number, dimensional data was requested across a range of feature sizes and geometries — not just the program's nominal part.</p>
 <p>The data showed a clear size dependence. On large features, the supplier achieved roughly half the stated blanket tolerance — they were underselling their capability. On small features, the actual achieved tolerance was roughly double the stated value — they were overselling it. The blanket number was approximately their average across the range, misleading in both directions and most misleading at the feature sizes that governed the design constraints.</p>
 <p><strong>Old process:</strong> blanket tolerance accepted at face value, applied uniformly across all feature sizes in the design. <strong>Artifact changed:</strong> a tolerance specification written as a function of feature size, derived from the supplier's own measurement data. <strong>Measured improvement:</strong> an optimized component geometry fit the available form-factor envelope, cleared assembly placement requirements, and was physically sized to also benefit peak operating temperature — three constraints that had appeared to be in conflict under the blanket specification, resolved simultaneously. <strong>Cost of the gap:</strong> without the size-dependent specification, the design would have been either over-constrained on large features (producing a component unnecessarily large for its envelope) or under-constrained on small features (relying on a tolerance the supplier could not hold, found during qualification).</p>
 <p>The supplier discrepancy pattern here is the downstream consequence of the thermal limit revision — the power-stage supplier built to the 85 °C derating assumption; after the requirement revised to 78 °C, the receiving inspection flagged the discrepancy. The discrepancy playbook is what surfaces it as a capability gap, not a supplier failure.</p>
+<hr />
 <p>Acceptable implementations for the supplier capability data exchange include an APQP or PPAP packet structure when the customer-supplier relationship is formal enough to require it, a supplier-collaboration object under product-data control when revision-locked handoffs are mandatory, a controlled exchange folder with revision-stamped attachments and a named review log for smaller programs, or a shared Cpk dashboard with defined refresh cadence. The OS cares that the capability data (Cpk values, measurement methods, sample sizes, and control chart history) arrives with the same revision control as the design requirements — not that it arrives through any particular tool.</p>
 <h3 id="producibility-as-a-continuous-signal"><a class="header" href="#producibility-as-a-continuous-signal">Producibility as a continuous signal</a></h3>
 <p>Producibility is not a one-time pre-launch checkbox.</p>
