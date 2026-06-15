@@ -156,7 +156,6 @@
                         <h1 id="11-many-factors-one-honest-limit"><a class="header" href="#11-many-factors-one-honest-limit">11. Many Factors, One Honest Limit</a></h1>
 <p>Wednesday, 2:35 p.m., the integrated test chamber still cycling in the next room, the subsystem verification report green on single-factor tests while the combined-condition run fails the requirement boundary.</p>
 <p>The subsystem passes every single-factor check in the verification report.</p>
-<p>It still fails in integrated operation under combined load and temperature.</p>
 <p>The verification team tested variables one at a time and never ran the combined condition envelope that exists in the real product.</p>
 <p>That test-plan gap burns schedule without reducing uncertainty enough for the gate decision owner to choose.</p>
 <hr />
@@ -170,7 +169,7 @@ It fails when interaction effects dominate the decision boundary.</p>
 <li>response is highly sensitive near operating boundaries,</li>
 <li>multiple coupled assumptions sit inside one requirement decision.</li>
 </ul>
-<p>EMI is a common second example: you can model the source with good accuracy, but coupling to other structures depends on layout, ground return paths, and shield geometry all at once. Shielding effectiveness calculated for a single source is only useful if you have correctly identified every significant source. Early testing with physical hardware can locate the coupling paths that single-domain analysis missed; catching that late means architectural changes after routing and mechanical design are fixed.</p>
+<p>EMI is a common example: you can model the source with good accuracy, but coupling to other structures depends on layout, ground return paths, and shield geometry all at once. Shielding effectiveness calculated for a single source is only useful if you have correctly identified every significant source. Early testing with physical hardware can locate the coupling paths that single-domain analysis missed; catching that late means architectural changes after routing and mechanical design are fixed.</p>
 <p>If any of these signs are present, additional one-factor testing usually burns time without reducing uncertainty enough to support a real decision.</p>
 <h3 id="leads-job-scope-the-decision-question"><a class="header" href="#leads-job-scope-the-decision-question">Lead's job: scope the decision question</a></h3>
 <p>The lead does not need to run the analysis personally.
@@ -199,7 +198,7 @@ The lead must scope a decision-ready ask with a named owner and due date.</p>
 <p>because none of those statements names a decision owner, requirement artifact, or closure trigger.</p>
 <p>Accept analysis packages that answer:</p>
 <ul>
-<li>what changed in the decision baseline,</li>
+<li>what changed in the decision baseline (the program's current standing commitments),</li>
 <li>what uncertainty remains and who owns it,</li>
 <li>what risk moved in the register,</li>
 <li>what next decision date is now justified.</li>
