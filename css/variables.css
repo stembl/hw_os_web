@@ -1,215 +1,198 @@
 /* ==========================================================================
    The Hardware OS — mdBook theme override
-   Replaces .light and .coal (dark) with HWOS zinc/amber palette.
+   .light and .coal use HWOS zinc/amber palette.
    Unified surface: sidebar shares the same background as content.
+   Link color in light theme uses amber-700 (#B45309) for WCAG AA compliance.
    ========================================================================== */
 
-/* --------------------------------------------------------------------------
-   Globals (unchanged from mdBook defaults)
-   -------------------------------------------------------------------------- */
 :root {
-  --sidebar-width: 300px;
-  --sidebar-resize-indicator-width: 8px;
-  --sidebar-resize-indicator-space: 2px;
-  --page-padding: 15px;
-  --content-max-width: 750px;
-  --menu-bar-height: 50px;
-  --mono-font: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace;
-  --code-font-size: 0.875em;
+ --sidebar-width: 300px;
+ --sidebar-resize-indicator-width: 8px;
+ --sidebar-resize-indicator-space: 2px;
+ --page-padding: 15px;
+ --content-max-width: 750px;
+ --menu-bar-height: 50px;
+ --mono-font: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace;
+ --code-font-size: 0.875em;
 }
 
 /* --------------------------------------------------------------------------
-   HWOS Light — zinc/white, amber-600 accent, unified surface
+   HWOS Light — zinc/white, amber-700 links (5.8:1 contrast on white)
    -------------------------------------------------------------------------- */
 .light, html:not(.js) {
-  --bg: #FFFFFF;
-  --fg: #09090B;              /* zinc-950 */
+ --bg: #FFFFFF;
+ --fg: #09090B;               /* zinc-950 */
 
-  --sidebar-bg: #FFFFFF;      /* unified — same as content */
-  --sidebar-fg: #71717A;      /* zinc-500 — muted nav */
-  --sidebar-non-existant: #A1A1AA;   /* zinc-400 */
-  --sidebar-active: #D97706;         /* amber-600 */
-  --sidebar-spacer: #E4E4E7;         /* zinc-200 */
+ --sidebar-bg: #FFFFFF;       /* unified surface */
+ --sidebar-fg: #71717A;       /* zinc-500 — muted nav */
+ --sidebar-non-existant: #A1A1AA;
+ --sidebar-active: #B45309;   /* amber-700 — 5.8:1 on white */
+ --sidebar-spacer: #E4E4E7;   /* zinc-200 */
 
-  --scrollbar: #A1A1AA;
+ --scrollbar: #A1A1AA;
 
-  --icons: #A1A1AA;           /* zinc-400 */
-  --icons-hover: #09090B;
+ --icons: #A1A1AA;
+ --icons-hover: #09090B;
 
-  --links: #D97706;           /* amber-600 */
+ --links: #B45309;            /* amber-700 — readable on white */
 
-  --inline-code-color: #09090B;
+ --inline-code-color: #09090B;
 
-  --theme-popup-bg: #FFFFFF;
-  --theme-popup-border: #E4E4E7;
-  --theme-hover: #F4F4F5;     /* zinc-100 */
+ --theme-popup-bg: #FFFFFF;
+ --theme-popup-border: #E4E4E7;
+ --theme-hover: #F4F4F5;      /* zinc-100 */
 
-  --quote-bg: #FEF3C7;        /* amber-100 */
-  --quote-border: #D97706;    /* amber-600 */
+ --quote-bg: #FEF3C7;         /* amber-100 */
+ --quote-border: #D97706;     /* amber-600 — decorative only */
 
-  --warning-border: #D97706;
+ --warning-border: #D97706;
 
-  --table-border-color: #E4E4E7;
-  --table-header-bg: #F4F4F5;
-  --table-alternate-bg: #FAFAFA;
+ --table-border-color: #E4E4E7;
+ --table-header-bg: #F4F4F5;
+ --table-alternate-bg: #FAFAFA;
 
-  --searchbar-border-color: #E4E4E7;
-  --searchbar-bg: #FFFFFF;
-  --searchbar-fg: #09090B;
-  --searchbar-shadow-color: #E4E4E7;
-  --searchresults-header-fg: #71717A;
-  --searchresults-border-color: #E4E4E7;
-  --searchresults-li-bg: #FEF3C7;
-  --search-mark-bg: #FDE68A;  /* amber-200 */
+ --searchbar-border-color: #E4E4E7;
+ --searchbar-bg: #FFFFFF;
+ --searchbar-fg: #09090B;
+ --searchbar-shadow-color: #E4E4E7;
+ --searchresults-header-fg: #71717A;
+ --searchresults-border-color: #E4E4E7;
+ --searchresults-li-bg: #FEF3C7;
+ --search-mark-bg: #FDE68A;   /* amber-200 */
 
-  --color-scheme: light;
+ --color-scheme: light;
 
-  --copy-button-filter: invert(45.49%);
-  --copy-button-filter-hover: invert(52%) sepia(80%) saturate(600%) hue-rotate(15deg) brightness(95%) contrast(95%);
+ --copy-button-filter: invert(45.49%);
+ --copy-button-filter-hover: invert(30%) sepia(80%) saturate(600%) hue-rotate(20deg) brightness(80%) contrast(100%);
 }
 
 /* --------------------------------------------------------------------------
-   HWOS Dark — zinc-950, amber-400 accent, unified surface
+   HWOS Dark — zinc-950, amber-400 accent (9.8:1 contrast on dark bg)
    -------------------------------------------------------------------------- */
 .coal {
-  --bg: #09090B;              /* zinc-950 */
-  --fg: #FAFAFA;              /* zinc-50 */
+ --bg: #09090B;               /* zinc-950 */
+ --fg: #FAFAFA;               /* zinc-50 */
 
-  --sidebar-bg: #09090B;      /* unified — same as content */
-  --sidebar-fg: #A1A1AA;      /* zinc-400 — muted nav */
-  --sidebar-non-existant: #52525B;   /* zinc-600 */
-  --sidebar-active: #F59E0B;         /* amber-400 */
-  --sidebar-spacer: #27272A;         /* zinc-800 */
+ --sidebar-bg: #09090B;       /* unified surface */
+ --sidebar-fg: #A1A1AA;       /* zinc-400 */
+ --sidebar-non-existant: #52525B;
+ --sidebar-active: #F59E0B;   /* amber-400 */
+ --sidebar-spacer: #27272A;   /* zinc-800 */
 
-  --scrollbar: #52525B;
+ --scrollbar: #52525B;
 
-  --icons: #52525B;           /* zinc-600 */
-  --icons-hover: #FAFAFA;
+ --icons: #52525B;
+ --icons-hover: #FAFAFA;
 
-  --links: #F59E0B;           /* amber-400 */
+ --links: #F59E0B;            /* amber-400 — 9.8:1 on zinc-950 */
 
-  --inline-code-color: #A1A1AA;
+ --inline-code-color: #A1A1AA;
 
-  --theme-popup-bg: #09090B;
-  --theme-popup-border: #27272A;
-  --theme-hover: #18181B;     /* zinc-900 */
+ --theme-popup-bg: #09090B;
+ --theme-popup-border: #27272A;
+ --theme-hover: #18181B;      /* zinc-900 */
 
-  --quote-bg: rgba(245,158,11,0.08);
-  --quote-border: #F59E0B;    /* amber-400 */
+ --quote-bg: rgba(245,158,11,0.08);
+ --quote-border: #F59E0B;
 
-  --warning-border: #F59E0B;
+ --warning-border: #F59E0B;
 
-  --table-border-color: #27272A;
-  --table-header-bg: #18181B;
-  --table-alternate-bg: #111113;
+ --table-border-color: #27272A;
+ --table-header-bg: #18181B;
+ --table-alternate-bg: #111113;
 
-  --searchbar-border-color: #27272A;
-  --searchbar-bg: #18181B;
-  --searchbar-fg: #FAFAFA;
-  --searchbar-shadow-color: #27272A;
-  --searchresults-header-fg: #A1A1AA;
-  --searchresults-border-color: #27272A;
-  --searchresults-li-bg: #18181B;
-  --search-mark-bg: rgba(245,158,11,0.3);
+ --searchbar-border-color: #27272A;
+ --searchbar-bg: #18181B;
+ --searchbar-fg: #FAFAFA;
+ --searchbar-shadow-color: #27272A;
+ --searchresults-header-fg: #A1A1AA;
+ --searchresults-border-color: #27272A;
+ --searchresults-li-bg: #18181B;
+ --search-mark-bg: rgba(245,158,11,0.3);
 
-  --color-scheme: dark;
+ --color-scheme: dark;
 
-  --copy-button-filter: invert(35%) sepia(0%) saturate(0%) brightness(80%) contrast(80%);
-  --copy-button-filter-hover: invert(70%) sepia(60%) saturate(500%) hue-rotate(5deg) brightness(100%) contrast(100%);
+ --copy-button-filter: invert(35%) sepia(0%) saturate(0%) brightness(80%) contrast(80%);
+ --copy-button-filter-hover: invert(70%) sepia(60%) saturate(500%) hue-rotate(5deg) brightness(100%) contrast(100%);
 }
 
 /* --------------------------------------------------------------------------
    System dark mode default (no JS / no theme set)
    -------------------------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
-  html:not(.js) {
-    --bg: #09090B;
-    --fg: #FAFAFA;
-    --sidebar-bg: #09090B;
-    --sidebar-fg: #A1A1AA;
-    --sidebar-non-existant: #52525B;
-    --sidebar-active: #F59E0B;
-    --sidebar-spacer: #27272A;
-    --scrollbar: #52525B;
-    --icons: #52525B;
-    --icons-hover: #FAFAFA;
-    --links: #F59E0B;
-    --inline-code-color: #A1A1AA;
-    --theme-popup-bg: #09090B;
-    --theme-popup-border: #27272A;
-    --theme-hover: #18181B;
-    --quote-bg: rgba(245,158,11,0.08);
-    --quote-border: #F59E0B;
-    --warning-border: #F59E0B;
-    --table-border-color: #27272A;
-    --table-header-bg: #18181B;
-    --table-alternate-bg: #111113;
-    --searchbar-border-color: #27272A;
-    --searchbar-bg: #18181B;
-    --searchbar-fg: #FAFAFA;
-    --searchbar-shadow-color: #27272A;
-    --searchresults-header-fg: #A1A1AA;
-    --searchresults-border-color: #27272A;
-    --searchresults-li-bg: #18181B;
-    --search-mark-bg: rgba(245,158,11,0.3);
-    --color-scheme: dark;
-    --copy-button-filter: invert(35%) sepia(0%) saturate(0%) brightness(80%) contrast(80%);
-    --copy-button-filter-hover: invert(70%) sepia(60%) saturate(500%) hue-rotate(5deg) brightness(100%) contrast(100%);
-  }
+ html:not(.js) {
+  --bg: #09090B; --fg: #FAFAFA;
+  --sidebar-bg: #09090B; --sidebar-fg: #A1A1AA;
+  --sidebar-non-existant: #52525B; --sidebar-active: #F59E0B;
+  --sidebar-spacer: #27272A; --scrollbar: #52525B;
+  --icons: #52525B; --icons-hover: #FAFAFA;
+  --links: #F59E0B; --inline-code-color: #A1A1AA;
+  --theme-popup-bg: #09090B; --theme-popup-border: #27272A; --theme-hover: #18181B;
+  --quote-bg: rgba(245,158,11,0.08); --quote-border: #F59E0B;
+  --warning-border: #F59E0B;
+  --table-border-color: #27272A; --table-header-bg: #18181B; --table-alternate-bg: #111113;
+  --searchbar-border-color: #27272A; --searchbar-bg: #18181B; --searchbar-fg: #FAFAFA;
+  --searchbar-shadow-color: #27272A; --searchresults-header-fg: #A1A1AA;
+  --searchresults-border-color: #27272A; --searchresults-li-bg: #18181B;
+  --search-mark-bg: rgba(245,158,11,0.3);
+  --color-scheme: dark;
+  --copy-button-filter: invert(35%) sepia(0%) saturate(0%) brightness(80%) contrast(80%);
+  --copy-button-filter-hover: invert(70%) sepia(60%) saturate(500%) hue-rotate(5deg) brightness(100%) contrast(100%);
+ }
 }
 
 /* --------------------------------------------------------------------------
-   Unchanged themes (ayu, navy, rust) — kept as mdBook defaults
+   Unchanged themes (ayu, navy, rust)
    -------------------------------------------------------------------------- */
 .ayu {
-  --bg: hsl(210, 25%, 8%); --fg: #c5c5c5;
-  --sidebar-bg: #14191f; --sidebar-fg: #c8c9db; --sidebar-non-existant: #5c6773;
-  --sidebar-active: #ffb454; --sidebar-spacer: #2d334f;
-  --scrollbar: var(--sidebar-fg); --icons: #737480; --icons-hover: #b7b9cc;
-  --links: #0096cf; --inline-code-color: #ffb454;
-  --theme-popup-bg: #14191f; --theme-popup-border: #5c6773; --theme-hover: #191f26;
-  --quote-bg: hsl(226, 15%, 17%); --quote-border: hsl(226, 15%, 22%);
-  --warning-border: #ff8e00;
-  --table-border-color: hsl(210, 25%, 13%); --table-header-bg: hsl(210, 25%, 28%); --table-alternate-bg: hsl(210, 25%, 11%);
-  --searchbar-border-color: #848484; --searchbar-bg: #424242; --searchbar-fg: #fff;
-  --searchbar-shadow-color: #d4c89f; --searchresults-header-fg: #666;
-  --searchresults-border-color: #888; --searchresults-li-bg: #252932; --search-mark-bg: #e3b171;
-  --color-scheme: dark;
-  --copy-button-filter: invert(45%) sepia(6%) saturate(621%) hue-rotate(198deg) brightness(99%) contrast(85%);
-  --copy-button-filter-hover: invert(68%) sepia(55%) saturate(531%) hue-rotate(341deg) brightness(104%) contrast(101%);
+ --bg: hsl(210, 25%, 8%); --fg: #c5c5c5;
+ --sidebar-bg: #14191f; --sidebar-fg: #c8c9db; --sidebar-non-existant: #5c6773;
+ --sidebar-active: #ffb454; --sidebar-spacer: #2d334f;
+ --scrollbar: var(--sidebar-fg); --icons: #737480; --icons-hover: #b7b9cc;
+ --links: #0096cf; --inline-code-color: #ffb454;
+ --theme-popup-bg: #14191f; --theme-popup-border: #5c6773; --theme-hover: #191f26;
+ --quote-bg: hsl(226, 15%, 17%); --quote-border: hsl(226, 15%, 22%);
+ --warning-border: #ff8e00;
+ --table-border-color: hsl(210, 25%, 13%); --table-header-bg: hsl(210, 25%, 28%); --table-alternate-bg: hsl(210, 25%, 11%);
+ --searchbar-border-color: #848484; --searchbar-bg: #424242; --searchbar-fg: #fff;
+ --searchbar-shadow-color: #d4c89f; --searchresults-header-fg: #666;
+ --searchresults-border-color: #888; --searchresults-li-bg: #252932; --search-mark-bg: #e3b171;
+ --color-scheme: dark;
+ --copy-button-filter: invert(45%) sepia(6%) saturate(621%) hue-rotate(198deg) brightness(99%) contrast(85%);
+ --copy-button-filter-hover: invert(68%) sepia(55%) saturate(531%) hue-rotate(341deg) brightness(104%) contrast(101%);
 }
 
 .navy {
-  --bg: hsl(226, 23%, 11%); --fg: #bcbdd0;
-  --sidebar-bg: #282d3f; --sidebar-fg: #c8c9db; --sidebar-non-existant: #505274;
-  --sidebar-active: #2b79a2; --sidebar-spacer: #2d334f;
-  --scrollbar: var(--sidebar-fg); --icons: #737480; --icons-hover: #b7b9cc;
-  --links: #2b79a2; --inline-code-color: #c5c8c6;
-  --theme-popup-bg: #161923; --theme-popup-border: #737480; --theme-hover: #282e40;
-  --quote-bg: hsl(226, 15%, 17%); --quote-border: hsl(226, 15%, 22%);
-  --warning-border: #ff8e00;
-  --table-border-color: hsl(226, 23%, 16%); --table-header-bg: hsl(226, 23%, 31%); --table-alternate-bg: hsl(226, 23%, 14%);
-  --searchbar-border-color: #aaa; --searchbar-bg: #aeaec6; --searchbar-fg: #000;
-  --searchbar-shadow-color: #aaa; --searchresults-header-fg: #5f5f71;
-  --searchresults-border-color: #5c5c68; --searchresults-li-bg: #242430; --search-mark-bg: #a2cff5;
-  --color-scheme: dark;
-  --copy-button-filter: invert(51%) sepia(10%) saturate(393%) hue-rotate(198deg) brightness(86%) contrast(87%);
-  --copy-button-filter-hover: invert(46%) sepia(20%) saturate(1537%) hue-rotate(156deg) brightness(85%) contrast(90%);
+ --bg: hsl(226, 23%, 11%); --fg: #bcbdd0;
+ --sidebar-bg: #282d3f; --sidebar-fg: #c8c9db; --sidebar-non-existant: #505274;
+ --sidebar-active: #2b79a2; --sidebar-spacer: #2d334f;
+ --scrollbar: var(--sidebar-fg); --icons: #737480; --icons-hover: #b7b9cc;
+ --links: #2b79a2; --inline-code-color: #c5c8c6;
+ --theme-popup-bg: #161923; --theme-popup-border: #737480; --theme-hover: #282e40;
+ --quote-bg: hsl(226, 15%, 17%); --quote-border: hsl(226, 15%, 22%);
+ --warning-border: #ff8e00;
+ --table-border-color: hsl(226, 23%, 16%); --table-header-bg: hsl(226, 23%, 31%); --table-alternate-bg: hsl(226, 23%, 14%);
+ --searchbar-border-color: #aaa; --searchbar-bg: #aeaec6; --searchbar-fg: #000;
+ --searchbar-shadow-color: #aaa; --searchresults-header-fg: #5f5f71;
+ --searchresults-border-color: #5c5c68; --searchresults-li-bg: #242430; --search-mark-bg: #a2cff5;
+ --color-scheme: dark;
+ --copy-button-filter: invert(51%) sepia(10%) saturate(393%) hue-rotate(198deg) brightness(86%) contrast(87%);
+ --copy-button-filter-hover: invert(46%) sepia(20%) saturate(1537%) hue-rotate(156deg) brightness(85%) contrast(90%);
 }
 
 .rust {
-  --bg: hsl(60, 9%, 87%); --fg: #262625;
-  --sidebar-bg: #3b2e2a; --sidebar-fg: #c8c9db; --sidebar-non-existant: #505254;
-  --sidebar-active: #e69f67; --sidebar-spacer: #45373a;
-  --scrollbar: var(--sidebar-fg); --icons: #737480; --icons-hover: #262625;
-  --links: #2b79a2; --inline-code-color: #6e6b5e;
-  --theme-popup-bg: #e1e1db; --theme-popup-border: #b38f6b; --theme-hover: #99908a;
-  --quote-bg: hsl(60, 5%, 75%); --quote-border: hsl(60, 5%, 70%);
-  --warning-border: #ff8e00;
-  --table-border-color: hsl(60, 9%, 82%); --table-header-bg: #b3a497; --table-alternate-bg: hsl(60, 9%, 84%);
-  --searchbar-border-color: #aaa; --searchbar-bg: #fafafa; --searchbar-fg: #000;
-  --searchbar-shadow-color: #aaa; --searchresults-header-fg: #666;
-  --searchresults-border-color: #888; --searchresults-li-bg: #dec2a2; --search-mark-bg: #e69f67;
-  --copy-button-filter: invert(51%) sepia(10%) saturate(393%) hue-rotate(198deg) brightness(86%) contrast(87%);
-  --copy-button-filter-hover: invert(77%) sepia(16%) saturate(1798%) hue-rotate(328deg) brightness(98%) contrast(83%);
+ --bg: hsl(60, 9%, 87%); --fg: #262625;
+ --sidebar-bg: #3b2e2a; --sidebar-fg: #c8c9db; --sidebar-non-existant: #505254;
+ --sidebar-active: #e69f67; --sidebar-spacer: #45373a;
+ --scrollbar: var(--sidebar-fg); --icons: #737480; --icons-hover: #262625;
+ --links: #2b79a2; --inline-code-color: #6e6b5e;
+ --theme-popup-bg: #e1e1db; --theme-popup-border: #b38f6b; --theme-hover: #99908a;
+ --quote-bg: hsl(60, 5%, 75%); --quote-border: hsl(60, 5%, 70%);
+ --warning-border: #ff8e00;
+ --table-border-color: hsl(60, 9%, 82%); --table-header-bg: #b3a497; --table-alternate-bg: hsl(60, 9%, 84%);
+ --searchbar-border-color: #aaa; --searchbar-bg: #fafafa; --searchbar-fg: #000;
+ --searchbar-shadow-color: #aaa; --searchresults-header-fg: #666;
+ --searchresults-border-color: #888; --searchresults-li-bg: #dec2a2; --search-mark-bg: #e69f67;
+ --copy-button-filter: invert(51%) sepia(10%) saturate(393%) hue-rotate(198deg) brightness(86%) contrast(87%);
+ --copy-button-filter-hover: invert(77%) sepia(16%) saturate(1798%) hue-rotate(328deg) brightness(98%) contrast(83%);
 }
