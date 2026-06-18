@@ -76,14 +76,15 @@ html:not(.js) {
 /* -- Page footer: outside the prose column, clearly site chrome ---------- */
 .hwos-page-footer {
   width: 100%;
-  padding: 0.75rem 1.5rem;
+  padding: 1rem 1.5rem;
   margin-top: 2rem;
   border-top: 1px solid var(--sidebar-spacer);
   background-color: var(--sidebar-bg);
-  font-size: 0.8rem;
+  font-size: 0.95rem;
   color: var(--fg);
   opacity: 0.65;
   box-sizing: border-box;
+  text-align: center;
 }
 .hwos-page-footer a {
   color: var(--links);

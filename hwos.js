@@ -30,15 +30,15 @@
   // The compiled toc.html is a flat list — part headings from SUMMARY.md
   // are not in the built HTML, so we add them via MutationObserver.
   var PARTS = [
-    { before: 'chapters/01-the-missing-manual.html',
+    { before: '01-the-missing-manual.html',
       label:  'Part I \u2014 Why Hardware Programs Break' },
-    { before: 'chapters/04-dri-ownership-and-decision-authority.html',
+    { before: '04-dri-ownership-and-decision-authority.html',
       label:  'Part II \u2014 The Hardware OS Core' },
-    { before: 'chapters/09-requirements-lifecycle.html',
+    { before: '09-requirements-lifecycle.html',
       label:  'Part III \u2014 Technical Evidence' },
-    { before: 'chapters/15-what-every-tier-wants.html',
+    { before: '15-what-every-tier-wants.html',
       label:  'Part IV \u2014 Running the Organization' },
-    { before: 'chapters/18-rollout-sequence-triage-then-system.html',
+    { before: '18-rollout-sequence-triage-then-system.html',
       label:  'Part V \u2014 Adoption and Scale' }
   ];
 
@@ -47,7 +47,7 @@
     if (!ol) return false;
     if (ol.querySelector('.part-title')) return true;
     PARTS.forEach(function(part) {
-      var link = ol.querySelector('a[href="' + part.before + '"]');
+      var link = ol.querySelector('a[href$="' + part.before + '"]');
       if (!link) return;
       var li = document.createElement('li');
       li.className = 'part-title';
