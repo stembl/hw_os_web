@@ -704,3 +704,43 @@ function playground_text(playground, hidden = true) {
     contentMain.appendChild(nudge);
   }
 })();
+// -- HWOS part-title injector --------------------------------------------------
+// The compiled toc.html is a flat chapter list — part headings were not in the
+// build. Inject them via JS once the sidebar scrollbox is populated.
+(function hwosParts() {
+  var PARTS = [
+    { before: 'chapters/01-the-missing-manual.html',              label: 'Part I \u2014 Why Hardware Programs Break' },
+    { before: 'chapters/04-dri-ownership-and-decision-authority.html', label: 'Part II \u2014 The Hardware OS Core' },
+    { before: 'chapters/09-requirements-lifecycle.html',          label: 'Part III \u2014 Technical Evidence' },
+    { before: 'chapters/15-what-every-tier-wants.html',           label: 'Part IV \u2014 Running the Organization' },
+    { before: 'chapters/18-rollout-sequence-triage-then-system.html', label: 'Part V \u2014 Adoption and Scale' }
+  ];
+
+  function injectParts() {
+    var ol = document.querySelector('.sidebar-scrollbox ol.chapter');
+    if (!ol) return false;
+    // avoid double-inject
+    if (ol.querySelector('.part-title')) return true;
+    PARTS.forEach(function(part) {
+      var link = ol.querySelector('a[href="' + part.before + '"]');
+      if (!link) return;
+      var li = document.createElement('li');
+      li.className = 'part-title';
+      li.textContent = part.label;
+      link.closest('li').insertAdjacentElement('beforebegin', li);
+    });
+    return true;
+  }
+
+  // Try immediately (sidebar may already be ready)
+  if (!injectParts()) {
+    // Fall back to MutationObserver
+    var target = document.querySelector('.sidebar-scrollbox') || document.getElementById('sidebar');
+    if (target) {
+      var obs = new MutationObserver(function() {
+        if (injectParts()) obs.disconnect();
+      });
+      obs.observe(target, { childList: true, subtree: true });
+    }
+  }
+})();
