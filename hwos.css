@@ -3,6 +3,10 @@
    Source of truth: web/mdbook-assets/hwos.css in stembl/hw_os
    Applied via additional-css after the default mdBook theme.
    When changing tokens, update ops/legal.md and design/tokens.css too.
+
+   SCALE NOTE: mdBook sets :root { font-size: 62.5% } so 1rem = 10px.
+   Always express font sizes in this scale: 1.4rem = 14px, 1.6rem = 16px.
+   Sub-1rem values are sub-10px and will be illegible.
    ========================================================================= */
 
 /* -- Typography ---------------------------------------------------------- */
@@ -47,7 +51,7 @@ html:not(.js) {
 
 /* -- Part title labels (injected by hwos.js) ----------------------------- */
 .chapter li.part-title {
-  font-size: 0.62rem;
+  font-size: 1.1rem;  /* 11px — small uppercase label, clearly secondary */
   font-weight: 700;
   letter-spacing: 0.1em;
   text-transform: uppercase;
@@ -64,7 +68,7 @@ html:not(.js) {
   margin-bottom: 8px;
 }
 .hwos-brand-link {
-  font-size: 0.72rem;
+  font-size: 1.3rem;  /* 13px */
   color: var(--sidebar-active);
   text-decoration: none;
   letter-spacing: 0.04em;
@@ -80,7 +84,7 @@ html:not(.js) {
   margin-top: 2rem;
   border-top: 1px solid var(--sidebar-spacer);
   background-color: var(--sidebar-bg);
-  font-size: 0.95rem;
+  font-size: 1.4rem;  /* 14px */
   color: var(--fg);
   opacity: 0.65;
   box-sizing: border-box;
