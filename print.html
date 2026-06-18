@@ -157,7 +157,7 @@
                         <h1 id="the-hardware-os"><a class="header" href="#the-hardware-os">The Hardware OS</a></h1>
 <p><img src="media/hw_os_front_2.png" alt="The Hardware OS — front cover" /></p>
 <p><strong>Author:</strong> Steve Embleton</p>
-<p>How engineering leads keep requirements, decisions, evidence, and executive truth tied to what the build actually proves — and what to do when drift starts.</p>
+<p>The operating discipline for hardware programs — how requirements, decisions, and evidence hold together from concept to production.</p>
 <p><strong>Start reading:</strong> use the sidebar for the full outline, or open <a href="chapters/01-the-missing-manual.html">1. The Missing Manual</a>.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="the-hardware-os-in-one-page"><a class="header" href="#the-hardware-os-in-one-page">The Hardware OS, in one page</a></h1>
 <h2 id="what-this-operating-system-looks-like-when-its-working"><a class="header" href="#what-this-operating-system-looks-like-when-its-working">What this operating system looks like when it's working</a></h2>
@@ -197,7 +197,7 @@
 <p>Mechanical already cut metal to last week’s number. Electrical has a new test trace that says the old number was optimistic. The supplier says they never got the last revision anyway. The program manager is trying to hold the date everyone committed in the first quarter — and your executive wants a one-page update by noon: <em>Are we still on track or not?</em></p>
 <p>Everyone is working. Nobody is slacking.</p>
 <p>The program is still drifting.</p>
-<p>You have watched this movie. It is usually not weak engineers. It is usually no manual for the process: no agreed way for work to cross team lines, no shared rule for what “locked” means when new data shows up, no honest tie between the schedule and long leads plus what test actually measured, and no single page where that story stays true before the room invents a new one.</p>
+<p>You have watched this movie. It is rarely weak engineers. What is almost always missing is a manual for the process: no agreed way for work to cross team lines, no shared rule for what “locked” means when new data shows up, no honest tie between the schedule and long leads plus what test actually measured, and no single page where that story stays true long enough to survive the next status call.</p>
 <p>Process means the written habits: who owns the handoff, where the numbers live that the factory is allowed to build to, who may change that number after a test, and how everyone who needs to know finds out before they order steel. Not paperwork stapled on after the design is “done.” The thing that keeps the design from quietly forking inside three different inboxes.</p>
 <p>Most engineering leads earn the role on technical judgment, then get judged on skills nobody prints in the promotion packet: who owns the step when mechanical’s output becomes electrical’s constraint; what has to exist after a meeting so people actually build to the same assumption; what belongs on a one-page status; how a limit moves when evidence says it must; when to pull an executive in before a week turns into a quarter. Nobody hands you a course for that bundle. The industry still behaves as if you learn it by walking past the right cubicles long enough.</p>
 <p>That gap costs money the same way bad parts cost money: slips, rework, supplier scrap, trust thinning with the people paying the bills. The same scenes on repeat: no owner on the interface line in writing, executive-facing pages that read confident while build and test already know the open item, suppliers going quiet when the drawing set forks, the stretch of calendar where cheap learning has become expensive metal.</p>
@@ -1139,7 +1139,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <hr />
 <p>The boundary-condition correction is confirmed. The model re-run matches the chamber within measurement uncertainty. The gate decision changes from hold to proceed — one week after the chamber result that everyone initially attributed to measurement error. The requirement is 78 °C, the model predicts 79 °C, and the boundary-condition log now carries the contact-resistance value traced to the direct contact-resistance measurement. The decision packet is one page. The technical backup is three.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="13-fleet-as-instrumented-experiment"><a class="header" href="#13-fleet-as-instrumented-experiment">13. Fleet as Instrumented Experiment</a></h1>
-<p>Thursday, 7:02 a.m., five units on the bench, cross-site call connecting, no two run logs with the same fields.</p>
+<p>Thursday, 7:02 a.m., five units on the bench, cross-site call connecting, no two run logs structured the same way.</p>
 <p>By Friday, the team has stories about each one and no comparable record of what was different between them.</p>
 <p>That is a missed experiment, not a successful fleet.</p>
 <hr />
@@ -1181,15 +1181,16 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>one-page status deltas,</li>
 <li>next decision queue.</li>
 </ul>
-<p>Unit 03 measured a leak rate well above Unit 01 at hot soak, moved the seal leak requirement confidence to red, and changed the next gate call from go to hold pending seal redesign evidence.</p>
+<p>When the chain runs: Unit 03 measured a leak rate well above Unit 01 at hot soak, the seal leak requirement confidence moved to red, and the next gate call shifted from go to hold pending seal redesign evidence.</p>
 <p>If fleet data stays in test notes, the program keeps running on stale assumptions.</p>
 <hr />
 <p>At a battery-adjacent program, five prototype units were built and instrumented over four weeks. Unit 03 measured a leak rate more than twice Unit 01's baseline at hot soak — not a sensor artifact, the same delta confirmed across multiple test runs. The discrepancy sat in the test engineer's notes for nearly two weeks before it reached the program's risk register, because there was no per-unit record requirement that forced the delta into the risk log. The thermal requirement moved to red only after the team had already placed tooling orders on the assumption that Unit 01 was representative.</p>
-<p>The program added a per-unit record requirement and a weekly fleet review cadence to its program controls (the program's standing records). The next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth. The eleven-day gap in the first campaign had cost tooling decisions made on unrepresentative data — decisions that required a correction order once the real distribution of results was visible. - <strong>Old process:</strong> no per-unit record requirement; unit-level discrepancies captured in engineer notes with no forced path to the risk register.</p>
+<p>The program added a per-unit record requirement and a weekly fleet review cadence to its program controls (the program's standing records). The next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth. The eleven-day gap in the first campaign had cost tooling decisions made on unrepresentative data — decisions that required a correction order once the real distribution of results was visible.</p>
 <ul>
+<li><strong>Old process:</strong> no per-unit record requirement; unit-level discrepancies captured in engineer notes with no forced path to the risk register.</li>
 <li><strong>Artifact changed:</strong> a per-unit record requirement and weekly fleet review cadence added to program controls.</li>
 <li><strong>Measured improvement:</strong> the next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth.</li>
-<li><strong>Cost of the gap:</strong> eleven days of unlogged unit variance cost tooling decisions on unrepresentative data — a correction order required once the real distribution was visible. An eleven-day lag between test observation and risk log entry costs one tooling decision at the fleet level; the same lag at the gate-closure level costs a release cycle.</li>
+<li><strong>Cost of the gap:</strong> an eleven-day lag between test observation and risk log entry costs one tooling decision at the fleet level; the same lag at the gate-closure level costs a release cycle.</li>
 </ul>
 <hr />
 <h3 id="failure-patterns-in-fleet-execution"><a class="header" href="#failure-patterns-in-fleet-execution">Failure patterns in fleet execution</a></h3>
@@ -1210,7 +1211,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>decision queue updates for next gate.</li>
 </ol>
 <p>Short, strict, repeatable. Each cycle ends with a documented delta note: which requirement or risk rows moved and what evidence moved them.</p>
-<h3 id="why-this-sits-after-modeltest-chapter"><a class="header" href="#why-this-sits-after-modeltest-chapter">Why this sits after model/test chapter</a></h3>
+<h3 id="delta-discipline-scales-to-fleet"><a class="header" href="#delta-discipline-scales-to-fleet">Delta discipline scales to fleet</a></h3>
 <p>Delta and traceability discipline at component and subsystem level scales directly into fleet work — the same logic, applied across physical units in real variation.</p>
 <p>When done well, fleet turns uncertainty into bounded decisions before major spend.</p>
 <hr />

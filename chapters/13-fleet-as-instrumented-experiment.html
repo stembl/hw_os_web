@@ -154,7 +154,7 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="13-fleet-as-instrumented-experiment"><a class="header" href="#13-fleet-as-instrumented-experiment">13. Fleet as Instrumented Experiment</a></h1>
-<p>Thursday, 7:02 a.m., five units on the bench, cross-site call connecting, no two run logs with the same fields.</p>
+<p>Thursday, 7:02 a.m., five units on the bench, cross-site call connecting, no two run logs structured the same way.</p>
 <p>By Friday, the team has stories about each one and no comparable record of what was different between them.</p>
 <p>That is a missed experiment, not a successful fleet.</p>
 <hr />
@@ -196,15 +196,16 @@
 <li>one-page status deltas,</li>
 <li>next decision queue.</li>
 </ul>
-<p>Unit 03 measured a leak rate well above Unit 01 at hot soak, moved the seal leak requirement confidence to red, and changed the next gate call from go to hold pending seal redesign evidence.</p>
+<p>When the chain runs: Unit 03 measured a leak rate well above Unit 01 at hot soak, the seal leak requirement confidence moved to red, and the next gate call shifted from go to hold pending seal redesign evidence.</p>
 <p>If fleet data stays in test notes, the program keeps running on stale assumptions.</p>
 <hr />
 <p>At a battery-adjacent program, five prototype units were built and instrumented over four weeks. Unit 03 measured a leak rate more than twice Unit 01's baseline at hot soak — not a sensor artifact, the same delta confirmed across multiple test runs. The discrepancy sat in the test engineer's notes for nearly two weeks before it reached the program's risk register, because there was no per-unit record requirement that forced the delta into the risk log. The thermal requirement moved to red only after the team had already placed tooling orders on the assumption that Unit 01 was representative.</p>
-<p>The program added a per-unit record requirement and a weekly fleet review cadence to its program controls (the program's standing records). The next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth. The eleven-day gap in the first campaign had cost tooling decisions made on unrepresentative data — decisions that required a correction order once the real distribution of results was visible. - <strong>Old process:</strong> no per-unit record requirement; unit-level discrepancies captured in engineer notes with no forced path to the risk register.</p>
+<p>The program added a per-unit record requirement and a weekly fleet review cadence to its program controls (the program's standing records). The next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth. The eleven-day gap in the first campaign had cost tooling decisions made on unrepresentative data — decisions that required a correction order once the real distribution of results was visible.</p>
 <ul>
+<li><strong>Old process:</strong> no per-unit record requirement; unit-level discrepancies captured in engineer notes with no forced path to the risk register.</li>
 <li><strong>Artifact changed:</strong> a per-unit record requirement and weekly fleet review cadence added to program controls.</li>
 <li><strong>Measured improvement:</strong> the next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth.</li>
-<li><strong>Cost of the gap:</strong> eleven days of unlogged unit variance cost tooling decisions on unrepresentative data — a correction order required once the real distribution was visible. An eleven-day lag between test observation and risk log entry costs one tooling decision at the fleet level; the same lag at the gate-closure level costs a release cycle.</li>
+<li><strong>Cost of the gap:</strong> an eleven-day lag between test observation and risk log entry costs one tooling decision at the fleet level; the same lag at the gate-closure level costs a release cycle.</li>
 </ul>
 <hr />
 <h3 id="failure-patterns-in-fleet-execution"><a class="header" href="#failure-patterns-in-fleet-execution">Failure patterns in fleet execution</a></h3>
@@ -225,7 +226,7 @@
 <li>decision queue updates for next gate.</li>
 </ol>
 <p>Short, strict, repeatable. Each cycle ends with a documented delta note: which requirement or risk rows moved and what evidence moved them.</p>
-<h3 id="why-this-sits-after-modeltest-chapter"><a class="header" href="#why-this-sits-after-modeltest-chapter">Why this sits after model/test chapter</a></h3>
+<h3 id="delta-discipline-scales-to-fleet"><a class="header" href="#delta-discipline-scales-to-fleet">Delta discipline scales to fleet</a></h3>
 <p>Delta and traceability discipline at component and subsystem level scales directly into fleet work — the same logic, applied across physical units in real variation.</p>
 <p>When done well, fleet turns uncertainty into bounded decisions before major spend.</p>
 <hr />

@@ -1,200 +1,309 @@
-/* ==========================================================================
-   The Hardware OS — mdBook theme override
-   .light and .coal use HWOS zinc/amber palette.
-   Unified surface: sidebar shares the same background as content.
-   Link color in light theme uses amber-700 (#B45309) for WCAG AA compliance.
-   ========================================================================== */
+
+/* Globals */
 
 :root {
- --sidebar-width: 300px;
- --sidebar-resize-indicator-width: 8px;
- --sidebar-resize-indicator-space: 2px;
- --page-padding: 15px;
- --content-max-width: 750px;
- --menu-bar-height: 50px;
- --mono-font: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace;
- --code-font-size: 0.875em;
+    --sidebar-width: 300px;
+    --sidebar-resize-indicator-width: 8px;
+    --sidebar-resize-indicator-space: 2px;
+    --page-padding: 15px;
+    --content-max-width: 750px;
+    --menu-bar-height: 50px;
+    --mono-font: "Source Code Pro", Consolas, "Ubuntu Mono", Menlo, "DejaVu Sans Mono", monospace, monospace;
+    --code-font-size: 0.875em; /* please adjust the ace font size accordingly in editor.js */
 }
 
-/* --------------------------------------------------------------------------
-   HWOS Light — zinc/white, amber-700 links (5.8:1 contrast on white)
-   -------------------------------------------------------------------------- */
-.light, html:not(.js) {
- --bg: #FAFAFA;   /* zinc-50 — not pure white */
- --fg: #09090B;               /* zinc-950 */
+/* Themes */
 
- --sidebar-bg: #F4F4F5;       /* zinc-100 - recessed nav, one step darker than body */
- --sidebar-fg: #71717A;       /* zinc-500 — muted nav */
- --sidebar-non-existant: #A1A1AA;
- --sidebar-active: #B45309;   /* amber-700 — 5.8:1 on white */
- --sidebar-spacer: #E4E4E7;   /* zinc-200 */
-
- --scrollbar: #A1A1AA;
-
- --icons: #A1A1AA;
- --icons-hover: #09090B;
-
- --links: #B45309;            /* amber-700 — readable on white */
-
- --inline-code-color: #09090B;
-
- --theme-popup-bg: #FFFFFF;
- --theme-popup-border: #E4E4E7;
- --theme-hover: #F4F4F5;      /* zinc-100 */
-
- --quote-bg: #FEF3C7;         /* amber-100 */
- --quote-border: #D97706;     /* amber-600 — decorative only */
-
- --warning-border: #D97706;
-
- --table-border-color: #E4E4E7;
- --table-header-bg: #F4F4F5;
- --table-alternate-bg: #F4F4F5;
-
- --searchbar-border-color: #E4E4E7;
- --searchbar-bg: #FFFFFF;
- --searchbar-fg: #09090B;
- --searchbar-shadow-color: #E4E4E7;
- --searchresults-header-fg: #71717A;
- --searchresults-border-color: #E4E4E7;
- --searchresults-li-bg: #FEF3C7;
- --search-mark-bg: #FDE68A;   /* amber-200 */
-
- --color-scheme: light;
-
- --copy-button-filter: invert(45.49%);
- --copy-button-filter-hover: invert(30%) sepia(80%) saturate(600%) hue-rotate(20deg) brightness(80%) contrast(100%);
-}
-
-/* --------------------------------------------------------------------------
-   HWOS Dark — zinc-900 bg, zinc-300 text (~11:1, no glow/halation)
-   -------------------------------------------------------------------------- */
-.coal {
- --bg: #18181B;               /* zinc-900 — dark gray, not black */
- --fg: #D4D4D8;               /* zinc-300 — soft off-white, ~11:1 contrast */
-
- --sidebar-bg: #27272A;       /* zinc-800 - recessed nav, one step darker than body */
- --sidebar-fg: #A1A1AA;       /* zinc-400 */
- --sidebar-non-existant: #52525B;
- --sidebar-active: #F59E0B;   /* amber-400 */
- --sidebar-spacer: #27272A;   /* zinc-800 */
-
- --scrollbar: #52525B;
-
- --icons: #52525B;
- --icons-hover: #D4D4D8;
-
- --links: #F59E0B;            /* amber-400 — high contrast on zinc-900 */
-
- --inline-code-color: #A1A1AA;
-
- --theme-popup-bg: #27272A;
- --theme-popup-border: #3F3F46;
- --theme-hover: #27272A;      /* zinc-800 */
-
- --quote-bg: rgba(245,158,11,0.08);
- --quote-border: #F59E0B;
-
- --warning-border: #F59E0B;
-
- --table-border-color: #27272A;
- --table-header-bg: #18181B;
- --table-alternate-bg: #111113;
-
- --searchbar-border-color: #27272A;
- --searchbar-bg: #18181B;
- --searchbar-fg: #FAFAFA;
- --searchbar-shadow-color: #27272A;
- --searchresults-header-fg: #A1A1AA;
- --searchresults-border-color: #27272A;
- --searchresults-li-bg: #18181B;
- --search-mark-bg: rgba(245,158,11,0.3);
-
- --color-scheme: dark;
-
- --copy-button-filter: invert(35%) sepia(0%) saturate(0%) brightness(80%) contrast(80%);
- --copy-button-filter-hover: invert(70%) sepia(60%) saturate(500%) hue-rotate(5deg) brightness(100%) contrast(100%);
-}
-
-/* --------------------------------------------------------------------------
-   System dark mode default (no JS / no theme set)
-   -------------------------------------------------------------------------- */
-@media (prefers-color-scheme: dark) {
- html:not(.js) {
-  --bg: #18181B; /* zinc-900 — dark gray, not black */ --fg: #D4D4D8; /* zinc-300 — soft off-white, ~11:1 contrast */
-  --sidebar-bg: #27272A; --sidebar-fg: #A1A1AA;
-  --sidebar-non-existant: #52525B; --sidebar-active: #F59E0B;
-  --sidebar-spacer: #27272A; --scrollbar: #52525B;
-  --icons: #52525B; --icons-hover: #D4D4D8;
-  --links: #F59E0B; --inline-code-color: #A1A1AA;
-  --theme-popup-bg: #27272A; --theme-popup-border: #3F3F46; --theme-hover: #27272A;
-  --quote-bg: rgba(245,158,11,0.08); --quote-border: #F59E0B;
-  --warning-border: #F59E0B;
-  --table-border-color: #27272A; --table-header-bg: #18181B; --table-alternate-bg: #111113;
-  --searchbar-border-color: #27272A; --searchbar-bg: #18181B; --searchbar-fg: #FAFAFA;
-  --searchbar-shadow-color: #27272A; --searchresults-header-fg: #A1A1AA;
-  --searchresults-border-color: #27272A; --searchresults-li-bg: #18181B;
-  --search-mark-bg: rgba(245,158,11,0.3);
-  --color-scheme: dark;
-  --copy-button-filter: invert(35%) sepia(0%) saturate(0%) brightness(80%) contrast(80%);
-  --copy-button-filter-hover: invert(70%) sepia(60%) saturate(500%) hue-rotate(5deg) brightness(100%) contrast(100%);
- }
-}
-
-/* --------------------------------------------------------------------------
-   Unchanged themes (ayu, navy, rust)
-   -------------------------------------------------------------------------- */
 .ayu {
- --bg: hsl(210, 25%, 8%); --fg: #c5c5c5;
- --sidebar-bg: #14191f; --sidebar-fg: #c8c9db; --sidebar-non-existant: #5c6773;
- --sidebar-active: #ffb454; --sidebar-spacer: #2d334f;
- --scrollbar: var(--sidebar-fg); --icons: #737480; --icons-hover: #b7b9cc;
- --links: #0096cf; --inline-code-color: #ffb454;
- --theme-popup-bg: #14191f; --theme-popup-border: #5c6773; --theme-hover: #191f26;
- --quote-bg: hsl(226, 15%, 17%); --quote-border: hsl(226, 15%, 22%);
- --warning-border: #ff8e00;
- --table-border-color: hsl(210, 25%, 13%); --table-header-bg: hsl(210, 25%, 28%); --table-alternate-bg: hsl(210, 25%, 11%);
- --searchbar-border-color: #848484; --searchbar-bg: #424242; --searchbar-fg: #fff;
- --searchbar-shadow-color: #d4c89f; --searchresults-header-fg: #666;
- --searchresults-border-color: #888; --searchresults-li-bg: #252932; --search-mark-bg: #e3b171;
- --color-scheme: dark;
- --copy-button-filter: invert(45%) sepia(6%) saturate(621%) hue-rotate(198deg) brightness(99%) contrast(85%);
- --copy-button-filter-hover: invert(68%) sepia(55%) saturate(531%) hue-rotate(341deg) brightness(104%) contrast(101%);
+    --bg: hsl(210, 25%, 8%);
+    --fg: #c5c5c5;
+
+    --sidebar-bg: #14191f;
+    --sidebar-fg: #c8c9db;
+    --sidebar-non-existant: #5c6773;
+    --sidebar-active: #ffb454;
+    --sidebar-spacer: #2d334f;
+
+    --scrollbar: var(--sidebar-fg);
+
+    --icons: #737480;
+    --icons-hover: #b7b9cc;
+
+    --links: #0096cf;
+
+    --inline-code-color: #ffb454;
+
+    --theme-popup-bg: #14191f;
+    --theme-popup-border: #5c6773;
+    --theme-hover: #191f26;
+
+    --quote-bg: hsl(226, 15%, 17%);
+    --quote-border: hsl(226, 15%, 22%);
+
+    --warning-border: #ff8e00;
+
+    --table-border-color: hsl(210, 25%, 13%);
+    --table-header-bg: hsl(210, 25%, 28%);
+    --table-alternate-bg: hsl(210, 25%, 11%);
+
+    --searchbar-border-color: #848484;
+    --searchbar-bg: #424242;
+    --searchbar-fg: #fff;
+    --searchbar-shadow-color: #d4c89f;
+    --searchresults-header-fg: #666;
+    --searchresults-border-color: #888;
+    --searchresults-li-bg: #252932;
+    --search-mark-bg: #e3b171;
+
+    --color-scheme: dark;
+
+    /* Same as `--icons` */
+    --copy-button-filter: invert(45%) sepia(6%) saturate(621%) hue-rotate(198deg) brightness(99%) contrast(85%);
+    /* Same as `--sidebar-active` */
+    --copy-button-filter-hover: invert(68%) sepia(55%) saturate(531%) hue-rotate(341deg) brightness(104%) contrast(101%);
+}
+
+.coal {
+    --bg: hsl(200, 7%, 8%);
+    --fg: #98a3ad;
+
+    --sidebar-bg: #292c2f;
+    --sidebar-fg: #a1adb8;
+    --sidebar-non-existant: #505254;
+    --sidebar-active: #3473ad;
+    --sidebar-spacer: #393939;
+
+    --scrollbar: var(--sidebar-fg);
+
+    --icons: #43484d;
+    --icons-hover: #b3c0cc;
+
+    --links: #2b79a2;
+
+    --inline-code-color: #c5c8c6;
+
+    --theme-popup-bg: #141617;
+    --theme-popup-border: #43484d;
+    --theme-hover: #1f2124;
+
+    --quote-bg: hsl(234, 21%, 18%);
+    --quote-border: hsl(234, 21%, 23%);
+
+    --warning-border: #ff8e00;
+
+    --table-border-color: hsl(200, 7%, 13%);
+    --table-header-bg: hsl(200, 7%, 28%);
+    --table-alternate-bg: hsl(200, 7%, 11%);
+
+    --searchbar-border-color: #aaa;
+    --searchbar-bg: #b7b7b7;
+    --searchbar-fg: #000;
+    --searchbar-shadow-color: #aaa;
+    --searchresults-header-fg: #666;
+    --searchresults-border-color: #98a3ad;
+    --searchresults-li-bg: #2b2b2f;
+    --search-mark-bg: #355c7d;
+
+    --color-scheme: dark;
+
+    /* Same as `--icons` */
+    --copy-button-filter: invert(26%) sepia(8%) saturate(575%) hue-rotate(169deg) brightness(87%) contrast(82%);
+    /* Same as `--sidebar-active` */
+    --copy-button-filter-hover: invert(36%) sepia(70%) saturate(503%) hue-rotate(167deg) brightness(98%) contrast(89%);
+}
+
+.light, html:not(.js) {
+    --bg: hsl(0, 0%, 100%);
+    --fg: hsl(0, 0%, 0%);
+
+    --sidebar-bg: #fafafa;
+    --sidebar-fg: hsl(0, 0%, 0%);
+    --sidebar-non-existant: #aaaaaa;
+    --sidebar-active: #1f1fff;
+    --sidebar-spacer: #f4f4f4;
+
+    --scrollbar: #8F8F8F;
+
+    --icons: #747474;
+    --icons-hover: #000000;
+
+    --links: #20609f;
+
+    --inline-code-color: #301900;
+
+    --theme-popup-bg: #fafafa;
+    --theme-popup-border: #cccccc;
+    --theme-hover: #e6e6e6;
+
+    --quote-bg: hsl(197, 37%, 96%);
+    --quote-border: hsl(197, 37%, 91%);
+
+    --warning-border: #ff8e00;
+
+    --table-border-color: hsl(0, 0%, 95%);
+    --table-header-bg: hsl(0, 0%, 80%);
+    --table-alternate-bg: hsl(0, 0%, 97%);
+
+    --searchbar-border-color: #aaa;
+    --searchbar-bg: #fafafa;
+    --searchbar-fg: #000;
+    --searchbar-shadow-color: #aaa;
+    --searchresults-header-fg: #666;
+    --searchresults-border-color: #888;
+    --searchresults-li-bg: #e4f2fe;
+    --search-mark-bg: #a2cff5;
+
+    --color-scheme: light;
+
+    /* Same as `--icons` */
+    --copy-button-filter: invert(45.49%);
+    /* Same as `--sidebar-active` */
+    --copy-button-filter-hover: invert(14%) sepia(93%) saturate(4250%) hue-rotate(243deg) brightness(99%) contrast(130%);
 }
 
 .navy {
- --bg: #18181B; /* zinc-900 — dark gray, not black */ --fg: #D4D4D8; /* zinc-300 — soft off-white, ~11:1 contrast */
- --sidebar-bg: #27272A; --sidebar-fg: #A1A1AA;
- --sidebar-non-existant: #52525B; --sidebar-active: #F59E0B;
- --sidebar-spacer: #27272A; --scrollbar: #52525B;
- --icons: #52525B; --icons-hover: #D4D4D8;
- --links: #F59E0B; --inline-code-color: #A1A1AA;
- --theme-popup-bg: #27272A; --theme-popup-border: #3F3F46; --theme-hover: #27272A;
- --quote-bg: rgba(245,158,11,0.08); --quote-border: #F59E0B;
- --warning-border: #F59E0B;
- --table-border-color: #27272A; --table-header-bg: #18181B; --table-alternate-bg: #111113;
- --searchbar-border-color: #27272A; --searchbar-bg: #18181B; --searchbar-fg: #FAFAFA;
- --searchbar-shadow-color: #27272A; --searchresults-header-fg: #A1A1AA;
- --searchresults-border-color: #27272A; --searchresults-li-bg: #18181B;
- --search-mark-bg: rgba(245,158,11,0.3);
- --color-scheme: dark;
- --copy-button-filter: invert(35%) sepia(0%) saturate(0%) brightness(80%) contrast(80%);
- --copy-button-filter-hover: invert(70%) sepia(60%) saturate(500%) hue-rotate(5deg) brightness(100%) contrast(100%);
+    --bg: hsl(226, 23%, 11%);
+    --fg: #bcbdd0;
+
+    --sidebar-bg: #282d3f;
+    --sidebar-fg: #c8c9db;
+    --sidebar-non-existant: #505274;
+    --sidebar-active: #2b79a2;
+    --sidebar-spacer: #2d334f;
+
+    --scrollbar: var(--sidebar-fg);
+
+    --icons: #737480;
+    --icons-hover: #b7b9cc;
+
+    --links: #2b79a2;
+
+    --inline-code-color: #c5c8c6;
+
+    --theme-popup-bg: #161923;
+    --theme-popup-border: #737480;
+    --theme-hover: #282e40;
+
+    --quote-bg: hsl(226, 15%, 17%);
+    --quote-border: hsl(226, 15%, 22%);
+
+    --warning-border: #ff8e00;
+
+    --table-border-color: hsl(226, 23%, 16%);
+    --table-header-bg: hsl(226, 23%, 31%);
+    --table-alternate-bg: hsl(226, 23%, 14%);
+
+    --searchbar-border-color: #aaa;
+    --searchbar-bg: #aeaec6;
+    --searchbar-fg: #000;
+    --searchbar-shadow-color: #aaa;
+    --searchresults-header-fg: #5f5f71;
+    --searchresults-border-color: #5c5c68;
+    --searchresults-li-bg: #242430;
+    --search-mark-bg: #a2cff5;
+
+    --color-scheme: dark;
+
+    /* Same as `--icons` */
+    --copy-button-filter: invert(51%) sepia(10%) saturate(393%) hue-rotate(198deg) brightness(86%) contrast(87%);
+    /* Same as `--sidebar-active` */
+    --copy-button-filter-hover: invert(46%) sepia(20%) saturate(1537%) hue-rotate(156deg) brightness(85%) contrast(90%);
 }
 
 .rust {
- --bg: hsl(60, 9%, 87%); --fg: #262625;
- --sidebar-bg: #3b2e2a; --sidebar-fg: #c8c9db; --sidebar-non-existant: #505254;
- --sidebar-active: #e69f67; --sidebar-spacer: #45373a;
- --scrollbar: var(--sidebar-fg); --icons: #737480; --icons-hover: #262625;
- --links: #2b79a2; --inline-code-color: #6e6b5e;
- --theme-popup-bg: #e1e1db; --theme-popup-border: #b38f6b; --theme-hover: #99908a;
- --quote-bg: hsl(60, 5%, 75%); --quote-border: hsl(60, 5%, 70%);
- --warning-border: #ff8e00;
- --table-border-color: hsl(60, 9%, 82%); --table-header-bg: #b3a497; --table-alternate-bg: hsl(60, 9%, 84%);
- --searchbar-border-color: #aaa; --searchbar-bg: #fafafa; --searchbar-fg: #000;
- --searchbar-shadow-color: #aaa; --searchresults-header-fg: #666;
- --searchresults-border-color: #888; --searchresults-li-bg: #dec2a2; --search-mark-bg: #e69f67;
- --copy-button-filter: invert(51%) sepia(10%) saturate(393%) hue-rotate(198deg) brightness(86%) contrast(87%);
- --copy-button-filter-hover: invert(77%) sepia(16%) saturate(1798%) hue-rotate(328deg) brightness(98%) contrast(83%);
+    --bg: hsl(60, 9%, 87%);
+    --fg: #262625;
+
+    --sidebar-bg: #3b2e2a;
+    --sidebar-fg: #c8c9db;
+    --sidebar-non-existant: #505254;
+    --sidebar-active: #e69f67;
+    --sidebar-spacer: #45373a;
+
+    --scrollbar: var(--sidebar-fg);
+
+    --icons: #737480;
+    --icons-hover: #262625;
+
+    --links: #2b79a2;
+
+    --inline-code-color: #6e6b5e;
+
+    --theme-popup-bg: #e1e1db;
+    --theme-popup-border: #b38f6b;
+    --theme-hover: #99908a;
+
+    --quote-bg: hsl(60, 5%, 75%);
+    --quote-border: hsl(60, 5%, 70%);
+
+    --warning-border: #ff8e00;
+
+    --table-border-color: hsl(60, 9%, 82%);
+    --table-header-bg: #b3a497;
+    --table-alternate-bg: hsl(60, 9%, 84%);
+
+    --searchbar-border-color: #aaa;
+    --searchbar-bg: #fafafa;
+    --searchbar-fg: #000;
+    --searchbar-shadow-color: #aaa;
+    --searchresults-header-fg: #666;
+    --searchresults-border-color: #888;
+    --searchresults-li-bg: #dec2a2;
+    --search-mark-bg: #e69f67;
+
+    /* Same as `--icons` */
+    --copy-button-filter: invert(51%) sepia(10%) saturate(393%) hue-rotate(198deg) brightness(86%) contrast(87%);
+    /* Same as `--sidebar-active` */
+    --copy-button-filter-hover: invert(77%) sepia(16%) saturate(1798%) hue-rotate(328deg) brightness(98%) contrast(83%);
+}
+
+@media (prefers-color-scheme: dark) {
+    html:not(.js) {
+        --bg: hsl(200, 7%, 8%);
+        --fg: #98a3ad;
+
+        --sidebar-bg: #292c2f;
+        --sidebar-fg: #a1adb8;
+        --sidebar-non-existant: #505254;
+        --sidebar-active: #3473ad;
+        --sidebar-spacer: #393939;
+
+        --scrollbar: var(--sidebar-fg);
+
+        --icons: #43484d;
+        --icons-hover: #b3c0cc;
+
+        --links: #2b79a2;
+
+        --inline-code-color: #c5c8c6;
+
+        --theme-popup-bg: #141617;
+        --theme-popup-border: #43484d;
+        --theme-hover: #1f2124;
+
+        --quote-bg: hsl(234, 21%, 18%);
+        --quote-border: hsl(234, 21%, 23%);
+
+        --warning-border: #ff8e00;
+
+        --table-border-color: hsl(200, 7%, 13%);
+        --table-header-bg: hsl(200, 7%, 28%);
+        --table-alternate-bg: hsl(200, 7%, 11%);
+
+        --searchbar-border-color: #aaa;
+        --searchbar-bg: #b7b7b7;
+        --searchbar-fg: #000;
+        --searchbar-shadow-color: #aaa;
+        --searchresults-header-fg: #666;
+        --searchresults-border-color: #98a3ad;
+        --searchresults-li-bg: #2b2b2f;
+        --search-mark-bg: #355c7d;
+
+        --color-scheme: dark;
+
+        /* Same as `--icons` */
+        --copy-button-filter: invert(26%) sepia(8%) saturate(575%) hue-rotate(169deg) brightness(87%) contrast(82%);
+        /* Same as `--sidebar-active` */
+        --copy-button-filter-hover: invert(36%) sepia(70%) saturate(503%) hue-rotate(167deg) brightness(98%) contrast(89%);
+    }
 }
