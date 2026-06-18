@@ -700,7 +700,7 @@ function playground_text(playground, hidden = true) {
   if (contentMain) {
     var nudge = document.createElement('div');
     nudge.className = 'hwos-purchase-nudge';
-    nudge.innerHTML = 'Read online free &mdash; also available in print &amp; audio at <a href="https://thehardwareos.com" rel="noopener">thehardwareos.com</a>.';
+    nudge.innerHTML = 'Read online free &mdash; print, ebook, and audio in preparation. <a href="https://thehardwareos.com" rel="noopener">thehardwareos.com</a> &nbsp;&middot;&nbsp; &copy; 2026 Steve Embleton';
     contentMain.appendChild(nudge);
   }
 })();
