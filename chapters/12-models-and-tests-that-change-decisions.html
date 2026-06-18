@@ -156,7 +156,6 @@
                     <main>
                         <h1 id="12-models-and-tests-that-change-decisions"><a class="header" href="#12-models-and-tests-that-change-decisions">12. Models and Tests That Change Decisions</a></h1>
 <p>Wednesday, 6:40 p.m., empty hallway outside the war room, the decision review packet contains 20 model runs and 12 test reports but still cannot resolve the thermal case temperature requirement.</p>
-<p>The verification team produced twenty model runs and twelve test reports for the same requirement decision.</p>
 <p>The gate decision still hangs because no owner can show baseline, delta, and effect size in one traceable artifact (a written program record).</p>
 <p>Evidence volume is high, but decision power stays low when each run is not linked to a baseline requirement state.</p>
 <hr />
@@ -193,20 +192,20 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 </ul>
 <p>The goal is not perfect correlation before every move; the goal is honest confidence for the next dated decision.</p>
 <hr />
-<p>A thermal model for a power-electronics module predicted the switching-stage case temperature would hold at 83 °C at full duty — safely below the 85 °C thermal case temperature limit. The chamber test measured 78 °C steady-state. The team's first interpretation was that the chamber was measuring something different than the model. The calibration finding was narrower: the model's contact-resistance boundary condition assumed a thermal-grease application that the actual mounting jig could not deliver. The jig had been designed for a different module family. The model was correct given its boundary condition. The boundary condition was wrong given the actual assembly. One boundary-condition correction and a re-run later, the model predicted 79 °C — matching the chamber within measurement uncertainty. The requirement revised to 78 °C — a controlled update: the boundary-condition correction is the evidence, the new value is documented with a named owner, and the baseline moves.</p>
+<p>A thermal model for a power-electronics module predicted the switching-stage case temperature would hold at 73 °C at full duty — safely below the 75 °C thermal case temperature limit. The chamber test measured 78 °C steady-state. The team's first interpretation was that the chamber was measuring something different than the model. The calibration finding was narrower: the model's contact-resistance boundary condition assumed a thermal-grease application that the actual mounting jig could not deliver. The jig had been designed for a different module with different interface geometry. The model was correct given its boundary condition. The boundary condition was wrong given the actual assembly. One boundary-condition correction and a re-run later, the model predicted 79 °C — matching the chamber within measurement uncertainty. The requirement revised to 78 °C — a controlled update: the boundary-condition correction is the evidence, the new value is documented with a named owner, and the baseline moves.</p>
 <ul>
 <li><strong>Old process:</strong> model and chamber treated as independent confidence votes; discrepancies resolved by negotiation.</li>
-<li><strong>Artifact changed:</strong> the model's boundary-condition log, with the contact-resistance value traced to a direct contact-resistance measurement rather than assumed from a different module family.</li>
+<li><strong>Artifact changed:</strong> the model's boundary-condition log, with the contact-resistance value traced to a direct measurement on this module rather than carried over from a different module with different interface geometry.</li>
 <li><strong>Measured improvement:</strong> model-chamber delta reduced from 7 °C to 1 °C after one boundary-condition correction.</li>
 <li><strong>Cost of the gap:</strong> one week of "the chamber must be wrong" investigation before the boundary condition was examined.</li>
 </ul>
 <p>That revision is a controlled evidence update — the requirement baseline moves only when evidence satisfies predeclared criteria and the rationale is documented.</p>
 <hr />
 <h3 id="evidence-threshold-for-requirement-changes"><a class="header" href="#evidence-threshold-for-requirement-changes">Evidence threshold for requirement changes</a></h3>
-<p>Do not revise a requirement on one attractive chart without corroborating evidence.</p>
+<p>Do not revise a requirement on a single model run that shows a passing result.</p>
 <p>Set requirement-change thresholds in advance:</p>
 <ul>
-<li>confirm coverage conditions are met,</li>
+<li>confirm the test or model ran at the operating conditions the requirement specifies,</li>
 <li>verify repeatability is acceptable,</li>
 <li>show sensitivity to key variables is understood,</li>
 <li>bound measurement uncertainty enough for the decision at hand.</li>

@@ -439,7 +439,7 @@
 <p>The fields that must be present — owner, decision question, evidence, rationale, affected artifacts, approver, date — are the requirement. The container is implementation detail.</p>
 <p><strong>Decision record: bad vs corrected</strong></p>
 <div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad (incomplete)</th><th>Good (decision-grade)</th></tr></thead><tbody>
-<tr><td>Decision</td><td>Revise thermal limit</td><td>Revise thermal limit from 85 °C to 78 °C per chamber measurement</td></tr>
+<tr><td>Decision</td><td>Revise thermal limit</td><td>Revise thermal limit from 75 °C to 78 °C per chamber measurement</td></tr>
 <tr><td>Owner</td><td>TBD</td><td>Thermal lead</td></tr>
 <tr><td>Rationale</td><td><em>(blank)</em></td><td>Chamber measured 78 °C steady-state; boundary condition error found in model; contact-resistance verified by direct measurement</td></tr>
 <tr><td>Downstream updates</td><td><em>(blank)</em></td><td>Supplier package flagged for re-qual, thermal risk row updated, gate one-page revised</td></tr>
@@ -557,7 +557,7 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 <li>date and criteria for closure,</li>
 <li>artifact delta list — what controlled records changed as a result.</li>
 </ol>
-<p>The artifact delta list is the implementation trail: thermal limit revised from 85 °C to 78 °C | supplier re-qual opened | thermal risk row closed | schedule baseline updated to rev 4. Without it, a decision taken in the room has no verified follow-through.</p>
+<p>The artifact delta list is the implementation trail: thermal limit revised from 75 °C to 78 °C | supplier re-qual opened | thermal risk row closed | schedule baseline updated to rev 4. Without it, a decision taken in the room has no verified follow-through.</p>
 <p>No decision, no gate. Just a meeting.</p>
 <p>Not every gate is a decision gate. A <strong>readiness review</strong> confirms that planned next-phase inputs are in place — no controlled value needs to change. An <strong>evidence review</strong> surfaces test or analysis results without forcing a decision yet — useful when the data is new and the team needs to absorb it before proposing a change. An <strong>alignment meeting</strong> reconciles cross-tier expectations without triggering a baseline change. A <strong>regulatory or customer staging gate</strong> moves a formal record forward in a controlled lifecycle. All of these have legitimate jobs. The rule "no decision, no gate" applies specifically to events on the program plan named "gate" that are expected to change a controlled baseline, requirement, or release — when those events happen but no controlled value changes, the gate is mislabeled. Rename it accurately: call it a review, write down what it produces, and stop treating it as a gate.</p>
 <h3 id="risk-register-from-decorative-list-to-control-tool"><a class="header" href="#risk-register-from-decorative-list-to-control-tool">Risk register: from decorative list to control tool</a></h3>
@@ -584,8 +584,8 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 <tr><td>Statement</td><td>Thermal</td><td>Thermal margin insufficient at full-duty 40 °C ambient</td></tr>
 <tr><td>Category</td><td><em>(blank)</em></td><td>Technical — thermal margin pending supplier re-qual</td></tr>
 <tr><td>Owner</td><td>Engineering team</td><td>Thermal lead</td></tr>
-<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Likelihood: medium (chamber showed 78 °C vs 85 °C limit) / Impact: high (gate hold, supplier re-qual)</td></tr>
-<tr><td>Trigger</td><td><em>(blank)</em></td><td>Any chamber run exceeding 77 °C</td></tr>
+<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Likelihood: medium (chamber showed 78 °C vs 75 °C limit) / Impact: high (gate hold, supplier re-qual)</td></tr>
+<tr><td>Trigger</td><td><em>(blank)</em></td><td>Any chamber run exceeding 74 °C</td></tr>
 <tr><td>Mitigation</td><td>In progress</td><td>Revise thermal limit, re-qual supplier package</td></tr>
 <tr><td>Decision date</td><td><em>(blank)</em></td><td>Named gate date</td></tr>
 <tr><td>Evidence</td><td><em>(blank)</em></td><td>Chamber run, contact-resistance measurement</td></tr>
@@ -1062,7 +1062,6 @@ It is the best current boundary supported by evidence, explicit assumptions, and
 <p>Lead responsibility remains: the lead still owns the decision question, artifact quality bar, and closure date.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="12-models-and-tests-that-change-decisions"><a class="header" href="#12-models-and-tests-that-change-decisions">12. Models and Tests That Change Decisions</a></h1>
 <p>Wednesday, 6:40 p.m., empty hallway outside the war room, the decision review packet contains 20 model runs and 12 test reports but still cannot resolve the thermal case temperature requirement.</p>
-<p>The verification team produced twenty model runs and twelve test reports for the same requirement decision.</p>
 <p>The gate decision still hangs because no owner can show baseline, delta, and effect size in one traceable artifact (a written program record).</p>
 <p>Evidence volume is high, but decision power stays low when each run is not linked to a baseline requirement state.</p>
 <hr />
@@ -1099,20 +1098,20 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 </ul>
 <p>The goal is not perfect correlation before every move; the goal is honest confidence for the next dated decision.</p>
 <hr />
-<p>A thermal model for a power-electronics module predicted the switching-stage case temperature would hold at 83 °C at full duty — safely below the 85 °C thermal case temperature limit. The chamber test measured 78 °C steady-state. The team's first interpretation was that the chamber was measuring something different than the model. The calibration finding was narrower: the model's contact-resistance boundary condition assumed a thermal-grease application that the actual mounting jig could not deliver. The jig had been designed for a different module family. The model was correct given its boundary condition. The boundary condition was wrong given the actual assembly. One boundary-condition correction and a re-run later, the model predicted 79 °C — matching the chamber within measurement uncertainty. The requirement revised to 78 °C — a controlled update: the boundary-condition correction is the evidence, the new value is documented with a named owner, and the baseline moves.</p>
+<p>A thermal model for a power-electronics module predicted the switching-stage case temperature would hold at 73 °C at full duty — safely below the 75 °C thermal case temperature limit. The chamber test measured 78 °C steady-state. The team's first interpretation was that the chamber was measuring something different than the model. The calibration finding was narrower: the model's contact-resistance boundary condition assumed a thermal-grease application that the actual mounting jig could not deliver. The jig had been designed for a different module with different interface geometry. The model was correct given its boundary condition. The boundary condition was wrong given the actual assembly. One boundary-condition correction and a re-run later, the model predicted 79 °C — matching the chamber within measurement uncertainty. The requirement revised to 78 °C — a controlled update: the boundary-condition correction is the evidence, the new value is documented with a named owner, and the baseline moves.</p>
 <ul>
 <li><strong>Old process:</strong> model and chamber treated as independent confidence votes; discrepancies resolved by negotiation.</li>
-<li><strong>Artifact changed:</strong> the model's boundary-condition log, with the contact-resistance value traced to a direct contact-resistance measurement rather than assumed from a different module family.</li>
+<li><strong>Artifact changed:</strong> the model's boundary-condition log, with the contact-resistance value traced to a direct measurement on this module rather than carried over from a different module with different interface geometry.</li>
 <li><strong>Measured improvement:</strong> model-chamber delta reduced from 7 °C to 1 °C after one boundary-condition correction.</li>
 <li><strong>Cost of the gap:</strong> one week of "the chamber must be wrong" investigation before the boundary condition was examined.</li>
 </ul>
 <p>That revision is a controlled evidence update — the requirement baseline moves only when evidence satisfies predeclared criteria and the rationale is documented.</p>
 <hr />
 <h3 id="evidence-threshold-for-requirement-changes"><a class="header" href="#evidence-threshold-for-requirement-changes">Evidence threshold for requirement changes</a></h3>
-<p>Do not revise a requirement on one attractive chart without corroborating evidence.</p>
+<p>Do not revise a requirement on a single model run that shows a passing result.</p>
 <p>Set requirement-change thresholds in advance:</p>
 <ul>
-<li>confirm coverage conditions are met,</li>
+<li>confirm the test or model ran at the operating conditions the requirement specifies,</li>
 <li>verify repeatability is acceptable,</li>
 <li>show sensitivity to key variables is understood,</li>
 <li>bound measurement uncertainty enough for the decision at hand.</li>
@@ -1219,11 +1218,10 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>If your weekly fleet review this week can name one risk-register row that moved because of a specific unit's measured delta, the campaign is doing its job. If it cannot, you are collecting prototypes, not evidence.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="14-risk-and-how-we-define-done-on-paper"><a class="header" href="#14-risk-and-how-we-define-done-on-paper">14. Risk and How We Define Done on Paper</a></h1>
 <p>Thursday, 9:40 a.m., gate prep table covered in coffee rings, the gate review package marks all actions closed while two critical failure modes remain open in current lab evidence.</p>
-<p>The gate review package artifact states "all actions closed."</p>
-<p>In the lab log, verification and reliability owners still track two unresolved critical failure modes with no accepted closure evidence.</p>
-<p>The paper package says done, but the program state is not done.</p>
+<p>Verification and reliability owners still track both in the lab log with no accepted closure evidence.</p>
+<p>The paper package says done, but the program state is not.</p>
 <p>That gap is where late cost, schedule slips, and credibility damage enter through integration and executive review.</p>
-<p>This is the gate-closure logic that depends on calibrated chamber evidence and a controlled requirement revision â€” in the canonical case, the closure that must happen before the thermal case temperature requirement and the supplier CpK risk row can close at the release gate.</p>
+<p>This is the gate-closure logic that depends on calibrated chamber evidence and a controlled requirement revision — in the canonical case, the closure that must happen before the thermal case temperature requirement can close at the release gate.</p>
 <hr />
 <h3 id="done-on-paper-must-match-decision-reality"><a class="header" href="#done-on-paper-must-match-decision-reality">"Done on paper" must match decision reality</a></h3>
 <p>Artifacts are useful only when a named owner uses them to change a specific decision and downstream behavior.</p>
@@ -1271,7 +1269,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>summarize tradeoffs in language each tier can evaluate without follow-up questions.</li>
 </ul>
 <hr />
-<p>A gate package at a large industrial program marked all thermal actions closed. Two critical failure modes â€” thermal runaway propagation and connector derating under field humidity â€” were still under active investigation in the test lab. The disconnect: the action tracker was PM-owned and tracked action-item status by ID. The failure-mode log was engineering-owned and tracked investigation state by failure mode. No artifact required a closure entry to cite a failure-mode log entry rather than just an action ID. One internal audit caught the gap three days before the gate review. If the gate had proceeded, the program would have released a build configuration while two unresolved failure modes were still in active investigation â€” a six-to-eight-week integration cost if either materialized in production.</p>
+<p>A gate package at a large industrial program marked all thermal actions closed. Two critical failure modes — thermal runaway propagation and connector derating under field humidity — were still under active investigation in the test lab. The disconnect: the action tracker was PM-owned and tracked action-item status by ID. The failure-mode log was engineering-owned and tracked investigation state by failure mode. No artifact required a closure entry to cite a failure-mode log entry rather than just an action ID. One internal audit caught the gap three days before the gate review. If the gate had proceeded, the program would have released a build configuration while two unresolved failure modes were still in active investigation — a six-to-eight-week integration cost if either materialized in production.</p>
 <ul>
 <li><strong>Old process:</strong> closure based on action-item status, not failure-mode investigation status.</li>
 <li><strong>Artifact changed:</strong> a requirement in the gate-packet template that closure evidence must cite the failure-mode log entry (not just the action ID) and state the investigation disposition.</li>
@@ -1289,7 +1287,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>trigger escalation with named owners.</li>
 </ul>
 <p>If this propagation is weak, paper confidence drifts from the real program state and misleads leadership decisions.</p>
-<p>Acceptable implementations for the failure-mode tracker include a dedicated FRACAS (Failure Reporting, Analysis, and Corrective Action System) when the organization already has one, a separate backlog slice that models failure modes as first-class records linked bidirectionally to mitigation actions via a keyed join field, a controlled spreadsheet with a named failure-mode ID column that action items must reference at closure, or a markdown file under version control with explicit closure dispositions. The OS cares that the failure-mode investigation status and the action-item closure status are cross-referenced â€” not that they live in the same tool.</p>
+<p>Acceptable implementations for the failure-mode tracker include a dedicated FRACAS (Failure Reporting, Analysis, and Corrective Action System) when the organization already has one, a separate backlog slice that models failure modes as first-class records linked bidirectionally to mitigation actions via a keyed join field, a controlled spreadsheet with a named failure-mode ID column that action items must reference at closure, or a markdown file under version control with explicit closure dispositions. The OS cares that the failure-mode investigation status and the action-item closure status are cross-referenced — not that they live in the same tool.</p>
 <h3 id="practical-done-review-in-15-minutes"><a class="header" href="#practical-done-review-in-15-minutes">Practical "done" review in 15 minutes</a></h3>
 <p>For each high-impact closure item, ask:</p>
 <ol>
@@ -1298,7 +1296,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>What risk remains despite closure?</li>
 <li>Which dependent decisions changed because of this closure?</li>
 </ol>
-<p>If questions 3 and 4 are blank, closure is cosmetic â€” do not treat as done; return the item to the evidence owner before the gate proceeds.</p>
+<p>If questions 3 and 4 are blank, closure is cosmetic — do not treat as done; return the item to the evidence owner before the gate proceeds.</p>
 <hr />
 <p>Done means the failure mode is dispositioned, not the action item is closed.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="15-what-every-tier-wants-exec-to-supplier"><a class="header" href="#15-what-every-tier-wants-exec-to-supplier">15. What Every Tier Wants (Exec to Supplier)</a></h1>
@@ -1531,7 +1529,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li><strong>Measured improvement:</strong> an optimized component geometry fit the available form-factor envelope, cleared assembly placement requirements, and was physically sized to also benefit peak operating temperature — three constraints that had appeared to be in conflict under the blanket specification, resolved simultaneously.</li>
 <li><strong>Cost of the gap:</strong> without the size-dependent specification, the design would have been either over-constrained on large features (producing a component unnecessarily large for its envelope) or under-constrained on small features (relying on a tolerance the supplier could not hold, found during qualification).</li>
 </ul>
-<p>The supplier discrepancy pattern here is the downstream consequence of the thermal limit revision — the power-stage supplier built to the 85 °C derating assumption; after the requirement revised to 78 °C, the receiving inspection flagged the discrepancy. The discrepancy playbook is what surfaces it as a capability gap, not a supplier failure.</p>
+<p>The supplier discrepancy pattern here is the downstream consequence of the thermal limit revision — the power-stage supplier built to the 75 °C derating assumption; after the requirement revised to 78 °C, the receiving inspection flagged the discrepancy. The discrepancy playbook is what surfaces it as a capability gap, not a supplier failure.</p>
 <hr />
 <p>Acceptable implementations for the supplier capability data exchange include an APQP or PPAP packet structure when the customer-supplier relationship is formal enough to require it, a supplier-collaboration object under product-data control when revision-locked handoffs are mandatory, a controlled exchange folder with revision-stamped attachments and a named review log for smaller programs, or a shared Cpk dashboard with defined refresh cadence. The OS cares that the capability data (Cpk values, measurement methods, sample sizes, and control chart history) arrives with the same revision control as the design requirements — not that it arrives through any particular tool.</p>
 <h3 id="producibility-as-a-continuous-signal"><a class="header" href="#producibility-as-a-continuous-signal">Producibility as a continuous signal</a></h3>
