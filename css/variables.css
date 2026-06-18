@@ -163,21 +163,23 @@
 }
 
 .navy {
- --bg: hsl(226, 23%, 11%); --fg: #bcbdd0;
- --sidebar-bg: #282d3f; --sidebar-fg: #c8c9db; --sidebar-non-existant: #505274;
- --sidebar-active: #2b79a2; --sidebar-spacer: #2d334f;
- --scrollbar: var(--sidebar-fg); --icons: #737480; --icons-hover: #b7b9cc;
- --links: #2b79a2; --inline-code-color: #c5c8c6;
- --theme-popup-bg: #161923; --theme-popup-border: #737480; --theme-hover: #282e40;
- --quote-bg: hsl(226, 15%, 17%); --quote-border: hsl(226, 15%, 22%);
- --warning-border: #ff8e00;
- --table-border-color: hsl(226, 23%, 16%); --table-header-bg: hsl(226, 23%, 31%); --table-alternate-bg: hsl(226, 23%, 14%);
- --searchbar-border-color: #aaa; --searchbar-bg: #aeaec6; --searchbar-fg: #000;
- --searchbar-shadow-color: #aaa; --searchresults-header-fg: #5f5f71;
- --searchresults-border-color: #5c5c68; --searchresults-li-bg: #242430; --search-mark-bg: #a2cff5;
+ --bg: #09090B; --fg: #FAFAFA;
+ --sidebar-bg: #09090B; --sidebar-fg: #A1A1AA;
+ --sidebar-non-existant: #52525B; --sidebar-active: #F59E0B;
+ --sidebar-spacer: #27272A; --scrollbar: #52525B;
+ --icons: #52525B; --icons-hover: #FAFAFA;
+ --links: #F59E0B; --inline-code-color: #A1A1AA;
+ --theme-popup-bg: #09090B; --theme-popup-border: #27272A; --theme-hover: #18181B;
+ --quote-bg: rgba(245,158,11,0.08); --quote-border: #F59E0B;
+ --warning-border: #F59E0B;
+ --table-border-color: #27272A; --table-header-bg: #18181B; --table-alternate-bg: #111113;
+ --searchbar-border-color: #27272A; --searchbar-bg: #18181B; --searchbar-fg: #FAFAFA;
+ --searchbar-shadow-color: #27272A; --searchresults-header-fg: #A1A1AA;
+ --searchresults-border-color: #27272A; --searchresults-li-bg: #18181B;
+ --search-mark-bg: rgba(245,158,11,0.3);
  --color-scheme: dark;
- --copy-button-filter: invert(51%) sepia(10%) saturate(393%) hue-rotate(198deg) brightness(86%) contrast(87%);
- --copy-button-filter-hover: invert(46%) sepia(20%) saturate(1537%) hue-rotate(156deg) brightness(85%) contrast(90%);
+ --copy-button-filter: invert(35%) sepia(0%) saturate(0%) brightness(80%) contrast(80%);
+ --copy-button-filter-hover: invert(70%) sepia(60%) saturate(500%) hue-rotate(5deg) brightness(100%) contrast(100%);
 }
 
 .rust {
