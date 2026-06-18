@@ -20,7 +20,7 @@
    HWOS Light — zinc/white, amber-700 links (5.8:1 contrast on white)
    -------------------------------------------------------------------------- */
 .light, html:not(.js) {
- --bg: #FFFFFF;
+ --bg: #FAFAFA;   /* zinc-50 — not pure white */
  --fg: #09090B;               /* zinc-950 */
 
  --sidebar-bg: #FFFFFF;       /* unified surface */
@@ -49,7 +49,7 @@
 
  --table-border-color: #E4E4E7;
  --table-header-bg: #F4F4F5;
- --table-alternate-bg: #FAFAFA;
+ --table-alternate-bg: #F4F4F5;
 
  --searchbar-border-color: #E4E4E7;
  --searchbar-bg: #FFFFFF;
