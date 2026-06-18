@@ -23,7 +23,7 @@
  --bg: #FAFAFA;   /* zinc-50 — not pure white */
  --fg: #09090B;               /* zinc-950 */
 
- --sidebar-bg: #FFFFFF;       /* unified surface */
+ --sidebar-bg: #F4F4F5;       /* zinc-100 - recessed nav, one step darker than body */
  --sidebar-fg: #71717A;       /* zinc-500 — muted nav */
  --sidebar-non-existant: #A1A1AA;
  --sidebar-active: #B45309;   /* amber-700 — 5.8:1 on white */
@@ -73,7 +73,7 @@
  --bg: #18181B;               /* zinc-900 — dark gray, not black */
  --fg: #D4D4D8;               /* zinc-300 — soft off-white, ~11:1 contrast */
 
- --sidebar-bg: #18181B;       /* unified surface */
+ --sidebar-bg: #27272A;       /* zinc-800 - recessed nav, one step darker than body */
  --sidebar-fg: #A1A1AA;       /* zinc-400 */
  --sidebar-non-existant: #52525B;
  --sidebar-active: #F59E0B;   /* amber-400 */
@@ -122,7 +122,7 @@
 @media (prefers-color-scheme: dark) {
  html:not(.js) {
   --bg: #18181B; /* zinc-900 — dark gray, not black */ --fg: #D4D4D8; /* zinc-300 — soft off-white, ~11:1 contrast */
-  --sidebar-bg: #18181B; --sidebar-fg: #A1A1AA;
+  --sidebar-bg: #27272A; --sidebar-fg: #A1A1AA;
   --sidebar-non-existant: #52525B; --sidebar-active: #F59E0B;
   --sidebar-spacer: #27272A; --scrollbar: #52525B;
   --icons: #52525B; --icons-hover: #D4D4D8;
@@ -164,7 +164,7 @@
 
 .navy {
  --bg: #18181B; /* zinc-900 — dark gray, not black */ --fg: #D4D4D8; /* zinc-300 — soft off-white, ~11:1 contrast */
- --sidebar-bg: #18181B; --sidebar-fg: #A1A1AA;
+ --sidebar-bg: #27272A; --sidebar-fg: #A1A1AA;
  --sidebar-non-existant: #52525B; --sidebar-active: #F59E0B;
  --sidebar-spacer: #27272A; --scrollbar: #52525B;
  --icons: #52525B; --icons-hover: #D4D4D8;
