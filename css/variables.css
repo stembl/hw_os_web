@@ -67,13 +67,13 @@
 }
 
 /* --------------------------------------------------------------------------
-   HWOS Dark — zinc-950, amber-400 accent (9.8:1 contrast on dark bg)
+   HWOS Dark — zinc-900 bg, zinc-300 text (~11:1, no glow/halation)
    -------------------------------------------------------------------------- */
 .coal {
- --bg: #09090B;               /* zinc-950 */
- --fg: #FAFAFA;               /* zinc-50 */
+ --bg: #18181B;               /* zinc-900 — dark gray, not black */
+ --fg: #D4D4D8;               /* zinc-300 — soft off-white, ~11:1 contrast */
 
- --sidebar-bg: #09090B;       /* unified surface */
+ --sidebar-bg: #18181B;       /* unified surface */
  --sidebar-fg: #A1A1AA;       /* zinc-400 */
  --sidebar-non-existant: #52525B;
  --sidebar-active: #F59E0B;   /* amber-400 */
@@ -82,15 +82,15 @@
  --scrollbar: #52525B;
 
  --icons: #52525B;
- --icons-hover: #FAFAFA;
+ --icons-hover: #D4D4D8;
 
- --links: #F59E0B;            /* amber-400 — 9.8:1 on zinc-950 */
+ --links: #F59E0B;            /* amber-400 — high contrast on zinc-900 */
 
  --inline-code-color: #A1A1AA;
 
- --theme-popup-bg: #09090B;
- --theme-popup-border: #27272A;
- --theme-hover: #18181B;      /* zinc-900 */
+ --theme-popup-bg: #27272A;
+ --theme-popup-border: #3F3F46;
+ --theme-hover: #27272A;      /* zinc-800 */
 
  --quote-bg: rgba(245,158,11,0.08);
  --quote-border: #F59E0B;
@@ -121,13 +121,13 @@
    -------------------------------------------------------------------------- */
 @media (prefers-color-scheme: dark) {
  html:not(.js) {
-  --bg: #09090B; --fg: #FAFAFA;
-  --sidebar-bg: #09090B; --sidebar-fg: #A1A1AA;
+  --bg: #18181B; /* zinc-900 — dark gray, not black */ --fg: #D4D4D8; /* zinc-300 — soft off-white, ~11:1 contrast */
+  --sidebar-bg: #18181B; --sidebar-fg: #A1A1AA;
   --sidebar-non-existant: #52525B; --sidebar-active: #F59E0B;
   --sidebar-spacer: #27272A; --scrollbar: #52525B;
-  --icons: #52525B; --icons-hover: #FAFAFA;
+  --icons: #52525B; --icons-hover: #D4D4D8;
   --links: #F59E0B; --inline-code-color: #A1A1AA;
-  --theme-popup-bg: #09090B; --theme-popup-border: #27272A; --theme-hover: #18181B;
+  --theme-popup-bg: #27272A; --theme-popup-border: #3F3F46; --theme-hover: #27272A;
   --quote-bg: rgba(245,158,11,0.08); --quote-border: #F59E0B;
   --warning-border: #F59E0B;
   --table-border-color: #27272A; --table-header-bg: #18181B; --table-alternate-bg: #111113;
@@ -163,13 +163,13 @@
 }
 
 .navy {
- --bg: #09090B; --fg: #FAFAFA;
- --sidebar-bg: #09090B; --sidebar-fg: #A1A1AA;
+ --bg: #18181B; /* zinc-900 — dark gray, not black */ --fg: #D4D4D8; /* zinc-300 — soft off-white, ~11:1 contrast */
+ --sidebar-bg: #18181B; --sidebar-fg: #A1A1AA;
  --sidebar-non-existant: #52525B; --sidebar-active: #F59E0B;
  --sidebar-spacer: #27272A; --scrollbar: #52525B;
- --icons: #52525B; --icons-hover: #FAFAFA;
+ --icons: #52525B; --icons-hover: #D4D4D8;
  --links: #F59E0B; --inline-code-color: #A1A1AA;
- --theme-popup-bg: #09090B; --theme-popup-border: #27272A; --theme-hover: #18181B;
+ --theme-popup-bg: #27272A; --theme-popup-border: #3F3F46; --theme-hover: #27272A;
  --quote-bg: rgba(245,158,11,0.08); --quote-border: #F59E0B;
  --warning-border: #F59E0B;
  --table-border-color: #27272A; --table-header-bg: #18181B; --table-alternate-bg: #111113;
