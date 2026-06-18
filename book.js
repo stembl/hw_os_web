@@ -683,3 +683,24 @@ function playground_text(playground, hidden = true) {
         document.addEventListener('scroll', updateBorder, { passive: true });
     })();
 })();
+
+// ── HWOS brand link + purchase nudge ────────────────────────────────────────
+(function hwosNav() {
+  // 1. Brand link below menu title in sidebar
+  var menuTitle = document.querySelector('.menu-title');
+  if (menuTitle) {
+    var brandEl = document.createElement('div');
+    brandEl.className = 'hwos-sidebar-brand';
+    brandEl.innerHTML = '<a href="https://thehardwareos.com" rel="noopener" class="hwos-brand-link">thehardwareos.com</a>';
+    menuTitle.parentNode.insertBefore(brandEl, menuTitle.nextSibling);
+  }
+
+  // 2. Purchase nudge at bottom of every page
+  var contentMain = document.querySelector('.content main');
+  if (contentMain) {
+    var nudge = document.createElement('div');
+    nudge.className = 'hwos-purchase-nudge';
+    nudge.innerHTML = 'Read online free &mdash; also available in print &amp; audio at <a href="https://thehardwareos.com" rel="noopener">thehardwareos.com</a>.';
+    contentMain.appendChild(nudge);
+  }
+})();
