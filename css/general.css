@@ -218,10 +218,18 @@ sup {
  visibility: visible;
 }
 
+/* Sidebar border - separates recessed nav from reading surface */
+#sidebar { border-right: 1px solid var(--sidebar-spacer); }
+
 .chapter li.part-title {
- color: var(--sidebar-fg);
- margin: 5px 0px;
- font-weight: bold;
+ font-size: 0.62rem;
+ font-weight: 700;
+ letter-spacing: 0.1em;
+ text-transform: uppercase;
+ color: var(--sidebar-active);
+ margin: 1.4em 0 0.2em;
+ padding-left: 10px;
+ opacity: 0.85;
 }
 
 .result-no-output {
