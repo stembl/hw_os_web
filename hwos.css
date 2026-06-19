@@ -86,8 +86,7 @@ html:not(.js) {
  * @media print covers epub renderers and browser print.
  */
 .content table {
-  width: 100%;
-  min-width: 600px;  /* below this .table-wrapper scrolls; prevents column crush */
+  width: max(100%, 600px); /* at least 600px — below this .table-wrapper scrolls */
   table-layout: fixed;
   border-collapse: collapse;
   font-size: 1.5rem;
