@@ -156,14 +156,8 @@
                     <main>
                         <h1 id="19-training-cadence-and-failure-recovery"><a class="header" href="#19-training-cadence-and-failure-recovery">19. Training, Cadence, and Failure Recovery</a></h1>
 <p>Friday, 2:18 p.m., the building going quiet at the edges, the habits already starting to slip before people scatter.</p>
-<p>The rollout looked good for six weeks. Then one lead change, one urgent supplier issue, and one skipped review cycle later, old behavior was back. The relapse analysis found three gaps: the skipped review had been covered by a handoff email, not a backup-trained lead; the lead change had no ownership-transfer protocol; the supplier issue had triggered an exception meeting that displaced the review cadence without a recovery date.</p>
+<p>The rollout looked good for six weeks. Then one lead change, one urgent supplier issue, and one skipped review cycle later, old behavior was back — a program quarter of uncontrolled drift before the cadence recovered. The relapse analysis found three gaps: the skipped review had been covered by a handoff email, not a backup-trained lead; the lead change had no ownership-transfer protocol; the supplier issue had triggered an exception meeting that displaced the review cadence without a recovery date.</p>
 <p>Three controls were added: a named backup DRI for each cadence slot, a thirty-day cadence audit after any lead change, and an explicit recovery trigger — if any scheduled review is displaced, the next one is held within five days regardless of program pressure. Six months later, a second lead change hit the same team. The cadence held.</p>
-<ul>
-<li><strong>Old process:</strong> rollout with no durability controls — one personnel change and one supplier escalation collapsed the review cadence; no backup-DRI assignment, no recovery trigger.</li>
-<li><strong>Artifact changed:</strong> backup DRI assignments per cadence slot, a thirty-day cadence audit following any lead change, and a five-day recovery trigger for displaced reviews.</li>
-<li><strong>Measured improvement:</strong> a second lead change six months later did not produce a relapse; the cadence held through the disruption.</li>
-<li><strong>Cost of the gap:</strong> six weeks of apparent adoption followed by full relapse — all adoption work restarted, plus a program quarter of uncontrolled drift during the collapse.</li>
-</ul>
 <h3 id="training-is-behavior-transfer-not-slide-transfer"><a class="header" href="#training-is-behavior-transfer-not-slide-transfer">Training is behavior transfer, not slide transfer</a></h3>
 <p>New people do not need the full theory first.</p>
 <p>They need operational moves in context.</p>
@@ -181,11 +175,11 @@
 <ul>
 <li>weekly decision/risk sync (updated decision log and risk register entries),</li>
 <li>fixed one-page refresh rhythm (published one-page status before each review),</li>
-<li>gate prep/check with artifact (written program record) traceability (gate artifact delta from the record system),</li>
+<li>gate prep/check with artifact traceability (gate artifact delta from the record system),</li>
 <li>monthly retro on control-loop failures (playbook update with named control adjustments).</li>
 </ul>
 <p>Cadence should be predictable and short enough to survive workload spikes.</p>
-<p>A PM who has a reliable weekly cadence stops pinging for status between reviews. Not because they stopped caring about the program — because the cadence has given them a predictable artifact update they can trust. The engineering lead who has locked a working cadence has bought themselves a working environment.</p>
+<p>Cadence is the mechanism that makes the artifact trustworthy enough to read between meetings. The engineering lead who has locked a working cadence has bought themselves a working environment.</p>
 <h3 id="failure-recovery-without-blame-loops"><a class="header" href="#failure-recovery-without-blame-loops">Failure recovery without blame loops</a></h3>
 <p>When the system slips:</p>
 <ol>
@@ -198,16 +192,16 @@
 <p>Frame it as "which control failed under what condition."</p>
 <h3 id="metrics-for-real-adoption"><a class="header" href="#metrics-for-real-adoption">Metrics for real adoption</a></h3>
 <p>Activity metrics mislead when closure and mismatch outcomes stay flat.</p>
-<p>Track these signals across consecutive cycles — a single-cycle improvement can be noise; a sustained trend is the signal:</p>
+<p>The rollout chapter defines each metric and its artifact source. This chapter's job is reading the trend over consecutive cycles — a single-cycle improvement can be noise; a sustained two-cycle trend is the signal that behavior is actually changing, not just reported:</p>
 <ul>
-<li>decision closure cycle time,</li>
-<li>reopen rate on closed decisions,</li>
-<li>one-page vs source mismatch frequency,</li>
-<li>late risk discovery rate,</li>
-<li>unresolved ownerless decision count.</li>
+<li>decision closure cycle time — trending down, or plateaued after initial improvement?</li>
+<li>reopen rate on closed decisions — still dropping, or holding flat while closure rate rises?</li>
+<li>one-page vs source mismatch frequency — gone, or recurring on the same artifact types?</li>
+<li>late risk discovery rate — at zero after two cycles, or spiking around milestones?</li>
+<li>unresolved ownerless decision count — cleared each cycle, or accumulating?</li>
 </ul>
-<p>If these metrics improve for two reporting cycles, behavior is changing.</p>
-<p>If only template completion improves while outcome metrics stay flat, adoption is cosmetic.</p>
+<p>If these improve for two reporting cycles, adoption is real.</p>
+<p>If only template completion improves while outcome metrics stay flat, the rollout produced activity, not behavior change.</p>
 <h3 id="turnover-resilience"><a class="header" href="#turnover-resilience">Turnover resilience</a></h3>
 <p>Systems fail at role transitions unless handover is explicit.</p>
 <p>Require handover package for key roles:</p>
@@ -228,12 +222,7 @@
 <li>flexible on meeting format and local workflow details.</li>
 </ul>
 <hr />
-<p>Eight weeks later, same program. The lead changed. The supplier issue hit. The review cycle slipped by one day, not three weeks — because the one-page had been published before Friday, the risk register named an owner on the supplier item, and the incoming lead read both before the first review. The handover package was on the shared drive: active decisions, top risks, current one-page, unresolved escalations, next gate commitments. - <strong>Old process:</strong> cadence habits lived in people, not program artifacts — when people changed, habits reset.</p>
-<ul>
-<li><strong>Artifact changed:</strong> the handover package and the locked one-page refresh cadence, converted from personal routine to documented system requirement.</li>
-<li><strong>Measured improvement:</strong> successor lead fully operational within one cycle instead of six weeks.</li>
-<li><strong>Cost of the gap:</strong> six weeks of apparent stability built on individual memory, not system.</li>
-</ul>
+<p>Eight weeks later, same program. The lead changed. The supplier issue hit. The review cycle slipped by one day, not three weeks — because the one-page had been published before Friday, the risk register named an owner on the supplier item, and the incoming lead read both before the first review. The handover package was on the shared drive: active decisions, top risks, current one-page, unresolved escalations, next gate commitments — the incoming lead was fully current within one review cycle.</p>
 <p>Field test: name the last time a control loop on your program failed — a gate arrived without evidence, a DRI was absent, a cadence slipped. Is there a playbook entry that names the trigger, the recovery action, and the owner? If not, recovery is improvised every time, and the same failure will return.</p>
 <hr />
 <p>The control stack is not a substitute for regulated lifecycle frameworks where the audit trail, evidence standard, or approval chain is defined by statute rather than by the program.</p>

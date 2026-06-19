@@ -172,12 +172,7 @@
 <h3 id="hygiene-failures-that-look-small-and-cost-big"><a class="header" href="#hygiene-failures-that-look-small-and-cost-big">Hygiene failures that look small and cost big</a></h3>
 <p>Most failures are not dramatic. They are quiet mismatches.</p>
 <hr />
-<p>Rev C.2 changed the leak-test dwell value, but manufacturing work instructions still referenced Rev C.1 while test benches used the new value. That one mismatch forced three days of teardown and retest. The team then found the dwell requirement had no owner and no rationale trail for the original dwell change. Once an owner was assigned and a controlled revision record was created with the rationale, the next revision — a ten-second dwell adjustment — was processed in four hours and reached all affected work instructions the same day. - <strong>Old process:</strong> no owner on the dwell requirement, no rationale trail, revision chain broken — manufacturing, test, and supplier each building to a different value.</p>
-<ul>
-<li><strong>Artifact changed:</strong> an owner assigned to the dwell requirement and a controlled revision record created, with the rationale for the change documented.</li>
-<li><strong>Measured improvement:</strong> the next revision processed in four hours and distributed to all affected work instructions the same day.</li>
-<li><strong>Cost of the gap:</strong> three days of teardown and retest before the mismatch source was found and the requirement baseline was trustworthy.</li>
-</ul>
+<p>Rev C.2 changed the leak-test dwell value, but manufacturing work instructions still referenced Rev C.1 while test benches used the new value. That one mismatch forced three days of teardown and retest. The team then found the dwell requirement had no owner and no rationale trail for the original dwell change. Once an owner was assigned and a controlled revision record was created with the rationale, the next revision — a ten-second dwell adjustment — was processed in four hours and reached all affected work instructions the same day.</p>
 <hr />
 <h3 id="requirement-statement-quality-minimum-bar"><a class="header" href="#requirement-statement-quality-minimum-bar">Requirement statement quality (minimum bar)</a></h3>
 <p>A requirement is usable when it is:</p>

@@ -187,6 +187,7 @@
 <li>owner on both sides (internal and supplier),</li>
 <li>revision baseline (aligned with the current controlled spec revision).</li>
 </ul>
+<p>A tight characteristics list answers what matters; the evidence package determines whether the supplier can deliver it before the program commits.</p>
 <h3 id="minimum-supplier-evidence-package"><a class="header" href="#minimum-supplier-evidence-package">Minimum supplier evidence package</a></h3>
 <p>Before major commit, require:</p>
 <ul>
@@ -220,13 +221,7 @@
 <hr />
 <p>A program sourcing custom precision components got the same answer from every supplier when asking about process tolerance: the process held a stated tolerance regardless of feature size. Multiple suppliers, independently, the same number. It had the feel of an industry rule of thumb repeated often enough that most programs treat it as settled.</p>
 <p>The claim did not follow basic manufacturing physics. Process tolerances on formed or machined features typically depend on feature size because the relative contribution of variation is larger at smaller scales. Rather than accept the blanket number, dimensional data was requested across a range of feature sizes and geometries — not just the program's nominal part.</p>
-<p>The data showed a clear size dependence. On large features, the supplier achieved roughly half the stated blanket tolerance — they were underselling their capability. On small features, the actual achieved tolerance was roughly double the stated value — they were overselling it. The blanket number was approximately their average across the range, misleading in both directions and most misleading at the feature sizes that governed the design constraints.</p>
-<ul>
-<li><strong>Old process:</strong> blanket tolerance accepted at face value, applied uniformly across all feature sizes in the design.</li>
-<li><strong>Artifact changed:</strong> a tolerance specification written as a function of feature size, derived from the supplier's own measurement data.</li>
-<li><strong>Measured improvement:</strong> an optimized component geometry fit the available form-factor envelope, cleared assembly placement requirements, and was physically sized to also benefit peak operating temperature — three constraints that had appeared to be in conflict under the blanket specification, resolved simultaneously.</li>
-<li><strong>Cost of the gap:</strong> without the size-dependent specification, the design would have been either over-constrained on large features (producing a component unnecessarily large for its envelope) or under-constrained on small features (relying on a tolerance the supplier could not hold, found during qualification).</li>
-</ul>
+<p>The data showed a clear size dependence. On large features, the supplier achieved roughly half the stated blanket tolerance — they were underselling their capability. On small features, the actual achieved tolerance was roughly double the stated value — they were overselling it. The blanket number was approximately their average across the range, misleading in both directions and most misleading at the feature sizes that governed the design constraints. Writing the tolerance specification as a function of feature size — derived from the supplier's own measurement data — resolved three constraints that had appeared to be in conflict under the blanket specification simultaneously: the component fit the available form-factor envelope, cleared assembly placement requirements, and was physically sized to benefit peak operating temperature.</p>
 <hr />
 <p>Acceptable implementations for the supplier capability data exchange include a supplier-collaboration object under product-data control when revision-locked handoffs are mandatory, a controlled exchange folder with revision-stamped attachments and a named review log for smaller programs, or a shared Cpk dashboard with defined refresh cadence. The OS cares that the capability data (Cpk values, measurement methods, sample sizes, and control chart history) arrives with the same revision control as the design requirements — not that it arrives through any particular tool.</p>
 <h3 id="producibility-as-a-continuous-signal"><a class="header" href="#producibility-as-a-continuous-signal">Producibility as a continuous signal</a></h3>

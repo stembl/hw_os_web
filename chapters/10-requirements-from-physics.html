@@ -179,13 +179,7 @@
 </ul>
 <p>Each margin looks reasonable in isolation, but combined they can exceed the product's weight, cost, or manufacturability limits.</p>
 <hr />
-<p>At an energy storage program, three teams each added a thermal margin to the switching-stage requirement. The thermal lead added 5 °C for component tolerance. The systems lead added 3 °C for ambient worst-case. The manufacturing lead added 2 °C for process variation. All three margins were honest engineering judgments. Combined, the requirement was 10 °C tighter than any single physical driver justified — and the chosen architecture could not satisfy it. When the teams traced each margin to its physical source and its uncertainty basis, 7 °C of the buffer was recoverable without increasing real risk. The requirement moved from unmeetable to achievable without changing the architecture.</p>
-<ul>
-<li><strong>Old process:</strong> each team adds a margin independently, with no shared traceability column linking each buffer to a named physical source.</li>
-<li><strong>Artifact changed (written program record):</strong> a margin-breakdown table in the requirement record, with each additive buffer attributed to a named physical source and an uncertainty basis.</li>
-<li><strong>Measured improvement:</strong> 7 °C of recoverable margin found; program architecture unchanged.</li>
-<li><strong>Cost of the gap:</strong> the program had been holding a two-month design study for a thermal architecture change that became unnecessary once the margins were untangled.</li>
-</ul>
+<p>At an energy storage program, three teams each added a thermal margin to the switching-stage requirement. The thermal lead added 5 °C for component tolerance. The systems lead added 3 °C for ambient worst-case. The manufacturing lead added 2 °C for process variation. All three margins were honest engineering judgments. Combined, the requirement was 10 °C tighter than any single physical driver justified — and the chosen architecture could not satisfy it. When the teams traced each margin to its physical source and its uncertainty basis, 7 °C of the buffer was recoverable without increasing real risk. The requirement moved from unmeetable to achievable without changing the architecture — and a two-month design study for a thermal architecture change became unnecessary once the margins were untangled. The conversation that untangled the three margins took ninety minutes. Eight weeks of design study replaced by a traceability column.</p>
 <hr />
 <h3 id="fake-safety-vs-real-safety"><a class="header" href="#fake-safety-vs-real-safety">Fake safety vs real safety</a></h3>
 <p>More margin in a requirement line is not automatically safer for the delivered product.</p>
@@ -196,7 +190,7 @@
 <li>reduce manufacturability and yield on the pilot line,</li>
 <li>hide which uncertainty actually needs test closure before gate sign-off.</li>
 </ul>
-<p>Real safety comes from explicit risk control in the requirement and risk register, not from accumulating hidden margin.</p>
+<p>Real safety is explicit risk control — named owner, named uncertainty, named evidence. What you have when you stack unexamined margin is a tighter number and no idea how much of it you actually need.</p>
 <h3 id="buffer-hygiene-rule"><a class="header" href="#buffer-hygiene-rule">Buffer hygiene rule</a></h3>
 <p>Every requirement buffer must carry five explicit fields:</p>
 <ul>
@@ -207,6 +201,7 @@
 <li>link planned evidence that will reduce or confirm it.</li>
 </ul>
 <p>If a buffer has no owner or retirement trigger, it persists by inertia and silently hardens into baseline policy.</p>
+<p>You have watched this happen. The 2 °C process buffer from the first design phase is still in the requirement four builds later, and nobody can find the engineer who added it.</p>
 <h3 id="quick-variation-coverage-check"><a class="header" href="#quick-variation-coverage-check">Quick variation coverage check</a></h3>
 <p>Before blessing a requirement ID, run this variation-coverage check:</p>
 <ol>

@@ -192,16 +192,12 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <li>supplier misalignment — supplier inspection criteria reference the frozen value, not the test-confirmed limit,</li>
 <li>and "surprise" gate failures — visible earlier in data, masked by a requirement record that stayed frozen.</li>
 </ul>
-<p>Revision discipline in the requirement log prevents both uncontrolled churn and evidence denial.</p>
+<p>The lead needs both controls in the requirement log: revision discipline stops uncontrolled churn, and evidence discipline stops the opposite failure — holding a known-wrong value to protect the appearance of a stable baseline.</p>
 <hr />
 <p>The board thermal limit was set to 65 °C by the electrical engineering team — a conservative estimate intended to protect component lifetime across the product's operating range. It was not decomposed to the case temperature limits of the specific components on the board, and no scope note identified which operating scenario it applied to.</p>
 <p>The full-load chamber test ran at full power and 40 °C ambient — the scenario defined for UL qualification — and measured the control board approaching 70 °C. The limit said 65 °C. The program ran three weeks of thermal management work: airflow changes, layout iterations, component placement. None of it was targeted, because the requirement had not been tied to the actual components at risk.</p>
 <p>When the requirement owner pulled the 65 °C limit back to its basis, two questions surfaced: which components it was protecting, and which scenario it applied to. The answers changed the problem. The 65 °C estimate was a lifetime operating condition limit — it applied to sustained load in worst-case ambient across the product service life, not to a one-time UL qualification test at 40 °C. No component case temperature limit was being violated under the qualification test scenario. For the lifetime scenario, the question became which specific components were at risk and what their case temperature limits were — a decomposed set of requirements the 65 °C proxy had been standing in for.</p>
-<ul>
-<li><strong>Old process:</strong> a single board-level temperature estimate applied as a requirement across both the lifetime operating scenario and the UL qualification scenario, without decomposition to component case temperature limits and without a scope note identifying which scenario it applied to.</li>
-<li><strong>Artifact changed:</strong> the board thermal limit in the requirement log revised — the proxy replaced by a decomposed set of component case temperature limits for the lifetime scenario, with the qualification test scenario confirmed out of scope for that requirement; the revision record named the evidence source, rationale, impact scope, approver, and date.</li>
-<li><strong>Measured improvement:</strong> three weeks of whole-assembly thermal management work redirected to targeted mitigation on the two components whose case temperatures were actually at risk under lifetime operating conditions.</li>
-</ul>
+<p>Three weeks of whole-assembly thermal management work was redirected to targeted mitigation on the two components whose case temperatures were actually at risk under lifetime operating conditions. The target list had two components on it. The previous three weeks had addressed neither.</p>
 <hr />
 <h3 id="revision-criteria-minimum"><a class="header" href="#revision-criteria-minimum">Revision criteria (minimum)</a></h3>
 <p>Revise a requirement only when predeclared decision thresholds are met:</p>
@@ -220,6 +216,7 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <li>approver and date.</li>
 </ul>
 <p>Acceptable implementations for the requirement lifecycle log include a gated product-data revision route when build truth must trace to an authoritative BOM, an issue-tracker type with gated fields for owner, evidence links, and revision trail when releases are routed from backlog records, a locked shared spreadsheet with named owners and protected history columns for early programs that still need fast iteration, or a controlled markdown log under version control when the team is small and repository-led. The OS does not care which; it cares that old value, new value, evidence source, rationale, impact scope, approver, and date are all in the same row.</p>
+<p>If the revision row exists but the evidence source field is blank, the revision is not controlled — it is a number change with a timestamp. That is the tell.</p>
 <h3 id="preventing-moving-goalpost-behavior"><a class="header" href="#preventing-moving-goalpost-behavior">Preventing moving-goalpost behavior</a></h3>
 <p>Teams resist revisions when the decision record looks arbitrary.</p>
 <p>Prevent goalpost behavior by separating two artifacts (written program records):</p>

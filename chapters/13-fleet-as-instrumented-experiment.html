@@ -157,7 +157,7 @@
                         <h1 id="13-fleet-as-instrumented-experiment"><a class="header" href="#13-fleet-as-instrumented-experiment">13. Fleet as Instrumented Experiment</a></h1>
 <p>Thursday, 7:02 a.m., five units on the bench, cross-site call connecting, no two run logs structured the same way.</p>
 <p>By Friday, the team has stories about each one and no comparable record of what was different between them.</p>
-<p>That is a missed experiment, not a successful fleet.</p>
+<p>That is a missed experiment, not a successful fleet. The distinction matters because the fleet's job is not to confirm a prototype — it is to surface variation across units so the risk register moves on evidence, not on which unit the program lead happened to visit last. Getting there requires structured per-unit records, a build matrix that controls variables, and a weekly cadence that forces comparison. That is the mechanism this chapter names.</p>
 <hr />
 <h3 id="fleet-mindset-learning-asset-not-milestone-artifact"><a class="header" href="#fleet-mindset-learning-asset-not-milestone-artifact">Fleet mindset: learning asset, not milestone artifact</a></h3>
 <p>A fleet build is valuable when each unit produces usable evidence.</p>
@@ -179,7 +179,8 @@
 <li>anomalies and disposition,</li>
 <li>owner/date for record completeness.</li>
 </ul>
-<p>No per-unit record means no defensible cross-unit comparison.</p>
+<p>If there is no per-unit record, you cannot defend the cross-unit comparison at gate — and the anomaly that matters will be in the unit whose log is thinnest.</p>
+<p>Six fields. If the record cannot survive the question "what was different about this unit," it is not a unit record — it is a bench note.</p>
 <h3 id="build-matrix-not-pile-of-units"><a class="header" href="#build-matrix-not-pile-of-units">Build matrix, not pile of units</a></h3>
 <p>Plan fleet variation deliberately:</p>
 <ul>
@@ -200,14 +201,8 @@
 <p>When the chain runs: Unit 03 measured a leak rate well above Unit 01 at hot soak, the seal leak requirement confidence moved to red, and the next gate call shifted from go to hold pending seal redesign evidence.</p>
 <p>If fleet data stays in test notes, the program keeps running on stale assumptions.</p>
 <hr />
-<p>At a battery-adjacent program, five prototype units were built and instrumented over four weeks. Unit 03 measured a leak rate more than twice Unit 01's baseline at hot soak — not a sensor artifact, the same delta confirmed across multiple test runs. The discrepancy sat in the test engineer's notes for nearly two weeks before it reached the program's risk register, because there was no per-unit record requirement that forced the delta into the risk log. The thermal requirement moved to red only after the team had already placed tooling orders on the assumption that Unit 01 was representative.</p>
+<p>At a battery-adjacent program, five prototype units were built and instrumented over four weeks. Unit 03 measured a leak rate more than twice Unit 01's baseline at hot soak — not a sensor artifact, the same delta confirmed across multiple test runs. The discrepancy sat in the test engineer's notes for eleven days before it reached the program's risk register, because there was no per-unit record requirement that forced the delta into the risk log. The test engineer had mentioned it verbally on day three. It was in nobody's written record. The thermal requirement moved to red only after the team had already placed tooling orders on the assumption that Unit 01 was representative.</p>
 <p>The program added a per-unit record requirement and a weekly fleet review cadence to its program controls (the program's standing records). The next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth. That gap had cost tooling decisions made on unrepresentative data — decisions that required a correction order once the real distribution of results was visible.</p>
-<ul>
-<li><strong>Old process:</strong> no per-unit record requirement; unit-level discrepancies captured in engineer notes with no forced path to the risk register.</li>
-<li><strong>Artifact changed:</strong> a per-unit record requirement and weekly fleet review cadence added to program controls.</li>
-<li><strong>Measured improvement:</strong> the next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth.</li>
-<li><strong>Cost of the gap:</strong> an eleven-day lag between test observation and risk log entry costs one tooling decision at the fleet level; the same lag at the gate-closure level costs a release cycle.</li>
-</ul>
 <hr />
 <h3 id="failure-patterns-in-fleet-execution"><a class="header" href="#failure-patterns-in-fleet-execution">Failure patterns in fleet execution</a></h3>
 <p>Common misses and what catches each:</p>
