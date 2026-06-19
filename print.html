@@ -1815,12 +1815,12 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <h2 id="decision-record"><a class="header" href="#decision-record">Decision record</a></h2>
 <p>The inert version records an outcome with no trail. Anyone who reads it six weeks later cannot reconstruct the trade, cannot tell who approved it, and cannot find what else changed as a result.</p>
 <div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Decision</td><td>"Team aligned to update thermal limit"</td><td>"Revise RQ-THERM-0 from 85 °C to 78 °C per T-0 chamber evidence"</td></tr>
+<tr><td>Decision</td><td>"Team aligned to update thermal limit"</td><td>"Revise thermal case temperature requirement from 85 °C to 78 °C, per first chamber test evidence"</td></tr>
 <tr><td>Owner</td><td>TBD</td><td>Thermal lead</td></tr>
-<tr><td>Rationale</td><td><em>(blank)</em></td><td>"T-0 measured 78 °C steady-state; boundary condition error in model confirmed by M-0"</td></tr>
+<tr><td>Rationale</td><td><em>(blank)</em></td><td>"First chamber test measured 78 °C steady-state; boundary condition error in thermal model confirmed"</td></tr>
 <tr><td>Alternatives</td><td><em>(blank)</em></td><td>"Considered 80 °C with derating margin — rejected: supplier cannot hold derating at current geometry"</td></tr>
-<tr><td>Downstream artifacts updated</td><td><em>(blank)</em></td><td>"Supplier package flagged for re-qual (ECO-0), schedule R-0 row updated, Gate-0 one-page revised"</td></tr>
-<tr><td>Approver / date</td><td><em>(blank)</em></td><td>Program lead, Day 9 post-T-0</td></tr>
+<tr><td>Downstream artifacts updated</td><td><em>(blank)</em></td><td>"Supplier package flagged for re-qualification, thermal risk row updated, Gate 0 one-page revised"</td></tr>
+<tr><td>Approver / date</td><td><em>(blank)</em></td><td>Program lead, Day 9 after first chamber test</td></tr>
 </tbody></table>
 </div>
 <p><em>See Ch. 4 for DRI ownership and minimum decision record fields.</em></p>
@@ -1830,11 +1830,11 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <div class="table-wrapper"><table><thead><tr><th>Field</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
 <tr><td>Statement</td><td>"Thermal"</td><td>"Thermal margin insufficient at full-duty 40 °C ambient"</td></tr>
 <tr><td>Owner</td><td>Engineering team</td><td>Thermal lead</td></tr>
-<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Medium (T-0 showed 78 °C vs 85 °C limit) / High (gate hold, supplier re-qual)</td></tr>
+<tr><td>Likelihood / Impact</td><td>Yellow</td><td>Medium (first chamber test showed 78 °C vs 85 °C limit) / High (gate hold, supplier re-qual)</td></tr>
 <tr><td>Trigger</td><td><em>(blank)</em></td><td>Any chamber run exceeding 77 °C</td></tr>
-<tr><td>Mitigation</td><td>In progress</td><td>Revise RQ-THERM-0; re-qual supplier package by Gate-0</td></tr>
-<tr><td>Decision date</td><td><em>(blank)</em></td><td>Gate-0</td></tr>
-<tr><td>Evidence</td><td><em>(blank)</em></td><td>T-0, M-0</td></tr>
+<tr><td>Mitigation</td><td>In progress</td><td>Revise thermal case temperature requirement; re-qual supplier package by Gate 0</td></tr>
+<tr><td>Decision date</td><td><em>(blank)</em></td><td>Gate 0</td></tr>
+<tr><td>Evidence</td><td><em>(blank)</em></td><td>First chamber test, thermal model</td></tr>
 </tbody></table>
 </div>
 <p><em>See Ch. 6 for the full risk-row schema and gate decision logic.</em></p>
@@ -1842,16 +1842,16 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <h2 id="one-page-status"><a class="header" href="#one-page-status">One-page status</a></h2>
 <p>The inert version compresses uncertainty into confidence — an exec or PM reading it cannot tell whether the calm tone reflects real evidence or polished slides. When it is wrong, nobody finds out until it is too late to act cheaply.</p>
 <div class="table-wrapper"><table><thead><tr><th>Section</th><th>Inert</th><th>Decision-grade</th></tr></thead><tbody>
-<tr><td>Current state</td><td>"Program tracking to plan"</td><td>"Gate-0 on track; thermal risk open — RQ-THERM-0 revision decision due Friday; supplier re-qual starts Monday"</td></tr>
-<tr><td>Top risks</td><td>"Thermal risk tracking green"</td><td>"R-0 thermal: medium/high — T-0 measured 78 °C vs 85 °C limit; owner: thermal lead; decision: Gate-0"</td></tr>
-<tr><td>Decision log deltas</td><td><em>(blank)</em></td><td>"DR-0 closed: thermal limit revised to 78 °C; supplier notified"</td></tr>
-<tr><td>Critical dependencies</td><td>"Supplier on track"</td><td>"Cold-plate extrusion: slip of 8 working days; replanned to Week 22; critical path impact: none if Gate-0 holds"</td></tr>
+<tr><td>Current state</td><td>"Program tracking to plan"</td><td>"Gate 0 on track; thermal risk open — thermal limit revision decision due Friday; supplier re-qual starts Monday"</td></tr>
+<tr><td>Top risks</td><td>"Thermal risk tracking green"</td><td>"Thermal: medium/high — first chamber test measured 78 °C vs 85 °C limit; owner: thermal lead; decision: Gate 0"</td></tr>
+<tr><td>Decision log deltas</td><td><em>(blank)</em></td><td>"Thermal limit decision closed: requirement revised to 78 °C; supplier notified"</td></tr>
+<tr><td>Critical dependencies</td><td>"Supplier on track"</td><td>"Cold-plate extrusion: slip of 8 working days; replanned to Week 22; critical path impact: none if Gate 0 holds"</td></tr>
 <tr><td>Asks / escalations</td><td>"None"</td><td>"Need program lead approval on revised supplier qualification plan by Thursday"</td></tr>
 </tbody></table>
 </div>
 <p><em>See Ch. 6 for the minimum one-page schema and source-record traceability requirement.</em></p>
 <hr />
-<p><em>These examples use the canonical <code>RQ-THERM-0</code> case that runs through Chs. 4, 6, 9, 10, 12, 13, 15, and 17. Substitute your program's artifacts; the field shapes hold.</em></p>
+<p><em>Substitute your program's artifacts; the field shapes hold.</em></p>
 
                     </main>
 
