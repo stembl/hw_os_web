@@ -204,7 +204,7 @@
 <p>That gap costs money the same way bad parts cost money: slips, rework, supplier scrap, trust thinning with the people paying the bills. The same scenes on repeat: no owner on the interface line in writing, executive-facing pages that read confident while build and test already know the open item, suppliers going quiet when the drawing set forks, the stretch of calendar where cheap learning has become expensive metal.</p>
 <p>This book closes that gap.</p>
 <hr />
-<h3 id="the-pm-in-the-room"><a class="header" href="#the-pm-in-the-room">The PM in the room</a></h3>
+<h3 id="the-pm-in-the-meeting"><a class="header" href="#the-pm-in-the-meeting">The PM in the meeting</a></h3>
 <p>The PM is usually the easiest face to blame when the review gets loud. They are also the one left holding ship windows someone already showed a paying customer while the technical facts are still moving. When what the team knows and what leadership sees do not match, someone still has to turn what actually happened into a plan someone can fund. Facts in hallway fragments and slide footnotes mean the PM keeps asking “where are we?” while mechanical, electrical, and supply each carry a different piece of the answer.</p>
 <p>Usually not a personality failure. Missing process: named owner for the handoff, one-page story that matches build and test, written decision when a tradeoff changes, early pull on risk and long leads while you can still steer. When the week stops burning on the same unanswered question, PMs get room to clear blockers instead of running the same worry past everyone again. Those habits start with leads, because that is where they get installed first or not at all.</p>
 <p>From the outside it can look like temperament. It is almost always facts that never landed in one place. Back to the list you can actually fix.</p>
@@ -215,6 +215,8 @@
 <p>Heroic individuals, fragile program. The work gets done because one person holds the context — who owns the call, where the open items live, what the real number is. When that knowledge is not in a record, work that depends on it cannot close. People push in parallel on the same question, each carrying a different piece of the answer, none of it forced into a single decision.</p>
 <p>Late truth. Risk and dependency never land in writing where PM and executives can help early, so the surprise shows up first in an exec review, then in metal, then in the field. Wrong altitude for cheap fixes.</p>
 <p>Schedule theater: the physics, procurement, and test facts that drive the date moved weeks ago, but the shared plan never caught up. The meeting defends loyalty to a date instead of updating the plan to match the facts. Name it that way and you can at least stop adding your own layer to it.</p>
+<p>Field test: pick any open technical decision on your current program. Ask who owns a change to it and where the current number lives. If those answers diverge across three people, or if no one can point to a written record, the program is running on memory — and the manual is missing.</p>
+<p>The standard response when a program slips is to add a tool. Sprints. Scrum. Jama for requirements. Jira for everything — more Jira, always more Jira. The boards get built. The training happens. Six months later the same program is behind the same way. The tool was not the problem and cannot be the solution. Jira cannot tell you who owns the handoff when no one does. A sprint ritual cannot lock a requirement that was never locked. The failure is upstream of the software: unowned decisions, numbers nobody committed to, schedules built on optimism rather than lead times. None of that requires new software to fix. It requires writing the right things down and naming who owns them.</p>
 <p>None of those get fixed by working harder on the same scattered pattern. I came to this late. A few different employers showed me what I had not been naming.</p>
 <hr />
 <h3 id="three-programs-one-lesson"><a class="header" href="#three-programs-one-lesson">Three programs, one lesson</a></h3>
@@ -264,7 +266,7 @@
 <p>Fourth, it creates <strong>trust debt</strong>. Suppliers, PMs, and executives stop trusting the current number because the number keeps changing without a visible decision trail.</p>
 <p>None of that is abstract. It shows up as scrap, missed windows, overtime, and avoidable churn in people who are already stretched.</p>
 <h3 id="the-operating-rule"><a class="header" href="#the-operating-rule">The operating rule</a></h3>
-<p>Treat process artifacts as product artifacts.</p>
+<p>Treat process artifacts (written program records) as product artifacts.</p>
 <p>If a limit, dependency, or risk can change build, cost, or date, it needs an owner, a controlled record, and a visible decision path. If it has no owner or no record, treat it as not real yet.</p>
 <p>This rule is strict on purpose. Hardware programs punish ambiguity late. Remove ambiguity when evidence first appears, before purchasing and build decisions fan out.</p>
 <p>A corollary worth keeping visible: every artifact in this system should reduce latency, rework, or ambiguity. If a record, checklist, or status field does not demonstrably do one of those three things, retire it. The minimum system listed above is exactly that — minimum. Do not add to it until the minimum proves it reduces argument and lag on your program.</p>
@@ -278,6 +280,7 @@
 <li>Make the next one-page status pull from that record.</li>
 </ol>
 <p>That is enough to expose whether your current process is implemented or cosmetic.</p>
+<p>Field test: pick the highest-stakes open limit on your current program. Can you name its owner and point to a controlled written record of its current value? If the answer to either question is no, the process is cosmetic at that limit — regardless of what the status deck says.</p>
 <p>Install one narrow control loop first. Prove it reduces argument and lag, then extend.</p>
 <p>Running a narrow control loop is the start. The harder problem is naming what the loop surfaces — because “bad communication” and “unowned decision” are not the same failure and do not have the same fix.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="3-failure-patterns-chaos-drift-and-unowned-decisions"><a class="header" href="#3-failure-patterns-chaos-drift-and-unowned-decisions">3. Failure Patterns: Chaos, Drift, and Unowned Decisions</a></h1>
@@ -285,7 +288,7 @@
 <p>Monday, 12:50 p.m., afternoon already drags, coffee going cold in the conference room.</p>
 <p>Day 19 of an EVT build for a handheld controller, and this is the third meeting on the same leakage-limit decision; every slip keeps a $42k fixture order on hold.</p>
 <p>Test says one thing. The status page says another. Procurement already acted on a third version because nobody marked which number was live.</p>
-<p>Three people in the room have calendar proof they worked the issue; the program has no record of who owns the live number or when it was last confirmed.</p>
+<p>Three people at the meeting have calendar proof they worked the issue; the program has no record of who owns the live number or when it was last confirmed.</p>
 <p>The program still misses the decision window.</p>
 <p>This is where teams waste months: treating recurring operating failures as isolated incidents.</p>
 <hr />
@@ -352,6 +355,7 @@
 <p>If your team cannot answer all five in under ten minutes, you are not dealing with one bad meeting. You are inside one or more of these patterns.</p>
 <h3 id="what-to-fix-first"><a class="header" href="#what-to-fix-first">What to fix first</a></h3>
 <p>Do not try to solve chaos, drift, and ownership with three separate initiatives.</p>
+<p>Field test: name the most-contested open decision on your current program. Can you point to one controlled record with a current value, one named owner, and a confirmed date? If not, you have an unowned decision — and the recurring meeting is the symptom, not the problem.</p>
 <hr />
 <p>Day 19 of the handheld-controller EVT — the $42k fixture order on hold, the third meeting on the same leakage-limit decision — resolved when one owner was named for the live value. A single field was added to the existing status record: current live value, owner, and date last confirmed. The next week's review ran the five-question check in seven minutes. The fixture order cleared. The decision did not come back to a meeting.</p>
 <ul>
@@ -364,7 +368,7 @@
 <div style="break-before: page; page-break-before: always;"></div><h1 id="4-dri-ownership-and-decision-authority"><a class="header" href="#4-dri-ownership-and-decision-authority">4. DRI Ownership and Decision Authority</a></h1>
 <p><em>Three failure patterns run together in hardware programs: chaos, drift, and unowned decisions. Unowned decisions are the first break point because without a named person accountable for closure, the minimum control loop has no one to run it.</em></p>
 <p>Monday, 3:55 p.m., late sun on the whiteboard, decision still hanging open.</p>
-<p>The question is clear. The data is good enough. The room still does not decide.</p>
+<p>The question is clear. The data is good enough. The meeting still does not decide.</p>
 <p>Everyone has input. Nobody is the DRI.</p>
 <p>By next week, the same topic appears in three meetings with three different "current" assumptions.</p>
 <p>This is not a communication problem. It is an ownership design problem.</p>
@@ -464,6 +468,7 @@
 <p>An <strong>irreversible decision</strong> — tooling release, supplier qualification, customer specification commitment — requires the full map: written authority boundary, decision record, downstream artifact updates. Replaying an irreversible decision is expensive enough to justify the added friction before calling it.</p>
 <p>A <strong>build-to-learn unit</strong> is a third class. The acceptance criterion is "what did we learn?" not "did it pass the requirement?" Treating a build-to-learn result as a production failure is a scope error. Name the unit's class before it hits the floor. The DRI for a build-to-learn unit owns the learning extraction, not the conformance call.</p>
 <p>If you are not sure which class a decision falls in, ask one question: if we call this wrong, can we undo it before purchasing and build decisions fan out? If yes, it is reversible. If no, treat it as irreversible until proven otherwise.</p>
+<p>Field test: pick the highest-stakes open decision on your current program. Who is the DRI? If three people answer that question differently, or if no one will say the name without hedging, the decision has no owner — and the program is waiting for someone else to close it.</p>
 <p>A named owner is only as reliable as the requirement they're deciding on — when requirement records drift, ownership cannot close what no one has defined cleanly.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="5-spec-integrity-and-requirement-hygiene"><a class="header" href="#5-spec-integrity-and-requirement-hygiene">5. Spec Integrity and Requirement Hygiene</a></h1>
 <p><em>Ownership defines who closes decisions. What those decisions close on is the requirement record — and a decision is only as good as the requirement it references.</em></p>
@@ -511,7 +516,7 @@
 <li>Explicit impact note: which tests, supplier packets, and schedule rows must update.</li>
 <li>Named approver matched to change scope — adjusting a tolerance within a validated range needs the requirement owner's sign-off; redefining what a requirement measures needs broader authority because every artifact built against it is affected.</li>
 </ul>
-<p>On one program, a stress analyst revised a structural load limit after a test result, notified manufacturing verbally, and considered the revision complete. REQ-STRUCT-08 remained at the old value in the controlled record. Manufacturing built to the revised limit; the supplier qualification test ran against the original. The gap surfaced at first-article acceptance: a three-week hold while the record, the build, and the supplier notification were reconciled.</p>
+<p>On one program, a stress analyst revised a structural load limit after a test result, notified manufacturing verbally, and considered the revision complete. The structural load requirement remained at the old value in the controlled record. Manufacturing built to the revised limit; the supplier qualification test ran against the original. The gap surfaced at first-article acceptance: a three-week hold while the record, the build, and the supplier notification were reconciled.</p>
 <p>If a value changes without the controlled source updated, treat the change as unofficial until cleaned up.</p>
 <h3 id="requirement-hygiene-checklist-for-active-programs"><a class="header" href="#requirement-hygiene-checklist-for-active-programs">Requirement hygiene checklist for active programs</a></h3>
 <p>Run this weekly on active high-risk requirements:</p>
@@ -540,14 +545,14 @@ Downstream artifacts updated (test plan, one-page status, supplier packet)</li>
 <h3 id="why-requirement-quality-comes-before-gate-design"><a class="header" href="#why-requirement-quality-comes-before-gate-design">Why requirement quality comes before gate design</a></h3>
 <p>Gates cannot be strong if requirement quality is weak.</p>
 <p>A gate asks, "Are we ready to commit?"
-If requirement truth is ambiguous, the gate is a well-prepared presentation over hollow data — the review happens, the questions get answered, and nothing said in the room is reliable.</p>
+If requirement truth is ambiguous, the gate is a well-prepared presentation over hollow data — the review happens, the questions get answered, and nothing said verbally is reliable.</p>
 <p>Spec integrity is the substrate under every later control: risk scoring, one-page truth, supplier alignment, and schedule realism.</p>
-<p>If a requirement in your current baseline has no evidence link, no named acceptance method, and no revision history, it is not a requirement. It is a wish with a number. Find three of those today and fix them.</p>
+<p>Field test: If a requirement in your current baseline has no evidence link, no named acceptance method, and no revision history, it is not a requirement. It is a wish with a number. Find three of those today and fix them.</p>
 <p>Clean requirements give gates, the risk register, and one-page status something honest to read — but when a requirement revises, there is no automatic mechanism that updates all three, and the lag is where the program drifts from truth without anyone noticing.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="6-gates-risk-registers-and-one-page-truth"><a class="header" href="#6-gates-risk-registers-and-one-page-truth">6. Gates, Risk Registers, and One-Page Truth</a></h1>
 <p><em>Requirement quality is the floor. Gates, risk rows, and one-page status are the synchronization mechanism that keeps requirements, decisions, and evidence in one shared view across all functions.</em></p>
 <p>Tuesday, 10:45 a.m., gate slides on the projector, whiteboard in the corner still covered in someone else's diagram from the session before.</p>
-<p>The gate deck looks clean. The room still cannot answer one simple question: what changed since last gate that alters risk to launch.</p>
+<p>The gate deck looks clean. The team still cannot answer one simple question: what changed since last gate that alters risk to launch.</p>
 <p>If the team cannot produce that answer in two minutes from the gate record, the program is performing confidence, not making decisions.</p>
 <hr />
 <h3 id="gate-reviews-decision-points-not-slide-events"><a class="header" href="#gate-reviews-decision-points-not-slide-events">Gate reviews: decision points, not slide events</a></h3>
@@ -559,7 +564,7 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 <li>date and criteria for closure,</li>
 <li>artifact delta list — what controlled records changed as a result.</li>
 </ol>
-<p>The artifact delta list is the implementation trail: thermal limit revised from 75 °C to 78 °C | supplier re-qual opened | thermal risk row closed | schedule baseline updated to rev 4. Without it, a decision taken in the room has no verified follow-through.</p>
+<p>The artifact delta list is the implementation trail: thermal limit revised from 75 °C to 78 °C | supplier re-qual opened | thermal risk row closed | schedule baseline updated to rev 4. Without it, a decision taken in the meeting has no verified follow-through.</p>
 <p>No decision, no gate. Just a meeting.</p>
 <p>Not every gate is a decision gate. A <strong>readiness review</strong> confirms that planned next-phase inputs are in place — no controlled value needs to change. An <strong>evidence review</strong> surfaces test or analysis results without forcing a decision yet — useful when the data is new and the team needs to absorb it before proposing a change. An <strong>alignment meeting</strong> reconciles cross-tier expectations without triggering a baseline change. A <strong>regulatory or customer staging gate</strong> moves a formal record forward in a controlled lifecycle. All of these have legitimate jobs. The rule "no decision, no gate" applies specifically to events on the program plan named "gate" that are expected to change a controlled baseline, requirement, or release — when those events happen but no controlled value changes, the gate is mislabeled. Rename it accurately: call it a review, write down what it produces, and stop treating it as a gate.</p>
 <h3 id="risk-register-from-decorative-list-to-control-tool"><a class="header" href="#risk-register-from-decorative-list-to-control-tool">Risk register: from decorative list to control tool</a></h3>
@@ -630,7 +635,7 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 <ul>
 <li>decisions disappear after the meeting,</li>
 <li>risk ownership blurs,</li>
-<li>status reflects what the room agreed to say, not what the records show,</li>
+<li>status reflects what the team agreed to report, not what the records show,</li>
 <li>and escalations arrive as surprises.</li>
 </ul>
 <p>The fix is not a different format. The fix is that whatever format carries the one-page must trace every line to a live record — and the tool holding that record must not be ephemeral. Specs need revision control so two people cannot be working from different versions of the same requirement. The one-page needs a stable, shared link so no one has to ask where it is. Data citations belong in a traceable location — a linked ticket, a controlled test record, a versioned log — not in a chat thread or an email chain. If the team has to reconstruct a decision by searching message history, the information was stored in the wrong place.</p>
@@ -655,6 +660,7 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 </ul>
 <h3 id="status-is-not-forecast"><a class="header" href="#status-is-not-forecast">Status is not forecast</a></h3>
 <p>Gates and one-page truth tell you what is true now. They cannot tell you when it will be done. Whether the evidence they need at the next gate will exist — whether the test coverage was designed to produce it — was decided before this gate opened.</p>
+<p>Field test: look at your last gate output. Can you name the DRI for each open risk row, point to the evidence that moved it to its current status, and trace every line on your one-page status to a live record? If not, the gate was a meeting, not a decision.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="7-automation-decisions-at-concept-stage"><a class="header" href="#7-automation-decisions-at-concept-stage">7. Automation Decisions at Concept Stage</a></h1>
 <p>Tuesday, 2:20 p.m., concept review wrapped an hour ago, the enclosure geometry locked and the probe-access question never raised.</p>
 <p>The design review celebrates fit, function, and cost.</p>
@@ -675,7 +681,7 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 <p>Delay those decisions and the program pays in cycle time, scrap, and heroic workaround engineering.</p>
 <p>On one actuator program — at concept stage, before geometry was locked — the concept team chose recessed test-pad geometry to save enclosure space. At ramp, that choice forced a manual probing station between ICT and final test and added 52 seconds per unit. At 10,000 units per month, 52 seconds per unit added 144 hours of test-floor time; when the team attempted to automate after tooling was fixed, fixture redesign consumed six additional weeks. - <strong>Old process:</strong> geometry locked without a probe-access check; no automation path review at concept.</p>
 <ul>
-<li><strong>Artifact changed:</strong> a mandatory concept-stage automation review added to the Phase 1 gate, requiring each critical characteristic mapped to a physical probe strategy before geometry froze.</li>
+<li><strong>Artifact changed (written program record):</strong> a mandatory concept-stage automation review added to the Phase 1 gate, requiring each critical characteristic mapped to a physical probe strategy before geometry froze.</li>
 <li><strong>Measured improvement:</strong> on the following program, the same class of pad access conflict was caught in week two of concept and resolved with a geometry adjustment before tooling; no manual station appeared in that line plan.</li>
 <li><strong>Cost of the gap:</strong> 52 seconds per unit added permanently to the line, plus six weeks of fixture redesign after tooling was already fixed.</li>
 </ul>
@@ -732,7 +738,7 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 </ul>
 <p>Treat automation as part of the operating system and it becomes predictable.
 Treat it as "integration detail" and it becomes late-stage volatility.</p>
-<p>If the test coverage plan for your current program includes unit counts, cost per unit, and a pass/fail threshold for automation — and that calculation was done before the concept was locked — the decision was made at the right time. If the test coverage is still 'TBD at D-phase,' the decision is already late.</p>
+<p>Field test: If the test coverage plan for your current program includes unit counts, cost per unit, and a pass/fail threshold for automation — and that calculation was done before the concept was locked — the decision was made at the right time. If the test coverage is still 'TBD at D-phase,' the decision is already late.</p>
 <p>Automation tasks on the critical path still need named owners and evidence dates — without those anchors, revised estimates drift and the critical path collapses into opportunistic re-sequence.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="8-schedule-from-real-dependencies-and-honest-critical-path"><a class="header" href="#8-schedule-from-real-dependencies-and-honest-critical-path">8. Schedule from Real Dependencies and Honest Critical Path</a></h1>
 <p>Tuesday, 5:50 p.m., long shadows in the program office, dependency chart finally honest.</p>
@@ -750,7 +756,7 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <li>prerequisite tasks,</li>
 <li>ownership of each task,</li>
 <li>uncertainty ranges,</li>
-<li>integration constraints between streams — where work in parallel has to meet (interface freezes, shared builds or fixtures, hardware–software bring-up order, qualification artifacts that block the next stream).</li>
+<li>integration constraints between streams — where work in parallel has to meet (interface freezes, shared builds or fixtures, hardware–software bring-up order, qualification artifacts (written program records) that block the next stream).</li>
 </ol>
 <p>Then the planning lead computes the date from that model instead of declaring it in advance.</p>
 <h3 id="honest-critical-path"><a class="header" href="#honest-critical-path">Honest critical path</a></h3>
@@ -821,6 +827,7 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <p>If these are weak, schedule updates drift into negotiation instead of model updates.</p>
 <hr />
 <p>If your plan has no visible float and no recovery lever named in writing, you do not have a schedule. You have a date with a story around it.</p>
+<p>Field test: find the next major milestone on your program. Can you name the three real physical or procurement dependencies that drive that date, and point to their current values in a controlled record? If the date is a commitment rather than a dependency calculation, the schedule is a target, not a plan.</p>
 <p>Dependencies are only as honest as the requirement values feeding them — when those values drift from physical evidence, a well-formed dependency chain still produces a confident schedule built on fiction.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="9-requirements-lifecycle-hypothesis---bless---evidence---revise"><a class="header" href="#9-requirements-lifecycle-hypothesis---bless---evidence---revise">9. Requirements Lifecycle (Hypothesis -&gt; Bless -&gt; Evidence -&gt; Revise)</a></h1>
 <p>Wednesday, 6:50 a.m., lab hallway quiet, the thermal verification log shows the board thermal limit set to 65 °C while the full-load chamber test at 40 °C ambient shows the control board measuring above 70 °C.</p>
@@ -890,7 +897,7 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <p>Acceptable implementations for the requirement lifecycle log include a gated product-data revision route when build truth must trace to an authoritative BOM, an issue-tracker type with gated fields for owner, evidence links, and revision trail when releases are routed from backlog records, a locked shared spreadsheet with named owners and protected history columns for early programs that still need fast iteration, or a controlled markdown log under version control when the team is small and repository-led. The OS does not care which; it cares that old value, new value, evidence source, rationale, impact scope, approver, and date are all in the same row.</p>
 <h3 id="preventing-moving-goalpost-behavior"><a class="header" href="#preventing-moving-goalpost-behavior">Preventing moving-goalpost behavior</a></h3>
 <p>Teams resist revisions when the decision record looks arbitrary.</p>
-<p>Prevent goalpost behavior by separating two artifacts:</p>
+<p>Prevent goalpost behavior by separating two artifacts (written program records):</p>
 <ul>
 <li><strong>decision criteria</strong> (requirement ID, revision threshold, and decision owner — defined and locked in the revision memo before data arrives),</li>
 <li><strong>decision outcome</strong> (revised value or reaffirmation — recorded after criteria are evaluated, with evidence source and approver).</li>
@@ -906,7 +913,7 @@ The opposite failure is also common: freezing wrong values in the requirement re
 </ul>
 <p>The requirement owner should finish this review in minutes and publish one delta note, not run a half-day meeting.</p>
 <hr />
-<p>If you cannot point at one requirement ID in your current program that revised in the last quarter with evidence in the log, an approver on record, and a downstream-update note, you are running on frozen-but-wrong values somewhere. Re-read <em>Frozen-but-wrong is worse than revised-with-evidence</em>.</p>
+<p>Field test: If you cannot point at one requirement ID in your current program that revised in the last quarter with evidence in the log, an approver on record, and a downstream-update note, you are running on frozen-but-wrong values somewhere. Re-read <em>Frozen-but-wrong is worse than revised-with-evidence</em>.</p>
 <p>Controlled revisions depend on requirement values that were grounded in physical evidence in the first place — stacked-margin assumptions make every revision a negotiation rather than an evidence check.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="10-requirements-from-physics-not-stacked-buffers"><a class="header" href="#10-requirements-from-physics-not-stacked-buffers">10. Requirements from Physics (Not Stacked Buffers)</a></h1>
 <p>Wednesday, 11:15 a.m., people already trading rumors about who pulls the weekend build, the structural load requirement carries three stacked safety factors while the latest build misses weight and yield targets.</p>
@@ -936,7 +943,7 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <p>At an energy storage program, three teams each added a thermal margin to the switching-stage requirement. The thermal lead added 5 °C for component tolerance. The systems lead added 3 °C for ambient worst-case. The manufacturing lead added 2 °C for process variation. All three margins were honest engineering judgments. Combined, the requirement was 10 °C tighter than any single physical driver justified — and the chosen architecture could not satisfy it. When the teams traced each margin to its physical source and its uncertainty basis, 7 °C of the buffer was recoverable without increasing real risk. The requirement moved from unmeetable to achievable without changing the architecture.</p>
 <ul>
 <li><strong>Old process:</strong> each team adds a margin independently, with no shared traceability column linking each buffer to a named physical source.</li>
-<li><strong>Artifact changed:</strong> a margin-breakdown table in the requirement record, with each additive buffer attributed to a named physical source and an uncertainty basis.</li>
+<li><strong>Artifact changed (written program record):</strong> a margin-breakdown table in the requirement record, with each additive buffer attributed to a named physical source and an uncertainty basis.</li>
 <li><strong>Measured improvement:</strong> 7 °C of recoverable margin found; program architecture unchanged.</li>
 <li><strong>Cost of the gap:</strong> the program had been holding a two-month design study for a thermal architecture change that became unnecessary once the margins were untangled.</li>
 </ul>
@@ -978,7 +985,7 @@ The opposite failure is also common: freezing wrong values in the requirement re
 "At condition set X/Y/Z, measured by method M, value shall be &lt;= N. Program buffer B covers uncertainty U, is owned by O, and is reviewed at gate G."</p>
 <p>The intent is the same, but the owner, uncertainty source, and gate review trigger are now explicit and auditable.</p>
 <hr />
-<p>If you can name the physical source and the uncertainty basis for each buffer in your tightest requirement, the requirement is grounded. If you cannot, the margin is ungrounded — stacked buffers are the most common reason, but the consequence is the same regardless of cause: you do not know how much design margin you actually have.</p>
+<p>Field test: If you can name the physical source and the uncertainty basis for each buffer in your tightest requirement, the requirement is grounded. If you cannot, the margin is ungrounded — stacked buffers are the most common reason, but the consequence is the same regardless of cause: you do not know how much design margin you actually have.</p>
 <p>Physics-first framing works when one variable dominates the limit; when interaction effects dominate the decision boundary, single-axis analysis underestimates the real limit and no single domain can set the engineering target alone.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="11-many-factors-one-honest-limit"><a class="header" href="#11-many-factors-one-honest-limit">11. Many Factors, One Honest Limit</a></h1>
 <p>Wednesday, 2:35 p.m., the integrated test chamber still cycling in the next room, the subsystem verification report green on single-factor tests while the combined-condition run fails the requirement boundary.</p>
@@ -1001,7 +1008,7 @@ It fails when interaction effects dominate the decision boundary.</p>
 <h3 id="leads-job-scope-the-decision-question"><a class="header" href="#leads-job-scope-the-decision-question">Lead's job: scope the decision question</a></h3>
 <p>The lead does not need to run the analysis personally.
 The lead must scope a decision-ready ask with a named owner and due date.</p>
-<p>Use this minimum ask format for the analysis request artifact:</p>
+<p>Use this minimum ask format for the analysis request artifact (a written program record):</p>
 <ol>
 <li>Name the decision to support,</li>
 <li>cite the impacted requirement,</li>
@@ -1066,6 +1073,7 @@ It is the best current boundary supported by evidence, explicit assumptions, and
 <li>require output in program language, not only specialist language.</li>
 </ul>
 <p>Lead responsibility remains: the lead still owns the decision question, artifact quality bar, and closure date.</p>
+<p>Field test: name the analysis your program is waiting on right now. Does the request include the decision it is meant to support, the factors and ranges to study, and the date the decision is needed? If not, the analyst is guessing what matters — and the result will not close the decision, only inform it.</p>
 <p>Setting the honest limit across interacting factors answers what the requirement should be — whether the program's models and tests are structured to confirm or revise that limit with each run, or just to produce data that no one acts on, is a different question.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="12-models-and-tests-that-change-decisions"><a class="header" href="#12-models-and-tests-that-change-decisions">12. Models and Tests That Change Decisions</a></h1>
 <p>Wednesday, 6:40 p.m., empty hallway outside the war room, the decision review packet contains 20 model runs and 12 test reports but still cannot resolve the thermal case temperature requirement.</p>
@@ -1145,6 +1153,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>This package keeps technical depth available while giving exec and PM reviewers a clear, fair decision frame.</p>
 <hr />
 <p>The boundary-condition correction is confirmed. The model re-run matches the chamber within measurement uncertainty. The gate decision changes from hold to proceed — one week after the chamber result that everyone initially attributed to measurement error. The requirement is 78 °C, the model predicts 79 °C, and the boundary-condition log now carries the contact-resistance value traced to the direct contact-resistance measurement. The decision packet is one page. The technical backup is three.</p>
+<p>Field test: name one model your program relies on. Did the last model update change a decision, or did it confirm a decision already made? If it confirmed what was already decided, the model is not driving decisions — it is defending them. Find the last result that was acted on and trace it to the decision log.</p>
 <p>Evidence from one controlled test is a point estimate — whether the result holds across units, fixtures, and shifts is a population question that the test floor alone cannot answer.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="13-fleet-as-instrumented-experiment"><a class="header" href="#13-fleet-as-instrumented-experiment">13. Fleet as Instrumented Experiment</a></h1>
 <p>Thursday, 7:02 a.m., five units on the bench, cross-site call connecting, no two run logs structured the same way.</p>
@@ -1193,7 +1202,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>If fleet data stays in test notes, the program keeps running on stale assumptions.</p>
 <hr />
 <p>At a battery-adjacent program, five prototype units were built and instrumented over four weeks. Unit 03 measured a leak rate more than twice Unit 01's baseline at hot soak — not a sensor artifact, the same delta confirmed across multiple test runs. The discrepancy sat in the test engineer's notes for nearly two weeks before it reached the program's risk register, because there was no per-unit record requirement that forced the delta into the risk log. The thermal requirement moved to red only after the team had already placed tooling orders on the assumption that Unit 01 was representative.</p>
-<p>The program added a per-unit record requirement and a weekly fleet review cadence to its program controls (the program's standing records). The next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth. The eleven-day gap in the first campaign had cost tooling decisions made on unrepresentative data — decisions that required a correction order once the real distribution of results was visible.</p>
+<p>The program added a per-unit record requirement and a weekly fleet review cadence to its program controls (the program's standing records). The next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth. That gap had cost tooling decisions made on unrepresentative data — decisions that required a correction order once the real distribution of results was visible.</p>
 <ul>
 <li><strong>Old process:</strong> no per-unit record requirement; unit-level discrepancies captured in engineer notes with no forced path to the risk register.</li>
 <li><strong>Artifact changed:</strong> a per-unit record requirement and weekly fleet review cadence added to program controls.</li>
@@ -1223,7 +1232,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>Delta and traceability discipline at component and subsystem level scales directly into fleet work — the same logic, applied across physical units in real variation.</p>
 <p>When done well, fleet turns uncertainty into bounded decisions before major spend.</p>
 <hr />
-<p>If your weekly fleet review this week can name one risk-register row that moved because of a specific unit's measured delta, the campaign is doing its job. If it cannot, you are collecting prototypes, not evidence.</p>
+<p>Field test: If your weekly fleet review this week can name one risk-register row that moved because of a specific unit's measured delta, the campaign is doing its job. If it cannot, you are collecting prototypes, not evidence.</p>
 <p>Fleet deltas change the program's risk register only if gate-closure criteria require evidence from the failure-mode log — programs that close gates on action-item status rather than test evidence are done on paper long before they are done in the hardware.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="14-risk-and-how-we-define-done-on-paper"><a class="header" href="#14-risk-and-how-we-define-done-on-paper">14. Risk and How We Define Done on Paper</a></h1>
 <p>Thursday, 9:40 a.m., gate prep table covered in coffee rings, the gate review package marks all actions closed while two critical failure modes remain open in current lab evidence.</p>
@@ -1233,7 +1242,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>This is the gate-closure logic that depends on calibrated chamber evidence and a controlled requirement revision — in the canonical case, the closure that must happen before the thermal case temperature requirement can close at the release gate.</p>
 <hr />
 <h3 id="done-on-paper-must-match-decision-reality"><a class="header" href="#done-on-paper-must-match-decision-reality">"Done on paper" must match decision reality</a></h3>
-<p>Artifacts are useful only when a named owner uses them to change a specific decision and downstream behavior.</p>
+<p>Artifacts (written program records) are useful only when a named owner uses them to change a specific decision and downstream behavior.</p>
 <p>A credible "done" statement is a decision object that must:</p>
 <ol>
 <li>state explicit criteria (gate chair's pass condition),</li>
@@ -1308,10 +1317,11 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>If questions 3 and 4 are blank, closure is cosmetic — do not treat as done; return the item to the evidence owner before the gate proceeds.</p>
 <hr />
 <p>Done means the failure mode is dispositioned, not the action item is closed.</p>
+<p>Field test: find one item your last gate called closed. Can you name the evidence that moved it to closure, the DRI who accepted residual risk, and the date that decision was recorded? If the closure record has none of those, it is closed on paper, not closed in fact.</p>
 <p>Artifact honesty within one program breaks at organizational boundaries — when tiers have no explicit contracts for what they owe each other, paper-closure patterns reappear at every handoff.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="15-what-every-tier-wants-exec-to-supplier"><a class="header" href="#15-what-every-tier-wants-exec-to-supplier">15. What Every Tier Wants (Exec to Supplier)</a></h1>
 <p>Thursday, 12:55 p.m., lunch cleared to the corner of the table, the weekly review still going.</p>
-<p>The exec pulled the status from last week's board deck. The PM has the project tracker open on one screen. Engineering is working from an email thread that captured the last three decisions. The supplier's rep is in the room with a spec revision they received three weeks ago, which has since been superseded twice.</p>
+<p>The exec pulled the status from last week's board deck. The PM has the project tracker open on one screen. Engineering is working from an email thread that captured the last three decisions. The supplier's rep is at the table with a spec revision they received three weeks ago, which has since been superseded twice.</p>
 <p>Nobody is wrong about what they brought. Each person is reading a legitimate artifact — a written program record. The problem is that the artifacts are not the same artifact.</p>
 <p>The review stalls forty minutes in because a decision that everyone assumed was made — a packaging change affecting the supplier — had never been recorded in a form any two tiers could read together. The exec asks for a confidence number. Engineering needs two more weeks of closure time. PM needs a stable input to forecast. The supplier needs one released package with one owner. All four needs are legitimate. None of them can be met in this meeting because the four tiers are navigating by different maps.</p>
 <ul>
@@ -1394,13 +1404,14 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <h3 id="escalation-becomes-cleaner"><a class="header" href="#escalation-becomes-cleaner">Escalation becomes cleaner</a></h3>
 <p>When tier contracts are explicit, escalation becomes factual and auditable: identify which contract failed, state what decision is blocked, quantify the current risk and date impact, assign who must decide by when.</p>
 <p>That path resolves blockers faster than personality-driven escalation because decision authority and artifact gaps are explicit. An engineering lead who escalates with a named artifact gap and a dated decision need is not complaining — they are running the process. An exec who receives that escalation has a job to do, not a people problem to manage.</p>
+<p>Field test: name the most recent decision your exec made on your program. Did they have a one-page status that traced to a live record? If they had to call someone first, the artifact was not trusted — and the call is now the record.</p>
 <p>Tier contracts are tested hardest at first article, where technical uncertainty and schedule pressure arrive in the same decision window — first-article iteration discipline is what keeps those builds from consuming every contract at once.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="16-first-article-fast-disciplined-iteration"><a class="header" href="#16-first-article-fast-disciplined-iteration">16. First Article: Fast, Disciplined Iteration</a></h1>
 <p>Thursday, 4:48 p.m., first-article scramble still running, someone's kid's practice already texted on the lock screen.</p>
 <p>The first article build starts rough, as expected. By day three, every shift has made "small improvements." Yield is still unstable and no one can say which change helped or hurt. The two-shift delta cost three days of root-cause investigation because the configuration was not locked between shifts — every build had a different unknown baseline. Build throughput increased, but the run log did not produce decision-ready learning.</p>
 <p>The team locked the build configuration at shift handoff: one baseline, one change per build cycle, signed off at handover. The first run log produced under that discipline answered two questions the previous log could not — which change moved yield and which did not. Root-cause investigation eliminated. The throughput was lower than the unlocked approach for the first two cycles; the learning was usable starting from cycle one. - <strong>Old process:</strong> build configuration unlocked between shifts; multiple simultaneous changes per cycle; run log captured throughput but could not attribute yield results to specific changes.</p>
 <ul>
-<li><strong>Artifact changed:</strong> locked-baseline discipline at shift handoff — one change per build cycle, configuration signed at handover, run log structured to answer what changed and what the yield result was.</li>
+<li><strong>Artifact changed (written program record):</strong> locked-baseline discipline at shift handoff — one change per build cycle, configuration signed at handover, run log structured to answer what changed and what the yield result was.</li>
 <li><strong>Measured improvement:</strong> decision-ready learning from the first disciplined run cycle; three days of root-cause investigation for the prior shift delta eliminated.</li>
 <li><strong>Cost of the gap:</strong> three days of root-cause investigation to recover from two shifts of simultaneous, untracked changes — throughput without learning, not a substitute for it.</li>
 </ul>
@@ -1553,6 +1564,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>design change impacts.</li>
 </ul>
 <p>Without ongoing tracking, supplier drift is not visible until integration — after tooling is committed and the design is locked.</p>
+<p>Field test: pick one supplier on your current program. Can you name the three critical characteristics you are tracking from them, and point to a controlled record with their latest measured values? If no, the supplier data link is not yet decision-grade.</p>
 <hr />
 <p>Installing the OS inside a single program creates an island — without a deliberate rollout sequence, it does not spread to an organization that already runs its own process.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="18-rollout-sequence-triage-then-system"><a class="header" href="#18-rollout-sequence-triage-then-system">18. Rollout Sequence: Triage Then System</a></h1>
@@ -1578,7 +1590,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>ownership map for top active decisions,</li>
 <li>one-page truth on fixed cadence,</li>
 <li>risk register with named owners and triggers,</li>
-<li>gate output discipline (decision/owner/date/artifact delta).</li>
+<li>gate output discipline (decision/owner/date/artifact (written program record) delta).</li>
 </ol>
 <p>If these four controls stay stable for two cycles, leaders can shift from firefighting to planned execution.</p>
 <h3 id="entryexit-criteria"><a class="header" href="#entryexit-criteria">Entry/exit criteria</a></h3>
@@ -1630,6 +1642,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li><strong>Measured improvement:</strong> two programs met adoption exit criteria in four weeks; the next two programs onboarded without a mandate, using the first two as a working model.</li>
 <li><strong>Cost of the gap:</strong> eight weeks of parallel rollout effort produced 90% template completion and zero improvement in decision quality — full restart required, and the compliance-theater period eroded team trust in the OS before the real rollout began.</li>
 </ul>
+<p>Field test: name one program control from this OS that your organization installed in the last 90 days. Does it have a named DRI, a controlled record, and at least one decision that traced through it? If not, it was installed in form but not in practice — and the next program will not use it either.</p>
 <p>Rollout installs controls.</p>
 <p>Training and cadence make them stick after launch urgency fades.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="19-training-cadence-and-failure-recovery"><a class="header" href="#19-training-cadence-and-failure-recovery">19. Training, Cadence, and Failure Recovery</a></h1>
@@ -1659,7 +1672,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <ul>
 <li>weekly decision/risk sync (updated decision log and risk register entries),</li>
 <li>fixed one-page refresh rhythm (published one-page status before each review),</li>
-<li>gate prep/check with artifact traceability (gate artifact delta from the record system),</li>
+<li>gate prep/check with artifact (written program record) traceability (gate artifact delta from the record system),</li>
 <li>monthly retro on control-loop failures (playbook update with named control adjustments).</li>
 </ul>
 <p>Cadence should be predictable and short enough to survive workload spikes.</p>
@@ -1712,6 +1725,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li><strong>Measured improvement:</strong> successor lead fully operational within one cycle instead of six weeks.</li>
 <li><strong>Cost of the gap:</strong> six weeks of apparent stability built on individual memory, not system.</li>
 </ul>
+<p>Field test: name the last time a control loop on your program failed — a gate arrived without evidence, a DRI was absent, a cadence slipped. Is there a playbook entry that names the trigger, the recovery action, and the owner? If not, recovery is improvised every time, and the same failure will return.</p>
 <hr />
 <p>The control stack is not a substitute for regulated lifecycle frameworks where the audit trail, evidence standard, or approval chain is defined by statute rather than by the program.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="20-what-this-os-does-not-cover"><a class="header" href="#20-what-this-os-does-not-cover">20. What This OS Does Not Cover</a></h1>
@@ -1731,7 +1745,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 </ul>
 <p>If your product sits in a regulated domain, those obligations remain primary and non-negotiable.</p>
 <h3 id="if-you-work-under-design-controls-here-is-how-the-os-sits-underneath"><a class="header" href="#if-you-work-under-design-controls-here-is-how-the-os-sits-underneath">If you work under design controls, here is how the OS sits underneath</a></h3>
-<p>The OS does not replace your design history file, your safety case, or your audit obligations. It mounts underneath them. Use the OS layer to keep ownership, requirement truth, gate output, and one-page status legible to your engineering team while the regulated artifacts continue to be the authoritative record for the auditor.</p>
+<p>The OS does not replace your design history file, your safety case, or your audit obligations. It mounts underneath them. Use the OS layer to keep ownership, requirement truth, gate output, and one-page status legible to your engineering team while the regulated artifacts (written program records) continue to be the authoritative record for the auditor.</p>
 <p>Practical mount points:</p>
 <ul>
 <li><strong>Decision records</strong> feed the rationale fields your design history file or equivalent already requires — write the rationale once, cite it twice.</li>
@@ -1794,6 +1808,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>faster closure on real decisions,</li>
 <li>fewer expensive surprises caused by preventable process failure.</li>
 </ul>
+<p>Field test: name one problem your program has right now. Is it a process gap — no record, no owner, no decision path — or a personnel gap? The OS addresses the first. If the answer is personnel, this book has nothing left to offer on that problem. Find the process gap and fix that first.</p>
 <p>If your team can see the same truth, decide faster, and revise honestly, this OS is doing its job.</p>
 <p>If that is true, shut the lid. Go home.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="artifact-examples-inert-vs-decision-grade"><a class="header" href="#artifact-examples-inert-vs-decision-grade">Artifact examples: inert vs. decision-grade</a></h1>

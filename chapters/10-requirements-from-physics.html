@@ -182,7 +182,7 @@
 <p>At an energy storage program, three teams each added a thermal margin to the switching-stage requirement. The thermal lead added 5 °C for component tolerance. The systems lead added 3 °C for ambient worst-case. The manufacturing lead added 2 °C for process variation. All three margins were honest engineering judgments. Combined, the requirement was 10 °C tighter than any single physical driver justified — and the chosen architecture could not satisfy it. When the teams traced each margin to its physical source and its uncertainty basis, 7 °C of the buffer was recoverable without increasing real risk. The requirement moved from unmeetable to achievable without changing the architecture.</p>
 <ul>
 <li><strong>Old process:</strong> each team adds a margin independently, with no shared traceability column linking each buffer to a named physical source.</li>
-<li><strong>Artifact changed:</strong> a margin-breakdown table in the requirement record, with each additive buffer attributed to a named physical source and an uncertainty basis.</li>
+<li><strong>Artifact changed (written program record):</strong> a margin-breakdown table in the requirement record, with each additive buffer attributed to a named physical source and an uncertainty basis.</li>
 <li><strong>Measured improvement:</strong> 7 °C of recoverable margin found; program architecture unchanged.</li>
 <li><strong>Cost of the gap:</strong> the program had been holding a two-month design study for a thermal architecture change that became unnecessary once the margins were untangled.</li>
 </ul>
@@ -224,7 +224,7 @@
 "At condition set X/Y/Z, measured by method M, value shall be &lt;= N. Program buffer B covers uncertainty U, is owned by O, and is reviewed at gate G."</p>
 <p>The intent is the same, but the owner, uncertainty source, and gate review trigger are now explicit and auditable.</p>
 <hr />
-<p>If you can name the physical source and the uncertainty basis for each buffer in your tightest requirement, the requirement is grounded. If you cannot, the margin is ungrounded — stacked buffers are the most common reason, but the consequence is the same regardless of cause: you do not know how much design margin you actually have.</p>
+<p>Field test: If you can name the physical source and the uncertainty basis for each buffer in your tightest requirement, the requirement is grounded. If you cannot, the margin is ungrounded — stacked buffers are the most common reason, but the consequence is the same regardless of cause: you do not know how much design margin you actually have.</p>
 <p>Physics-first framing works when one variable dominates the limit; when interaction effects dominate the decision boundary, single-axis analysis underestimates the real limit and no single domain can set the engineering target alone.</p>
 
                     </main>

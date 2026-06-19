@@ -170,7 +170,7 @@
 <li>prerequisite tasks,</li>
 <li>ownership of each task,</li>
 <li>uncertainty ranges,</li>
-<li>integration constraints between streams — where work in parallel has to meet (interface freezes, shared builds or fixtures, hardware–software bring-up order, qualification artifacts that block the next stream).</li>
+<li>integration constraints between streams — where work in parallel has to meet (interface freezes, shared builds or fixtures, hardware–software bring-up order, qualification artifacts (written program records) that block the next stream).</li>
 </ol>
 <p>Then the planning lead computes the date from that model instead of declaring it in advance.</p>
 <h3 id="honest-critical-path"><a class="header" href="#honest-critical-path">Honest critical path</a></h3>
@@ -241,6 +241,7 @@
 <p>If these are weak, schedule updates drift into negotiation instead of model updates.</p>
 <hr />
 <p>If your plan has no visible float and no recovery lever named in writing, you do not have a schedule. You have a date with a story around it.</p>
+<p>Field test: find the next major milestone on your program. Can you name the three real physical or procurement dependencies that drive that date, and point to their current values in a controlled record? If the date is a commitment rather than a dependency calculation, the schedule is a target, not a plan.</p>
 <p>Dependencies are only as honest as the requirement values feeding them — when those values drift from physical evidence, a well-formed dependency chain still produces a confident schedule built on fiction.</p>
 
                     </main>
