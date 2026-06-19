@@ -25,14 +25,14 @@
   <polygon points="390,134 383,130.2 383,137.8" fill="#2E6BB0"/>
   <line x1="520" y1="134" x2="553" y2="134" stroke="#2E6BB0" stroke-width="1.5"/>
   <polygon points="560,134 553,130.2 553,137.8" fill="#2E6BB0"/>
-  <line x1="540" y1="166" x2="540" y2="193" stroke="#C05050" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <line x1="540" y1="134" x2="540" y2="193" stroke="#C05050" stroke-width="1.5" stroke-dasharray="6,4"/>
   <polygon points="540,200 536.1,193 543.9,193" fill="#C05050"/>
-  <text x="548" y="183" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="10" font-weight="400" fill="#C05050" dominant-baseline="central">Loop broken</text>
+  <text x="548" y="167" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="10" font-weight="400" fill="#C05050" dominant-baseline="central">Loop broken</text>
   <rect x="430" y="200" width="220" height="64" fill="#7B2020" rx="4" stroke="#C05050" stroke-width="1.5" stroke-dasharray="6,4"/>
   <text x="540" y="222" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">Frozen but Wrong</text>
   <text x="540" y="244" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="10" font-weight="400" fill="#F0AEAE" text-anchor="middle" dominant-baseline="central">Revision blocked — stays wrong</text>
-  <line x1="690" y1="166" x2="704" y2="166" stroke="#4D91CC" stroke-width="1.5"/>
-  <line x1="704" y1="166" x2="704" y2="292" stroke="#4D91CC" stroke-width="1.5"/>
+  <line x1="690" y1="134" x2="704" y2="134" stroke="#4D91CC" stroke-width="1.5"/>
+  <line x1="704" y1="134" x2="704" y2="292" stroke="#4D91CC" stroke-width="1.5"/>
   <line x1="704" y1="292" x2="285" y2="292" stroke="#4D91CC" stroke-width="1.5"/>
   <line x1="285" y1="292" x2="285" y2="173" stroke="#4D91CC" stroke-width="1.5"/>
   <polygon points="285,166 281.1,173 288.9,173" fill="#4D91CC"/>

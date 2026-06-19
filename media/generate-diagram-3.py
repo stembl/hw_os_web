@@ -240,10 +240,10 @@ def generate_svg(theme_name="light", transparent_bg=False):
         x2 = state_left(i + 1)         # left edge of state i+1
         arrow_right(out, x1, x2, STATE_CY, t["arrow"])
 
-    # ── FBW dead-end: dashed arrow from STATE_BOT down to FBW box ──
-    arrow_down(out, FBW_BRANCH_X, STATE_BOT, FBW_Y, t["fbw_arrow"], dashed=True)
+    # ── FBW dead-end: dashed arrow branches from the E→R blue arrow (STATE_CY) ──
+    arrow_down(out, FBW_BRANCH_X, STATE_CY, FBW_Y, t["fbw_arrow"], dashed=True)
     # "Loop broken" label — right of dashed arrow
-    out.append(f'  <text x="{FBW_BRANCH_X + 8}" y="{(STATE_BOT + FBW_Y) // 2}"'
+    out.append(f'  <text x="{FBW_BRANCH_X + 8}" y="{(STATE_CY + FBW_Y) // 2}"'
                f' font-family="{FONT}" font-size="10" font-weight="400"'
                f' fill="{t["fbw_label"]}" dominant-baseline="central">{FBW_BREAK}</text>')
 
@@ -254,11 +254,11 @@ def generate_svg(theme_name="light", transparent_bg=False):
     centred(out, FBW_CX, FBW_Y + 22, FBW_NAME, 14, "700", t["fbw_text"])
     centred(out, FBW_CX, FBW_Y + 44, FBW_DESC, 10, "400", t["fbw_muted"])
 
-    # ── Loop-back: R → Bless (U-shape with right arm outside Revise box) ──
-    # Path: R right edge → jog to LOOP_ARM_X → down to LOOP_Y
+    # ── Loop-back: R → Bless (exits middle of R right side, not bottom corner) ──
+    # Path: R mid-right → jog to LOOP_ARM_X → down to LOOP_Y
     #       → left to B_CX → up to B bottom (arrowhead)
-    plain_line(out, R_RIGHT, STATE_BOT, LOOP_ARM_X, STATE_BOT, t["loop_arrow"])
-    plain_line(out, LOOP_ARM_X, STATE_BOT, LOOP_ARM_X, LOOP_Y, t["loop_arrow"])
+    plain_line(out, R_RIGHT, STATE_CY, LOOP_ARM_X, STATE_CY, t["loop_arrow"])
+    plain_line(out, LOOP_ARM_X, STATE_CY, LOOP_ARM_X, LOOP_Y, t["loop_arrow"])
     plain_line(out, LOOP_ARM_X, LOOP_Y, B_CX, LOOP_Y, t["loop_arrow"])
     arrow_up(out, B_CX, LOOP_Y, STATE_BOT, t["loop_arrow"])
 
