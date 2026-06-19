@@ -157,7 +157,7 @@
                         <h1 id="13-fleet-as-instrumented-experiment"><a class="header" href="#13-fleet-as-instrumented-experiment">13. Fleet as Instrumented Experiment</a></h1>
 <p>Thursday, 7:02 a.m., five units on the bench, cross-site call connecting, no two run logs structured the same way.</p>
 <p>By Friday, the team has stories about each one and no comparable record of what was different between them.</p>
-<p>That is a missed experiment, not a successful fleet. The distinction matters because the fleet's job is not to confirm a prototype — it is to surface variation across units so the risk register moves on evidence, not on which unit the program lead happened to visit last. Getting there requires structured per-unit records, a build matrix that controls variables, and a weekly cadence that forces comparison. That is the mechanism this chapter names.</p>
+<p>That is a missed experiment, not a successful fleet. The distinction matters because the fleet's job is not to confirm a prototype — it is to surface variation across units so the risk register moves on evidence, not on which unit the program lead happened to visit last. Getting there requires structured per-unit records, a build matrix that controls variables, and a weekly cadence that forces comparison. Build those three and the fleet becomes an experiment; skip them and it stays a pile of units with good stories attached.</p>
 <hr />
 <h3 id="fleet-mindset-learning-asset-not-milestone-artifact"><a class="header" href="#fleet-mindset-learning-asset-not-milestone-artifact">Fleet mindset: learning asset, not milestone artifact</a></h3>
 <p>A fleet build is valuable when each unit produces usable evidence.</p>
@@ -202,7 +202,7 @@
 <p>If fleet data stays in test notes, the program keeps running on stale assumptions.</p>
 <hr />
 <p>At a battery-adjacent program, five prototype units were built and instrumented over four weeks. Unit 03 measured a leak rate more than twice Unit 01's baseline at hot soak — not a sensor artifact, the same delta confirmed across multiple test runs. The discrepancy sat in the test engineer's notes for eleven days before it reached the program's risk register, because there was no per-unit record requirement that forced the delta into the risk log. The test engineer had mentioned it verbally on day three. It was in nobody's written record. The thermal requirement moved to red only after the team had already placed tooling orders on the assumption that Unit 01 was representative.</p>
-<p>The program added a per-unit record requirement and a weekly fleet review cadence to its program controls (the program's standing records). The next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth. That gap had cost tooling decisions made on unrepresentative data — decisions that required a correction order once the real distribution of results was visible.</p>
+<p>The program added a per-unit record requirement and a weekly fleet review cadence to its standing controls. The next fleet campaign surfaced three requirement deltas in the first review week rather than the fifth. That gap had cost tooling decisions made on unrepresentative data — decisions that required a correction order once the real distribution of results was visible.</p>
 <hr />
 <h3 id="failure-patterns-in-fleet-execution"><a class="header" href="#failure-patterns-in-fleet-execution">Failure patterns in fleet execution</a></h3>
 <p>Common misses and what catches each:</p>

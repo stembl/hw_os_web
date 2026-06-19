@@ -162,7 +162,7 @@
 <hr />
 <h3 id="requirements-are-managed-hypotheses"><a class="header" href="#requirements-are-managed-hypotheses">Requirements are managed hypotheses</a></h3>
 <p>A requirement starts as a controlled hypothesis in the requirement log: this value must hold for a named operating condition. Both the value and the operating condition are part of the hypothesis. Changing the understanding of the bounding scenario — what worst-case actually looks like in field deployment — is itself a revision trigger, not only a measurement that crosses a threshold.</p>
-<p>The requirement hypothesis becomes decision-ready through:</p>
+<p>You make that hypothesis decision-ready by:</p>
 <ol>
 <li>stating assumptions in the requirement record,</li>
 <li>attaching bounded evidence to the same requirement ID,</li>
@@ -198,6 +198,7 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <p>The full-load chamber test ran at full power and 40 °C ambient — the scenario defined for UL qualification — and measured the control board approaching 70 °C. The limit said 65 °C. The program ran three weeks of thermal management work: airflow changes, layout iterations, component placement. None of it was targeted, because the requirement had not been tied to the actual components at risk.</p>
 <p>When the requirement owner pulled the 65 °C limit back to its basis, two questions surfaced: which components it was protecting, and which scenario it applied to. The answers changed the problem. The 65 °C estimate was a lifetime operating condition limit — it applied to sustained load in worst-case ambient across the product service life, not to a one-time UL qualification test at 40 °C. No component case temperature limit was being violated under the qualification test scenario. For the lifetime scenario, the question became which specific components were at risk and what their case temperature limits were — a decomposed set of requirements the 65 °C proxy had been standing in for.</p>
 <p>Three weeks of whole-assembly thermal management work was redirected to targeted mitigation on the two components whose case temperatures were actually at risk under lifetime operating conditions. The target list had two components on it. The previous three weeks had addressed neither.</p>
+<p>The fix was not a thermal redesign. It was the sentence that should have ridden alongside the number the day it was written: which scenario, which components. Two clauses, three weeks late.</p>
 <hr />
 <h3 id="revision-criteria-minimum"><a class="header" href="#revision-criteria-minimum">Revision criteria (minimum)</a></h3>
 <p>Revise a requirement only when predeclared decision thresholds are met:</p>
@@ -219,7 +220,7 @@ The opposite failure is also common: freezing wrong values in the requirement re
 <p>If the revision row exists but the evidence source field is blank, the revision is not controlled — it is a number change with a timestamp. That is the tell.</p>
 <h3 id="preventing-moving-goalpost-behavior"><a class="header" href="#preventing-moving-goalpost-behavior">Preventing moving-goalpost behavior</a></h3>
 <p>Teams resist revisions when the decision record looks arbitrary.</p>
-<p>Prevent goalpost behavior by separating two artifacts (written program records):</p>
+<p>Prevent goalpost behavior by separating two written records:</p>
 <ul>
 <li><strong>decision criteria</strong> (requirement ID, revision threshold, and decision owner — defined and locked in the revision memo before data arrives),</li>
 <li><strong>decision outcome</strong> (revised value or reaffirmation — recorded after criteria are evaluated, with evidence source and approver).</li>
