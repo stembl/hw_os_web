@@ -1,0 +1,40 @@
+<svg xmlns="http://www.w3.org/2000/svg"
+     viewBox="0 0 740 344"
+     width="740" height="344"
+     role="img"
+     aria-label="Requirements Lifecycle Arc">
+  <rect width="740" height="344" fill="#FFFFFF"/>
+  <text x="50" y="40" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="22" font-weight="700" fill="#111111">Requirements Lifecycle Arc</text>
+  <text x="50" y="64" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="14" font-weight="400" fill="#444444">Four states in a controlled cycle — “Frozen but Wrong” when the loop breaks</text>
+  <text x="200" y="84" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="10" font-weight="400" fill="#444444" text-anchor="middle" dominant-baseline="central">Sign-off</text>
+  <text x="370" y="84" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="10" font-weight="400" fill="#444444" text-anchor="middle" dominant-baseline="central">Data attached</text>
+  <text x="540" y="84" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="10" font-weight="400" fill="#444444" text-anchor="middle" dominant-baseline="central">Threshold</text>
+  <rect x="50" y="102" width="130" height="64" fill="#222222" rx="4"/>
+  <text x="115" y="134" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">Hypothesis</text>
+  <rect x="220" y="102" width="130" height="64" fill="#222222" rx="4"/>
+  <text x="285" y="134" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">Bless</text>
+  <rect x="390" y="102" width="130" height="64" fill="#222222" rx="4"/>
+  <text x="455" y="134" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">Evidence</text>
+  <rect x="560" y="102" width="130" height="64" fill="#222222" rx="4"/>
+  <text x="625" y="134" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="16" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">Revise</text>
+  <line x1="30" y1="134" x2="43" y2="134" stroke="#333333" stroke-width="1.5"/>
+  <polygon points="50,134 43,130.2 43,137.8" fill="#333333"/>
+  <line x1="180" y1="134" x2="213" y2="134" stroke="#333333" stroke-width="1.5"/>
+  <polygon points="220,134 213,130.2 213,137.8" fill="#333333"/>
+  <line x1="350" y1="134" x2="383" y2="134" stroke="#333333" stroke-width="1.5"/>
+  <polygon points="390,134 383,130.2 383,137.8" fill="#333333"/>
+  <line x1="520" y1="134" x2="553" y2="134" stroke="#333333" stroke-width="1.5"/>
+  <polygon points="560,134 553,130.2 553,137.8" fill="#333333"/>
+  <line x1="540" y1="166" x2="540" y2="193" stroke="#555555" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <polygon points="540,200 536.1,193 543.9,193" fill="#555555"/>
+  <text x="548" y="183" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="10" font-weight="400" fill="#555555" dominant-baseline="central">Loop broken</text>
+  <rect x="430" y="200" width="220" height="64" fill="#444444" rx="4" stroke="#555555" stroke-width="1.5" stroke-dasharray="6,4"/>
+  <text x="540" y="222" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">Frozen but Wrong</text>
+  <text x="540" y="244" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="10" font-weight="400" fill="#CCCCCC" text-anchor="middle" dominant-baseline="central">Revision blocked — stays wrong</text>
+  <line x1="690" y1="166" x2="704" y2="166" stroke="#555555" stroke-width="1.5"/>
+  <line x1="704" y1="166" x2="704" y2="292" stroke="#555555" stroke-width="1.5"/>
+  <line x1="704" y1="292" x2="285" y2="292" stroke="#555555" stroke-width="1.5"/>
+  <line x1="285" y1="292" x2="285" y2="173" stroke="#555555" stroke-width="1.5"/>
+  <polygon points="285,166 281.1,173 288.9,173" fill="#555555"/>
+  <text x="494" y="282" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="10" font-weight="400" fill="#555555" text-anchor="middle" dominant-baseline="central">Revision complete</text>
+</svg>

@@ -3,7 +3,6 @@
      width="680" height="688"
      role="img"
      aria-label="DRI Decision Flow — Five duties — with escalation when criteria are not met">
-  <rect width="680" height="688" fill="#FFFFFF"/>
   <text x="105" y="40" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="22" font-weight="700" fill="#162447">DRI Decision Flow</text>
   <text x="105" y="64" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="14" font-weight="400" fill="#4D6A8A">Five duties — with escalation when criteria are not met</text>
   <rect x="105" y="86" width="300" height="60" fill="#1F4287" rx="4"/>

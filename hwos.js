@@ -67,3 +67,39 @@
     }
   }
 })();
+
+(function hwosDiagrams() {
+  // Swap diagram SVGs between light and dark variants when the mdBook theme changes.
+  // mdBook stores the active theme as a class on <html>: light, rust, coal, navy, ayu.
+  // Dark themes: coal, navy, ayu, rust.
+  var DARK = { coal: true, navy: true, ayu: true, rust: true };
+
+  function isDark() {
+    var cls = document.documentElement.className.trim();
+    return DARK[cls] === true;
+  }
+
+  function swapDiagrams() {
+    var dark = isDark();
+    var imgs = document.querySelectorAll('img[src*="diagram-"]');
+    for (var i = 0; i < imgs.length; i++) {
+      var img = imgs[i];
+      var src = img.getAttribute('src');
+      if (dark && src.indexOf('-dark.svg') === -1) {
+        img.setAttribute('src', src.replace('.svg', '-dark.svg'));
+      } else if (!dark && src.indexOf('-dark.svg') !== -1) {
+        img.setAttribute('src', src.replace('-dark.svg', '.svg'));
+      }
+    }
+  }
+
+  swapDiagrams();
+
+  // Watch for theme class changes on <html> (user switches theme via mdBook menu).
+  var obs = new MutationObserver(function(mutations) {
+    for (var i = 0; i < mutations.length; i++) {
+      if (mutations[i].attributeName === 'class') { swapDiagrams(); break; }
+    }
+  });
+  obs.observe(document.documentElement, { attributes: true });
+})();
