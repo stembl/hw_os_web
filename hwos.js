@@ -70,13 +70,12 @@
 
 (function hwosDiagrams() {
   // Swap diagram SVGs between light and dark variants when the mdBook theme changes.
-  // mdBook stores the active theme as a class on <html>: light, rust, coal, navy, ayu.
+  // mdBook sets multiple classes on <html>: "js sidebar-visible navy" etc.
   // Dark themes: coal, navy, ayu, rust.
-  var DARK = { coal: true, navy: true, ayu: true, rust: true };
 
   function isDark() {
-    var cls = document.documentElement.className.trim();
-    return DARK[cls] === true;
+    var cl = document.documentElement.classList;
+    return cl.contains('coal') || cl.contains('navy') || cl.contains('ayu') || cl.contains('rust');
   }
 
   function swapDiagrams() {
