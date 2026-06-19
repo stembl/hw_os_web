@@ -208,11 +208,11 @@
 <p>If logs are optional, memory becomes the system and confidence outruns evidence.</p>
 <h3 id="common-anti-patterns"><a class="header" href="#common-anti-patterns">Common anti-patterns</a></h3>
 <ul>
-<li>random edits between runs (change-introduced field blank or absent between runs),</li>
+<li>unlogged changes between runs (change-introduced field blank or absent),</li>
 <li>lost baselines (baseline-state field blank at run start),</li>
 <li>vague pass/fail definitions (result-against-criteria field contains narrative instead of a named criterion),</li>
-<li>"good enough" calls without criteria (decision field names no predeclared threshold),</li>
-<li>fixes merged before isolated effect is understood (decision field reads "keep" while anomaly-notes field remains open).</li>
+<li>"good enough" closure (decision field names no predeclared threshold, only a judgment),</li>
+<li>change accepted while anomaly notes remain open (decision field reads "keep" while anomaly-notes field is unresolved).</li>
 </ul>
 <p>These patterns feel energetic and usually lengthen ramp.</p>
 <h3 id="decision-gates-inside-first-article"><a class="header" href="#decision-gates-inside-first-article">Decision gates inside first article</a></h3>
