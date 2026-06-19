@@ -155,10 +155,9 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="11-many-factors-one-honest-limit"><a class="header" href="#11-many-factors-one-honest-limit">11. Many Factors, One Honest Limit</a></h1>
-<p>Wednesday, 2:35 p.m., the integrated test chamber still cycling in the next room, the subsystem verification report green on single-factor tests while the combined-condition run fails the requirement boundary.</p>
-<p>The subsystem passes every single-factor check in the verification report.</p>
-<p>The verification team tested variables one at a time and never ran the combined condition envelope that exists in the real product.</p>
-<p>That test-plan gap burns schedule without reducing uncertainty enough for the gate decision owner to choose.</p>
+<p>The subsystem passed every single-factor check in the verification report. On paper it was green.</p>
+<p>Then the combined-condition run — every variable loaded at once, the way the real product sees them — failed the requirement boundary. The team had tested one factor at a time and never run the combined envelope.</p>
+<p>By Wednesday afternoon the gate owner had a stack of passing single-factor data and no basis to choose. The test plan had burned schedule without lowering the uncertainty that actually mattered.</p>
 <hr />
 <h3 id="when-one-factor-reasoning-breaks"><a class="header" href="#when-one-factor-reasoning-breaks">When one-factor reasoning breaks</a></h3>
 <p>One-factor testing is useful during early screening.
@@ -235,7 +234,7 @@ It is the best current boundary supported by evidence, explicit assumptions, and
 </ul>
 <p>Lead responsibility remains: the lead still owns the decision question, artifact quality bar, and closure date.</p>
 <p>Field test: name the analysis your program is waiting on right now. Does the request include the decision it is meant to support, the factors and ranges to study, and the date the decision is needed? If not, the analyst is guessing what matters — and the result will not close the decision, only inform it.</p>
-<p>Setting the honest limit across interacting factors answers what the requirement should be — whether the program's models and tests are structured to confirm or revise that limit with each run, or just to produce data that no one acts on, is a different question.</p>
+<p>You can set the honest limit and still lose it. If a model run or a test cannot show what changed from the last baseline, it produced data, not a decision — and the limit you just fought for erodes one unacted-on result at a time.</p>
 
                     </main>
 

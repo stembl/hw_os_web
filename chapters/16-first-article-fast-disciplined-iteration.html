@@ -155,8 +155,8 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="16-first-article-fast-disciplined-iteration"><a class="header" href="#16-first-article-fast-disciplined-iteration">16. First Article: Fast, Disciplined Iteration</a></h1>
-<p>Thursday, 4:48 p.m., first-article scramble still running, someone's kid's practice already texted on the lock screen.</p>
-<p>The first article build starts rough, as expected. By day three, every shift has made "small improvements." Yield is still unstable and no one can say which change helped or hurt. The two-shift delta cost three days of root-cause investigation because the configuration was not locked between shifts — every build had a different unknown baseline. Build throughput increased, but the run log did not produce decision-ready learning.</p>
+<p>The first-article build ran three days before anyone clocked that the problem was not the hardware. It started rough, as expected; every shift made "small improvements." By Thursday afternoon yield was still bouncing and no one could say which change had moved it.</p>
+<p>Three days went into root-cause investigation that found nothing wrong with any single change — only that the configuration was never locked between shifts, so every build started from a different unknown baseline. Throughput had climbed the whole time. The run log had quietly stopped producing anything you could decide from.</p>
 <p>The team locked the build configuration at shift handoff: one baseline, one change per build cycle, signed off at handover. The first run log produced under that discipline answered two questions the previous log could not — which change moved yield and which did not. Root-cause investigation eliminated. The throughput was lower than the unlocked approach for the first two cycles; the learning was usable starting from cycle one.</p>
 <h3 id="objective-of-first-article"><a class="header" href="#objective-of-first-article">Objective of first article</a></h3>
 <p>First article is not a demo milestone.</p>
@@ -222,7 +222,7 @@
 <p>This protects speed while preserving decision quality.</p>
 <p>Thursday, second week, same time of day. The change log is posted on the workbench before the next shift arrives. The incoming lead reads it in five minutes, starts from a known baseline, and when yield drops on run 14, the delta investigation takes twenty minutes — not three days — because the configuration is locked and the prior decision is on paper.</p>
 <p>Field test: find your last first-article result. Is there a written learning extraction that links specific findings to specific design or process changes? If the findings fed the conversation but not a written record, the iteration is fast but not disciplined — and the next yield drop starts from zero again.</p>
-<p>First-article learning depends on supplier data quality — when supplier measurements are not verified against real capability, the change log records truth about the build process but not truth about the parts.</p>
+<p>If you cannot point to the supplier measurement behind a part on that locked build — the real measured capability, not the certificate that shipped with it — then the change log is recording the truth about your process and guessing about the parts.</p>
 
                     </main>
 
