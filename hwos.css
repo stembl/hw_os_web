@@ -87,6 +87,7 @@ html:not(.js) {
  */
 .content table {
   width: 100%;
+  min-width: 600px;  /* below this .table-wrapper scrolls; prevents column crush */
   table-layout: fixed;
   border-collapse: collapse;
   font-size: 1.5rem;
