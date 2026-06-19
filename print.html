@@ -464,7 +464,7 @@
 <p>An <strong>irreversible decision</strong> — tooling release, supplier qualification, customer specification commitment — requires the full map: written authority boundary, decision record, downstream artifact updates. Replaying an irreversible decision is expensive enough to justify the added friction before calling it.</p>
 <p>A <strong>build-to-learn unit</strong> is a third class. The acceptance criterion is "what did we learn?" not "did it pass the requirement?" Treating a build-to-learn result as a production failure is a scope error. Name the unit's class before it hits the floor. The DRI for a build-to-learn unit owns the learning extraction, not the conformance call.</p>
 <p>If you are not sure which class a decision falls in, ask one question: if we call this wrong, can we undo it before purchasing and build decisions fan out? If yes, it is reversible. If no, treat it as irreversible until proven otherwise.</p>
-<p>Ownership closes decisions. The decisions are only as clean as the requirements they land on — and requirement integrity is a separate control that ownership alone cannot guarantee.</p>
+<p>A named owner is only as reliable as the requirement they're deciding on — when requirement records drift, ownership cannot close what no one has defined cleanly.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="5-spec-integrity-and-requirement-hygiene"><a class="header" href="#5-spec-integrity-and-requirement-hygiene">5. Spec Integrity and Requirement Hygiene</a></h1>
 <p><em>Ownership defines who closes decisions. What those decisions close on is the requirement record — and a decision is only as good as the requirement it references.</em></p>
 <p>Tuesday, 7:20 a.m., the drawing package still warm from the printer, Rev C on the cover and Rev B still in the work instructions.</p>
@@ -543,7 +543,7 @@ Downstream artifacts updated (test plan, one-page status, supplier packet)</li>
 If requirement truth is ambiguous, the gate is a well-prepared presentation over hollow data — the review happens, the questions get answered, and nothing said in the room is reliable.</p>
 <p>Spec integrity is the substrate under every later control: risk scoring, one-page truth, supplier alignment, and schedule realism.</p>
 <p>If a requirement in your current baseline has no evidence link, no named acceptance method, and no revision history, it is not a requirement. It is a wish with a number. Find three of those today and fix them.</p>
-<p>Clean requirement records give gates, the risk register, and one-page status something honest to read. What keeps those controls synchronized when any record changes — and what breaks when they lag behind a revision — is a separate problem that requirement hygiene alone does not close.</p>
+<p>Clean requirements give gates, the risk register, and one-page status something honest to read — but when a requirement revises, there is no automatic mechanism that updates all three, and the lag is where the program drifts from truth without anyone noticing.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="6-gates-risk-registers-and-one-page-truth"><a class="header" href="#6-gates-risk-registers-and-one-page-truth">6. Gates, Risk Registers, and One-Page Truth</a></h1>
 <p><em>Requirement quality is the floor. Gates, risk rows, and one-page status are the synchronization mechanism that keeps requirements, decisions, and evidence in one shared view across all functions.</em></p>
 <p>Tuesday, 10:45 a.m., gate slides on the projector, whiteboard in the corner still covered in someone else's diagram from the session before.</p>
@@ -733,7 +733,7 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 <p>Treat automation as part of the operating system and it becomes predictable.
 Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <p>If the test coverage plan for your current program includes unit counts, cost per unit, and a pass/fail threshold for automation — and that calculation was done before the concept was locked — the decision was made at the right time. If the test coverage is still 'TBD at D-phase,' the decision is already late.</p>
-<p>The concept-stage decisions define what belongs on the critical path. Automation tasks on that path still need named owners and evidence dates — without those anchors, revised estimates drift and honest critical-path reasoning collapses into opportunistic re-sequence.</p>
+<p>Automation tasks on the critical path still need named owners and evidence dates — without those anchors, revised estimates drift and the critical path collapses into opportunistic re-sequence.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="8-schedule-from-real-dependencies-and-honest-critical-path"><a class="header" href="#8-schedule-from-real-dependencies-and-honest-critical-path">8. Schedule from Real Dependencies and Honest Critical Path</a></h1>
 <p>Tuesday, 5:50 p.m., long shadows in the program office, dependency chart finally honest.</p>
 <p>The launch date on the slide has not moved in three months.</p>
@@ -1066,7 +1066,7 @@ It is the best current boundary supported by evidence, explicit assumptions, and
 <li>require output in program language, not only specialist language.</li>
 </ul>
 <p>Lead responsibility remains: the lead still owns the decision question, artifact quality bar, and closure date.</p>
-<p>Pairing model and chamber results with a boundary-condition log ensures each new run changes a decision rather than restarting the comparison argument.</p>
+<p>Setting the honest limit across interacting factors answers what the requirement should be — whether the program's models and tests are structured to confirm or revise that limit with each run, or just to produce data that no one acts on, is a different question.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="12-models-and-tests-that-change-decisions"><a class="header" href="#12-models-and-tests-that-change-decisions">12. Models and Tests That Change Decisions</a></h1>
 <p>Wednesday, 6:40 p.m., empty hallway outside the war room, the decision review packet contains 20 model runs and 12 test reports but still cannot resolve the thermal case temperature requirement.</p>
 <p>The gate decision still hangs because no owner can show baseline, delta, and effect size in one traceable artifact (a written program record).</p>
@@ -1145,7 +1145,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>This package keeps technical depth available while giving exec and PM reviewers a clear, fair decision frame.</p>
 <hr />
 <p>The boundary-condition correction is confirmed. The model re-run matches the chamber within measurement uncertainty. The gate decision changes from hold to proceed — one week after the chamber result that everyone initially attributed to measurement error. The requirement is 78 °C, the model predicts 79 °C, and the boundary-condition log now carries the contact-resistance value traced to the direct contact-resistance measurement. The decision packet is one page. The technical backup is three.</p>
-<p>Delta discipline answers what the evidence shows. It does not answer whether a controlled result holds across build variation — whether the boundary conditions that made the model and chamber agree will reproduce across units, fixtures, and shifts. Evidence from one careful test is a point estimate. Whether the requirement holds is a population question.</p>
+<p>Evidence from one controlled test is a point estimate — whether the result holds across units, fixtures, and shifts is a population question that the test floor alone cannot answer.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="13-fleet-as-instrumented-experiment"><a class="header" href="#13-fleet-as-instrumented-experiment">13. Fleet as Instrumented Experiment</a></h1>
 <p>Thursday, 7:02 a.m., five units on the bench, cross-site call connecting, no two run logs structured the same way.</p>
 <p>By Friday, the team has stories about each one and no comparable record of what was different between them.</p>
@@ -1224,7 +1224,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>When done well, fleet turns uncertainty into bounded decisions before major spend.</p>
 <hr />
 <p>If your weekly fleet review this week can name one risk-register row that moved because of a specific unit's measured delta, the campaign is doing its job. If it cannot, you are collecting prototypes, not evidence.</p>
-<p>Fleet deltas change the program's risk register only if the gate-closure criteria require evidence from the failure-mode log, not just action-item status — and writing those criteria so they close on evidence rather than action-item color is the next discipline to install.</p>
+<p>Fleet deltas change the program's risk register only if gate-closure criteria require evidence from the failure-mode log — programs that close gates on action-item status rather than test evidence are done on paper long before they are done in the hardware.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="14-risk-and-how-we-define-done-on-paper"><a class="header" href="#14-risk-and-how-we-define-done-on-paper">14. Risk and How We Define Done on Paper</a></h1>
 <p>Thursday, 9:40 a.m., gate prep table covered in coffee rings, the gate review package marks all actions closed while two critical failure modes remain open in current lab evidence.</p>
 <p>Verification and reliability owners still track both in the lab log with no accepted closure evidence.</p>
@@ -1308,7 +1308,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>If questions 3 and 4 are blank, closure is cosmetic — do not treat as done; return the item to the evidence owner before the gate proceeds.</p>
 <hr />
 <p>Done means the failure mode is dispositioned, not the action item is closed.</p>
-<p>Artifact honesty within one program does not scale unless each tier has an explicit contract for what it owes the others and what it can expect in return — and the absence of those contracts is what lets paper-closure patterns re-emerge at every organizational boundary.</p>
+<p>Artifact honesty within one program breaks at organizational boundaries — when tiers have no explicit contracts for what they owe each other, paper-closure patterns reappear at every handoff.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="15-what-every-tier-wants-exec-to-supplier"><a class="header" href="#15-what-every-tier-wants-exec-to-supplier">15. What Every Tier Wants (Exec to Supplier)</a></h1>
 <p>Thursday, 12:55 p.m., lunch cleared to the corner of the table, the weekly review still going.</p>
 <p>The exec pulled the status from last week's board deck. The PM has the project tracker open on one screen. Engineering is working from an email thread that captured the last three decisions. The supplier's rep is in the room with a spec revision they received three weeks ago, which has since been superseded twice.</p>
@@ -1554,7 +1554,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 </ul>
 <p>Without ongoing tracking, supplier drift is not visible until integration — after tooling is committed and the design is locked.</p>
 <hr />
-<p>Installing the OS inside a single program does not transfer to an organization that already runs its own process — the rollout decision is whether to triage first or deploy the full system at once.</p>
+<p>Installing the OS inside a single program creates an island — without a deliberate rollout sequence, it does not spread to an organization that already runs its own process.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="18-rollout-sequence-triage-then-system"><a class="header" href="#18-rollout-sequence-triage-then-system">18. Rollout Sequence: Triage Then System</a></h1>
 <p>Friday, 11:12 a.m., customer presentation already on the projector, someone still writing "full rollout — week one" on the shared doc.</p>
 <p>The program is already behind, with unresolved blockers accumulating every cycle.</p>
