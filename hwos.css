@@ -77,6 +77,54 @@ html:not(.js) {
 }
 .hwos-brand-link:hover { opacity: 1; text-decoration: none; }
 
+/* -- Tables -------------------------------------------------------------- */
+/*
+ * table-layout: fixed + overflow-wrap: break-word prevents the
+ * Decision-grade column from blowing out the page width.
+ * Column widths below target the three-column Field|Inert|Decision-grade
+ * layout used in artifact-examples; they apply to all tables on the site.
+ * @media print covers epub renderers and browser print.
+ */
+.content table {
+  width: 100%;
+  table-layout: fixed;
+  border-collapse: collapse;
+  font-size: 1.5rem;
+  line-height: 1.55em;
+  margin: 1.6em 0;
+}
+.content table th,
+.content table td {
+  padding: 0.55em 0.8em;
+  border: 1px solid var(--sidebar-spacer, #d1d5db);
+  vertical-align: top;
+  overflow-wrap: break-word;
+  word-break: break-word;
+  hyphens: auto;
+}
+.content table th {
+  background-color: var(--sidebar-bg, #f4f4f5);
+  font-weight: 600;
+  text-align: left;
+}
+/* Field column: narrow label */
+.content table th:first-child,
+.content table td:first-child { width: 20%; }
+/* Inert column: medium */
+.content table th:nth-child(2),
+.content table td:nth-child(2) { width: 30%; }
+/* Decision-grade column: remainder (~50%) — no explicit rule needed */
+
+@media print {
+  .content table th,
+  .content table td {
+    border-color: #888;
+  }
+  .content table th {
+    background-color: #f0f0f0;
+  }
+}
+
 /* -- Page footer: outside the prose column, clearly site chrome ---------- */
 .hwos-page-footer {
   width: 100%;
