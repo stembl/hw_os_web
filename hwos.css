@@ -74,8 +74,17 @@ html:not(.js) {
   letter-spacing: 0.04em;
   text-transform: uppercase;
   opacity: 0.8;
+  display: flex;
+  align-items: center;
+  gap: 7px;
 }
 .hwos-brand-link:hover { opacity: 1; text-decoration: none; }
+.hwos-brand-icon {
+  width: 20px;
+  height: 20px;
+  display: block;
+  flex-shrink: 0;
+}
 
 /* -- Tables -------------------------------------------------------------- */
 /*

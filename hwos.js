@@ -2,13 +2,32 @@
 // Source of truth: web/mdbook-assets/hwos.js in stembl/hw_os
 // Injected via additional-js by mdBook build.
 
+(function hwosFavicon() {
+  // Override mdBook's default favicon with the D4+ mark.
+  // Done via JS because head.hbs injects before mdBook's own <link> tags.
+  var links = document.querySelectorAll('link[rel*="icon"]');
+  var icon = 'media/logo-d4plus-icon-32.png';
+  for (var i = 0; i < links.length; i++) { links[i].href = icon; }
+  if (!links.length) {
+    var link = document.createElement('link');
+    link.rel = 'icon';
+    link.type = 'image/png';
+    link.href = icon;
+    document.head.appendChild(link);
+  }
+})();
+
 (function hwosNav() {
   // Brand link below menu title in sidebar
   var menuTitle = document.querySelector('.menu-title');
   if (menuTitle) {
     var brandEl = document.createElement('div');
     brandEl.className = 'hwos-sidebar-brand';
-    brandEl.innerHTML = '<a href="https://thehardwareos.com" rel="noopener" class="hwos-brand-link">thehardwareos.com</a>';
+    brandEl.innerHTML =
+      '<a href="https://thehardwareos.com" rel="noopener" class="hwos-brand-link">'
+      + '<img src="media/logo-d4plus-icon-32.png" class="hwos-brand-icon" alt="" aria-hidden="true" />'
+      + 'thehardwareos.com'
+      + '</a>';
     menuTitle.parentNode.insertBefore(brandEl, menuTitle.nextSibling);
   }
 
