@@ -166,10 +166,10 @@
                 <div id="content" class="content">
                     <main>
                         <h1 id="the-hardware-os"><a class="header" href="#the-hardware-os">The Hardware OS</a></h1>
-<p><img src="media/hw_os_front_2.png" alt="The Hardware OS — front cover" /></p>
 <p><strong>Author:</strong> Steve Embleton</p>
 <p>The operating discipline for hardware programs — how requirements, decisions, and risk stay grounded in what the build shows.</p>
 <p><strong>Start reading:</strong> use the sidebar for the full outline, or open <a href="chapters/01-the-missing-manual.html">1. The Missing Manual</a>.</p>
+<p>thehardwareos.com</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="dedication"><a class="header" href="#dedication">Dedication</a></h1>
 <p><em>To my loving family.</em></p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="a-note-on-the-stories"><a class="header" href="#a-note-on-the-stories">A Note on the Stories</a></h1>
@@ -186,12 +186,12 @@
 <hr />
 <p>Five operating layers produce these outcomes. Knowing the layer a chapter belongs to tells you what it is <em>for</em>, and what it is <strong>not</strong> for.</p>
 <p><img src="media/diagram-1-hardware-os-stack.svg" alt="Hardware OS Stack — five layers from Program Truth at the foundation to Installation and Durability at the top" /></p>
-<div class="table-wrapper"><table><thead><tr><th>Layer</th><th>What this layer guarantees</th><th>Chapters</th></tr></thead><tbody>
-<tr><td>1. Program truth</td><td>One source of truth, one ownership rule, requirements as managed values, decisions as records</td><td>1, 2, 4, 5, 9, 10</td></tr>
-<tr><td>2. Decision discipline</td><td>Named owner for every open decision; gates entered as decisions, not reviews; risk rows that can trigger a mitigation action</td><td>3, 4, 6, 7, 11, 14</td></tr>
-<tr><td>3. Execution evidence</td><td>Evidence from the test floor, supplier, and fleet that is traceable to a requirement and current enough to change a decision</td><td>12, 13, 16, 17</td></tr>
-<tr><td>4. Forecast you can defend</td><td>Schedule from real dependencies, tier obligations made visible, executive one-page truth</td><td>6, 8, 15</td></tr>
-<tr><td>5. Installation and durability</td><td>Predictable OS install sequence; cadence that survives personnel changes; named scope limit so the OS does not overpromise</td><td>18, 19, 20</td></tr>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Layer</th><th style="text-align: left">What this layer guarantees</th><th style="text-align: left">Ch.</th></tr></thead><tbody>
+<tr><td style="text-align: left">1. Program truth</td><td style="text-align: left">One source of truth, one ownership rule, requirements as managed values, decisions as records</td><td style="text-align: left">1, 2, 4, 5, 9, 10</td></tr>
+<tr><td style="text-align: left">2. Decision discipline</td><td style="text-align: left">Named owner for every open decision; gates entered as decisions, not reviews; risk rows that can trigger a mitigation action</td><td style="text-align: left">3, 4, 6, 7, 11, 14</td></tr>
+<tr><td style="text-align: left">3. Execution evidence</td><td style="text-align: left">Evidence from the test floor, supplier, and fleet that is traceable to a requirement and current enough to change a decision</td><td style="text-align: left">12, 13, 16, 17</td></tr>
+<tr><td style="text-align: left">4. Forecast you can defend</td><td style="text-align: left">Schedule from real dependencies, tier obligations made visible, executive one-page truth</td><td style="text-align: left">6, 8, 15</td></tr>
+<tr><td style="text-align: left">5. Installation and durability</td><td style="text-align: left">Predictable OS install sequence; cadence that survives personnel changes; named scope limit so the OS does not overpromise</td><td style="text-align: left">18, 19, 20</td></tr>
 </tbody></table>
 </div>
 <p>A chapter can appear on more than one layer when its mechanism genuinely spans them. Gates show up in decision discipline and in forecast because a gate decision both changes a controlled baseline <em>and</em> moves the forecast. Automation at concept (<strong>Ch. 7</strong>) belongs in decision discipline, not execution evidence: it fixes access, presentation, and traceability fields before the line is producing population-scale floor and fleet returns. The layer is not a category; it is a declaration of what the chapter must guarantee for the OS above it to hold.</p>
@@ -220,9 +220,9 @@
 <p>That gap costs money the same way bad parts cost money: slips, rework, supplier scrap, trust thinning with the people paying the bills. The same scenes on repeat: no owner on the interface line in writing, executive-facing pages that read confident while build and test already know the open item, suppliers going quiet when the drawing set forks, the stretch of calendar where cheap learning has become expensive metal.</p>
 <p>This book closes that gap.</p>
 <hr />
-<h3 id="the-pm-in-the-meeting"><a class="header" href="#the-pm-in-the-meeting">The PM in the meeting</a></h3>
+<h3 id="the-pm-in-the-room"><a class="header" href="#the-pm-in-the-room">The PM in the room</a></h3>
 <p>The PM is usually the easiest face to blame when the review gets loud. They are also the one left holding ship windows someone already showed a paying customer while the technical facts are still moving. When what the team knows and what leadership sees do not match, someone still has to turn what actually happened into a plan someone can fund. Facts in hallway fragments and slide footnotes mean the PM keeps asking “where are we?” while mechanical, electrical, and supply each carry a different piece of the answer.</p>
-<p>Usually not a personality failure. Missing process: named owner for the handoff, one-page story that matches build and test, written decision when a tradeoff changes, early pull on risk and long leads while you can still steer. When the week stops burning on the same unanswered question, PMs get room to clear blockers instead of running the same worry past everyone again. Those habits start with leads, because that is where they get installed first or not at all.</p>
+<p>This is not a personality failure. Missing process: named owner for the handoff, one-page story that matches build and test, written decision when a tradeoff changes, early pull on risk and long leads while you can still steer. When the week stops burning on the same unanswered question, PMs get room to clear blockers instead of running the same worry past everyone again. Those habits start with leads, because that is where they get installed first or not at all.</p>
 <p>From the outside it can look like temperament. It is almost always facts that never landed in one place. Back to the list you can actually fix.</p>
 <h3 id="what-missing-manual-looks-like"><a class="header" href="#what-missing-manual-looks-like">What “missing manual” looks like</a></h3>
 <p>You see the same failure modes often enough to stop calling them bad luck.</p>
@@ -443,13 +443,13 @@
 <p>The question to ask of any tool: can I send someone a direct link to this record right now, and will that link still resolve in a year? If the answer is no, that tool is not suitable for decision records regardless of what else it is used for.</p>
 <p>The fields that must be present — owner, decision question, evidence, rationale, affected artifacts, approver, date — are the requirement. The container is implementation detail.</p>
 <p><strong>Decision record: bad vs corrected</strong></p>
-<div class="table-wrapper"><table><thead><tr><th>Field</th><th>Bad (incomplete)</th><th>Good (decision-grade)</th></tr></thead><tbody>
-<tr><td>Decision</td><td>Revise thermal limit</td><td>Revise thermal limit from 75 °C to 78 °C per chamber measurement</td></tr>
-<tr><td>Owner</td><td>TBD</td><td>Thermal lead</td></tr>
-<tr><td>Rationale</td><td><em>(blank)</em></td><td>Chamber measured 78 °C steady-state; boundary condition error found in model; contact-resistance verified by direct measurement</td></tr>
-<tr><td>Downstream updates</td><td><em>(blank)</em></td><td>Supplier package flagged for re-qual, thermal risk row updated, gate one-page revised</td></tr>
-<tr><td>Approver</td><td><em>(blank)</em></td><td>Program lead</td></tr>
-<tr><td>Date</td><td><em>(blank)</em></td><td>Day 9 post-chamber run</td></tr>
+<div class="table-wrapper"><table><thead><tr><th style="text-align: left">Field</th><th style="text-align: left">Bad (incomplete)</th><th style="text-align: left">Good (decision-grade)</th></tr></thead><tbody>
+<tr><td style="text-align: left">Decision</td><td style="text-align: left">Revise thermal limit</td><td style="text-align: left">Revise thermal limit from 75 °C to 78 °C per chamber measurement</td></tr>
+<tr><td style="text-align: left">Owner</td><td style="text-align: left">TBD</td><td style="text-align: left">Thermal lead</td></tr>
+<tr><td style="text-align: left">Rationale</td><td style="text-align: left"><em>(blank)</em></td><td style="text-align: left">Chamber measured 78 °C steady-state; boundary condition error found in model; contact-resistance verified by direct measurement</td></tr>
+<tr><td style="text-align: left">Downstream updates</td><td style="text-align: left"><em>(blank)</em></td><td style="text-align: left">Supplier package flagged for re-qual, thermal risk row updated, gate one-page revised</td></tr>
+<tr><td style="text-align: left">Approver</td><td style="text-align: left"><em>(blank)</em></td><td style="text-align: left">Program lead</td></tr>
+<tr><td style="text-align: left">Date</td><td style="text-align: left"><em>(blank)</em></td><td style="text-align: left">Day 9 post-chamber run</td></tr>
 </tbody></table>
 </div>
 <h3 id="escalation-without-drama"><a class="header" href="#escalation-without-drama">Escalation without drama</a></h3>
