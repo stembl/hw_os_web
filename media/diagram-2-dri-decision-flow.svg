@@ -4,8 +4,8 @@
      role="img"
      aria-label="DRI Decision Flow — Five duties — with escalation when criteria are not met">
   <rect width="680" height="688" fill="#FFFFFF"/>
-  <text x="105" y="40" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="22" font-weight="700" fill="#162447">DRI Decision Flow</text>
-  <text x="105" y="64" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="14" font-weight="400" fill="#4D6A8A">Five duties — with escalation when criteria are not met</text>
+  <text x="340" y="40" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="22" font-weight="700" fill="#162447" text-anchor="middle">DRI Decision Flow</text>
+  <text x="340" y="64" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="14" font-weight="400" fill="#4D6A8A" text-anchor="middle">Five duties — with escalation when criteria are not met</text>
   <rect x="105" y="86" width="300" height="60" fill="#1F4287" rx="4"/>
   <text x="255" y="116" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">1. Frame the decision question</text>
   <line x1="255" y1="146" x2="255" y2="165" stroke="#2E6BB0" stroke-width="1.5"/>
