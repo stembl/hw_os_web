@@ -404,7 +404,7 @@
 <li>Escalations happen late because no one is responsible for raising the flag.</li>
 <li>PM and exec updates become negotiation artifacts instead of state artifacts.</li>
 </ul>
-<p>One team carried an open bus-bar gauge decision for eleven days. Three functions had stated positions; no one had a named DRI or a decision date. Procurement held two competing purchase orders for the full period. The missing verb was a single line in the ownership record: the lead engineer was authorized to call the gauge specification by a stated date without cross-function consensus below a defined current threshold. Writing that line took ten minutes.</p>
+<p>The same gap shows up quieter. A bus-bar gauge decision on one program was "made" three separate times over eleven days — each time a different function reopened it in a different meeting, because no record named who owned the close or what would end the debate. The status slide stayed green the whole time; the real state was one decision being relitigated on a loop. What ended it was not more analysis but a single line naming the owner and the date past which the call would stand.</p>
 <p>The cost is not just time. It is trust in the decision system.</p>
 <h3 id="minimum-ownership-map-for-week-1"><a class="header" href="#minimum-ownership-map-for-week-1">Minimum ownership map for Week 1</a></h3>
 <p>You do not need an org redesign to fix this. You need a narrow map:</p>
@@ -1143,14 +1143,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 </ul>
 <p>If all units are "nominal," fleet learning is shallow and late surprises remain likely. A common miss: a five-unit fleet built to identical nominal conditions produces five confirmations of one operating point rather than a sample of the variation the program will face at scale.</p>
 <h3 id="connect-fleet-data-to-program-controls"><a class="header" href="#connect-fleet-data-to-program-controls">Connect fleet data to program controls</a></h3>
-<p>Fleet evidence must update:</p>
-<ul>
-<li>requirement confidence,</li>
-<li>risk register entries,</li>
-<li>one-page status deltas,</li>
-<li>next decision queue.</li>
-</ul>
-<p>When the chain runs: Unit 03 measured a leak rate well above Unit 01 at hot soak, the seal leak requirement confidence moved to red, and the next gate call shifted from go to hold pending seal redesign evidence.</p>
+<p>Fleet evidence earns its keep only when it moves the same program-control records every result should — requirement confidence, the risk register, the one-page status, and the next decision in the queue. When the chain runs, that propagation is visible: Unit 03 measured a leak rate well above Unit 01 at hot soak, the seal leak requirement confidence moved to red, and the next gate call shifted from go to hold pending seal redesign evidence.</p>
 <p>If fleet data stays in test notes, the program keeps running on stale assumptions.</p>
 <hr />
 <p>At a battery-adjacent program, five prototype units were built and instrumented over four weeks. Unit 03 measured a leak rate more than twice Unit 01's baseline at hot soak — not a sensor artifact, the same delta confirmed across multiple test runs. The discrepancy sat in the test engineer's notes for eleven days before it reached the program's risk register, because there was no per-unit record requirement that forced the delta into the risk log. The test engineer had mentioned it verbally on day three. It was in nobody's written record. The thermal requirement moved to red only after the team had already placed tooling orders on the assumption that Unit 01 was representative.</p>
@@ -1238,14 +1231,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <hr />
 <h3 id="tie-ins-to-gates-and-one-page-truth"><a class="header" href="#tie-ins-to-gates-and-one-page-truth">Tie-ins to gates and one-page truth</a></h3>
 <p>You need risk artifacts to feed the records that gate decisions depend on. When they stay in a technical silo, leadership walks into the gate review with paper confidence that nobody in the lab would recognize.</p>
-<p>They must feed four decision artifacts:</p>
-<ul>
-<li>update gate decisions,</li>
-<li>update risk register entries,</li>
-<li>update one-page narrative deltas,</li>
-<li>trigger escalation with named owners.</li>
-</ul>
-<p>If this propagation is weak, paper confidence drifts from the real program state and misleads leadership decisions.</p>
+<p>They must feed the decision records the gate depends on — the gate decision itself, the risk register, the one-page narrative, and escalation to named owners when a failure mode stays open. If this propagation is weak, paper confidence drifts from the real program state and misleads leadership decisions.</p>
 <p>What matters is that one record exists, everyone knows it is where failure modes and their investigation status live, and it is the record that gets pulled for the one-page summary and the gate package — not a status assembled fresh for the occasion.</p>
 <h3 id="practical-done-review-in-15-minutes"><a class="header" href="#practical-done-review-in-15-minutes">Practical "done" review in 15 minutes</a></h3>
 <p>For each high-impact closure item, ask:</p>
