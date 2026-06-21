@@ -27,7 +27,7 @@
   <polygon points="560,134 553,130.2 553,137.8" fill="#333333"/>
   <line x1="540" y1="134" x2="540" y2="193" stroke="#555555" stroke-width="1.5" stroke-dasharray="6,4"/>
   <polygon points="540,200 536.1,193 543.9,193" fill="#555555"/>
-  <text x="548" y="167" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="10" font-weight="400" fill="#555555" dominant-baseline="central">Loop broken</text>
+  <text x="548" y="182" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="10" font-weight="400" fill="#555555" dominant-baseline="central">Loop broken</text>
   <rect x="430" y="200" width="220" height="64" fill="#444444" rx="4" stroke="#555555" stroke-width="1.5" stroke-dasharray="6,4"/>
   <text x="540" y="222" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="14" font-weight="700" fill="#FFFFFF" text-anchor="middle" dominant-baseline="central">Frozen but Wrong</text>
   <text x="540" y="244" font-family="'Helvetica Neue', 'Arial', sans-serif" font-size="10" font-weight="400" fill="#CCCCCC" text-anchor="middle" dominant-baseline="central">Revision blocked — stays wrong</text>
