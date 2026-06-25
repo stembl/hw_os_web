@@ -37,7 +37,7 @@
     var footer = document.createElement('footer');
     footer.className = 'hwos-page-footer';
     footer.innerHTML =
-      'Read online free \u2014 '
+      'Read online \u2014 '
       + '<a href="https://www.amazon.com/dp/B0H6D3GJD1" rel="noopener">paperback</a>'
       + ' and '
       + '<a href="https://www.amazon.com/dp/B0H6CYJH6B" rel="noopener">Kindle</a>'
