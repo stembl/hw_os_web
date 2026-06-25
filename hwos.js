@@ -6,7 +6,7 @@
   // Override mdBook's default favicon with the D4+ mark.
   // Done via JS because head.hbs injects before mdBook's own <link> tags.
   var links = document.querySelectorAll('link[rel*="icon"]');
-  var icon = 'media/logo-d4plus-icon-web.png';
+  var icon = '/media/logo-d4plus-icon-web.png';
   for (var i = 0; i < links.length; i++) { links[i].href = icon; }
   if (!links.length) {
     var link = document.createElement('link');
@@ -25,7 +25,7 @@
     brandEl.className = 'hwos-sidebar-brand';
     brandEl.innerHTML =
       '<a href="https://thehardwareos.com" rel="noopener" class="hwos-brand-link">'
-      + '<img src="media/logo-d4plus-icon-web.png" class="hwos-brand-icon" alt="" aria-hidden="true" />'
+      + '<img src="/media/logo-d4plus-icon-web.png" class="hwos-brand-icon" alt="" aria-hidden="true" />'
       + 'thehardwareos.com'
       + '</a>';
     menuTitle.parentNode.insertBefore(brandEl, menuTitle.nextSibling);
