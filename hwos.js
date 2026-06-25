@@ -37,7 +37,11 @@
     var footer = document.createElement('footer');
     footer.className = 'hwos-page-footer';
     footer.innerHTML =
-      'Read online free \u2014 print, ebook, and audio in preparation. '
+      'Read online free \u2014 '
+      + '<a href="https://www.amazon.com/dp/B0H6D3GJD1" rel="noopener">paperback</a>'
+      + ' and '
+      + '<a href="https://www.amazon.com/dp/B0H6CYJH6B" rel="noopener">Kindle</a>'
+      + ' on Amazon. '
       + '<a href="https://thehardwareos.com" rel="noopener">thehardwareos.com</a>'
       + ' \u00a0\u00b7\u00a0 \u00a9 2026 Steve Embleton \u2014 All Rights Reserved';
     pageWrapper.appendChild(footer);
