@@ -180,6 +180,7 @@
 </ol>
 <p>A unit's evidence is gate-complete when the record answers all three from the record alone — without asking the engineer who ran the test.</p>
 <h3 id="minimum-per-unit-record"><a class="header" href="#minimum-per-unit-record">Minimum per-unit record</a></h3>
+<p>Six fields per unit. If the record cannot survive the question "what was different about this unit," it is not a unit record — it is a bench note.</p>
 <p>For each serial unit, capture:</p>
 <ul>
 <li>configuration (revision/state),</li>
@@ -190,7 +191,6 @@
 <li>owner/date for record completeness.</li>
 </ul>
 <p>If there is no per-unit record, you cannot defend the cross-unit comparison at gate — and the anomaly that matters will be in the unit whose log is thinnest.</p>
-<p>Six fields. If the record cannot survive the question "what was different about this unit," it is not a unit record — it is a bench note.</p>
 <h3 id="build-matrix-not-pile-of-units"><a class="header" href="#build-matrix-not-pile-of-units">Build matrix, not pile of units</a></h3>
 <p>Plan fleet variation deliberately:</p>
 <ul>
@@ -227,7 +227,7 @@
 <p>Short, strict, repeatable. Each cycle ends with a documented delta note: which requirement or risk rows moved and what evidence moved them.</p>
 <h3 id="delta-discipline-scales-to-fleet"><a class="header" href="#delta-discipline-scales-to-fleet">Delta discipline scales to fleet</a></h3>
 <p>Delta and traceability discipline at component and subsystem level scales directly into fleet work — the same logic, applied across physical units in real variation.</p>
-<p>When done well, fleet turns uncertainty into bounded decisions before major spend.</p>
+<p>A fleet built this way surfaces process variation before tooling orders commit and supplier qualifications lock it in.</p>
 <hr />
 <p>Field test: If your weekly fleet review this week can name one risk-register row that moved because of a specific unit's measured delta, the campaign is doing its job. If it cannot, you are collecting prototypes, not evidence.</p>
 <p>Fleet deltas change the program's risk register only if gate-closure criteria require evidence from the failure-mode log — programs that close gates on action-item status rather than test evidence are done on paper long before they are done in the hardware.</p>

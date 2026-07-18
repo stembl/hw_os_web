@@ -416,7 +416,7 @@
 <li>PM and exec updates become negotiation artifacts instead of state artifacts.</li>
 </ul>
 <p>The same gap shows up quieter. A bus-bar gauge decision on one program was "made" three separate times over eleven days — each time a different function reopened it in a different meeting, because no record named who owned the close or what would end the debate. The status slide stayed green the whole time; the real state was one decision being relitigated on a loop. What ended it was not more analysis but a single line naming the owner and the date past which the call would stand.</p>
-<p>The cost is not just time. It is trust in the decision system.</p>
+<p>The cost is not just time. Decisions that cannot close erode the record — the next owner inherits a log nobody trusts.</p>
 <h3 id="minimum-ownership-map-for-week-1"><a class="header" href="#minimum-ownership-map-for-week-1">Minimum ownership map for Week 1</a></h3>
 <p>You do not need an org redesign to fix this. You need a narrow map:</p>
 <ol>
@@ -488,7 +488,7 @@
 </ol>
 <p>If answers differ by function, the program does not have a spec. It has parallel interpretations.</p>
 <h3 id="hygiene-failures-that-look-small-and-cost-big"><a class="header" href="#hygiene-failures-that-look-small-and-cost-big">Hygiene failures that look small and cost big</a></h3>
-<p>Most failures are not dramatic. They are quiet mismatches.</p>
+<p>Most failures start as a single revision not propagated — one team still running the old value while another has already moved.</p>
 <hr />
 <p>Rev C.2 changed the leak-test dwell value, but manufacturing work instructions still referenced Rev C.1 while test benches used the new value. That one mismatch forced three days of teardown and retest. The team then found the dwell requirement had no owner and no rationale trail for the original dwell change. Once an owner was assigned and a controlled revision record was created with the rationale, the next revision — a ten-second dwell adjustment — was processed in four hours and reached all affected work instructions the same day.</p>
 <hr />
@@ -554,7 +554,7 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 <hr />
 <h3 id="gate-reviews-decision-points-not-slide-events"><a class="header" href="#gate-reviews-decision-points-not-slide-events">Gate reviews: decision points, not slide events</a></h3>
 <p>A gate is useful only if it closes explicit decisions.</p>
-<p>Minimum output of every gate:</p>
+<p>A gate closes when four things are recorded — not when the review ends:</p>
 <ol>
 <li>decision taken (go/hold/re-scope),</li>
 <li>owner for each follow-up action,</li>
@@ -619,7 +619,7 @@ If requirement truth is ambiguous, the gate is a well-prepared presentation over
 </blockquote>
 <h3 id="update-rhythm-that-keeps-it-honest"><a class="header" href="#update-rhythm-that-keeps-it-honest">Update rhythm that keeps it honest</a></h3>
 <p>Cadence matters more than formatting.</p>
-<p>Recommended rhythm:</p>
+<p>The rhythm that keeps the register honest:</p>
 <ul>
 <li>risk register refreshed at least weekly by owners,</li>
 <li>one-page refreshed on fixed cadence before leadership touchpoints,</li>
@@ -749,7 +749,7 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 <h3 id="honest-critical-path"><a class="header" href="#honest-critical-path">Honest critical path</a></h3>
 <p>Critical path is not "the work we care about most."</p>
 <p>It is the chain that controls completion date.</p>
-<p>Rules for honest path management:</p>
+<p>Three rules that keep the path honest when date pressure starts:</p>
 <ul>
 <li>recalculate path when task state changes,</li>
 <li>include external dependencies (supplier lead time — procurement and qualification clock from order or release to usable parts — plus compliance, tooling),</li>
@@ -758,7 +758,7 @@ Treat it as "integration detail" and it becomes late-stage volatility.</p>
 </ul>
 <p>If your plan has no visible float and no uncertainty ranges, the schedule has no tested recovery path.</p>
 <h3 id="failure-modes-that-fake-schedule-confidence"><a class="header" href="#failure-modes-that-fake-schedule-confidence">Failure modes that fake schedule confidence</a></h3>
-<p>Common schedule distortions:</p>
+<p>The distortions appear in the same order on every program. Naming them is faster than re-diagnosing from scratch:</p>
 <ul>
 <li>compressing non-critical tasks and calling it recovery,</li>
 <li>hiding blocked dependencies in "in progress" buckets,</li>
@@ -893,7 +893,7 @@ The opposite failure is also common: freezing wrong values in the requirement re
 </ul>
 <p>The requirement owner should finish this review in minutes and publish one delta note, not run a half-day meeting.</p>
 <hr />
-<p>Field test: If you cannot point at one requirement ID in your current program that revised in the last quarter with evidence in the log, an approver on record, and a downstream-update note, you are running on frozen-but-wrong values somewhere. Re-read <em>Frozen-but-wrong is worse than revised-with-evidence</em>.</p>
+<p>Field test: If you cannot point at one requirement ID in your current program that revised in the last quarter with evidence in the log, an approver on record, and a downstream-update note, you are running on frozen-but-wrong values somewhere.</p>
 <p>Controlled revisions depend on requirement values that were grounded in physical evidence in the first place — stacked-margin assumptions make every revision a negotiation rather than an evidence check.</p>
 <div style="break-before: page; page-break-before: always;"></div><h1 id="10-requirements-from-physics-not-stacked-buffers"><a class="header" href="#10-requirements-from-physics-not-stacked-buffers">10. Requirements from Physics (Not Stacked Buffers)</a></h1>
 <p>By mid-morning Wednesday the structural load requirement carried three separate safety factors — one from the component lead, one from systems, one from operations. The rationale table had a row for the number and no row for what uncertainty each factor was covering.</p>
@@ -1133,6 +1133,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 </ol>
 <p>A unit's evidence is gate-complete when the record answers all three from the record alone — without asking the engineer who ran the test.</p>
 <h3 id="minimum-per-unit-record"><a class="header" href="#minimum-per-unit-record">Minimum per-unit record</a></h3>
+<p>Six fields per unit. If the record cannot survive the question "what was different about this unit," it is not a unit record — it is a bench note.</p>
 <p>For each serial unit, capture:</p>
 <ul>
 <li>configuration (revision/state),</li>
@@ -1143,7 +1144,6 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>owner/date for record completeness.</li>
 </ul>
 <p>If there is no per-unit record, you cannot defend the cross-unit comparison at gate — and the anomaly that matters will be in the unit whose log is thinnest.</p>
-<p>Six fields. If the record cannot survive the question "what was different about this unit," it is not a unit record — it is a bench note.</p>
 <h3 id="build-matrix-not-pile-of-units"><a class="header" href="#build-matrix-not-pile-of-units">Build matrix, not pile of units</a></h3>
 <p>Plan fleet variation deliberately:</p>
 <ul>
@@ -1180,7 +1180,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>Short, strict, repeatable. Each cycle ends with a documented delta note: which requirement or risk rows moved and what evidence moved them.</p>
 <h3 id="delta-discipline-scales-to-fleet"><a class="header" href="#delta-discipline-scales-to-fleet">Delta discipline scales to fleet</a></h3>
 <p>Delta and traceability discipline at component and subsystem level scales directly into fleet work — the same logic, applied across physical units in real variation.</p>
-<p>When done well, fleet turns uncertainty into bounded decisions before major spend.</p>
+<p>A fleet built this way surfaces process variation before tooling orders commit and supplier qualifications lock it in.</p>
 <hr />
 <p>Field test: If your weekly fleet review this week can name one risk-register row that moved because of a specific unit's measured delta, the campaign is doing its job. If it cannot, you are collecting prototypes, not evidence.</p>
 <p>Fleet deltas change the program's risk register only if gate-closure criteria require evidence from the failure-mode log — programs that close gates on action-item status rather than test evidence are done on paper long before they are done in the hardware.</p>
@@ -1189,7 +1189,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>Two critical failure modes were still open in the lab log — verification and reliability tracking both, with no accepted closure evidence. It was Thursday, gate prep underway.</p>
 <p>The paper package says done, but the program state is not. The gap is not a communication failure — it is a structural one. The action tracker and the failure-mode log are not the same artifact, and no gate-packet requirement connected closure of one to the other. Fixing it requires a single rule: closure evidence must cite the failure-mode investigation disposition, not just the action ID. That single rule is the spine of this chapter.</p>
 <p>That gap is where late cost, schedule slips, and credibility damage enter through integration and executive review.</p>
-<p>This is the gate-closure logic that depends on calibrated chamber evidence and a controlled requirement revision — in the canonical case, the closure that must happen before the thermal case temperature requirement can close at the release gate.</p>
+<p>This is the gate-closure logic: the chamber evidence became a controlled requirement revision, and that revision had to be in the record before the gate could close.</p>
 <hr />
 <h3 id="done-on-paper-must-match-decision-reality"><a class="header" href="#done-on-paper-must-match-decision-reality">"Done on paper" must match decision reality</a></h3>
 <p>Artifacts are useful only when a named owner uses them to change a specific decision and downstream behavior.</p>
@@ -1223,19 +1223,8 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 </ul>
 <p>Resetting artifacts to "clean" each phase destroys institutional memory that gate and program leaders need.</p>
 <h3 id="busywork-vs-decision-work"><a class="header" href="#busywork-vs-decision-work">Busywork vs decision work</a></h3>
-<p>Reject artifact packages that:</p>
-<ul>
-<li>are completed only to satisfy format,</li>
-<li>contain generic failure text with no operating context,</li>
-<li>omit a named owner or closure date,</li>
-<li>cannot point to a decision they changed.</li>
-</ul>
-<p>Keep artifact packages that:</p>
-<ul>
-<li>expose uncertainty honestly,</li>
-<li>map to active decisions,</li>
-<li>summarize tradeoffs in language each tier can evaluate without follow-up questions.</li>
-</ul>
+<p>The filter is simple: does this artifact change a decision, or was it produced to show the artifact exists? Format-only completion, generic failure text, no owner, no closure date — any of those signals the artifact served the tracker, not the program.</p>
+<p>What keeps: honest uncertainty on the table, a clear link to an active decision, and tradeoff framing that each tier can read without a follow-up meeting.</p>
 <p>You know the difference after the first gate debrief where someone produced a risk summary that nobody had read. That is not a documentation gap — that is what busywork looks like when it reaches the table.</p>
 <hr />
 <p>A gate package at a large industrial program marked all thermal actions closed. Two critical failure modes — thermal runaway propagation and connector derating under field humidity — were still under active investigation in the test lab. The disconnect: the action tracker was PM-owned and tracked action-item status by ID. The failure-mode log was engineering-owned and tracked investigation state by failure mode. No artifact required a closure entry to cite a failure-mode log entry rather than just an action ID. One internal audit caught the gap three days before the gate review. The auditor had not been looking for it specifically — she was tracing an action item listed as closed with no linked evidence, and the failure-mode log was the first place she checked. If the gate had proceeded, the program would have released a build configuration while two unresolved failure modes were still in active investigation — a six-to-eight-week integration cost if either materialized in production. The fix was one line in the gate-packet template: closure evidence must cite the failure-mode log entry and its investigation disposition, not just the action ID. The organization had been closing gates the old way for two cycles and had shipped at least twice with failure modes still open. Three days of one auditor's scrutiny was all that separated this gate from the same outcome.</p>
@@ -1287,12 +1276,14 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <li>authority boundaries — which decisions belong to the lead and which need approval; ambiguity here is expensive</li>
 <li>protected closure windows for technical decisions — time to think is not a luxury; a lead with no protected windows will make shallow calls on deep problems, because the problem context resets at every interruption</li>
 </ul>
+<p>Operations and manufacturing read the same thing differently — they need the release package to be unambiguous before the build starts, not before the inspection fails.</p>
 <p><strong>Manufacturing/operations</strong></p>
 <ul>
 <li>unambiguous release package with revision-locked content</li>
 <li>process-critical characteristics called out explicitly, not scattered through engineering notes</li>
 <li>change notice with timing — not just "we changed it" but "this revision affects your build starting with lot N"</li>
 </ul>
+<p>The supplier contract is the farthest from the program center, which means any ambiguity compounds the longest.</p>
 <p><strong>Supplier</strong></p>
 <ul>
 <li>one current revision source — not "check the portal, the email, and the drop folder"</li>
@@ -1312,7 +1303,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <h3 id="pm-fairness-explicitly"><a class="header" href="#pm-fairness-explicitly">PM fairness, explicitly</a></h3>
 <p>When record quality is low, PM becomes the human sync engine compensating for missing system behavior in formal artifacts. The PM pings because the artifact does not answer the question. That is a system failure, not a PM failure.</p>
 <p>With clean ownership, requirement truth, and one-page integrity, PM work shifts from chasing contradictions to clearing real blockers. That shift has a concrete payoff for the engineering lead: <strong>a PM who trusts the schedule and the risk register stops asking for daily status.</strong> Not because they stopped caring, but because they have something reliable to read. An engineering lead who has earned that trust has bought themselves a working environment — time to solve the technical problem instead of presenting it repeatedly.</p>
-<p>That is the contract to protect. An efficient PM, backed by a process that does not waste their time, is a PM teams respect — and that earned trust is itself the measurement that the artifacts are doing their job.</p>
+<p>That is the contract to protect. A PM who reads the schedule without calling you is one who trusts the artifacts — and that is the signal the OS is working.</p>
 <h3 id="what-the-exec-leaving-early-looks-like"><a class="header" href="#what-the-exec-leaving-early-looks-like">What the exec leaving early looks like</a></h3>
 <p>There is a simple field test for whether the program's one-page status and gate truth are working: <strong>can your exec leave for the weekend without anxiety?</strong></p>
 <p>Not because the program has no risk. Every hardware program has risk. But because:</p>
@@ -1345,6 +1336,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <h3 id="objective-of-first-article"><a class="header" href="#objective-of-first-article">Objective of first article</a></h3>
 <p>First article is not a demo milestone.</p>
 <p>It is a structured learning phase that reduces uncertainty fast enough to decide next commitments.</p>
+<p>First article has three jobs: isolate each change so the run log is readable, lock the build configuration at handoff so yield is attributable, and run mini-gates so problems surface within the article — not in production.</p>
 <p>Primary objectives:</p>
 <ol>
 <li>validate critical functions under real build conditions,</li>
@@ -1451,7 +1443,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>Require only the evidence package needed to make and record the commit decision.</p>
 <h3 id="capability-discussions-in-plain-language"><a class="header" href="#capability-discussions-in-plain-language">Capability discussions in plain language</a></h3>
 <p>Do not let reviews drift into slide-heavy statistics discussion that delays a release decision.</p>
-<p>Ask practical questions:</p>
+<p>Three questions surface producibility risk before the tooling is cut:</p>
 <ul>
 <li>Can this process repeatedly hit the required window?</li>
 <li>Under what conditions does it fail?</li>
@@ -1506,7 +1498,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>Install the minimum loop that restores decision quality.</p>
 <h3 id="triage-phase-first-2-4-weeks"><a class="header" href="#triage-phase-first-2-4-weeks">Triage phase (first 2-4 weeks)</a></h3>
 <p>Timebox triage and keep it narrow.</p>
-<p>Core controls:</p>
+<p>Four controls stabilize a distressed program. Install them in this order — the later ones depend on the earlier ones being readable:</p>
 <ol>
 <li>ownership map for top active decisions,</li>
 <li>one-page truth on fixed cadence,</li>
@@ -1515,14 +1507,8 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 </ol>
 <p>If these four controls stay stable for two cycles, leaders can shift from firefighting to planned execution.</p>
 <h3 id="entryexit-criteria"><a class="header" href="#entryexit-criteria">Entry/exit criteria</a></h3>
-<p>Define triage done criteria before starting:</p>
-<ul>
-<li>top decision backlog reduced below the threshold declared at triage start,</li>
-<li>one-page and source records aligned for two consecutive cycles,</li>
-<li>escalation path functioning with response SLA,</li>
-<li>no unresolved "which value is live" conflicts on critical threads.</li>
-</ul>
-<p>Without exit criteria, triage becomes permanent emergency mode.</p>
+<p>Define what "triage done" means before starting — not after. Four criteria: the decision backlog is below the threshold you declared on day one, the one-page and source records have aligned for two consecutive cycles, the escalation path has a functioning response SLA, and there are no unresolved "which value is live" conflicts on critical threads.</p>
+<p>Without those criteria predeclared, triage becomes permanent emergency mode.</p>
 <h3 id="system-phase-after-triage"><a class="header" href="#system-phase-after-triage">System phase (after triage)</a></h3>
 <p>Once stable, layer deeper controls:</p>
 <ul>
@@ -1542,7 +1528,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 </ul>
 <p>Each mistake lowers trust in the OS.</p>
 <h3 id="adoption-metric-that-matters"><a class="header" href="#adoption-metric-that-matters">Adoption metric that matters</a></h3>
-<p>Track behavior change, not document count:</p>
+<p>Template completion is not adoption. The metrics that distinguish real adoption from compliance theater are all timestamp deltas or count deltas in the decision record — not whether the template exists:</p>
 <ul>
 <li>decision closure time (timestamp delta between decision logged and decision closed in the decision log),</li>
 <li>decision carry rate (count of open decisions still unresolved at the start of the following review cycle),</li>
@@ -1576,7 +1562,7 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <p>Teach these on live program threads, not in abstract slides only.</p>
 <h3 id="cadence-is-the-enforcement-mechanism"><a class="header" href="#cadence-is-the-enforcement-mechanism">Cadence is the enforcement mechanism</a></h3>
 <p>Without cadence, standards drift into preference.</p>
-<p>Minimum cadence set:</p>
+<p>The minimum cadence is four touchpoints. Any program that cannot hold all four is not running the OS — it is running a lighter version that will drift when pressure spikes:</p>
 <ul>
 <li>weekly decision/risk sync (updated decision log and risk register entries),</li>
 <li>fixed one-page refresh rhythm (published one-page status before each review),</li>
@@ -1658,12 +1644,12 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 </ul>
 <p>If a regulator or notified body asks for evidence, the OS does not produce it. Your formal lifecycle does. The OS makes sure your team is not running on fiction while that lifecycle runs.</p>
 <h3 id="what-this-os-is-for"><a class="header" href="#what-this-os-is-for">What this OS is for</a></h3>
-<p>This OS helps teams run those obligations with less chaos:</p>
+<p>The gap these obligations don't fill is program reality: who owns the current decision, what the requirement actually says this week, and whether the risk register reflects today's evidence. The OS covers that gap:</p>
 <ul>
-<li>clearer ownership,</li>
-<li>cleaner requirement/revision truth,</li>
-<li>faster risk signal propagation,</li>
-<li>more credible gate and status decisions.</li>
+<li>one named owner per open decision instead of "engineering,"</li>
+<li>one live requirement value per controlled parameter instead of "see the latest email,"</li>
+<li>risk surfaced before the gate instead of in the debrief,</li>
+<li>gate output that traces to evidence instead of to color.</li>
 </ul>
 <p>It is a coordination layer that links specialists, records, and decisions without replacing domain frameworks.</p>
 <h3 id="where-specialist-depth-must-enter"><a class="header" href="#where-specialist-depth-must-enter">Where specialist depth must enter</a></h3>
@@ -1695,8 +1681,8 @@ Tests are strongest when reviewers interpret them with model context and assumpt
 <h3 id="how-the-os-itself-can-degrade"><a class="header" href="#how-the-os-itself-can-degrade">How the OS itself can degrade</a></h3>
 <p>Every operating system has failure modes of its own. Name them so you can spot the drift early and correct it as a system problem, not a personal one.</p>
 <ul>
-<li><strong>Process becomes bureaucracy.</strong> When operating habits start collecting their own approvals, audits, and meetings <em>about</em> the habits, you have rebuilt the dysfunction one layer up. Fix: every operating artifact must trace to a decision the program would otherwise miss. If it does not, retire the artifact.</li>
-<li><strong>DRIs become bottlenecks.</strong> A named owner becomes the only path, and decisions stall on one calendar. Fix: the DRI's job is to frame and record, not to be present at every conversation. Delegated decision frames are still controlled.</li>
+<li>Process becomes bureaucracy. When operating habits start collecting their own approvals, audits, and meetings <em>about</em> the habits, you have rebuilt the dysfunction one layer up. Fix: every operating artifact must trace to a decision the program would otherwise miss. If it does not, retire the artifact.</li>
+<li>DRIs become bottlenecks. A named owner becomes the only path, and decisions stall on one calendar. Fix: the DRI's job is to frame and record, not to be present at every conversation. Delegated decision frames are still controlled.</li>
 <li><strong>The source of truth goes stale.</strong> The live record stops being live. Status meetings start running from copies. Fix: the weekly evidence update is the live record, not the slide. If the slide is the primary artifact, the live record has already failed.</li>
 <li><strong>Executives override the decision record.</strong> A controlled decision is reversed in a hallway; no record is updated. Fix: hallway reversals are decisions. If they are not recorded with the same fields as a formal decision, the OS is being undermined and the program is back on personalities.</li>
 <li><strong>Too many gates slow learning.</strong> Gates exist to change controlled values. If every cross-functional checkpoint becomes a gate, the program loses iteration speed without gaining decision quality. Fix: prune gates that have no controlled value to change — a checkpoint without a controlled value to change is not a gate.</li>

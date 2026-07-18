@@ -169,7 +169,7 @@
 <p>Two critical failure modes were still open in the lab log — verification and reliability tracking both, with no accepted closure evidence. It was Thursday, gate prep underway.</p>
 <p>The paper package says done, but the program state is not. The gap is not a communication failure — it is a structural one. The action tracker and the failure-mode log are not the same artifact, and no gate-packet requirement connected closure of one to the other. Fixing it requires a single rule: closure evidence must cite the failure-mode investigation disposition, not just the action ID. That single rule is the spine of this chapter.</p>
 <p>That gap is where late cost, schedule slips, and credibility damage enter through integration and executive review.</p>
-<p>This is the gate-closure logic that depends on calibrated chamber evidence and a controlled requirement revision — in the canonical case, the closure that must happen before the thermal case temperature requirement can close at the release gate.</p>
+<p>This is the gate-closure logic: the chamber evidence became a controlled requirement revision, and that revision had to be in the record before the gate could close.</p>
 <hr />
 <h3 id="done-on-paper-must-match-decision-reality"><a class="header" href="#done-on-paper-must-match-decision-reality">"Done on paper" must match decision reality</a></h3>
 <p>Artifacts are useful only when a named owner uses them to change a specific decision and downstream behavior.</p>
@@ -203,19 +203,8 @@
 </ul>
 <p>Resetting artifacts to "clean" each phase destroys institutional memory that gate and program leaders need.</p>
 <h3 id="busywork-vs-decision-work"><a class="header" href="#busywork-vs-decision-work">Busywork vs decision work</a></h3>
-<p>Reject artifact packages that:</p>
-<ul>
-<li>are completed only to satisfy format,</li>
-<li>contain generic failure text with no operating context,</li>
-<li>omit a named owner or closure date,</li>
-<li>cannot point to a decision they changed.</li>
-</ul>
-<p>Keep artifact packages that:</p>
-<ul>
-<li>expose uncertainty honestly,</li>
-<li>map to active decisions,</li>
-<li>summarize tradeoffs in language each tier can evaluate without follow-up questions.</li>
-</ul>
+<p>The filter is simple: does this artifact change a decision, or was it produced to show the artifact exists? Format-only completion, generic failure text, no owner, no closure date — any of those signals the artifact served the tracker, not the program.</p>
+<p>What keeps: honest uncertainty on the table, a clear link to an active decision, and tradeoff framing that each tier can read without a follow-up meeting.</p>
 <p>You know the difference after the first gate debrief where someone produced a risk summary that nobody had read. That is not a documentation gap — that is what busywork looks like when it reaches the table.</p>
 <hr />
 <p>A gate package at a large industrial program marked all thermal actions closed. Two critical failure modes — thermal runaway propagation and connector derating under field humidity — were still under active investigation in the test lab. The disconnect: the action tracker was PM-owned and tracked action-item status by ID. The failure-mode log was engineering-owned and tracked investigation state by failure mode. No artifact required a closure entry to cite a failure-mode log entry rather than just an action ID. One internal audit caught the gap three days before the gate review. The auditor had not been looking for it specifically — she was tracing an action item listed as closed with no linked evidence, and the failure-mode log was the first place she checked. If the gate had proceeded, the program would have released a build configuration while two unresolved failure modes were still in active investigation — a six-to-eight-week integration cost if either materialized in production. The fix was one line in the gate-packet template: closure evidence must cite the failure-mode log entry and its investigation disposition, not just the action ID. The organization had been closing gates the old way for two cycles and had shipped at least twice with failure modes still open. Three days of one auditor's scrutiny was all that separated this gate from the same outcome.</p>
